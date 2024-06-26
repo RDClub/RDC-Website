@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="RDCLogo.png" type="image/png">
+<title>RDC</title>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #FFB6C1, #FFC0CB);
+  margin: 0;
+  padding: 0;
+  color: #333;
+  transition: background 0.5s ease-in-out;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: pink;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+  max-height: 100px;
+  transition: transform 0.3s ease;
+}
+
+header img:hover {
+  transform: scale(1.1);
+}
+
+header .contact-link {
+  padding: 15px 30px; /* Increased padding for larger button */
+  background-color: #B96794;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 20px; /* Increased font size */
+  transition: background-color 0.3s ease;
+}
+
+header .contact-link:hover {
+  background-color: #784461;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: background-color 0.3s ease;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #B96794;
+  color: white;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 16px;
+  margin: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.Links {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 16px;
+  margin: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.content:hover {
+  transform: translateY(-10px);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.Links:hover {
+  transform: translateY(-10px);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.content p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.nowhite {
+  text-align: center;
+  margin-top: 40px;
+  color: #B96794;
+}
+
+.contentmargin {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 16px;
+  margin: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-align: center;
+}
+
+.contentmargin:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contentmargin img {
+  max-width: 10%; /* Adjusted max-width for smaller images */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+.contentmargin h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.contentmargin p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 70%;
+}
+
+#contact {
+  margin: 50px 16px; /* Adjusted margin here */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mottopng img {
+  max-width: 100%;
+  height: auto;
+}
+
+#contact h2 {
+  text-align: center;
+}
+
+.Links img {
+  max-width: 10%;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+
+  .contentmargin p {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+  <img src="Logo.png" alt="RDC Logo">
+  <div class="mottopng">
+    <img src="Motto.png">
+  </div>  
+  <a class="contact-link" href="https://www.paypal.com/donate/?business=JCAFVAP478D6G&no_recurring=0&item_name=+Donations+will+go+to+patients+with+rare+diseases+who+can%27t+afford+treatment+and+to+nonprofits+who+support+these+patients.+&currency_code=USD">Donate</a>
+</header>
+
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="https://www.signupgenius.com/go/10C0B44A8A923A6F5C52-50174468-volunteering#/">Volunteer</a>
+  <a href="#contact">Contact</a>
+  <a href="#officers">Members</a>
+</div>
+
+<div class="nowhite">
+  <h1>Rare Disease Club</h1>
+  <br>
+</div>
+
+<div class="content">
+  <p>In RDC (Rare Disease Club), our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families. Additionally, we want to offer resources and support to families who are struggling with the challenges of caring for a loved one with a rare disease. Our club serves the local community including elementary school students, families in need, and local hospitals, as well as our own members. We believe that by working together, we can create a more compassionate and informed society that values the importance of rare disease awareness and advocacy.</p>
+  <br>
+</div>
+
+<div class="Links">
+  <h2>Sign up <a href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform?usp=sf_link&pli=1">Interest form</a></h2>
+  <img src="RDCQrcode.png">
+  <h2>Sign up <a href="https://www.signupgenius.com/go/10C0B44A8A923A6F5C52-50174468-volunteering#/">Volunteer</a></h2>
+  <h2><a href="https://www.paypal.com/donate/?business=JCAFVAP478D6G&no_recurring=0&item_name=+Donations+will+go+to+patients+with+rare+diseases+who+can%27t+afford+treatment+and+to+nonprofits+who+support+these+patients.+&currency_code=USD">Donate to us!</a></h2>
+</div>
+
+<hr>
+<div id="contact" class="content">
+    <h2>Contact Us</h2>
+    <p>For
+   any inquiries, please email us at <a href="mailto:rarediseaseclub44@gmail.com">rarediseaseclub44@gmail.com</a>.</p>
+</div>
+<br>
+<div id="officers" class="contentmargin">
+  <h2>Meet our officers</h2>
+  <br>
+  <img src="CoP.png" alt="Co-Founder Image">
+  <h2>Co-Founder</h2>
+  <p>Hey, my name is Parnika Khatri, and I am a sophomore. I have a strong passion for helping others in my community. I believe it's important to assist others in need because everyone deserves a chance to reach their full potential in life :) I can’t wait to make an impactful first year as a club!</p>
+  <img src="CoP2.png" alt="Co-Founder Image">
+  <h2>Co-Founder</h2>
+  <p>Hi, my name is Samhita Ramesh and I am a sophomore. Rare diseases are critical yet often overlooked in healthcare. With over 300 million people affected, there is still a lack of public awareness. By leading RDC we can create a more compassionate and informed society that values rare disease awareness and advocacy which is why I’m passionate about this club.</p>
+  <br>
+  <img src="Secretary.png" alt="Secretary Image">
+  <h2>Secretary</h2>
+  <p>Hi, my name is Zoey Bayani and I am a Sophomore this year! Leading RDC is a step toward exploring and seeding awareness, empathy, and support in future generations. Through this club, I hope to see even more positivity in our school. Let’s make good use of our minds during our time together!</p>
+  <br>
+  <img src="Treasurer.png" alt="Treasurer Image">
+  <h2>Treasurer</h2>
+  <p>Hi! my name is TriYA Sinha and I am a Sophomore this year! There isn’t currently a club focused on supporting people with rare diseases and spreading awareness at Foothill, which is why I’m so excited to be a part of the RDC journey! Let’s come together and learn about how we can provide support and make a positive impact! </p>
+</div>
+
+
+
+</body>
+</html>
