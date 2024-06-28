@@ -55,6 +55,7 @@ header .contact-link:hover {
 .topnav {
   overflow: hidden;
   background-color: #333;
+  position: relative;
 }
 
 .topnav a {
@@ -103,6 +104,55 @@ header .contact-link:hover {
 
 .topnav .search-container button:hover {
   background: #ccc;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .content {
@@ -236,7 +286,15 @@ header .contact-link:hover {
   <a class="active" href="#home">Home</a>
   <a href="https://www.signupgenius.com/go/10C0B44A8A923A6F5C52-50174468-volunteering#/">Volunteer</a>
   <a href="#contact">Contact</a>
-  <a href="#officers">Members</a>
+  <div class="dropdown">
+    <button class="dropbtn">Members</button>
+    <div class="dropdown-content">
+      <a href="#officers">Co-Founder: Parnika Khatri</a>
+      <a href="#officers">Co-Founder: Samhita Ramesh</a>
+      <a href="#officers">Secretary: Zoey Bayani</a>
+      <a href="#officers">Treasurer: TriYA Sinha</a>
+    </div>
+  </div>
   <a href="https://docs.google.com/presentation/d/1-nZOirFYozmSOCHmZ6twHAFxfLgW7Lo9TrDQrtzRo5w/edit?pli=1#slide=id.p">Diseases</a>
 </div>
 
@@ -283,8 +341,6 @@ header .contact-link:hover {
   <h2>Treasurer</h2>
   <p>Hi! my name is TriYA Sinha and I am a Sophomore this year! There isn’t currently a club focused on supporting people with rare diseases and spreading awareness at Foothill, which is why I’m so excited to be a part of the RDC journey! Let’s come together and learn about how we can provide support and make a positive impact! </p>
 </div>
-
-
 
 </body>
 </html>
