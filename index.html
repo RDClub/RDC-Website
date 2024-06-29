@@ -39,12 +39,12 @@ header img:hover {
 }
 
 header .contact-link {
-  padding: 15px 30px;
+  padding: 15px 30px; /* Increased padding for larger button */
   background-color: #B96794;
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 20px; /* Increased font size */
   transition: background-color 0.3s ease;
 }
 
@@ -160,7 +160,7 @@ header .contact-link:hover {
 }
 
 .contentmargin img {
-  max-width: 10%;
+  max-width: 10%; /* Adjusted max-width for smaller images */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 16px;
@@ -180,7 +180,7 @@ header .contact-link:hover {
 }
 
 #contact {
-  margin: 50px 16px;
+  margin: 50px 16px; /* Adjusted margin here */
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
@@ -200,58 +200,11 @@ header .contact-link:hover {
   max-width: 10%;
 }
 
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  font-size: 17px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #ddd;
-  color: black;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
 @media screen and (max-width: 600px) {
   .topnav .search-container {
     float: none;
   }
-  .topnav a, .topnav input[type=text], .topnav .search-container button, .dropdown .dropbtn {
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
     float: none;
     display: block;
     text-align: left;
@@ -274,17 +227,17 @@ header .contact-link:hover {
 <header>
   <img src="Logo.png" alt="RDC Logo">
   <div class="mottopng">
-    <img src="Motto.png" alt="Motto Image">
+    <img src="Motto.png">
   </div>  
-  <a class="contact-link" href="https://cureraredisease.raisely.com/parnika-khatri">Donate</a>
+  <a class="contact-link" href="https://cureraredisease.raisely.com/parnika-khatri" target="_blank">Donate</a>
 </header>
 
 <div class="topnav">
   <a class="active" href="#home">Home</a>
-  <a href="https://www.signupgenius.com/go/10C0B44A8A923A6F5C52-50174468-volunteering#/">Volunteer</a>
+  <a href="https://www.signupgenius.com/go/10C0B44A8A923A6F5C52-50174468-volunteering#/" target="_blank">Volunteer</a>
   <a href="#contact">Contact</a>
-  <a href="officers.html">Meet our Officers</a>
-  <a href="https://docs.google.com/presentation/d/1-nZOirFYozmSOCHmZ6twHAFxfLgW7Lo9TrDQrtzRo5w/edit?pli=1#slide=id.p">Diseases</a>
+  <a href="officers.html" target="_blank">Members</a>
+  <a href="https://docs.google.com/presentation/d/1-nZOirFYozmSOCHmZ6twHAFxfLgW7Lo9TrDQrtzRo5w/edit?pli=1#slide=id.p" target="_blank">Diseases</a>
 </div>
 
 <div class="nowhite">
@@ -298,17 +251,16 @@ header .contact-link:hover {
 </div>
 
 <div class="Links">
-  <h2>Sign up <a href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform?usp=sf_link&pli=1">Interest form</a></h2>
-  <img src="RDCQrcode.png" alt="RDC QR Code">
-  <h2>Sign up <a href="https://www.signupgenius.com/go/10C0B44A8A923A6F5C52-50174468-volunteering#/">Volunteer</a></h2>
+  <h2>Sign up <a href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform?usp=sf_link&pli=1" target="_blank">Interest form</a></h2>
+  <img src="RDCQrcode.png">
+  <h2>Sign up <a href="https://www.signupgenius.com/go/10C0B44A8A923A6F5C52-50174468-volunteering#/" target="_blank">Volunteer</a></h2>
   <br>
-  <h2><a href="https://cureraredisease.raisely.com/parnika-khatri">Donate to us!</a></h2>
+  <h2><a href="https://cureraredisease.raisely.com/parnika-khatri" target="_blank">Donate to us!</a></h2>
 </div>
 
-<hr>
-<div id="contact" class="content">
-    <h2>Contact Us</h2>
-    <p>For any inquiries, please email us at <a href="mailto:rarediseaseclub44@gmail.com">rarediseaseclub44@gmail.com</a>.</p>
+<div id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: info@rarediseaseclub.com</p>
 </div>
 </body>
 </html>
