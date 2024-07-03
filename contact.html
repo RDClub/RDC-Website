@@ -75,7 +75,6 @@ header .contact-link:hover {
 }
 
 .contentmargin img {
-  max-width: 10%;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 16px;
@@ -97,19 +96,19 @@ header .contact-link:hover {
 .social-media {
   display: flex;
   justify-content: center;
-  gap: 5px; /* Reduced gap to make logos very close */
+  gap: 10px; /* Adjust gap to keep icons close */
   margin-top: 20px;
 }
 
 .social-media a {
   color: #333;
   text-decoration: none;
-  font-size: 40px;
 }
 
 .social-media img {
-  width: 50px; /* Adjust the size of the icons */
+  width: 50px; /* Ensure the width and height are the same */
   height: 50px;
+  object-fit: contain; /* Keep aspect ratio */
 }
 
 @media screen and (max-width: 600px) {
