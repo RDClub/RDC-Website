@@ -1,26 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="RDCLogo.png" type="image/png">
-<title>Rare Disease Club</title>
-<meta name="description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. Join us to make a difference and support our community.">
-
+<title>Contact Us - Rare Disease Club</title>
+<meta name="description" content="Contact the Rare Disease Club to learn more about our mission and how you can help spread awareness about rare diseases.">
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   font-family: 'Arial', sans-serif;
   background: linear-gradient(to right, #FFB6C1, #FFC0CB);
   margin: 0;
   padding: 0;
   color: #333;
-  transition: background 0.5s ease-in-out;
 }
 
 header {
@@ -28,27 +19,21 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: pink; /* Restored pink color */
+  background-color: pink;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header img {
   max-height: 100px;
-  transition: transform 0.3s ease;
-}
-
-header img:hover {
-  transform: scale(1.1);
 }
 
 header .contact-link {
-  padding: 15px 30px; /* Increased padding for larger button */
+  padding: 15px 30px;
   background-color: #B96794;
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  font-size: 20px; /* Increased font size */
-  transition: background-color 0.3s ease;
+  font-size: 20px;
 }
 
 header .contact-link:hover {
@@ -68,7 +53,6 @@ header .contact-link:hover {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  transition: background-color 0.3s ease;
 }
 
 .topnav a:hover {
@@ -81,89 +65,17 @@ header .contact-link:hover {
   color: white;
 }
 
-.topnav .search-container {
-  float: right;
-}
-
-.topnav input[type=text] {
-  padding: 6px;
-  margin-top: 8px;
-  font-size: 17px;
-  border: none;
-}
-
-.topnav .search-container button {
-  float: right;
-  padding: 6px;
-  margin-top: 8px;
-  margin-right: 16px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.topnav .search-container button:hover {
-  background: #ccc;
-}
-
-.content {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 16px;
-  margin: 16px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.Links {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 16px;
-  margin: 16px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.content:hover {
-  transform: translateY(-10px);
-  background-color: rgba(255, 255, 255, 1);
-}
-
-.Links:hover {
-  transform: translateY(-10px);
-  background-color: rgba(255, 255, 255, 1);
-}
-
-.content p {
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.nowhite {
-  text-align: center;
-  margin-top: 40px;
-  color: #B96794;
-}
-
 .contentmargin {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 16px;
   margin: 16px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease;
   text-align: center;
 }
 
-.contentmargin:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
 .contentmargin img {
-  max-width: 10%; /* Adjusted max-width for smaller images */
+  max-width: 10%;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 16px;
@@ -182,46 +94,38 @@ header .contact-link:hover {
   max-width: 70%;
 }
 
-#contact {
-  margin: 50px 16px; /* Adjusted margin here */
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Reduced gap to make logos closer */
+  margin-top: 20px;
 }
 
-.mottopng img {
-  max-width: 100%;
-  height: auto;
-}
-
-#contact h2 {
-  text-align: center;
-}
-
-.Links img {
-  max-width: 10%;
+.social-media a {
+  color: #333;
+  text-decoration: none;
+  font-size: 40px;
 }
 
 @media screen and (max-width: 600px) {
-  .topnav .search-container {
-    float: none;
-  }
-  .topnav a, .topnav input[type=text], .topnav .search-container button {
+  .topnav a {
     float: none;
     display: block;
     text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
   }
-  .topnav input[type=text] {
-    border: 1px solid #ccc;
-  }
-
   .contentmargin p {
     max-width: 100%;
     padding: 0 16px;
+  }
+  .contentmargin img {
+    max-width: 30%;
+  }
+  header img {
+    max-height: 60px;
+  }
+  header .contact-link {
+    padding: 10px 20px;
+    font-size: 16px;
   }
 }
 </style>
@@ -230,33 +134,26 @@ header .contact-link:hover {
 <header>
   <img src="Logo.png" alt="RDC Logo">
   <div class="mottopng">
-    <img src="Motto.png" alt="Motto of the Rare Disease Club">
+    <img src="Motto.png" alt="Motto Image">
   </div>  
   <a class="contact-link" href="https://cureraredisease.raisely.com/parnika-khatri" target="_blank">Donate</a>
 </header>
 
 <div class="topnav">
-  <a class="active" href="#home">Home</a>
+  <a href="index.html">Home</a>
   <a href="https://www.signupgenius.com/go/10C0B44A8A923A6F5C52-50174468-volunteering#/" target="_blank">Volunteer</a>
   <a href="officers.html">Meet our Officers</a>
   <a href="https://docs.google.com/presentation/d/1-nZOirFYozmSOCHmZ6twHAFxfLgW7Lo9TrDQrtzRo5w/edit?pli=1#slide=id.p" target="_blank">Diseases</a>
-  <a href="contact.html">Contact</a>
+  <a class="active" href="contact.html">Contact</a>
 </div>
 
-<div class="nowhite">
-  <h1>Rare Disease Club</h1>
-  <br>
+<div class="contentmargin">
+  <h1>Contact Us</h1>
+  <div class="social-media">
+    <a href="https://www.instagram.com/rdc_rarediseaseclub/" target="_blank"><img src="5968776.png" alt="Instagram Icon"></a>
+    <a href="https://www.linkedin.com" target="_blank"><img src="Screenshot_2024-07-02_at_4.47.04_PM-removebg-preview.png" alt="LinkedIn Icon"></a>
+    <a href="mailto:rarediseaseclub44@gmail.com" target="_blank"><img src="gmail.png" alt="Email Icon"></a>
+  </div>
 </div>
-
-<div class="content">
-  <p>In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families. Additionally, we want to offer resources and support to families who are struggling with the challenges of caring for a loved one with a rare disease. Our club serves the local community including elementary school students, families in need, and local hospitals, as well as our own members. We believe that by working together, we can create a more compassionate and informed society that values the importance of rare disease awareness and advocacy.</p>
-  <br>
-</div>
-
-<div class="Links">
-  <img src="RDCQrcode.png">
-  <h2>Sign up <a href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform?usp=sf_link&pli=1" target="_blank">Interest form</a></h2>
-</div>
-
 </body>
 </html>
