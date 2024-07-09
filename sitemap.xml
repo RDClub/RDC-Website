@@ -15,5 +15,14 @@
       <lastmod>2024-07-02</lastmod>
       <priority>0.80</priority>
    </url>
-   <!-- Add more URLs as needed -->
+   <url>
+      <loc>https://www.rarediseaseclubs.com</loc>
+      <lastmod>2024-07-02</lastmod>
+      <priority>0.80</priority>
+   </url>
+      <url>
+      <loc>https://rarediseaseclubs.com</loc>
+      <lastmod>2024-07-02</lastmod>
+      <priority>0.80</priority>
+   </url>
 </urlset>
