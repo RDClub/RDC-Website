@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Rare Disease Club: Spreading Awareness About Rare Diseases. Join us to make a difference and support our community.">
-    <meta name="keywords" content="Rare Disease Club, Rare Disease Clubs, RDC, Rare Diseases, Disease Awareness, Support Community">
+    <meta name="Rare Disease Club" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. Join us to make a difference and support our community.">
     <link rel="canonical" href="https://rarediseaseclubs.com" />
     <link rel="icon" href="RDCLogo.png" type="image/png">
     <title>Rare Disease Club - Spreading Awareness About Rare Diseases</title>
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Rare Disease Club - Spreading Awareness About Rare Diseases">
-    <meta property="og:description" content="Join us to make a difference and support our community.">
+    <meta property="og:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families. Additionally, we want to offer resources and support to families who are struggling with the challenges of caring for a loved one with a rare disease. Our club serves the local community including elementary school students, families in need, and local hospitals, as well as our own members. We believe that by working together, we can create a more compassionate and informed society that values the importance of rare disease awareness and advocacy.">
     <meta property="og:image" content="https://rarediseaseclubs.com/RDCLogo.png">
     <meta property="og:url" content="https://rarediseaseclubs.com">
     <meta property="og:type" content="website">
@@ -19,7 +18,7 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Rare Disease Club - Spreading Awareness About Rare Diseases">
-    <meta name="twitter:description" content="Join us to make a difference and support our community.">
+    <meta name="twitter:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families. Additionally, we want to offer resources and support to families who are struggling with the challenges of caring for a loved one with a rare disease. Our club serves the local community including elementary school students, families in need, and local hospitals, as well as our own members. We believe that by working together, we can create a more compassionate and informed society that values the importance of rare disease awareness and advocacy.">
     <meta name="twitter:image" content="https://rarediseaseclubs.com/RDCLogo.png">
 
     <!-- Structured Data -->
@@ -30,7 +29,7 @@
       "name": "Rare Disease Club",
       "url": "https://rarediseaseclubs.com",
       "logo": "https://rarediseaseclubs.com/RDCLogo.png",
-      "description": "Spreading Awareness About Rare Diseases. Join us to make a difference and support our community."
+      "description": "In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. Join us to make a difference and support our community."
     }
     </script>
 
@@ -38,7 +37,217 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
     <style>
-        /* ... your existing styles ... */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #FFB6C1, #FFC0CB);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            transition: background 0.5s ease-in-out;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: pink;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            max-height: 100px;
+            transition: transform 0.3s ease;
+        }
+
+        header img:hover {
+            transform: scale(1.1);
+        }
+
+        header .contact-link {
+            padding: 15px 30px;
+            background-color: #B96794;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        header .contact-link:hover {
+            background-color: #784461;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: background-color 0.3s ease;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #B96794;
+            color: white;
+        }
+
+        .topnav .search-container {
+            float: right;
+        }
+
+        .topnav input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+
+        .topnav .search-container button {
+            float: right;
+            padding: 6px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .topnav .search-container button:hover {
+            background: #ccc;
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 16px;
+            margin: 16px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .Links {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 16px;
+            margin: 16px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .content:hover, .Links:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .nowhite {
+            text-align: center;
+            margin-top: 40px;
+            color: #B96794;
+        }
+
+        .contentmargin {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 16px;
+            margin: 16px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .contentmargin:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .contentmargin img {
+            max-width: 10%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 16px;
+        }
+
+        .contentmargin h2 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .contentmargin p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 70%;
+        }
+
+        #contact {
+            margin: 50px 16px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .mottopng img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #contact h2 {
+            text-align: center;
+        }
+
+        .Links img {
+            max-width: 10%;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav .search-container {
+                float: none;
+            }
+            .topnav a, .topnav input[type=text], .topnav .search-container button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+            .topnav input[type=text] {
+                border: 1px solid #ccc;
+            }
+
+            .contentmargin p {
+                max-width: 100%;
+                padding: 0 16px;
+            }
+        }
     </style>
 </head>
 <body>
