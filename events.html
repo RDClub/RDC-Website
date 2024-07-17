@@ -74,41 +74,40 @@ header .contact-link:hover {
   text-align: center;
 }
 
-.contentmargin img {
+.contentmargin h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.contentmargin .event {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contentmargin .event img {
+  max-width: 100px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 16px;
 }
 
-.contentmargin h2 {
-  font-size: 24px;
-  margin-bottom: 8px;
+.contentmargin .event .details {
+  flex: 1;
+  margin-left: 20px;
 }
 
-.contentmargin p {
+.contentmargin .event .details p {
+  margin: 5px 0;
   font-size: 16px;
-  line-height: 1.6;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 70%;
 }
 
-.social-media {
-  display: flex;
-  justify-content: center;
-  gap: 100px; /* Adjust gap for more spacing */
-  margin-top: 20px;
-}
-
-.social-media a {
-  color: #333;
-  text-decoration: none;
-}
-
-.social-media img {
-  width: 50px; /* Ensure the width and height are the same */
-  height: 50px;
-  object-fit: contain; /* Keep aspect ratio */
+.contentmargin .event .details .form-link {
+  font-weight: bold;
 }
 
 @media screen and (max-width: 600px) {
@@ -117,12 +116,12 @@ header .contact-link:hover {
     display: block;
     text-align: left;
   }
-  .contentmargin p {
-    max-width: 100%;
-    padding: 0 16px;
+  .contentmargin .event {
+    flex-direction: column;
+    text-align: center;
   }
-  .contentmargin img {
-    max-width: 30%;
+  .contentmargin .event .details {
+    margin-left: 0;
   }
   header img {
     max-height: 60px;
@@ -130,14 +129,6 @@ header .contact-link:hover {
   header .contact-link {
     padding: 10px 20px;
     font-size: 16px;
-  }
-  .social-media {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .social-media img {
-    width: 40px; /* Adjust the size for smaller screens */
-    height: 40px;
   }
 }
 </style>
@@ -162,16 +153,14 @@ header .contact-link:hover {
 
 <div class="contentmargin">
   <h1>Events</h1>
-  <div class="social-media">
-    <h3>Fundraising Camps</h3>
-    <br>
-    <p><b>Summer Speech and Debate Camp</b></p>
-    <br>
-    <p>7/16/24-8/1/24</p>
-    <br>
+  <div class="event">
+    <div class="details">
+      <h3>Fundraising Camps</h3>
+      <p><b>Summer Speech and Debate Camp</b></p>
+      <p>7/16/24 - 8/1/24</p>
+      <p class="form-link"><b>Sign up form: <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform?usp=sf_link" target="_blank">Form</a></b></p>
+    </div>
     <img src="Flyer.png" alt="Event Flyer">
-    <br>
-    <p><b>Sign up form: <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform?usp=sf_link" target="_blank">Form</a></b></p>
   </div>
 </div>
 </body>
