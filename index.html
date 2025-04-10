@@ -4,40 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="Rare Disease Club" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. Join us to make a difference and support our community." />
-  <link rel="canonical" href="http://rarediseaseclubs.com" />
   <link rel="canonical" href="https://www.rarediseaseclubs.com" />
-  <link rel="canonical" href="https://rarediseaseclubs.com/index.html" />
-  <meta name="keywords" content="Rare Disease Club, Rare Disease Clubs, RDC, Rare Diseases, Disease Awareness, Support Community" />
   <link rel="icon" href="RDCLogo.png" type="image/png" />
   <title>Rare Disease Club - Spreading Awareness About Rare Diseases</title>
-
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Rare Disease Club - Spreading Awareness About Rare Diseases" />
-  <meta property="og:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families." />
-  <meta property="og:image" content="https://rarediseaseclubs.com/RDCLogo.png" />
-  <meta property="og:url" content="https://rarediseaseclubs.com" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Rare Disease Club - Spreading Awareness About Rare Diseases" />
-  <meta name="twitter:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families." />
-  <meta name="twitter:image" content="https://rarediseaseclubs.com/RDCLogo.png" />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "name": "Rare Disease Club",
-      "url": "https://rarediseaseclubs.com",
-      "logo": "https://rarediseaseclubs.com/RDCLogo.png",
-      "description": "In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. Join us to make a difference and support our community."
-    }
-  </script>
-
-  <!-- Animate.css CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
   <style>
     * {
@@ -111,56 +80,37 @@
       color: white;
     }
 
-    .topnav .search-container {
-      float: right;
+    .hero-section {
+      background: url('your-image-url.jpg') no-repeat center center;
+      background-size: cover;
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
     }
 
-    .topnav input[type=text] {
-      padding: 6px;
-      margin-top: 8px;
-      font-size: 17px;
-      border: none;
+    .hero-title {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
     }
 
-    .topnav .search-container button {
-      float: right;
-      padding: 6px;
-      margin-top: 8px;
-      margin-right: 16px;
-      background: #ddd;
-      font-size: 17px;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+    .hero-description {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
     }
 
-    .topnav .search-container button:hover {
-      background: #ccc;
+    .cta-button {
+      padding: 15px 30px;
+      background-color: #B96794;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      transition: background-color 0.3s;
     }
 
-    /* 🔥 NEW updated styling for the image-wrapper section */
-    .image-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 40px 20px;
-      gap: 40px;
-      background-color: rgba(255, 255, 255, 0.3);
-    }
-
-    .art_image img {
-      max-width: 400px;
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .text-image img {
-      max-width: 500px;
-      width: 100%;
-      height: auto;
+    .cta-button:hover {
+      background-color: #784461;
     }
 
     .content,
@@ -184,45 +134,6 @@
       line-height: 1.6;
     }
 
-    .nowhite {
-      text-align: center;
-      margin-top: 40px;
-      color: #B96794;
-    }
-
-    .contentmargin {
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 16px;
-      margin: 16px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .contentmargin:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .contentmargin img {
-      max-width: 10%;
-      border-radius: 8px;
-      margin-bottom: 16px;
-    }
-
-    .contentmargin h2 {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-
-    .contentmargin p {
-      font-size: 16px;
-      line-height: 1.6;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 70%;
-    }
-
     #contact {
       margin: 50px 16px;
       padding: 20px;
@@ -234,8 +145,11 @@
       text-align: center;
     }
 
-    .Links img {
-      max-width: 10%;
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #B96794;
+      color: white;
     }
 
     @media screen and (max-width: 600px) {
@@ -272,63 +186,47 @@
   </style>
 </head>
 <body>
-  <header class="animate__animated animate__fadeInDown">
+
+  <header>
     <img src="rdc.png" alt="RDC Logo" />
     <div class="mottopng">
       <img src="Motto.png" alt="RDC Motto" />
     </div>
-    <a class="contact-link animate__animated animate__bounceIn" href="https://cureraredisease.raisely.com/parnika-khatri" target="_blank">Donate</a>
+    <a class="contact-link" href="https://cureraredisease.raisely.com/parnika-khatri" target="_blank">Donate</a>
   </header>
 
   <div class="topnav">
-    <a class="active animate__animated animate__fadeInLeft" href="#home">Home</a>
-    <a class="animate__animated animate__fadeInLeft" href="https://www.signupgenius.com/go/10C0B44A8A923A6F5C52-50174468-volunteering#/" target="_blank">Volunteer</a>
-    <a class="animate__animated animate__fadeInLeft" href="officers.html">Meet our Officers</a>
-    <a class="animate__animated animate__fadeInLeft" href="https://docs.google.com/presentation/d/1-nZOirFYozmSOCHmZ6twHAFxfLgW7Lo9TrDQrtzRo5w/edit?pli=1#slide=id.p" target="_blank">Diseases</a>
-    <a class="animate__animated animate__fadeInLeft" href="events.html">Events</a>
-    <a class="animate__animated animate__fadeInLeft" href="contact.html">Contact</a>
-    <a class="animate__animated animate__fadeInLeft" href="partner.html">Partnerships</a>
+    <a class="active" href="#home">Home</a>
+    <a href="https://www.signupgenius.com/go/10C0B44A8A923A6F5C52-50174468-volunteering#/" target="_blank">Volunteer</a>
+    <a href="officers.html">Meet our Officers</a>
+    <a href="https://docs.google.com/presentation/d/1-nZOirFYozmSOCHmZ6twHAFxfLgW7Lo9TrDQrtzRo5w/edit?pli=1#slide=id.p" target="_blank">Diseases</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+    <a href="partner.html">Partnerships</a>
   </div>
 
-  <!-- 🔥 Fixed image layout -->
-  <div class="image-wrapper animate__animated animate__fadeInUp">
-    <div class="art_image">
-      <img src="people.png" alt="people" />
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">We Have a Beautiful and Rare Chance</h1>
+      <p class="hero-description">
+        At Rare Disease Club, we aim to raise awareness and offer support for those impacted by rare diseases. Together, we can make a real difference in the lives of those who need our help.
+      </p>
+      <a class="cta-button" href="#donate">Join Us in Making a Difference</a>
     </div>
-    <div class="text-image">
-      <img src="titlerdc.png" alt="Titleforrdc" />
-    </div>
   </div>
 
-  <div class="nowhite animate__animated animate__fadeInUp">
-    <h1>Rare Disease Club</h1><br />
-  </div>
-
-  <div class="content animate__animated animate__fadeInUp">
+  <div class="content">
     <p>In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society...</p><br />
   </div>
 
-  <div class="Links animate__animated animate__fadeInUp">
+  <div class="Links">
     <img src="RDCQrcode.png" alt="QR Code for Interest Form" />
     <h2>Sign up <a href="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform?usp=sf_link&pli=1" target="_blank">Interest form</a></h2>
   </div>
 
-  <div class="nowhite animate__animated animate__fadeInUp">
-    <footer>
-      <p>&copy; 2024 Rare Disease Club. All rights reserved.</p>
-    </footer>
-  </div>
+  <footer>
+    <p>&copy; 2024 Rare Disease Club. All rights reserved.</p>
+  </footer>
 
-  <script>
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
 </body>
 </html>
