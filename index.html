@@ -45,9 +45,12 @@
 
     body {
       font-family: 'Arial', sans-serif;
-      background-color: #FCD6E7; /* Light pink background */
+      background-color: #FCD6E7;
       color: #333;
       transition: background 0.5s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
@@ -55,7 +58,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 10px 20px;
-      background-color: #FFB6C1; /* Pink header */
+      background-color: #FFB6C1;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
@@ -108,39 +111,13 @@
       color: white;
     }
 
-    .topnav .search-container {
-      float: right;
-    }
-
-    .topnav input[type=text] {
-      padding: 6px;
-      margin-top: 8px;
-      font-size: 17px;
-      border: none;
-    }
-
-    .topnav .search-container button {
-      float: right;
-      padding: 6px;
-      margin-top: 8px;
-      margin-right: 16px;
-      background: #ddd;
-      font-size: 17px;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .topnav .search-container button:hover {
-      background: #ccc;
-    }
-
     .main-content {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       padding: 40px 20px;
       background-color: transparent;
+      flex: 1;
     }
 
     .content-image {
@@ -169,17 +146,17 @@
       line-height: 1.6;
       color: #333;
     }
+
     .people-img {
       max-width: 100%;
       height: auto;
-      max-height: 1000px; /* Increased from 500px to 700px */
+      max-height: 700px;
       width: auto;
       display: block;
       margin: 0 auto;
     }
 
-    .content,
-    .Links {
+    .content {
       background-color: rgba(255, 255, 255, 0.6);
       padding: 16px;
       margin: 16px;
@@ -188,8 +165,7 @@
       transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
-    .content:hover,
-    .Links:hover {
+    .content:hover {
       transform: translateY(-10px);
       background-color: rgba(255, 255, 255, 0.8);
     }
@@ -205,7 +181,7 @@
       color: #B96794;
     }
 
-    /* New NORD Section Styles */
+    /* NORD Section Styles */
     .nord-section {
       padding: 60px 20px;
       background-color: #fff;
@@ -273,29 +249,109 @@
       background-color: #784461;
     }
 
+    /* Enhanced Footer Styles */
+    .site-footer {
+      background-color: #f8f8f8;
+      padding: 40px 20px 20px;
+      color: #333;
+      font-size: 14px;
+      border-top: 1px solid #e1e1e1;
+    }
+    
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto 30px;
+    }
+    
+    .footer-section h3 {
+      color: #B96794;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-section a {
+      color: #555;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-section a:hover {
+      color: #B96794;
+      text-decoration: underline;
+    }
+    
+    address {
+      font-style: normal;
+      line-height: 1.6;
+    }
+    
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #e1e1e1;
+    }
+    
+    .footer-links {
+      margin-bottom: 15px;
+    }
+    
+    .footer-links a {
+      color: #555;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: #B96794;
+    }
+    
+    .copyright {
+      margin-bottom: 10px;
+    }
+    
+    .disclaimer {
+      font-size: 12px;
+      color: #777;
+      max-width: 800px;
+      margin: 20px auto 0;
+      line-height: 1.5;
+    }
+
     @media screen and (max-width: 600px) {
-      .topnav .search-container {
-        float: none;
-      }
-      .topnav a,
-      .topnav input[type=text],
-      .topnav .search-container button {
-        float: none;
-        display: block;
-        text-align: left;
-        width: 100%;
-        margin: 0;
-        padding: 14px;
-      }
-      .topnav input[type=text] {
-        border: 1px solid #ccc;
-      }
       .main-content {
         flex-direction: column;
         padding: 20px;
       }
+      
       .people-img {
         max-width: 100%;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-section {
+        text-align: center;
+      }
+      
+      .footer-links a {
+        display: block;
+        margin: 5px 0;
       }
     }
   </style>
@@ -317,7 +373,6 @@
     <a class="animate__animated animate__fadeInLeft" href="contact.html">Contact</a>
   </div>
 
-  <!-- Main content section with image on left and text on right -->
   <div class="main-content animate__animated animate__fadeIn">
     <div class="content-image">
       <img src="people.png" alt="People supporting rare disease awareness" class="people-img">
@@ -327,9 +382,9 @@
       <p>In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families. Additionally, we want to offer resources and support to families who are struggling with the challenges of caring for a loved one with a rare disease.</p>
     </div>
   </div>
-  <!-- New NORD Section -->
+
   <section class="nord-section">
-    <h2>How You Can make an impact</h2>
+    <h2>How You Can Make an Impact</h2>
     <div class="services-grid">
       <div class="service-card">
         <h3>Donating</h3>
@@ -345,17 +400,70 @@
       
       <div class="service-card">
         <h3>Partnerships</h3>
-        <p>Explore our current partnerships! </p>
+        <p>Explore our current partnerships!</p>
         <a href="partner.html" class="service-btn">Learn More</a>
       </div>
     </div>
   </section>
 
-  <div class="nowhite animate__animated animate__fadeInUp">
-    <footer>
-      <p>&copy; 2024 Rare Disease Club. All rights reserved.</p>
-    </footer>
+  <div class="content animate__animated animate__fadeInUp">
+    <p>In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families. Additionally, we want to offer resources and support to families who are struggling with the challenges of caring for a loved one with a rare disease. Our club serves the local community including elementary school students, families in need, and local hospitals, as well as our own members. We believe that by working together, we can create a more compassionate and informed society that values the importance of rare disease awareness and advocacy.</p>
   </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Understanding Rare Disease</h3>
+        <ul>
+          <li><a href="#">Where to Start</a></li>
+          <li><a href="#">Stay Informed</a></li>
+          <li><a href="#">Patient Stories</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Community Support</h3>
+        <ul>
+          <li><a href="#">Mentoring Organizations</a></li>
+          <li><a href="#">Improving Clinical Care</a></li>
+          <li><a href="#">Partnering With the Community</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Get Involved</h3>
+        <ul>
+          <li><a href="https://www.signupgenius.com/go/10C0B44A8A923A6F5C52-50174468-volunteering#/" target="_blank">Volunteer</a></li>
+          <li><a href="https://cureraredisease.raisely.com/parnika-khatri" target="_blank">Donate</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <address>
+          Rare Disease Club<br>
+          123 Awareness Avenue<br>
+          Sydney, WA 02169<br>
+          Phone: 617-249-7300
+        </address>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-links">
+        <a href="#">Terms & Conditions</a> |
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Media Inquiries</a> |
+        <a href="#">Careers</a>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2024 Rare Disease Club. All rights reserved.</p>
+        <p>Rare Disease Club is a registered 501(c)(3) charity organization.</p>
+        <p class="disclaimer">The information on this website is provided for general informational purposes only and is not intended as medical advice. Please consult with qualified healthcare professionals regarding any medical conditions or treatments.</p>
+      </div>
+    </div>
+  </footer>
 
   <script>
     // Smooth scrolling for anchor links
