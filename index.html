@@ -108,69 +108,178 @@
       color: white;
     }
 
-    .image-wrapper {
+    .topnav .search-container {
+      float: right;
+    }
+
+    .topnav input[type=text] {
+      padding: 6px;
+      margin-top: 8px;
+      font-size: 17px;
+      border: none;
+    }
+
+    .topnav .search-container button {
+      float: right;
+      padding: 6px;
+      margin-top: 8px;
+      margin-right: 16px;
+      background: #ddd;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .topnav .search-container button:hover {
+      background: #ccc;
+    }
+
+    .screenshot-layout {
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-wrap: wrap;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-      margin: 20px;
-    }
-
-    .art_image {
-      flex: 1;
-      min-width: 300px;
-      text-align: center;
-    }
-
-    .art_image img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-
-    .text-image {
-      flex: 1;
-      min-width: 300px;
-      padding: 20px;
-      text-align: left;
-    }
-
-    .text-image h1 {
-      color: #B96794;
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .text-image p {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-
-    .content {
+      align-items: center;
       background-color: rgba(255, 255, 255, 0.8);
-      padding: 20px;
+      padding: 40px;
       margin: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .screenshot-text {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+    }
+
+    .screenshot-image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .screenshot-text h2 {
+      font-size: 2rem;
+      color: #B96794;
+      margin-bottom: 20px;
+      line-height: 1.3;
+      font-weight: bold;
+    }
+
+    .screenshot-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .people-img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .content,
+    .Links {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 16px;
+      margin: 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .content:hover,
+    .Links:hover {
+      transform: translateY(-10px);
+      background-color: rgba(255, 255, 255, 1);
+    }
+
+    .content p {
       font-size: 18px;
       line-height: 1.6;
     }
 
-    footer {
+    .nowhite {
       text-align: center;
-      margin: 20px 0;
+      margin-top: 10px;
       color: #B96794;
     }
 
-    @media screen and (max-width: 768px) {
-      .image-wrapper {
-        flex-direction: column;
-      }
+    .contentmargin {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 16px;
+      margin: 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
 
-      .text-image {
-        text-align: center;
+    .contentmargin:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .contentmargin img {
+      max-width: 10%;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+
+    .contentmargin h2 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .contentmargin p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 70%;
+    }
+
+    #contact {
+      margin: 50px 16px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+    }
+
+    #contact h2 {
+      text-align: center;
+    }
+
+    .Links img {
+      max-width: 10%;
+    }
+
+    @media screen and (max-width: 600px) {
+      .topnav .search-container {
+        float: none;
+      }
+      .topnav a,
+      .topnav input[type=text],
+      .topnav .search-container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+      }
+      .topnav input[type=text] {
+        border: 1px solid #ccc;
+      }
+      .contentmargin p {
+        max-width: 100%;
+        padding: 0 16px;
+      }
+      .screenshot-layout {
+        flex-direction: column;
+        padding: 20px;
+      }
+      .screenshot-text h2 {
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -194,38 +303,30 @@
     <a class="animate__animated animate__fadeInLeft" href="partner.html">Partnerships</a>
   </div>
 
-  <!-- 🔥 NORD-style layout: image left, title/text right -->
-  <div class="image-wrapper">
-    <div class="art_image">
-      <img src="people.png" alt="People supporting Rare Disease Awareness" />
+  <!-- Updated section to match screenshot layout -->
+  <div class="screenshot-layout animate__animated animate__fadeIn">
+    <div class="screenshot-text">
+      <h2>We have a Beautiful & RARE,<br>Chance</h2>
+      <p>NORD advances practical, meaningful, and enduring change so people with rare diseases can live their fullest and best lives. Every day, we elevate care, advance research, and drive policy in a purposeful and holistic manner to lift up the rare disease community.</p>
     </div>
-    <div class="text-image">
-      <h1>Rare Disease Club</h1>
-      <p>
-        Join us in spreading awareness about rare diseases that often go unnoticed in society.
-        Together, we can create a community that supports individuals and families affected by
-        these conditions. Your involvement can change lives and help bring attention to the
-        importance of rare disease research and advocacy.
-      </p>
+    <div class="screenshot-image">
+      <img src="people.png" alt="People supporting rare disease awareness" class="people-img">
     </div>
+  </div>
+
+  <div class="nowhite animate__animated animate__fadeInUp">
+    <h1>Rare Disease Club</h1><br />
   </div>
 
   <div class="content animate__animated animate__fadeInUp">
-    <p>
-      In the Rare Disease Club, our primary objective is to spread awareness about rare diseases,
-      which are often ignored in society. We are committed to educating our community about these
-      diseases and their impact on individuals and families. Additionally, we want to offer resources
-      and support to families who are struggling with the challenges of caring for a loved one with a
-      rare disease. Our club serves the local community including elementary school students, families
-      in need, and local hospitals, as well as our own members. We believe that by working together,
-      we can create a more compassionate and informed society that values the importance of rare
-      disease awareness and advocacy.
-    </p>
+    <p>In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families. Additionally, we want to offer resources and support to families who are struggling with the challenges of caring for a loved one with a rare disease. Our club serves the local community including elementary school students, families in need, and local hospitals, as well as our own members. We believe that by working together, we can create a more compassionate and informed society that values the importance of rare disease awareness and advocacy.</p><br />
   </div>
 
-  <footer>
-    <p>&copy; 2024 Rare Disease Club. All rights reserved.</p>
-  </footer>
+  <div class="nowhite animate__animated animate__fadeInUp">
+    <footer>
+      <p>&copy; 2024 Rare Disease Club. All rights reserved.</p>
+    </footer>
+  </div>
 
   <script>
     // Smooth scrolling for anchor links
