@@ -116,6 +116,7 @@
       flex: 1;
     }
 
+
     .content-image {
       flex: 1;
       min-width: 300px;
@@ -124,29 +125,36 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      max-height: 90vh; /* Match image container to image size */
+      overflow: hidden; /* Prevent any overflow */
     }
 
     .content-text {
       flex: 1;
       min-width: 300px;
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .content-text img.title-img {
       max-width: 100%;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .content-text p {
-      font-size: 1.1rem;
-      line-height: 1.6;
+      font-size: 1.3rem; /* Slightly larger text */
+      line-height: 1.8; /* More spacing between lines */
       color: #333;
     }
+
+
 
     .people-img {
       max-width: 100%;
       height: auto;
-      max-height: 800px; /* Increased size */
+      max-height: 90vh; /* Now takes 90% of viewport height */
       width: auto;
       display: block;
       margin: 0 auto;
@@ -360,10 +368,10 @@
 </head>
 <body>
   <header>
+    <div class="logo-container">
       <img src="rdc.png" alt="RDC Logo" />
-      <div class="logo-container">
-        <img src="rdcslogan.jpeg" alt="RDC Slogan"/>
-      </div>
+      <img src="rdcslogan.jpeg" alt="RDC Slogan"/>
+    </div>
   </header>
 
   <div class="topnav">
