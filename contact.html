@@ -78,9 +78,9 @@
       overflow: hidden;
       background-color: #333;
       display: flex;
-      justify-content: flex-end; /* Changed from center to flex-end */
+      justify-content: flex-end;
       flex-wrap: wrap;
-      padding-right: 20px; /* Added padding to right */
+      padding-right: 20px;
     }
 
     .topnav a {
@@ -181,13 +181,17 @@
     }
 
     .contact-info {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      border-radius: 15px;
       max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.2rem;
-      line-height: 1.8;
+      margin: 40px auto;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     }
 
     .contact-info p {
+      font-size: 1.2rem;
+      line-height: 1.8;
       margin-bottom: 20px;
     }
 
@@ -210,6 +214,7 @@
       color: #333;
       font-size: 14px;
       border-top: 1px solid #e1e1e1;
+      margin-top: auto;
     }
     
     .footer-container {
@@ -293,8 +298,8 @@
       }
       
       .topnav {
-        justify-content: center; /* Center on mobile */
-        padding-right: 0; /* Remove right padding on mobile */
+        justify-content: center;
+        padding-right: 0;
       }
       
       .topnav a {
@@ -320,6 +325,11 @@
       .social-icon {
         width: 60px;
         height: 60px;
+      }
+      
+      .contact-info {
+        padding: 25px;
+        margin: 30px auto;
       }
       
       .footer-container {
@@ -350,7 +360,7 @@
         font-size: 1.1rem;
       }
       
-      .contact-info {
+      .contact-info p {
         font-size: 1rem;
       }
     }
@@ -397,6 +407,11 @@
         </a>
       </div>
       
+      <div class="contact-info">
+        <p></p>
+      </div>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="footer-container">
