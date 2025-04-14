@@ -43,11 +43,11 @@ header .contact-link:hover {
 .topnav {
   overflow: hidden;
   background-color: #333;
+  text-align: right;
 }
 
 .topnav a {
-  float: left;
-  display: block;
+  display: inline-block;
   color: white;
   text-align: center;
   padding: 14px 16px;
@@ -149,8 +149,10 @@ header .contact-link:hover {
 }
 
 @media screen and (max-width: 600px) {
+  .topnav {
+    text-align: center;
+  }
   .topnav a {
-    float: none;
     display: block;
     text-align: left;
   }
@@ -181,13 +183,13 @@ header .contact-link:hover {
 </header>
 
 <div class="topnav">
-  <a href="index.html">Home</a>
-  <a href="https://www.signupgenius.com/go/10C0B44A8A923A6F5C52-50174468-volunteering#/" target="_blank">Volunteer</a>
-  <a href="officers.html">Meet our Officers</a>
-  <a href="https://docs.google.com/presentation/d/1-nZOirFYozmSOCHmZ6twHAFxfLgW7Lo9TrDQrtzRo5w/edit?pli=1#slide=id.p" target="_blank">Diseases</a>
-  <a class="active" href="events.html">Events</a>
   <a href="contact.html">Contact</a>
   <a href="partner.html">Partnerships</a>
+  <a class="active" href="events.html">Events</a>
+  <a href="https://docs.google.com/presentation/d/1-nZOirFYozmSOCHmZ6twHAFxfLgW7Lo9TrDQrtzRo5w/edit?pli=1#slide=id.p" target="_blank">Diseases</a>
+  <a href="officers.html">Meet our Officers</a>
+  <a href="https://www.signupgenius.com/go/10C0B44A8A923A6F5C52-50174468-volunteering#/" target="_blank">Volunteer</a>
+  <a href="index.html">Home</a>
 </div>
 
 <div class="contentmargin">
