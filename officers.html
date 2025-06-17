@@ -1,1 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="Rare Disease Club" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. Join us to make a difference and support our community." />
+  <link rel="canonical" href="https://www.rarediseaseclubs.com" />
+  <link rel="icon" href="RDCLogo.png" type="image/png" />
+  <title>Rare Disease Club - Spreading Awareness About Rare Diseases</title>
 
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Rare Disease Club - Spreading Awareness About Rare Diseases" />
+  <meta property="og:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families." />
+  <meta property="og:image" content="https://rarediseaseclubs.com/RDCLogo.png" />
+  <meta property="og:url" content="https://rarediseaseclubs.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rare Disease Club - Spreading Awareness About Rare Diseases" />
+  <meta name="twitter:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families." />
+  <meta name="twitter:image" content="https://rarediseaseclubs.com/RDCLogo.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "Rare Disease Club",
+      "url": "https://rarediseaseclubs.com",
+      "logo": "https://rarediseaseclubs.com/RDCLogo.png",
+      "description": "In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. Join us to make a difference and support our community."
+    }
+  </script>
+
+  <!-- Animate.css CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #FFDEE6;
+      color: #333;
+      transition: background 0.5s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background-color: #FFDEE6;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 10px;
+    }
+
+    header img {
+      max-height: 100px;
+      transition: transform 0.3s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.1);
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .topnav a {
+      float: right;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 17px 19px;
+      text-decoration: none;
+      font-size: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      background-color: #B96794;
+      color: white;
+    }
+
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 30px 20px 10px; /* Reduced bottom padding */
+      background-color: transparent;
+      flex: 1;
+    }
+
+
+    .content-image {
+      flex: 1;
+      min-width: 500px;
+      text-align: center;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-height: 90vh; /* Match image container to image size */
+      overflow: hidden; /* Prevent any overflow */
+    }
+
+    .content-text {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .content-text img.title-img {
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
+
+    .content-text p {
+      font-size: 1.3rem; /* Slightly larger text */
+      line-height: 1.8; /* More spacing between lines */
+      color: #333;
+    }
+
+
+
+    .people-img {
+      max-width: 100%;
+      height: auto;
+      max-height: 90vh; /* Now takes 90% of viewport height */
+      width: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .content {
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 16px;
+      margin: 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .content:hover {
+      transform: translateY(-10px);
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .content p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .nowhite {
+      text-align: center;
+      margin-top: 10px;
+      color: #B96794;
+    }
+
+    /* NORD Section Styles */
+    .nord-section {
+      padding: 30px 20px; /* Reduced padding */
+      background-color: #fff;
+      margin: 20px 0; /* Reduced margin */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+    
+    .nord-section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .nord-section h2 {
+      color: #B96794;
+      text-align: center;
+      margin-bottom: 20px; /* Reduced margin */
+      font-size: 2rem;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px; /* Reduced gap */
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .service-card {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 20px; /* Reduced padding */
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    
+    .service-card h3 {
+      color: #784461;
+      margin-bottom: 10px; /* Reduced margin */
+    }
+    
+    .service-card p {
+      margin-bottom: 15px; /* Reduced margin */
+      color: #555;
+    }
+    
+    .service-btn {
+      display: inline-block;
+      padding: 8px 16px; /* Slightly reduced */
+      background-color: #B96794;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .service-btn:hover {
+      background-color: #784461;
+    }
+
+    /* Enhanced Footer Styles */
+    .site-footer {
+      background-color: #f8f8f8;
+      padding: 30px 20px 15px; /* Reduced padding */
+      color: #333;
+      font-size: 14px;
+      border-top: 1px solid #e1e1e1;
+    }
+    
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px; /* Reduced gap */
+      max-width: 1200px;
+      margin: 0 auto 20px; /* Reduced margin */
+    }
+    
+    .footer-section h3 {
+      color: #B96794;
+      margin-bottom: 12px; /* Reduced margin */
+      font-size: 1.1rem;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section li {
+      margin-bottom: 8px; /* Reduced margin */
+    }
+    
+    .footer-section a {
+      color: #555;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-section a:hover {
+      color: #B96794;
+      text-decoration: underline;
+    }
+    
+    address {
+      font-style: normal;
+      line-height: 1.6;
+    }
+    
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 15px; /* Reduced padding */
+      border-top: 1px solid #e1e1e1;
+    }
+    
+    .footer-links {
+      margin-bottom: 10px; /* Reduced margin */
+    }
+    
+    .footer-links a {
+      color: #555;
+      text-decoration: none;
+      margin: 0 8px; /* Reduced margin */
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: #B96794;
+    }
+    
+    .copyright {
+      margin-bottom: 8px; /* Reduced margin */
+    }
+    
+    .disclaimer {
+      font-size: 12px;
+      color: #777;
+      max-width: 800px;
+      margin: 15px auto 0; /* Reduced margin */
+      line-height: 1.5;
+    }
+
+    @media screen and (max-width: 600px) {
+      .main-content {
+        flex-direction: column;
+        padding: 20px 15px 5px; /* Adjusted padding */
+      }
+      
+      .logo-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .people-img {
+        max-width: 100%;
+        max-height: 500px; /* Adjusted for mobile */
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-section {
+        text-align: center;
+      }
+      
+      .footer-links a {
+        display: block;
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="rdc.png" alt="RDC Logo" />
+      <img src="rdcslogan.jpeg" alt="RDC Slogan"/>
+    </div>
+  </header>
+
+  <div class="topnav">
+    <a class="active animate__animated animate__fadeInLeft" href="#home">Home</a>
+    <a class="animate__animated animate__fadeInLeft" href="officers.html">Meet our Officers</a>
+    <a class="animate__animated animate__fadeInLeft" href="https://docs.google.com/presentation/d/1-nZOirFYozmSOCHmZ6twHAFxfLgW7Lo9TrDQrtzRo5w/edit?pli=1#slide=id.p" target="_blank">Diseases</a>
+    <a class="animate__animated animate__fadeInLeft" href="events.html">Events</a>
+    <a class="animate__animated animate__fadeInLeft" href="contact.html">Contact</a>
+  </div>
+
+  <div class="main-content animate__animated animate__fadeIn">
+    <div class="content-image">
+      <img src="people.png" alt="People supporting rare disease awareness" class="people-img">
+    </div>
+    <div class="content-text">
+      <img src="title.png" alt="Rare Disease Club Title" class="title-img">
+      <p>In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families. Additionally, we want to offer resources and support to families who are struggling with the challenges of caring for a loved one with a rare disease.</p>
+    </div>
+  </div>
+
+  <section class="nord-section">
+    <h2>How You Can Make an Impact</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Donating</h3>
+        <p>Donate to CRD and their research facilities of rare disease treatment and support.</p>
+        <a href="https://cureraredisease.raisely.com/parnika-khatri" target="_blank" class="service-btn">Donate</a>
+      </div>
+      
+      <div class="service-card">
+        <h3>Volunteering</h3>
+        <p>Get a chance to make a difference by volunteering.</p>
+        <a href="#" class="service-btn">Search Now</a>
+      </div>
+      
+      <div class="service-card">
+        <h3>Partnerships</h3>
+        <p>Explore our current partnerships!</p>
+        <a href="partner.html" class="service-btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Understanding Rare Disease</h3>
+        <ul>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform">Where to Start</a></li>
+          <li><a href="https://docs.google.com/presentation/d/1-nZOirFYozmSOCHmZ6twHAFxfLgW7Lo9TrDQrtzRo5w/edit?pli=1#slide=id.p">Stay Informed</a></li>
+          <li><a href="#">Patient Stories</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Get Involved</h3>
+        <ul>
+          <li><a href="https://www.signupgenius.com/go/10C0B44A8A923A6F5C52-50174468-volunteering#/" target="_blank">Volunteer</a></li>
+          <li><a href="https://cureraredisease.raisely.com/parnika-khatri" target="_blank">Donate</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <address>
+          Rare Disease Club<br>
+          Pleasanton, CA 94588<br>
+          Phone: 925-505-8696
+        </address>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-links">
+        <a href="#">Terms & Conditions</a>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2024 Rare Disease Club. All rights reserved.</p>
+        <p>Rare Disease Club is a registered 501(c)(3) charity organization.</p>
+        <p class="disclaimer">The information on this website is provided for general informational purposes only and is not intended as medical advice. Please consult with qualified healthcare professionals regarding any medical conditions or treatments.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Scroll animation for NORD section
+    const nordSection = document.querySelector('.nord-section');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    observer.observe(nordSection);
+  </script>
+</body>
+</html>
