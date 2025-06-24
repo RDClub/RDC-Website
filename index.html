@@ -215,7 +215,31 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-    
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .edma-logo {
+  height: 50px;
+    }
+
+  .rdc-logo-wrapper {
+    background-color: white;
+    padding: 10px 40px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    max-width: 90vw;
+  }
+
+  .rdc-logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
     .service-card {
       background-color: #f9f9f9;
       border-radius: 8px;
@@ -370,11 +394,13 @@
 </head>
 <body>
   <header>
-    <div class="logo-container">
-      <img src="EDMA.png" alt="EDMA Logo" style="height: 50px;">
-      <img src="RDC.png" alt="Rare Disease Club Logo" style="height: 60px; margin-top: 10px; width">
+  <div class="logo-container">
+    <img src="EDMA.png" alt="EDMA Logo" class="edma-logo">
+    <div class="rdc-logo-wrapper">
+      <img src="RDCLogo.png" alt="Rare Disease Club Logo" class="rdc-logo">
     </div>
-  </header>
+  </div>
+</header>
   <div class="topnav">
     <a class="active animate__animated animate__fadeInLeft" href="#home">Home</a>
     <a class="animate__animated animate__fadeInLeft" href="officers.html">Meet our Officers</a>
