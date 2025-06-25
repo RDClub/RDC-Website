@@ -217,29 +217,37 @@
     }
     .logo-container {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 10px;
+      justify-content: space-between;
+      padding: 10px 40px;
+      background-color: white;
+      width: 100%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
     }
-
+    
     .edma-logo {
-  height: 50px;
+      height: 50px;
     }
-
-  .rdc-logo-wrapper {
-    background-color: white;
-    padding: 10px 40px;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    border-radius: 6px;
-    max-width: 90vw;
-  }
-
-  .rdc-logo {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
+    
+    .title-image {
+      height: 40px;
+      object-fit: contain;
+    }
+    
+    .rdc-logo-wrapper {
+      background-color: white;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .rdc-logo {
+      height: 50px;
+    }
+  
+    
     .service-card {
       background-color: #f9f9f9;
       border-radius: 8px;
@@ -396,12 +404,15 @@
   <header>
   <div class="logo-container">
     <img src="EDMA.png" alt="EDMA Logo" class="edma-logo">
+
+    <img src="RDC.png" alt="Rare Disease Club Text" class="title-image">
+
     <div class="rdc-logo-wrapper">
-      <img src="RDC.png" alt="Rare Disease Club Logo" class="rdc-logo">
-      <img src= "rdc.png" class="rdc-logo">
+      <img src="rdc.png" alt="RDC Logo" class="rdc-logo">
     </div>
   </div>
 </header>
+
   <div class="topnav">
     <a class="active animate__animated animate__fadeInLeft" href="#home">Home</a>
     <a class="animate__animated animate__fadeInLeft" href="officers.html">Meet our Officers</a>
