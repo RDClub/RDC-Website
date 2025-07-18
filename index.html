@@ -245,6 +245,82 @@
     .footer-section ul {
       list-style: none;
     }
+    <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #fce8f5; /* light pink */
+    }
+
+    /* Motto and RDC text images */
+    .motto-banner,
+    .rdc-title-banner {
+      width: 100%;
+      display: block;
+    }
+
+    /* White bar with logo */
+    .header-bar {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+    }
+
+    .header-bar img.logo {
+      height: 100px;
+    }
+
+    /* Navigation bar styling */
+    nav {
+      background-color: #fce8f5;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-size: 28px;
+      margin: 0 40px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      padding: 10px 20px;
+      border: 2px solid transparent;
+      border-radius: 12px;
+    }
+
+    nav a.active {
+      border: 2px solid black;
+      background-color: white;
+    }
+
+    nav a:hover {
+      background-color: white;
+      transition: 0.3s;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .header-bar {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        margin: 10px;
+      }
+    
 
     .footer-section li {
       margin-bottom: 8px;
@@ -335,15 +411,24 @@
 </head>
 <body>
 
-  <header>
-    <div class="logo-container">
-      <img src="Motto.png" alt="Motto" class="motto-img">
-      <img src="RDC.png" alt="Rare Disease Club Text" class="title-image">
-      <div class="rdc-logo-wrapper">
-        <img src="rdc.png" alt="RDC Logo" class="rdc-logo">
-      </div>
-    </div>
-  </header>
+    <img src="Motto.png" alt="Motto" class="motto-banner">
+
+  <!-- RDC title image -->
+  <img src="RDC.png" alt="Rare Disease Club Title" class="rdc-title-banner">
+
+  <!-- White bar with RDC logo on right -->
+  <div class="header-bar">
+    <div></div> <!-- Empty left space to balance the logo -->
+    <img src="rdc.png" alt="RDC Logo" class="logo">
+  </div>
+
+  <!-- Navigation bar -->
+  <nav>
+    <a href="#" class="active">HOME</a>
+    <a href="#">ABOUT</a>
+    <a href="#">CONTACT</a>
+    <a href="#">EVENTS</a>
+  </nav>
 
   <div class="topnav">
     <a class="active animate__animated animate__fadeInLeft" href="#home">Home</a>
