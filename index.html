@@ -341,7 +341,20 @@
       font-style: normal;
       line-height: 1.6;
     }
+    .motto-pair {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      background-color: #fce8f5;
+    }
 
+.motto-pair .motto-banner {
+  max-width: 100%;
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+}
     .footer-bottom {
       max-width: 1200px;
       margin: 0 auto;
@@ -411,10 +424,10 @@
 </head>
 <body>
 
-    <img src="Motto2.png" alt="Motto" class="motto-banner">
-
-  <!-- RDC title image -->
-  <img src="RDC.png" alt="Rare Disease Club Title" class="rdc-title-banner">
+    <div class="motto-pair">
+      <img src="Motto2.png" alt="Motto" class="motto-banner">
+      <img src="RDC.PNG" alt="RDC Banner" class="motto-banner">
+  </div>
 
   <!-- White bar with RDC logo on right -->
   <div class="header-bar">
