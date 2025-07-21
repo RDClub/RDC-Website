@@ -383,7 +383,11 @@
       margin: 15px auto 0;
       line-height: 1.5;
     }
-
+    .rdc-img {
+      height: 20px; /* ← way smaller */
+      width: auto;
+      margin-left: 10px;
+    }
     @media screen and (max-width: 600px) {
       .main-content {
         flex-direction: column;
@@ -395,11 +399,7 @@
         gap: 10px;
       }
 
-      .motto-img,
-      .title-image,
-      .rdc-logo {
-        height: 40px;
-      }
+    
 
       .footer-container {
         grid-template-columns: 1fr;
