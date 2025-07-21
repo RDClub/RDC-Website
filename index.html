@@ -383,8 +383,9 @@
       margin-bottom: 8px;
     }
     .background-img {
-      width: 30px;
-      height: auto;
+      width: 100%;
+      max-height: 300px; /* Try 200 or 150 if you want even smaller */
+      object-fit: cover;
       display: block;
     }
     .disclaimer {
