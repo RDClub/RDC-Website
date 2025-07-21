@@ -56,9 +56,16 @@
     }
 
     .motto-img {
-      height: 60px;
-      object-fit: contain;
+      height: 40px;
+      width: auto;
     }
+
+    .rdc-img {
+      height: 20px; /* ← way smaller */
+      width: auto;
+      margin-left: 10px;
+    }
+
 
     .title-image {
       height: 40px;
@@ -411,8 +418,10 @@
 </head>
 <body>
     <img src="rdc.png" alt="RDC Logo">
-    <img src="Motto2.png" alt="Motto" class="motto-banner">
-    <img src="RDC.png" alt="Rare Disease Club Title" class="rdc-title-banner">
+    <div class="header-bar">
+    <img src="Motto.png" alt="Educate Donate Motto" class="motto-img" />
+    <img src="RDC.png" alt="RDC Logo" class="rdc-img" />
+</div>
   <!-- RDC title image -->
 
   <!-- White bar with RDC logo on right -->
