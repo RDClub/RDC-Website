@@ -326,26 +326,28 @@
         text-align: center;
       }
 
-      nav {
-      background-color: #fce8f5;
-      border-top: 3px solid black;
-      border-bottom: 3px solid black;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-    }
+        nav {
+    background-color: #fce8f5;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    display: flex;
+    flex-wrap: wrap; /* Allow nav items to wrap if needed */
+    justify-content: center;
+    padding: 10px 0;
+    gap: 20px; /* spacing between nav items */
+  }
 
-    nav a {
-      text-decoration: none;
-      color: black;
-      font-size: 28px;
-      margin: 0 40px;
-      font-weight: bold;
-      font-family: 'Georgia', serif;
-      padding: 10px 20px;
-      border: 2px solid transparent;
-      border-radius: 12px;
-    }
+  nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    transition: background-color 0.3s;
+  }
 
     nav a.active {
       border: 2px solid black;
@@ -354,15 +356,7 @@
 
     nav a:hover {
       background-color: white;
-      transition: 0.3s;
     }
-    nav {
-        flex-wrap: wrap;
-      }
-
-      nav a {
-        margin: 10px;
-      }
 
     .footer-section li {
       margin-bottom: 8px;
