@@ -317,40 +317,7 @@
     }
 
     /* Navigation bar styling */
-    nav {
-      background-color: #fce8f5;
-      border-top: 5px solid black;
-      padding: 15px 0;
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: black;
-      padding: 8px 16px;
-      border-radius: 12px;
-      border: 2px solid transparent;
-    }
-
-    nav a:hover {
-      border-color: black;
-      background-color: white;
-    }
-
-    nav a.active {
-      border-color: black;
-      background-color: white;
-    }
-
-      nav {
-        flex-direction: column;
-        gap: 10px;
-        font-size: 18px;
-      }
+    
 
     /* Responsive tweaks */
     @media (max-width: 768px) {
@@ -360,13 +327,42 @@
       }
 
       nav {
+      background-color: #fce8f5;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-size: 28px;
+      margin: 0 40px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      padding: 10px 20px;
+      border: 2px solid transparent;
+      border-radius: 12px;
+    }
+
+    nav a.active {
+      border: 2px solid black;
+      background-color: white;
+    }
+
+    nav a:hover {
+      background-color: white;
+      transition: 0.3s;
+    }
+    nav {
         flex-wrap: wrap;
       }
 
       nav a {
         margin: 10px;
       }
-    
 
     .footer-section li {
       margin-bottom: 8px;
