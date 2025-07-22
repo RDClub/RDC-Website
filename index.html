@@ -319,34 +319,38 @@
     /* Navigation bar styling */
     nav {
       background-color: #fce8f5;
-      border-top: 3px solid black;
-      border-bottom: 3px solid black;
+      border-top: 5px solid black;
+      padding: 15px 0;
       display: flex;
       justify-content: center;
-      padding: 10px 0;
+      gap: 60px;
+      font-size: 24px;
+      font-weight: bold;
     }
 
     nav a {
       text-decoration: none;
       color: black;
-      font-size: 10px;
-      margin: 0 20px;
-      font-weight: bold;
-      font-family: 'Georgia', serif;
-      padding: 10px 20px;
-      border: 2px solid transparent;
+      padding: 8px 16px;
       border-radius: 12px;
-    }
-
-    nav a.active {
-      border: 2px solid black;
-      background-color: white;
+      border: 2px solid transparent;
     }
 
     nav a:hover {
+      border-color: black;
       background-color: white;
-      transition: 0.3s;
     }
+
+    nav a.active {
+      border-color: black;
+      background-color: white;
+    }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 18px;
+      }
 
     /* Responsive tweaks */
     @media (max-width: 768px) {
@@ -500,10 +504,7 @@
   <!-- White bar with RDC logo on right -->
 
   <!-- Navigation bar -->
-  <header>
-  <div style="text-align: center; padding: 10px;">
-    <img src="rdc.png" alt="RDC Logo" style="height: 60px;">
-  </div>
+  
   <nav>
     <a href="#" class="active">Home</a>
     <a href="#">About</a>
