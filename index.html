@@ -97,7 +97,45 @@
       font-size: 10px;
       transition: background-color 0.3s ease;
     }
+      .hero {
+      position: relative;
+      height: 100vh;
+      background: url('darkenphoto.png') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding-top: 100px;
+    }
 
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.4); /* dark overlay for contrast */
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 64px;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 24px;
+      f
     .topnav a:hover {
       background-color: #F0E3ED;
     }
@@ -471,10 +509,14 @@
     <a href="events.html">GET INVOLVED</a>
   </nav>
 
-  <div class="image-overlay-container">
-  <img src="darkenphoto.png" alt="Background" class="background-img">
-  <div class="overlay-text">Welcome to the Rare Disease Club</div>
-</div>
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <img src="RDC.png" alt="Rare Disease Club">
+      <h1>Rare Disease Club</h1>
+      <p>Spreading awareness. Supporting the rare.</p>
+    </div>
+  </section>
 
 
 
