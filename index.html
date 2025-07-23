@@ -381,7 +381,24 @@
         flex-direction: column;
       }
     }
+    .join-btn {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      padding: 10px 20px;
+      border: 3px solid white;
+      border-radius: 0; /* Makes it rectangular */
+      background-color: transparent;
+      transition: all 0.3s ease;
+      margin-left: 20px;
+      text-transform: uppercase;
+    }
 
+    .join-btn:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
     @media (max-width: 600px) {
       .nav-links {
         flex-direction: column;
@@ -418,6 +435,7 @@
     <div class="hero-content">
       <img src="Mainpage.png" alt="RDC Logo">
     </div>
+    <a href="join.html" class="join-btn">Join Now</a>
   </section>
 
   <div class="main-content animate__animated animate__fadeIn">
