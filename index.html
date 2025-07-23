@@ -381,23 +381,29 @@
         flex-direction: column;
       }
     }
-    .join-btn {
+    <style>
+    /* Add this to your existing CSS */
+    .join-overlay-btn {
+      position: absolute;
+      bottom: 50px; /* Adjust this to position vertically */
+      left: 50%;
+      transform: translateX(-50%);
       text-decoration: none;
       color: black;
-      font-size: 20px;
+      font-size: 24px;
       font-weight: bold;
       font-family: 'Georgia', serif;
-      padding: 10px 20px;
+      padding: 12px 30px;
       border: 3px solid white;
       border-radius: 0; /* Makes it rectangular */
-      background-color: transparent;
+      background-color: rgba(255,255,255,0.3); /* Semi-transparent white */
       transition: all 0.3s ease;
-      margin-left: 20px;
       text-transform: uppercase;
+      z-index: 3; /* Ensures it appears above the overlay */
     }
 
-    .join-btn:hover {
-      background-color: rgba(255,255,255,0.2);
+    .join-overlay-btn:hover {
+      background-color: rgba(255,255,255,0.5);
     }
     @media (max-width: 600px) {
       .nav-links {
@@ -434,8 +440,8 @@
     <div class="overlay"></div>
     <div class="hero-content">
       <img src="Mainpage.png" alt="RDC Logo">
+      <a href="join.html" class="join-overlay-btn">Join Now</a>
     </div>
-    <a href="join.html" class="join-btn">Join Now</a>
   </section>
 
   <div class="main-content animate__animated animate__fadeIn">
