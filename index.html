@@ -347,17 +347,28 @@
       gap: 20px;
     }
 
+     nav {
+      background-color: #fce8f5;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 10px 0;
+      gap: 20px;
+      z-index: 10;
+      position: relative;
+    }
+
     nav a {
       text-decoration: none;
       color: black;
       font-size: 28px;
       font-weight: bold;
-      font-family: 'Georgia', serif;
       padding: 10px 20px;
       border: 2px solid transparent;
       border-radius: 12px;
       transition: background-color 0.3s;
-      display: inline-block;
     }
 
     nav a.active {
