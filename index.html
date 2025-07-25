@@ -126,7 +126,101 @@
       text-transform: uppercase;
       transition: color 0.3s ease;
     }
+    
+    .contact-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 40px;
+      gap: 20px;
+    }
 
+    .contact-left {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .contact-left h2 {
+      color: #b97fdc;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .contact-left p {
+      font-size: 16px;
+    }
+
+    .contact-left img {
+      width: 150px;
+      margin-top: 20px;
+    }
+
+    .social-icons {
+      margin-top: 15px;
+    }
+
+    .social-icons img {
+      width: 30px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .description {
+      margin-top: 20px;
+      font-size: 18px;
+      max-width: 400px;
+      line-height: 1.5;
+    }
+
+    .contact-right {
+      flex: 1;
+      min-width: 280px;
+      background-color: #3c3c3c;
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .contact-right h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .contact-right input,
+    .contact-right textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .contact-right textarea {
+      height: 120px;
+    }
+
+    .submit-btn {
+      background-color: #b97fdc;
+      color: white;
+      font-weight: bold;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .submit-btn:hover {
+      background-color: #a469c7;
+    }
+
+    footer {
+      border-top: 1px solid white;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      color: white;
+    }
     .nav-links a:hover {
       color: #B96794;
     }
@@ -493,45 +587,38 @@
     </div>
   </section>
 
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-section">
-        <h3>Understanding Rare Disease</h3>
-        <ul>
-          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform">Where to Start</a></li>
-          <li><a href="https://docs.google.com/presentation/d/1-nZOirFYozmSOCHmZ6twHAFxfLgW7Lo9TrDQrtzRo5w/edit?pli=1#slide=id.p">Stay Informed</a></li>
-          <li><a href="#">Patient Stories</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Get Involved</h3>
-        <ul>
-          <li><a href="https://www.signupgenius.com/go/10C0B44A8A923A6F5C52-50174468-volunteering#/" target="_blank">Volunteer</a></li>
-          <li><a href="https://cureraredisease.raisely.com/parnika-khatri" target="_blank">Donate</a></li>
-          <li><a href="events.html">Events</a></li>
-        </ul>
+  <section class="contact-section">
+    <div class="contact-left">
+      <h2>Contact Us</h2>
+      <p><strong>Email:</strong><br> girls4sportsequality@gmail.com</p>
+
+      <div class="social-icons">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" />
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
       </div>
 
-      <div class="footer-section">
-        <h3>Contact Us</h3>
-        <address>
-          Rare Disease Club<br>
-          Pleasanton, CA 94588<br>
-          Phone: 925-505-8696
-        </address>
+      <img src="https://i.imgur.com/9lWdwDj.png" alt="Girls 4 Sports Logo" />
+      <div class="description">
+        World’s largest youth-led organization<br>
+        fighting gender inequality in sports
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <div class="footer-links">
-        <a href="#">Terms & Conditions</a>
-      </div>
-      <div class="copyright">
-        <p>&copy; 2024 Rare Disease Club. All rights reserved.</p>
-        <p>Rare Disease Club is a registered 501(c)(3) charity organization.</p>
-        <p class="disclaimer">The information on this website is provided for general informational purposes only and is not intended as medical advice. Please consult with qualified healthcare professionals regarding any medical conditions or treatments.</p>
-      </div>
+    <div class="contact-right">
+      <h2>Leave Us Your Info</h2>
+      <form>
+        <input type="text" placeholder="Enter Your Name" required />
+        <input type="email" placeholder="Enter Your Email" required />
+        <input type="text" placeholder="Enter Your Subject" required />
+        <textarea placeholder="Type Message Here...." required></textarea>
+        <br />
+        <button class="submit-btn">Submit</button>
+      </form>
     </div>
+  </section>
+
+  <footer>
+    © 2022 by Girls4Sports
   </footer>
 
   <script>
