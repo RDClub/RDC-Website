@@ -3,645 +3,223 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="Rare Disease Club" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. Join us to make a difference and support our community." />
-  <link rel="canonical" href="https://www.rarediseaseclubs.com" />
-  <link rel="icon" href="RDCLogo.png" type="image/png" />
-  <title>Rare Disease Club - Spreading Awareness About Rare Diseases</title>
-
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Rare Disease Club - Spreading Awareness About Rare Diseases" />
-  <meta property="og:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families." />
-  <meta property="og:image" content="https://rarediseaseclubs.com/RDCLogo.png" />
-  <meta property="og:url" content="https://rarediseaseclubs.com" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Rare Disease Club - Spreading Awareness About Rare Diseases" />
-  <meta name="twitter:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families." />
-  <meta name="twitter:image" content="https://rarediseaseclubs.com/RDCLogo.png" />
-
-  <!-- Animate.css CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
+  <title>Contact - Rare Disease Club</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
+      margin: 0;
       font-family: 'Georgia', serif;
-      background-color: #fce8f5;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      background-color: black;
+      color: white;
     }
 
-    /* Header and Logo Styles */
-    .logo-container {
+    /* Motto & RDC Logo */
+    .motto-header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 15px 30px;
-      background-color: white;
-      width: 100%;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #ffe5f1;
+      color: black;
+      padding: 20px;
+      border-bottom: 3px solid black;
     }
 
-    .rdc-img {
-      height: 300px;
-      width: 300px;
-      margin-left: 10px;
+    .motto-header img {
+      height: 80px;
+      margin-right: 20px;
     }
 
-    .title-image {
-      height: 40px;
-      object-fit: contain;
+    .motto-header h1 {
+      font-size: 36px;
+      margin: 0;
     }
 
-    .rdc-logo-wrapper {
-      background-color: white;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-
-    .rdc-logo {
-      height: 50px;
-    }
-
-    /* Navigation Styles */
+    /* NAV BAR - your custom one */
     nav {
       background-color: #fce8f5;
       border-top: 3px solid black;
       border-bottom: 3px solid black;
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: 15px 0;
-      gap: 30px;
       flex-wrap: wrap;
+      padding: 10px 0;
     }
 
-    .home-btn {
+    nav a {
       text-decoration: none;
       color: black;
-      font-size: 20px;
+      font-size: 28px;
+      margin: 10px 20px;
       font-weight: bold;
       font-family: 'Georgia', serif;
       padding: 10px 20px;
-      border: 3px solid black;
-      border-radius: 16px;
-      background-color: white;
-      transition: all 0.3s ease;
-      margin-right: 20px;
-    }
-
-    .home-btn:hover {
-      background-color: #f0f0f0;
-    }
-
-    .home-btn.active {
-      background-color: #B96794;
-      color: white;
-      border-color: #B96794;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: black;
-      font-size: 20px;
-      font-weight: bold;
-      font-family: 'Georgia', serif;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-    }
-    
-    .contact-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      padding: 40px;
-      gap: 20px;
-    }
-
-    .contact-left {
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .contact-left h2 {
-      color: #b97fdc;
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    .contact-left p {
-      font-size: 16px;
-    }
-
-    .contact-left img {
-      width: 150px;
-      margin-top: 20px;
-    }
-
-    .social-icons {
-      margin-top: 15px;
-    }
-
-    .social-icons img {
-      width: 30px;
-      margin-right: 10px;
-      vertical-align: middle;
-    }
-
-    .description {
-      margin-top: 20px;
-      font-size: 18px;
-      max-width: 400px;
-      line-height: 1.5;
-    }
-
-    .contact-right {
-      flex: 1;
-      min-width: 280px;
-      background-color: #3c3c3c;
-      padding: 30px;
+      border: 2px solid transparent;
       border-radius: 12px;
     }
 
-    .contact-right h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
+    nav a.active {
+      border: 2px solid black;
+      background-color: white;
     }
 
-    .contact-right input,
-    .contact-right textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
+    nav a:hover {
+      background-color: white;
+      transition: 0.3s;
     }
 
-    .contact-right textarea {
-      height: 120px;
-    }
-
-    .submit-btn {
-      background-color: #b97fdc;
-      color: white;
-      font-weight: bold;
-      padding: 12px 28px;
-      border: none;
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    .submit-btn:hover {
-      background-color: #a469c7;
-    }
-
-    footer {
-      border-top: 1px solid white;
-      padding: 15px;
-      text-align: center;
-      font-size: 14px;
-      color: white;
-    }
-    .nav-links a:hover {
-      color: #B96794;
-    }
-
-    .nav-links a.active {
-      color: #B96794;
-    }
-
-    /* Hero Section */
-    .hero {
-      width: 100%;
-      height: 500px;
-      background-image: url('darkenphoto.png');
-      background-size: cover;
-      background-position: center;
+    /* CONTACT SECTION */
+    .contact-container {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 0;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .hero-content img {
-      width: 700px;
-      margin-bottom: 20px;
-    }
-
-    .hero-content h1 {
-      font-size: 64px;
-      margin-bottom: 10px;
-    }
-
-    .hero-content p {
-      font-size: 24px;
-    }
-
-    /* Main Content */
-    .main-content {
-      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+      max-width: 1300px;
+      margin: auto;
       flex-wrap: wrap;
-      align-items: center;
-      padding: 30px 20px 10px;
-      background-color: #F6DBEE;
-      flex: 1;
     }
-    hero-text {
-      color: white;
-      margin-bottom: 30px; /* Space between text and button */
+
+    .contact-left {
+      max-width: 500px;
     }
-    .content-image {
-      flex: 1;
-      min-width: 500px;
-      text-align: center;
-      padding: 20px;
+
+    .contact-left h2 {
+      color: #c78dd8;
+      font-size: 36px;
+    }
+
+    .contact-left p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .social-icons {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      max-height: 90vh;
-      overflow: hidden;
-    }
-
-    .people-img {
-      max-width: 100%;
-      height: auto;
-      max-height: 90vh;
-      width: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .content-text {
-      flex: 1;
-      min-width: 300px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .content-text img.title-img {
-      max-width: 100%;
+      gap: 15px;
       margin-bottom: 30px;
     }
 
-    .content-text p {
-      font-size: 1.3rem;
-      line-height: 1.8;
-      color: #333;
+    .social-icons img {
+      width: 40px;
+      height: 40px;
     }
 
-    /* NORD Section */
-    .nord-section {
-      padding: 30px 20px;
-      background-color: #fff;
-      margin: 20px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s ease;
-    }
-
-    .nord-section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .nord-section h2 {
-      color: #000000;
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    .org-info {
+      display: flex;
+      align-items: center;
       gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
     }
 
-    .service-card {
-      background-color: #f9f9f9;
-      border-radius: 8px;
-      padding: 20px;
-      text-align: center;
-      transition: transform 0.3s ease;
+    .org-info img {
+      width: 150px;
     }
 
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    }
-
-    .service-card h3 {
-      color: #000000;
-      margin-bottom: 10px;
-    }
-
-    .service-card p {
-      margin-bottom: 15px;
-      color: #555;
-    }
-
-    .service-btn {
-      display: inline-block;
-      padding: 8px 16px;
-      background-color: #000000;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-    .service-btn:hover {
-      background-color: #784461;
-    }
-    .hero-btn {
-      display: inline-block;
-      margin-top: 30px; /* Space between image and button */
-      padding: 12px 40px;
-      color: white;
+    .org-text {
       font-size: 20px;
-      font-weight: bold;
-      font-family: 'Georgia', serif;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: 2px solid white;
-      background-color: transparent;
-      transition: all 0.3s ease;
+      max-width: 300px;
+      line-height: 1.4;
     }
 
-    .hero-btn:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-    /* Footer */
-    .site-footer {
-      background-color: #f8f8f8;
-      padding: 30px 20px 15px;
-      color: #333;
-      font-size: 14px;
-      border-top: 1px solid #e1e1e1;
+    /* Contact Form */
+    .contact-form {
+      background-color: #3d3c3c;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
     }
 
-    .footer-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto 20px;
+    .contact-form h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
     }
 
-    .footer-section h3 {
-      color: #B96794;
-      margin-bottom: 12px;
-      font-size: 1.1rem;
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
     }
 
-    .footer-section ul {
-      list-style: none;
+    .contact-form textarea {
+      height: 120px;
+      resize: none;
     }
 
-    .footer-section li {
-      margin-bottom: 8px;
-    }
-
-    .footer-section a {
-      color: #555;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .footer-section a:hover {
-      color: #B96794;
-      text-decoration: underline;
-    }
-
-    address {
-      font-style: normal;
-      line-height: 1.6;
-    }
-
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-      padding-top: 15px;
-      border-top: 1px solid #e1e1e1;
-    }
-
-    .footer-links {
-      margin-bottom: 10px;
-    }
-
-    .motto-img {
-      height: 60px;
-      object-fit: contain;
-    }
-
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        gap: 15px;
-      }
-      .home-btn {
-        margin-right: 0;
-        margin-bottom: 10px;
-      }
-      .hero-content img {
-        width: 90%;
-      }
-      .content-image, .content-text {
-        min-width: 100%;
-      }
-      .main-content {
-        flex-direction: column;
-      }
-    }
-    <style>
-    /* Add this to your existing CSS */
-    .join-overlay-btn {
-      position: absolute;
-      bottom: 50px; /* Adjust this to position vertically */
-      left: 50%;
-      transform: translateX(-50%);
-      text-decoration: none;
-      color: black;
-      font-size: 24px;
-      font-weight: bold;
-      font-family: 'Georgia', serif;
+    .contact-form button {
       padding: 12px 30px;
-      border: 3px solid white;
-      border-radius: 0; /* Makes it rectangular */
-      background-color: rgba(255,255,255,0.3); /* Semi-transparent white */
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      z-index: 3; /* Ensures it appears above the overlay */
+      background-color: #c78dd8;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
     }
 
-    .join-overlay-btn:hover {
-      background-color: rgba(255,255,255,0.5);
+    .contact-form button:hover {
+      background-color: #ae68c5;
     }
-    @media (max-width: 600px) {
-      .nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
-      .footer-container {
-        grid-template-columns: 1fr;
-      }
-      .footer-section {
-        text-align: center;
-      }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      border-top: 1px solid white;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
-  <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
-  <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
 
-  <!-- Navigation -->
+  <!-- Motto and Logo -->
+  <div class="motto-header">
+    <img src="RDC.PNG" alt="RDC Logo">
+    <h1>Rare Disease Club – Empowering Awareness & Hope</h1>
+  </div>
+
+  <!-- Navigation Bar -->
   <nav>
-    <a href="index.html" class="home-btn">Home</a>
-    <div class="nav-links">
-      <a href="about.html">About</a>
-      <a href="events.html">Events</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="contact.html">Contact</a>
-      <a href="getinvolved.html">Get Involved</a>
-    </div>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Events</a>
+    <a href="#" class="active">Contact</a>
   </nav>
 
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <img src="Mainpage.png" alt="RDC Logo">
-      <!-- Button will appear below the image -->
-      <a href="join.html" class="hero-btn">JOIN NOW</a>
-    </div>
-  </section>
-
-  
-
-  <section class="nord-section">
-    <h2>How You Can Make an Impact</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Donating</h3>
-        <p>Donate to CRD and their research facilities of rare disease treatment and support.</p>
-        <a href="https://cureraredisease.raisely.com/parnika-khatri" target="_blank" class="service-btn">Donate</a>
-      </div>
-
-      <div class="service-card">
-        <h3>Volunteering</h3>
-        <p>Get a chance to make a difference by volunteering.</p>
-        <a href="#" class="service-btn">Search Now</a>
-      </div>
-
-      <div class="service-card">
-        <h3>Partnerships</h3>
-        <p>Explore our current partnerships!</p>
-        <a href="partner.html" class="service-btn">Learn More</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact-section">
+  <!-- Contact Section -->
+  <div class="contact-container">
     <div class="contact-left">
       <h2>Contact Us</h2>
-      <p><strong>Email:</strong><br> girls4sportsequality@gmail.com</p>
-
+      <p><strong>Email:</strong><br>rarediseaseclub@example.com</p>
       <div class="social-icons">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+        <a href="#"><img src="instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="youtube.png" alt="YouTube"></a>
+        <a href="#"><img src="tiktok.png" alt="TikTok"></a>
       </div>
-
-      <img src="https://i.imgur.com/9lWdwDj.png" alt="Girls 4 Sports Logo" />
-      <div class="description">
-        World’s largest youth-led organization<br>
-        fighting gender inequality in sports
+      <div class="org-info">
+        <img src="rdc_logo.png" alt="RDC Logo">
+        <div class="org-text">
+          Helping students spread awareness about rare diseases through education, connection, and action.
+        </div>
       </div>
     </div>
 
-    <div class="contact-right">
+    <div class="contact-form">
       <h2>Leave Us Your Info</h2>
       <form>
-        <input type="text" placeholder="Enter Your Name" required />
-        <input type="email" placeholder="Enter Your Email" required />
-        <input type="text" placeholder="Enter Your Subject" required />
-        <textarea placeholder="Type Message Here...." required></textarea>
-        <br />
-        <button class="submit-btn">Submit</button>
+        <input type="text" placeholder="Enter Your Name" required>
+        <input type="email" placeholder="Enter Your Email" required>
+        <input type="text" placeholder="Enter Your Subject">
+        <textarea placeholder="Type Message Here...."></textarea>
+        <button type="submit">Submit</button>
       </form>
     </div>
-  </section>
+  </div>
 
+  <!-- Footer -->
   <footer>
-    © 2022 by Girls4Sports
+    © 2025 by Rare Disease Club
   </footer>
 
-  <script>
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    // Scroll animation for NORD section
-    const nordSection = document.querySelector('.nord-section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, { threshold: 0.1 });
-    observer.observe(nordSection);
-  </script>
 </body>
 </html>
