@@ -130,29 +130,75 @@
     .contact-section {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
       padding: 40px;
-      gap: 20px;
+      justify-content: space-between;
+      align-items: center;
     }
-
-    .contact-left {
+    .contact-left, .contact-right {
       flex: 1;
-      min-width: 280px;
+      min-width: 300px;
+      margin: 20px;
     }
-
     .contact-left h2 {
-      color: #b97fdc;
-      font-size: 30px;
-      margin-bottom: 10px;
+      font-size: 32px;
+      color: #B97FDC;
     }
-
     .contact-left p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    .contact-left .email {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .contact-left .social-icons img {
+      width: 30px;
+      margin-right: 10px;
+    }
+    .description {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+    .contact-logo {
+      margin-top: 30px;
+      max-width: 180px;
+    }
+    .contact-right {
+      background-color: #3c3c3c;
+      padding: 30px;
+      border-radius: 12px;
+    }
+    .contact-right h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .contact-right input,
+    .contact-right textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
       font-size: 16px;
     }
-
-    .contact-left img {
-      width: 150px;
-      margin-top: 20px;
+    .contact-right textarea {
+      height: 120px;
+    }
+    .submit-btn {
+      background-color: #B97FDC;
+      color: white;
+      font-weight: bold;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .submit-btn:hover {
+      background-color: #9c5dbf;
     }
 
     .social-icons {
@@ -601,37 +647,20 @@
     </div>
   </div>
 
-  <div class="contact-right">
-    <h2>Send Us a Message</h2>
-    <form class="contact-form">
-      <div class="form-group">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" placeholder="Enter your name" required>
+  <section class="contact-section">
+    <div class="contact-left">
+      <h2>Contact Us</h2>
+      <p class="email"><strong>Email:</strong><br>girls4sportsequality@gmail.com</p>
+      <div class="social-icons">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
       </div>
-      
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="Enter your email" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" placeholder="What's this about?">
-      </div>
-      
-      <div class="form-group">
-        <label for="message">Your Message</label>
-        <textarea id="message" placeholder="Type your message here..." rows="5" required></textarea>
-      </div>
-      
-      <button type="submit" class="submit-btn">Send Message</button>
-    </form>
-  </div>
-</section>
-
-  <footer>
-    © 2022 by Girls4Sports
-  </footer>
+      <img class="contact-logo" src="GirlsASportsLogo.png" alt="Girls A Sports logo">
+      <p class="description">
+        World’s largest youth-led organization<br>
+        fighting gender inequality in sports
+      </p>
+    </div>
 
   <script>
     // Smooth scrolling
