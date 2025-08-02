@@ -127,64 +127,98 @@
       transition: color 0.3s ease;
     }
     
-    .contact-section {
+    .contact-container {
       display: flex;
-      flex-wrap: wrap;
-      padding: 40px;
       justify-content: space-between;
-      align-items: center;
+      padding: 40px;
+      max-width: 1300px;
+      margin: auto;
+      flex-wrap: wrap;
+      background-color: black;
     }
-    .contact-left, .contact-right {
-      flex: 1;
-      min-width: 300px;
-      margin: 20px;
+
+    .contact-left {
+      max-width: 500px;
     }
+
     .contact-left h2 {
-      font-size: 32px;
-      color: #B97FDC;
+      color: #c78dd8;
+      font-size: 36px;
     }
+
     .contact-left p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
-    .contact-left .email {
-      font-size: 16px;
+      font-size: 20px;
       margin-bottom: 20px;
     }
-    .contact-left .social-icons img {
-      width: 30px;
-      margin-right: 10px;
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
     }
-    .description {
-      margin-top: 20px;
+
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .org-info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .org-info img {
+      width: 150px;
+    }
+
+    .org-text {
       font-size: 20px;
-      font-weight: bold;
-      line-height: 1.5;
+      max-width: 300px;
+      line-height: 1.4;
     }
-    .contact-logo {
-      margin-top: 30px;
-      max-width: 180px;
-    }
-    .contact-right {
-      background-color: #3c3c3c;
+
+    /* Contact Form */
+    .contact-form {
+      background-color: #3d3c3c;
       padding: 30px;
       border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
     }
-    .contact-right h2 {
-      font-size: 28px;
+
+    .contact-form h2 {
+      font-size: 32px;
       margin-bottom: 20px;
     }
-    .contact-right input,
-    .contact-right textarea {
+
+    .contact-form input,
+    .contact-form textarea {
       width: 100%;
-      padding: 12px;
-      margin: 10px 0;
+      padding: 15px;
+      margin-bottom: 15px;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 16px;
     }
-    .contact-right textarea {
+
+    .contact-form textarea {
       height: 120px;
+      resize: none;
+    }
+
+    .contact-form button {
+      padding: 12px 30px;
+      background-color: #c78dd8;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #ae68c5;
     }
     .submit-btn {
       background-color: #B97FDC;
@@ -636,31 +670,39 @@
       </div>
     </div>
     
-    <div class="social-links">
-      <h3>Connect With Us</h3>
+    <<div class="contact-container" id="contact">
+    <div class="contact-left">
+      <h2>Contact Us</h2>
+      <p><strong>Email:</strong><br>rarediseaseclub@example.com</p>
       <div class="social-icons">
-        <a href="#" aria-label="Facebook"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" alt="Facebook"></a>
-        <a href="#" aria-label="Instagram"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram"></a>
-        <a href="#" aria-label="Twitter"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="Twitter"></a>
-        <a href="#" aria-label="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384088.png" alt="LinkedIn"></a>
+        <a href="#"><img src="instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="youtube.png" alt="YouTube"></a>
+        <a href="#"><img src="tiktok.png" alt="TikTok"></a>
       </div>
+      <div class="org-info">
+        <img src="rdc_logo.png" alt="RDC Logo">
+        <div class="org-text">
+          Helping students spread awareness about rare diseases through education, connection, and action.
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h2>Leave Us Your Info</h2>
+      <form>
+        <input type="text" placeholder="Enter Your Name" required>
+        <input type="email" placeholder="Enter Your Email" required>
+        <input type="text" placeholder="Enter Your Subject">
+        <textarea placeholder="Type Message Here...."></textarea>
+        <button type="submit">Submit</button>
+      </form>
     </div>
   </div>
 
-  <section class="contact-section">
-    <div class="contact-left">
-      <h2>Contact Us</h2>
-      <p class="email"><strong>Email:</strong><br>girls4sportsequality@gmail.com</p>
-      <div class="social-icons">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
-      </div>
-      <img class="contact-logo" src="GirlsASportsLogo.png" alt="Girls A Sports logo">
-      <p class="description">
-        World’s largest youth-led organization<br>
-        fighting gender inequality in sports
-      </p>
-    </div>
+  <!-- Footer -->
+  <footer>
+    © 2025 by Rare Disease Club
+  </footer>
 
   <script>
     // Smooth scrolling
