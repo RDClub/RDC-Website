@@ -150,7 +150,43 @@
       font-size: 20px;
       margin-bottom: 20px;
     }
+    @media (max-width: 768px) {
+  /* Contact section adjustments */
+  section[style*="background-color: black; padding: 60px 20px;"] {
+    padding: 40px 15px !important;
+  }
+  
+  section[style*="background-color: black; padding: 60px 20px;"] > div {
+    flex-direction: column !important;
+    gap: 30px !important;
+  }
+  
+  section[style*="background-color: black; padding: 60px 20px;"] h2 {
+    font-size: 28px !important;
+  }
+  
+  section[style*="background-color: black; padding: 60px 20px;"] p {
+    font-size: 16px !important;
+  }
+  
+  section[style*="background-color: black; padding: 60px 20px;"] div[style*="background-color: #3d3c3c"] {
+    padding: 30px !important;
+  }
+}
 
+@media (max-width: 480px) {
+  section[style*="background-color: black; padding: 60px 20px;"] {
+    padding: 30px 10px !important;
+  }
+  
+  section[style*="background-color: black; padding: 60px 20px;"] h2 {
+    font-size: 24px !important;
+  }
+  
+  section[style*="background-color: black; padding: 60px 20px;"] div[style*="background-color: #3d3c3c"] {
+    padding: 20px !important;
+  }
+}
     .social-icons {
       display: flex;
       gap: 15px;
