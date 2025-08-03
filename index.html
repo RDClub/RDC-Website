@@ -524,6 +524,60 @@
     .footer-section li {
       margin-bottom: 8px;
     }
+    .what-we-do-section {
+  background-color: #f9dff4;
+  padding: 20px;
+}
+
+.what-we-do-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.what-we-do-img {
+  width: 100%;
+  border-radius: 30px;
+  border: 3px solid black;
+}
+
+.what-we-do-box {
+  background-color: black;
+  color: white;
+  padding: 30px;
+  border-radius: 30px;
+  max-width: 650px;
+  margin: -50px auto 0;
+  position: relative;
+  z-index: 2;
+}
+
+.what-we-do-box h2 {
+  font-size: 32px;
+  color: #f9dff4;
+  margin-bottom: 20px;
+}
+
+.what-we-do-box p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .what-we-do-box {
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+  .what-we-do-box h2 {
+    font-size: 24px;
+  }
+
+  .what-we-do-box p {
+    font-size: 16px;
+  }
+}
 
     .footer-section a {
       color: #555;
@@ -640,14 +694,12 @@
       <!-- Button will appear below the image -->
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform" class="hero-btn">JOIN NOW</a>
     </div>
-  </section>
-  <section style="background-color: #f9dff4; padding: 20px 0;">
-  <div style="max-width: 825px; margin: auto; text-align: center;">
-    <img src="photocopy.jpeg" alt="What We Do" style="width: 100%; border-radius: 30px; border: 3px solid black;">
-    
-    <div style="background-color: black; color: white; padding: 30px; margin-top: -80px; border-radius: 30px; max-width: 550px; margin-left: auto; margin-right: auto; position: relative; z-index: 2;">
-      <h2 style="font-size: 36px; color: #f9dff4; margin-bottom: 30px;">WHAT WE DO</h2>
-      <p style="font-size: 20px; line-height: 1.6;">
+  <section class="what-we-do-section">
+  <div class="what-we-do-container">
+    <img src="photocopy.jpeg" alt="What We Do" class="what-we-do-img">
+    <div class="what-we-do-box">
+      <h2>WHAT WE DO</h2>
+      <p>
         Rare Disease Collective (RDC) is a student-led initiative working to raise awareness about rare diseases.
         We aim to educate communities, support early diagnosis, and promote conversations around conditions that
         often go unnoticed due to limited research and public understanding.
