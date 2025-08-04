@@ -842,15 +842,20 @@
 
     <!-- Right Contact Form -->
     
-<form action="https://formsubmit.co/el/your-email" method="POST" style="display: grid; gap: 20px;">
-    <input type="hidden" name="_template" value="box">
-    <input type="hidden" name="_autoresponse" value="Thank you for contacting Rare Disease Club!">
-    
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    
-    <button type="submit">Send Message</button>
+<form
+  action="https://formspree.io/f/mblkaeak"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
 </form>
     </div>
   </div>
