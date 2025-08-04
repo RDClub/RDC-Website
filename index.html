@@ -830,29 +830,22 @@
     <div style="flex: 1; min-width: 300px; background-color: #3d3c3c; padding: 40px; border-radius: 12px 12px 0 0; margin: 0;">
       <h2 style="font-size: 32px; color: white; margin: 0 0 30px 0;">Leave Us Your Info</h2>
       
-      <form action="https://formsubmit.co/your-email@example.com" method="POST" style="display: grid; gap: 20px; margin: 0;">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
-        
-        <input type="text" name="name" placeholder="Enter Your Name" required 
-               style="padding: 15px; border: none; border-radius: 8px; font-size: 16px; width: 100%; margin: 0;">
-        
-        <input type="email" name="email" placeholder="Enter Your Email" required 
-               style="padding: 15px; border: none; border-radius: 8px; font-size: 16px; width: 100%; margin: 0;">
-        
-        <input type="text" name="subject" placeholder="Enter Your Subject" 
-               style="padding: 15px; border: none; border-radius: 8px; font-size: 16px; width: 100%; margin: 0;">
-        
-        <textarea name="message" placeholder="Type Message Here..." rows="4" 
-                  style="padding: 15px; border: none; border-radius: 8px; font-size: 16px; resize: vertical; width: 100%; margin: 0;"></textarea>
-        
-        <button type="submit" 
-                style="padding: 15px 30px; background-color: #b97fdc; color: white; 
-                       border: none; border-radius: 25px; font-size: 18px; cursor: pointer; 
-                       font-weight: bold; margin: 0;">
-          Submit
-        </button>
-      </form>
+      <form
+  action="https://formspree.io/f/mblkaeak"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
+
     </div>
   </div>
 </div>
