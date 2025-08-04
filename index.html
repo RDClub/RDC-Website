@@ -869,14 +869,16 @@
     </div>
 
     <!-- Right Contact Form -->
-    <form action="send_email.php" method="POST" style="display: grid; gap: 20px;">
-    <!-- Keep all your existing fields -->
-    <input type="text" name="name" placeholder="Enter Your Name" required>
-    <input type="email" name="email" placeholder="Enter Your Email" required>
-    <input type="text" name="subject" placeholder="Enter Your Subject">
-    <textarea name="message" placeholder="Type Message Here..." required></textarea>
     
-    <button type="submit">Submit</button>
+<form action="https://formsubmit.co/el/your-email" method="POST" style="display: grid; gap: 20px;">
+    <input type="hidden" name="_template" value="box">
+    <input type="hidden" name="_autoresponse" value="Thank you for contacting Rare Disease Club!">
+    
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    
+    <button type="submit">Send Message</button>
 </form>
     </div>
   </div>
