@@ -869,29 +869,15 @@
     </div>
 
     <!-- Right Contact Form -->
-    <div style="flex: 1; min-width: 300px; background-color: #3d3c3c; padding: 40px; border-radius: 12px 12px 0 0;">
-      <h2 style="font-size: 32px; color: white; margin-bottom: 30px;">Leave Us Your Info</h2>
-      
-      <form style="display: grid; gap: 20px;">
-        <input type="text" placeholder="Enter Your Name" required 
-               style="padding: 15px; border: none; border-radius: 8px; font-size: 16px; width: 100%;">
-        
-        <input type="email" placeholder="Enter Your Email" required 
-               style="padding: 15px; border: none; border-radius: 8px; font-size: 16px; width: 100%;">
-        
-        <input type="text" placeholder="Enter Your Subject" 
-               style="padding: 15px; border: none; border-radius: 8px; font-size: 16px; width: 100%;">
-        
-        <textarea placeholder="Type Message Here..." rows="4" 
-                  style="padding: 15px; border: none; border-radius: 8px; font-size: 16px; resize: vertical; width: 100%;"></textarea>
-        
-        <button type="submit" 
-            style="padding: 15px 30px; background-color: #b97fdc; color: white; 
-                   border: none; border-radius: 25px; font-size: 18px; cursor: pointer; 
-                   font-weight: bold; margin-top: 20px;">
-      Submit
-        </button>
-      </form>
+    <form action="send_email.php" method="POST" style="display: grid; gap: 20px;">
+    <!-- Keep all your existing fields -->
+    <input type="text" name="name" placeholder="Enter Your Name" required>
+    <input type="email" name="email" placeholder="Enter Your Email" required>
+    <input type="text" name="subject" placeholder="Enter Your Subject">
+    <textarea name="message" placeholder="Type Message Here..." required></textarea>
+    
+    <button type="submit">Submit</button>
+</form>
     </div>
   </div>
 </div>
