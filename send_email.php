@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // REPLACE THIS WITH YOUR EMAIL:
-    $to = "your-email@rarediseaseclub.com";
+    $to = "rarediseaseclub44@gmail.com";
     
     // Get form data (no need to change these)
     $name = strip_tags(trim($_POST['name']));
