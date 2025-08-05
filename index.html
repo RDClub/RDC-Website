@@ -792,11 +792,12 @@
   
       <!-- Right Contact Form -->
    <!-- NO-GAP CONTACT SECTION -->
-<div style="background-color: black; width: 100%; padding: 60px 0 0; margin: 0; overflow: hidden;">
+<!-- FULL WIDTH CONTACT SECTION -->
+<div style="background-color: black; width: 100%; padding: 60px 0; margin: 0;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 40px;">
 
     <!-- Left Contact Column -->
-    <div style="flex: 1; min-width: 300px; color: white; padding-bottom: 60px;">
+    <div style="flex: 1; min-width: 300px; color: white;">
       <h2 style="font-size: 36px; color: #c78dd8; margin: 0 0 30px 0;">Contact Us</h2>
       
       <div style="margin: 0 0 30px 0;">
@@ -827,25 +828,20 @@
     </div>
 
     <!-- Right Contact Form -->
-    <div style="flex: 1; min-width: 300px; background-color: #3d3c3c; padding: 40px; border-radius: 12px 12px 0 0; margin: 0;">
+    <div style="flex: 1; min-width: 300px; background-color: #3d3c3c; padding: 40px; border-radius: 12px; margin: 0;">
       <h2 style="font-size: 32px; color: white; margin: 0 0 30px 0;">Leave Us Your Info</h2>
       
-      <form
-  action="https://formspree.io/f/mblkaeak"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
-
+      <form action="https://formspree.io/f/mblkaeak" method="POST">
+        <label style="display: block; margin-bottom: 15px;">
+          <span style="display: block; color: white; margin-bottom: 5px;">Your email:</span>
+          <input type="email" name="email" style="width: 100%; padding: 10px; border-radius: 5px; border: none;">
+        </label>
+        <label style="display: block; margin-bottom: 20px;">
+          <span style="display: block; color: white; margin-bottom: 5px;">Your message:</span>
+          <textarea name="message" style="width: 100%; padding: 10px; border-radius: 5px; border: none; height: 120px;"></textarea>
+        </label>
+        <button type="submit" style="background-color: #b97fdc; color: white; font-weight: bold; padding: 12px 28px; border: none; border-radius: 999px; cursor: pointer; font-size: 16px;">Send</button>
+      </form>
     </div>
   </div>
 </div>
