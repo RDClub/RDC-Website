@@ -685,7 +685,13 @@
       }
       .footer-section {
         text-align: center;
+      
       }
+      body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
     }
   </style>
 </head>
@@ -791,8 +797,7 @@
       </div>
   
       <!-- Right Contact Form -->
-   <!-- FULL WIDTH CONTACT SECTION -->
-<div style="background-color: black; width: 100%; padding: 60px 0; margin: 0;">
+<section style="background-color: black; width: 100%; padding: 60px 0; margin: 0; overflow: hidden;">
   <div style="max-width: 1300px; margin: 0 auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 40px;">
 
     <!-- Left Contact Column -->
@@ -830,29 +835,27 @@
     <div style="flex: 1; min-width: 300px; background-color: #3d3c3c; padding: 40px; border-radius: 12px; margin: 0;">
       <h2 style="font-size: 32px; color: white; margin: 0 0 30px 0;">Leave Us Your Info</h2>
       
-      <form
-  action="https://formspree.io/f/mblkaeak"
-  method="POST"
-  style="width: 100%;"
->
-  <label style="display: block; margin-bottom: 15px;">
-    <span style="display: block; color: white; margin-bottom: 5px; font-size: 16px;">Your email:</span>
-    <input type="email" name="email" style="width: 100%; padding: 12px; border-radius: 6px; border: none; font-size: 16px;">
-  </label>
-  <label style="display: block; margin-bottom: 20px;">
-    <span style="display: block; color: white; margin-bottom: 5px; font-size: 16px;">Your message:</span>
-    <textarea name="message" style="width: 100%; padding: 12px; border-radius: 6px; border: none; font-size: 16px; height: 120px;"></textarea>
-  </label>
-  <button type="submit" style="background-color: #b97fdc; color: white; font-weight: bold; padding: 12px 28px; border: none; border-radius: 999px; cursor: pointer; font-size: 16px;">Send Message</button>
-</form>
+      <form action="https://formspree.io/f/mblkaeak" method="POST" style="width: 100%;">
+        <label style="display: block; margin-bottom: 15px;">
+          <span style="display: block; color: white; margin-bottom: 5px; font-size: 16px;">Your email:</span>
+          <input type="email" name="email" required style="width: 100%; padding: 12px; border-radius: 6px; border: none; font-size: 16px;">
+        </label>
+        <label style="display: block; margin-bottom: 20px;">
+          <span style="display: block; color: white; margin-bottom: 5px; font-size: 16px;">Your message:</span>
+          <textarea name="message" required style="width: 100%; padding: 12px; border-radius: 6px; border: none; font-size: 16px; height: 120px;"></textarea>
+        </label>
+        <button type="submit" style="background-color: #b97fdc; color: white; font-weight: bold; padding: 12px 28px; border: none; border-radius: 999px; cursor: pointer; font-size: 16px;">Send Message</button>
+      </form>
     </div>
   </div>
-</div>
+</section>
 
-<!-- FOOTER -->
-<footer style="background-color: black; color: white; text-align: center; padding: 20px; font-size: 14px;">
+<!-- FOOTER - ATTACHED DIRECTLY TO CONTACT SECTION -->
+<footer style="background-color: black; color: white; text-align: center; padding: 20px; font-size: 14px; margin-top: -1px;">
   © 2025 by Rare Disease Club
 </footer>
+      
+     
 
   <script>
     // Smooth scrolling
