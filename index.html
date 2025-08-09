@@ -87,7 +87,15 @@
       gap: 30px;
       flex-wrap: wrap;
     }
-
+    html {
+      scroll-behavior: smooth; /* This enables smooth scrolling */
+    }
+    
+    section {
+      height: 100vh; /* Makes each section full viewport height */
+      padding: 20px;
+      border-bottom: 1px solid #ccc;
+    }
     .home-btn {
       text-decoration: none;
       color: black;
@@ -731,7 +739,7 @@
       <a href="about.html">About</a>
       <a href="events.html">Events</a>
       <a href="newsletter.html">Newsletter</a>
-      <a href="contact.html">Contact</a>
+      <a href="#contact">Contact</a>
       <a href="getinvolved.html">Get Involved</a>
     </div>
   </nav>
@@ -813,7 +821,7 @@
       <!-- Right Contact Form -->
    <!-- NO-GAP CONTACT SECTION -->
 <!-- FULL WIDTH CONTACT SECTION -->
-<section style="background-color: #1a1a1a; padding: 80px 20px; position: relative; overflow: hidden;">
+<section style="background-color: #1a1a1a; id="contact"; padding: 80px 20px; position: relative; overflow: hidden;">
   <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
     
     <!-- Left Contact Column -->
