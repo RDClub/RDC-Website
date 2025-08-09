@@ -812,62 +812,136 @@
       <!-- Right Contact Form -->
    <!-- NO-GAP CONTACT SECTION -->
 <!-- FULL WIDTH CONTACT SECTION -->
-<div style="background-color: black; width: 100%; padding: 60px 0; margin: 0;">
-  <div style="max-width: 1300px; margin: 0 auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 40px;">
-
+<section style="background-color: #1a1a1a; padding: 80px 20px; position: relative; overflow: hidden;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+    
     <!-- Left Contact Column -->
-    <div style="flex: 1; min-width: 300px; color: white;">
-      <h2 style="font-size: 36px; color: #c78dd8; margin: 0 0 30px 0;">Contact Us</h2>
+    <div style="flex: 1; min-width: 300px; color: white; padding: 20px; position: relative; z-index: 2;">
+      <h2 style="font-size: 2.5rem; color: #c78dd8; margin-bottom: 30px; position: relative;">
+        Get In Touch
+        <span style="position: absolute; bottom: -10px; left: 0; width: 80px; height: 3px; background: #c78dd8;"></span>
+      </h2>
       
-      <div style="margin: 0 0 30px 0;">
-        <h3 style="font-size: 20px; color: #f9dff4; margin: 0 0 15px 0;">Email</h3>
-        <p style="font-size: 18px; margin: 0;">rarediseaseclub@example.com</p>
+      <!-- Contact Info -->
+      <div style="margin-bottom: 30px;">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+          <svg style="width: 24px; height: 24px; fill: #c78dd8;" viewBox="0 0 24 24">
+            <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+          </svg>
+          <h3 style="font-size: 1.3rem; color: #f9dff4;">Email Us</h3>
+        </div>
+        <a href="mailto:rarediseaseclub@example.com" style="font-size: 1.1rem; color: white; text-decoration: none; display: block; padding-left: 34px;">
+          rarediseaseclub@example.com
+        </a>
       </div>
       
-      <div style="margin: 0 0 30px 0;">
-        <h3 style="font-size: 20px; color: #f9dff4; margin: 0 0 15px 0;">Follow Us</h3>
-        <div style="display: flex; gap: 15px; margin: 0;">
-          <a href="#" style="display: inline-block; width: 36px; height: 36px; background: white; border-radius: 50%; padding: 7px; text-align: center; margin: 0;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/240px-Instagram-Icon.png" 
-                 alt="Instagram" style="width: 100%; height: auto; filter: brightness(0); margin: 0;">
-          </a>
-          <a href="#" style="display: inline-block; width: 36px; height: 36px; background: white; border-radius: 50%; padding: 7px; text-align: center; margin: 0;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/TikTok_light.png/240px-TikTok_light.png" 
-                 alt="TikTok" style="width: 100%; height: auto; filter: brightness(0); margin: 0;">
-          </a>
+      <!-- Social Media -->
+      <div style="margin-bottom: 40px;">
+        <h3 style="font-size: 1.3rem; color: #f9dff4; margin-bottom: 15px;">Follow Us</h3>
+        <div style="display: flex; gap: 15px; padding-left: 10px;">
+          <!-- Social icons would go here -->
         </div>
       </div>
       
-      <div style="display: flex; gap: 20px; align-items: center; margin: 0;">
-        <img src="rdc_logo.png" alt="RDC Logo" style="width: 100px; margin: 0;">
-        <p style="font-size: 16px; line-height: 1.5; margin: 0;">
-          Helping students spread awareness about rare diseases.
+      <!-- Organization Info -->
+      <div style="display: flex; gap: 20px; align-items: center; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border: 1px solid rgba(199,141,216,0.2);">
+        <img src="RDCLogo.png" alt="RDC Logo" style="width: 80px; height: 80px; object-fit: contain;">
+        <p style="font-size: 1rem; line-height: 1.5;">
+          <strong>Rare Disease Club</strong><br>
+          Empowering awareness through education and community.
         </p>
       </div>
     </div>
-
-    <!-- Right Contact Form -->
-    <div style="flex: 1; min-width: 300px; background-color: #3d3c3c; padding: 40px; border-radius: 12px; margin: 0;">
-      <h2 style="font-size: 32px; color: white; margin: 0 0 30px 0;">Leave Us Your Info</h2>
+    
+    <!-- Right Form Column (WITH PROPER FLOATING LABELS) -->
+    <div style="flex: 1; min-width: 300px; background: #2a2a2a; border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); position: relative; z-index: 2;">
+      <h2 style="font-size: 2rem; color: white; margin-bottom: 30px; position: relative;">
+        Send Us a Message
+        <span style="position: absolute; bottom: -10px; left: 0; width: 80px; height: 3px; background: #c78dd8;"></span>
+      </h2>
       
-      <form
-  action="https://formspree.io/f/mblkaeak"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
+      <!-- FORMSPREE FORM WITH FLOATING LABELS (FIXED) -->
+      <form action="https://formspree.io/f/mblkaeak" method="POST" style="display: flex; flex-direction: column; gap: 25px;">
+        <!-- Name Field -->
+        <div style="position: relative;">
+          <input 
+            type="text" 
+            name="name" 
+            id="name-input"
+            required
+            style="width: 100%; padding: 15px; background: #3d3c3c; border: 2px solid transparent; border-radius: 6px; color: white; font-size: 1rem; transition: all 0.3s;"
+            onfocus="this.style.borderColor='#c78dd8'; document.getElementById('name-label').style.transform='translateY(-25px)'; document.getElementById('name-label').style.fontSize='0.9rem';"
+            onblur="this.style.borderColor='transparent'; if(this.value === '') { document.getElementById('name-label').style.transform='none'; document.getElementById('name-label').style.fontSize='1rem'; }"
+          >
+          <label 
+            id="name-label"
+            for="name-input"
+            style="position: absolute; left: 15px; top: 15px; color: #aaa; font-size: 1rem; pointer-events: none; transition: all 0.3s;"
+          >
+            Your Name
+          </label>
+        </div>
+        
+        <!-- Email Field -->
+        <div style="position: relative;">
+          <input 
+            type="email" 
+            name="_replyto" 
+            id="email-input"
+            required
+            style="width: 100%; padding: 15px; background: #3d3c3c; border: 2px solid transparent; border-radius: 6px; color: white; font-size: 1rem; transition: all 0.3s;"
+            onfocus="this.style.borderColor='#c78dd8'; document.getElementById('email-label').style.transform='translateY(-25px)'; document.getElementById('email-label').style.fontSize='0.9rem';"
+            onblur="this.style.borderColor='transparent'; if(this.value === '') { document.getElementById('email-label').style.transform='none'; document.getElementById('email-label').style.fontSize='1rem'; }"
+          >
+          <label 
+            id="email-label"
+            for="email-input"
+            style="position: absolute; left: 15px; top: 15px; color: #aaa; font-size: 1rem; pointer-events: none; transition: all 0.3s;"
+          >
+            Email Address
+          </label>
+        </div>
+        
+        <!-- Message Field -->
+        <div style="position: relative;">
+          <textarea 
+            name="message" 
+            id="message-input"
+            required
+            rows="5"
+            style="width: 100%; padding: 15px; background: #3d3c3c; border: 2px solid transparent; border-radius: 6px; color: white; font-size: 1rem; resize: vertical; transition: all 0.3s;"
+            onfocus="this.style.borderColor='#c78dd8'; document.getElementById('message-label').style.transform='translateY(-25px)'; document.getElementById('message-label').style.fontSize='0.9rem';"
+            onblur="this.style.borderColor='transparent'; if(this.value === '') { document.getElementById('message-label').style.transform='none'; document.getElementById('message-label').style.fontSize='1rem'; }"
+          ></textarea>
+          <label 
+            id="message-label"
+            for="message-input"
+            style="position: absolute; left: 15px; top: 15px; color: #aaa; font-size: 1rem; pointer-events: none; transition: all 0.3s;"
+          >
+            Your Message
+          </label>
+        </div>
+        
+        <!-- Submit Button -->
+        <button 
+          type="submit"
+          style="padding: 15px 30px; background: linear-gradient(135deg, #c78dd8, #9c5dbf); color: white; border: none; border-radius: 30px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: all 0.3s; align-self: flex-start; display: flex; align-items: center; gap: 8px;"
+          onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(156,93,191,0.4)'"
+          onmouseout="this.style.transform='none'; this.style.boxShadow='none'"
+        >
+          Send Message
+          <svg style="width: 20px; height: 20px; fill: white;" viewBox="0 0 24 24">
+            <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+          </svg>
+        </button>
+      </form>
     </div>
+    
+    <!-- Decorative Elements -->
+    <div style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(199,141,216,0.1) 0%, rgba(199,141,216,0) 70%); z-index: 1;"></div>
+    <div style="position: absolute; bottom: -100px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(199,141,216,0.1) 0%, rgba(199,141,216,0) 70%); z-index: 1;"></div>
   </div>
-</div>
+</section>
 
 <!-- SEAMLESS FOOTER -->
 <footer style="background-color: black; color: white; text-align: center; padding: 20px; font-size: 14px; margin: 0;">
