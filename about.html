@@ -1,1 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="Rare Disease Club" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. Join us to make a difference and support our community." />
+  <link rel="canonical" href="https://www.rarediseaseclubs.com" />
+  <link rel="icon" href="rdc.png" type="image/png" />
+  <title>Rare Disease Club - Spreading Awareness About Rare Diseases</title>
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Rare Disease Club - Spreading Awareness About Rare Diseases" />
+  <meta property="og:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families." />
+  <meta property="og:image" content="https://rarediseaseclubs.com/RDCLogo.png" />
+  <meta property="og:url" content="https://rarediseaseclubs.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rare Disease Club - Spreading Awareness About Rare Diseases" />
+  <meta name="twitter:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families." />
+  <meta name="twitter:image" content="https://rarediseaseclubs.com/RDCLogo.png" />
+
+  <!-- Animate.css CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fce8f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header and Logo Styles */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background-color: white;
+      width: 100%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+    }
+
+    .rdc-img {
+      height: 300px;
+      width: 300px;
+      margin-left: 10px;
+    }
+
+    .title-image {
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .rdc-logo-wrapper {
+      background-color: white;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .rdc-logo {
+      height: 50px;
+    }
+
+    /* Navigation Styles */
+    nav {
+      background-color: #fce8f5;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 0;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    html {
+      scroll-behavior: smooth; /* This enables smooth scrolling */
+    }
+    
+    section {
+      height: 100vh; /* Makes each section full viewport height */
+      padding: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+    .home-btn {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      padding: 10px 20px;
+      border: 3px solid black;
+      border-radius: 16px;
+      background-color: white;
+      transition: all 0.3s ease;
+      margin-right: 20px;
+    }
+
+    .home-btn:hover {
+      background-color: #f0f0f0;
+    }
+
+    .home-btn.active {
+      background-color: #B96794;
+      color: white;
+      border-color: #B96794;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+      max-width: 1300px;
+      margin: auto;
+      flex-wrap: wrap;
+      background-color: black;
+    }
+
+    .contact-left {
+      max-width: 300px;
+    }
+
+    .contact-left h2 {
+      color: #c78dd8;
+      font-size: 36px;
+    }
+
+    .contact-left p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 1000px) {
+  /* Contact section adjustments */
+  section[style*="background-color: black; padding: 60px 20px;"] {
+    padding: 40px 15px !important;
+  }
+  
+  section[style*="background-color: black; padding: 60px 20px;"] > div {
+    flex-direction: column !important;
+    gap: 30px !important;
+  }
+  
+  section[style*="background-color: black; padding: 60px 20px;"] h2 {
+    font-size: 28px !important;
+  }
+  
+  section[style*="background-color: black; padding: 60px 20px;"] p {
+    font-size: 16px !important;
+  }
+  
+  section[style*="background-color: black; padding: 60px 20px;"] div[style*="background-color: #3d3c3c"] {
+    padding: 30px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  section[style*="background-color: black; padding: 60px 20px;"] {
+    padding: 30px 10px !important;
+  }
+  
+  section[style*="background-color: black; padding: 60px 20px;"] h2 {
+    font-size: 24px !important;
+  }
+  
+  section[style*="background-color: black; padding: 60px 20px;"] div[style*="background-color: #3d3c3c"] {
+    padding: 20px !important;
+  }
+}
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .org-info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .org-info img {
+      width: 150px;
+    }
+
+    .org-text {
+      font-size: 20px;
+      max-width: 300px;
+      line-height: 1.4;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background-color: #3d3c3c;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .contact-form h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .contact-form textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    .contact-form button {
+      padding: 12px 30px;
+      background-color: #c78dd8;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #ae68c5;
+    }
+    .submit-btn {
+      background-color: #B97FDC;
+      color: white;
+      font-weight: bold;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .submit-btn:hover {
+      background-color: #9c5dbf;
+    }
+
+    .social-icons {
+      margin-top: 15px;
+    }
+
+    .social-icons img {
+      width: 30px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .description {
+      margin-top: 20px;
+      font-size: 18px;
+      max-width: 400px;
+      line-height: 1.5;
+    }
+
+    .contact-right {
+      flex: 1;
+      min-width: 280px;
+      background-color: #3c3c3c;
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .contact-right h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .contact-right input,
+    .contact-right textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .contact-right textarea {
+      height: 120px;
+    }
+
+    .submit-btn {
+      background-color: #b97fdc;
+      color: white;
+      font-weight: bold;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .submit-btn:hover {
+      background-color: #a469c7;
+    }
+
+    footer {
+      border-top: 1px solid white;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      color: white;
+    }
+    .nav-links a:hover {
+      color: #B96794;
+    }
+
+    .nav-links a.active {
+      color: #B96794;
+    }
+
+    /* Hero Section */
+    
+
+    @media (max-width: 768px) {
+  section[style*="background-color: #f9dff4"] {
+    padding: 30px 15px !important;
+  }
+  
+  section[style*="background-color: #f9dff4"] div[style*="background-color: black"] {
+    width: 90% !important;
+    padding: 20px !important;
+    margin-top: -40px !important;
+  }
+  
+  section[style*="background-color: #f9dff4"] h2 {
+    font-size: 24px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  section[style*="background-color: #f9dff4"] p {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  section[style*="background-color: #f9dff4"] div[style*="background-color: black"] {
+    width: 95% !important;
+    padding: 15px !important;
+    margin-top: -30px !important;
+    border-radius: 20px !important;
+  }
+  
+  section[style*="background-color: #f9dff4"] h2 {
+    font-size: 20px !important;
+  }
+  
+  section[style*="background-color: #f9dff4"] p {
+    font-size: 14px !important;
+  }
+}
+  
+
+    /* Main Content */
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 30px 20px 10px;
+      background-color: #F6DBEE;
+      flex: 1;
+    }
+  
+    .content-image {
+      flex: 1;
+      min-width: 500px;
+      text-align: center;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-height: 90vh;
+      overflow: hidden;
+    }
+
+    .people-img {
+      max-width: 100%;
+      height: auto;
+      max-height: 90vh;
+      width: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .content-text {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .content-text img.title-img {
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
+
+    .content-text p {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    /* NORD Section */
+    .nord-section {
+      padding: 30px 20px;
+      background-color: #fff;
+      margin: 20px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+
+    .nord-section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nord-section h2 {
+      color: #000000;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    .service-card h3 {
+      color: #000000;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    .service-btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #000000;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .service-btn:hover {
+      background-color: #784461;
+    }
+    
+    /* Footer */
+    .site-footer {
+      background-color: #f8f8f8;
+      padding: 30px 20px 15px;
+      color: #333;
+      font-size: 14px;
+      border-top: 1px solid #e1e1e1;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto 20px;
+    }
+
+    .footer-section h3 {
+      color: #B96794;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section li {
+      margin-bottom: 8px;
+    }
+
+    .footer-section a {
+      color: #555;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: #B96794;
+      text-decoration: underline;
+    }
+
+    address {
+      font-style: normal;
+      line-height: 1.6;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 15px;
+      border-top: 1px solid #e1e1e1;
+    }
+
+    .footer-links {
+      margin-bottom: 10px;
+    }
+
+    .motto-img {
+      height: 60px;
+      object-fit: contain;
+    }
+    .hero {
+  width: 100%;
+  height: 500px;
+  background-image: url('darkenphoto.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-text {
+  color: white;
+  margin-bottom: 30px;
+  max-width: 800px;
+}
+
+.hero-text h1 {
+  font-size: 64px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text p {
+  font-size: 24px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 12px 40px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid white;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.hero-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 48px;
+  }
+  
+  .hero-text p {
+    font-size: 18px;
+  }
+  
+  .hero-btn {
+    padding: 10px 30px;
+    font-size: 18px;
+  }
+}
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .home-btn {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+      .hero-content img {
+        width: 90%;
+      }
+      .content-image, .content-text {
+        min-width: 100%;
+      }
+      .main-content {
+        flex-direction: column;
+      }
+    }
+    <style>
+    /* Add this to your existing CSS */
+    .join-overlay-btn {
+      position: absolute;
+      bottom: 50px; /* Adjust this to position vertically */
+      left: 50%;
+      transform: translateX(-50%);
+      text-decoration: none;
+      color: black;
+      font-size: 24px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      padding: 12px 30px;
+      border: 3px solid white;
+      border-radius: 0; /* Makes it rectangular */
+      background-color: rgba(255,255,255,0.3); /* Semi-transparent white */
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      z-index: 3; /* Ensures it appears above the overlay */
+    }
+
+    .join-overlay-btn:hover {
+      background-color: rgba(255,255,255,0.5);
+    }
+    @media (max-width: 600px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+      .footer-section {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
+  <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="home-btn">HOME</a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="#contact">Contact</a>
+      <a href="getinvolved.html">Get Involved</a>
+    </div>
+  </nav>
+</html>
 
