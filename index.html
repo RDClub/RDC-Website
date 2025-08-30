@@ -87,15 +87,17 @@
       gap: 30px;
       flex-wrap: wrap;
     }
+    
     html {
-      scroll-behavior: smooth; /* This enables smooth scrolling */
+      scroll-behavior: smooth;
     }
     
     section {
-      height: 100vh; /* Makes each section full viewport height */
+      height: 100vh;
       padding: 20px;
       border-bottom: 1px solid #ccc;
     }
+    
     .home-btn {
       text-decoration: none;
       color: black;
@@ -157,43 +159,44 @@
       font-size: 20px;
       margin-bottom: 20px;
     }
+    
     @media (max-width: 1000px) {
-  /* Contact section adjustments */
-  section[style*="background-color: black; padding: 60px 20px;"] {
-    padding: 40px 15px !important;
-  }
-  
-  section[style*="background-color: black; padding: 60px 20px;"] > div {
-    flex-direction: column !important;
-    gap: 30px !important;
-  }
-  
-  section[style*="background-color: black; padding: 60px 20px;"] h2 {
-    font-size: 28px !important;
-  }
-  
-  section[style*="background-color: black; padding: 60px 20px;"] p {
-    font-size: 16px !important;
-  }
-  
-  section[style*="background-color: black; padding: 60px 20px;"] div[style*="background-color: #3d3c3c"] {
-    padding: 30px !important;
-  }
-}
+      section[style*="background-color: black; padding: 60px 20px;"] {
+        padding: 40px 15px !important;
+      }
+      
+      section[style*="background-color: black; padding: 60px 20px;"] > div {
+        flex-direction: column !important;
+        gap: 30px !important;
+      }
+      
+      section[style*="background-color: black; padding: 60px 20px;"] h2 {
+        font-size: 28px !important;
+      }
+      
+      section[style*="background-color: black; padding: 60px 20px;"] p {
+        font-size: 16px !important;
+      }
+      
+      section[style*="background-color: black; padding: 60px 20px;"] div[style*="background-color: #3d3c3c"] {
+        padding: 30px !important;
+      }
+    }
 
-@media (max-width: 480px) {
-  section[style*="background-color: black; padding: 60px 20px;"] {
-    padding: 30px 10px !important;
-  }
-  
-  section[style*="background-color: black; padding: 60px 20px;"] h2 {
-    font-size: 24px !important;
-  }
-  
-  section[style*="background-color: black; padding: 60px 20px;"] div[style*="background-color: #3d3c3c"] {
-    padding: 20px !important;
-  }
-}
+    @media (max-width: 480px) {
+      section[style*="background-color: black; padding: 60px 20px;"] {
+        padding: 30px 10px !important;
+      }
+      
+      section[style*="background-color: black; padding: 60px 20px;"] h2 {
+        font-size: 24px !important;
+      }
+      
+      section[style*="background-color: black; padding: 60px 20px;"] div[style*="background-color: #3d3c3c"] {
+        padding: 20px !important;
+      }
+    }
+    
     .social-icons {
       display: flex;
       gap: 15px;
@@ -263,6 +266,7 @@
     .contact-form button:hover {
       background-color: #ae68c5;
     }
+    
     .submit-btn {
       background-color: #B97FDC;
       color: white;
@@ -274,6 +278,7 @@
       font-size: 16px;
       margin-top: 10px;
     }
+    
     .submit-btn:hover {
       background-color: #9c5dbf;
     }
@@ -322,21 +327,6 @@
       height: 120px;
     }
 
-    .submit-btn {
-      background-color: #b97fdc;
-      color: white;
-      font-weight: bold;
-      padding: 12px 28px;
-      border: none;
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    .submit-btn:hover {
-      background-color: #a469c7;
-    }
-
     footer {
       border-top: 1px solid white;
       padding: 15px;
@@ -344,6 +334,7 @@
       font-size: 14px;
       color: white;
     }
+    
     .nav-links a:hover {
       color: #B96794;
     }
@@ -352,47 +343,43 @@
       color: #B96794;
     }
 
-    /* Hero Section */
-    
-
     @media (max-width: 768px) {
-  section[style*="background-color: #f9dff4"] {
-    padding: 30px 15px !important;
-  }
-  
-  section[style*="background-color: #f9dff4"] div[style*="background-color: black"] {
-    width: 90% !important;
-    padding: 20px !important;
-    margin-top: -40px !important;
-  }
-  
-  section[style*="background-color: #f9dff4"] h2 {
-    font-size: 24px !important;
-    margin-bottom: 15px !important;
-  }
-  
-  section[style*="background-color: #f9dff4"] p {
-    font-size: 16px !important;
-  }
-}
+      section[style*="background-color: #f9dff4"] {
+        padding: 30px 15px !important;
+      }
+      
+      section[style*="background-color: #f9dff4"] div[style*="background-color: black"] {
+        width: 90% !important;
+        padding: 20px !important;
+        margin-top: -40px !important;
+      }
+      
+      section[style*="background-color: #f9dff4"] h2 {
+        font-size: 24px !important;
+        margin-bottom: 15px !important;
+      }
+      
+      section[style*="background-color: #f9dff4"] p {
+        font-size: 16px !important;
+      }
+    }
 
-@media (max-width: 480px) {
-  section[style*="background-color: #f9dff4"] div[style*="background-color: black"] {
-    width: 95% !important;
-    padding: 15px !important;
-    margin-top: -30px !important;
-    border-radius: 20px !important;
-  }
-  
-  section[style*="background-color: #f9dff4"] h2 {
-    font-size: 20px !important;
-  }
-  
-  section[style*="background-color: #f9dff4"] p {
-    font-size: 14px !important;
-  }
-}
-  
+    @media (max-width: 480px) {
+      section[style*="background-color: #f9dff4"] div[style*="background-color: black"] {
+        width: 95% !important;
+        padding: 15px !important;
+        margin-top: -30px !important;
+        border-radius: 20px !important;
+      }
+      
+      section[style*="background-color: #f9dff4"] h2 {
+        font-size: 20px !important;
+      }
+      
+      section[style*="background-color: #f9dff4"] p {
+        font-size: 14px !important;
+      }
+    }
 
     /* Main Content */
     .main-content {
@@ -576,122 +563,87 @@
       height: 60px;
       object-fit: contain;
     }
+    
     .hero {
-  width: 100%;
-  height: 500px;
-  background-image: url('darkenphoto.png');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 0;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  text-align: center;
-  padding: 20px;
-}
-
-.hero-text {
-  color: white;
-  margin-bottom: 30px;
-  max-width: 800px;
-}
-
-.hero-text h1 {
-  font-size: 64px;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.hero-text p {
-  font-size: 24px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.hero-btn-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-btn {
-  display: inline-block;
-  padding: 12px 40px;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: 'Georgia', serif;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: 2px solid white;
-  background-color: transparent;
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
-.hero-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 48px;
-  }
-  
-  .hero-text p {
-    font-size: 18px;
-  }
-  
-  .hero-btn {
-    padding: 10px 30px;
-    font-size: 18px;
-  }
-}
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        gap: 15px;
-      }
-      .home-btn {
-        margin-bottom: 10px;
-      }
-      .hero-content img {
-        width: 90%;
-      }
-      .content-image, .content-text {
-        min-width: 100%;
-      }
-      .main-content {
-        flex-direction: column;
-      }
+      width: 100%;
+      height: 500px;
+      background-image: url('darkenphoto.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
     }
-    <style>
-    /* Add this to your existing CSS */
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-text {
+      color: white;
+      margin-bottom: 30px;
+      max-width: 800px;
+    }
+
+    .hero-text h1 {
+      font-size: 64px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-text p {
+      font-size: 24px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-btn-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      padding: 12px 40px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 2px solid white;
+      background-color: transparent;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .hero-btn:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
     .join-overlay-btn {
       position: absolute;
-      bottom: 50px; /* Adjust this to position vertically */
+      bottom: 50px;
       left: 50%;
       transform: translateX(-50%);
       text-decoration: none;
@@ -701,25 +653,65 @@
       font-family: 'Georgia', serif;
       padding: 12px 30px;
       border: 3px solid white;
-      border-radius: 0; /* Makes it rectangular */
-      background-color: rgba(255,255,255,0.3); /* Semi-transparent white */
+      border-radius: 0;
+      background-color: rgba(255,255,255,0.3);
       transition: all 0.3s ease;
       text-transform: uppercase;
-      z-index: 3; /* Ensures it appears above the overlay */
+      z-index: 3;
     }
 
     .join-overlay-btn:hover {
       background-color: rgba(255,255,255,0.5);
     }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .home-btn {
+        margin-bottom: 10px;
+      }
+      
+      .hero-content img {
+        width: 90%;
+      }
+      
+      .content-image, .content-text {
+        min-width: 100%;
+      }
+      
+      .main-content {
+        flex-direction: column;
+      }
+      
+      .hero-text h1 {
+        font-size: 48px;
+      }
+      
+      .hero-text p {
+        font-size: 18px;
+      }
+      
+      .hero-btn {
+        padding: 10px 30px;
+        font-size: 18px;
+      }
+    }
+    
     @media (max-width: 600px) {
       .nav-links {
         flex-direction: column;
         align-items: center;
         gap: 10px;
       }
+      
       .footer-container {
         grid-template-columns: 1fr;
       }
+      
       .footer-section {
         text-align: center;
       }
@@ -742,25 +734,24 @@
     </div>
   </nav>
 
-
-<!-- With this text-based hero section -->
-<section class="hero">
-  <div class="overlay"></div>
-  <div class="hero-content">
-    <div class="hero-text">
-      <h1>Together For Rare</h1>
-      <h1>Lives</h1>
-      <p>Rare doesn't mean alone. Together, we're</p>
-      <p>turning awareness into action and hope into</p>
-      <p>impact.</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Together For Rare</h1>
+        <h1>Lives</h1>
+        <p>Rare doesn't mean alone. Together, we're</p>
+        <p>turning awareness into action and hope into</p>
+        <p>impact.</p>
+      </div>
+      <div class="hero-btn-container">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform" class="hero-btn">JOIN NOW</a>
+      </div>
     </div>
-    <div class="hero-btn-container">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform" class="hero-btn">JOIN NOW</a>
-    </div>
-  </div>
-</section>
-  
+  </section>
 
+  <!-- Impact Section -->
   <section class="nord-section">
     <h2>How You Can Make an Impact</h2>
     <div class="services-grid">
@@ -782,188 +773,95 @@
         <a href="partner.html" class="service-btn">Learn More</a>
       </div>
     </div>
-    
-      </div>
-    </div>
-  <section style="background-color: #fce8f5; padding: 60px 20px;">
-  <h2 style="text-align: center; font-size: 48px; color: #000; margin-bottom: 40px;">Monthly Events</h2>
-  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; max-width: 1200px; margin: 0 auto;">
-    
-    <!-- Selling at Jewelry Markets -->
-    <div style="text-align: center; max-width: 325px;">
-      <img src="selling.png" alt="Jewelry Market" style="width: 100%; border: 2px solid #000; border-radius: 12px;">
-      <h3 style="margin-top: 20px; font-size: 22px;">SELLING AT JEWELRY MARKETS</h3>
-      <p style="margin-top: 10px; font-size: 18px;">We design and sell handmade jewelry at local markets to raise funds for rare disease research and awareness initiatives.</p>
-    </div>
-
-    <!-- Fundraisers -->
-    <div style="text-align: center; max-width: 325px;">
-      <img src="donate.png" alt="Fundraisers" style="width: 100%; border: 2px solid #000; border-radius: 12px;">
-      <h3 style="margin-top: 20px; font-size: 22px;">FUNDRAISERS</h3>
-      <p style="margin-top: 10px; font-size: 18px;">We host restaurant fundraisers, organize blanket drives, and donate care packages to support patients and families affected by rare diseases.</p>
-    </div>
-
-    <!-- Guest Speaking -->
-    <div style="text-align: center; max-width: 325px;">
-      <img src="rdcshare.png" alt="Guest Speaking" style="width: 100%; border: 2px solid #000; border-radius: 12px;">
-      <h3 style="margin-top: 20px; font-size: 22px;">GUEST SPEAKING</h3>
-      <p style="margin-top: 10px; font-size: 18px;">We share our story and raise awareness by speaking at schools, community events, and online spaces, encouraging others to learn and get involved.
-</p>
-    </div>
-
-  </div>
-      </div>
   </section>
-  
-      <!-- Right Contact Form -->
-   <!-- NO-GAP CONTACT SECTION -->
-<!-- FULL WIDTH CONTACT SECTION -->
-<!-- FULL WIDTH CONTACT SECTION -->
-<section style="background-color: #1a1a1a; id="#contact"; padding: 80px 20px; position: relative; overflow: hidden;">
-  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
-    
-    <!-- Left Contact Column -->
-    <div style="flex: 1; min-width: 300px; color: white; padding: 20px; position: relative; z-index: 2;">
-      <h2 style="font-size: 2.5rem; color: #c78dd8; margin-bottom: 30px; position: relative;">
-        Get In Touch
-        <span style="position: absolute; bottom: -10px; left: 0; width: 80px; height: 3px; background: #c78dd8;"></span>
-      </h2>
-      
-      <!-- Contact Info -->
-      <div style="margin-bottom: 30px;">
-        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-          <svg style="width: 24px; height: 24px; fill: #c78dd8;" viewBox="0 0 24 24">
-            <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
-          </svg>
-          <h3 style="font-size: 1.3rem; color: #f9dff4;">Email Us</h3>
-        </div>
-        <a href="mailto:rarediseaseclub@example.com" style="font-size: 1.1rem; color: white; text-decoration: none; display: block; padding-left: 34px;">
-          rarediseaseclub@example.com
-        </a>
-      </div>
-      
-      <!-- Social Media -->
-      <div style="margin-bottom: 40px;">
-        <h3 style="font-size: 1.3rem; color: #f9dff4; margin-bottom: 15px;">Follow Us</h3>
-        <div style="display: flex; gap: 15px; padding-left: 10px;">
-          <!-- Social icons would go here -->
-        </div>
-      </div>
-      
-      <!-- Organization Info -->
-      <div style="display: flex; gap: 20px; align-items: center; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border: 1px solid rgba(199,141,216,0.2);">
-        <img src="rdc.png" alt="RDC Logo" style="width: 80px; height: 80px; object-fit: contain;">
-        <p style="font-size: 1rem; line-height: 1.5;">
-          <strong>Rare Disease Club</strong><br>
-          Empowering awareness through education and community.
-        </p>
-      </div>
-    </div>
-    
-    <!-- Right Form Column (WITH PROPER FLOATING LABELS) -->
-    <div style="flex: 1; min-width: 300px; background: #2a2a2a; border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); position: relative; z-index: 2;">
-      <h2 style="font-size: 2rem; color: white; margin-bottom: 30px; position: relative;">
-        Send Us a Message
-        <span style="position: absolute; bottom: -10px; left: 0; width: 80px; height: 3px; background: #c78dd8;"></span>
-      </h2>
-      
-      <!-- FORMSPREE FORM WITH FLOATING LABELS (FIXED) -->
-      <form action="https://formspree.io/f/mblkaeak" method="POST" style="display: flex; flex-direction: column; gap: 25px;">
-        <!-- Name Field -->
-        <div style="position: relative;">
-          <input 
-            type="text" 
-            name="name" 
-            id="name-input"
-            required
-            style="width: 100%; padding: 15px; background: #3d3c3c; border: 2px solid transparent; border-radius: 6px; color: white; font-size: 1rem; transition: all 0.3s;"
-            onfocus="this.style.borderColor='#c78dd8'; document.getElementById('name-label').style.transform='translateY(-25px)'; document.getElementById('name-label').style.fontSize='0.9rem';"
-            onblur="this.style.borderColor='transparent'; if(this.value === '') { document.getElementById('name-label').style.transform='none'; document.getElementById('name-label').style.fontSize='1rem'; }"
-          >
-          <label 
-            id="name-label"
-            for="name-input"
-            style="position: absolute; left: 15px; top: 15px; color: #aaa; font-size: 1rem; pointer-events: none; transition: all 0.3s;"
-          >
-            Your Name
-          </label>
-        </div>
-        
-        <!-- Email Field -->
-        <div style="position: relative;">
-          <input 
-            type="email" 
-            name="_replyto" 
-            id="email-input"
-            required
-            style="width: 100%; padding: 15px; background: #3d3c3c; border: 2px solid transparent; border-radius: 6px; color: white; font-size: 1rem; transition: all 0.3s;"
-            onfocus="this.style.borderColor='#c78dd8'; document.getElementById('email-label').style.transform='translateY(-25px)'; document.getElementById('email-label').style.fontSize='0.9rem';"
-            onblur="this.style.borderColor='transparent'; if(this.value === '') { document.getElementById('email-label').style.transform='none'; document.getElementById('email-label').style.fontSize='1rem'; }"
-          >
-          <label 
-            id="email-label"
-            for="email-input"
-            style="position: absolute; left: 15px; top: 15px; color: #aaa; font-size: 1rem; pointer-events: none; transition: all 0.3s;"
-          >
-            Email Address
-          </label>
-        </div>
-        
-        <!-- Message Field -->
-        <div style="position: relative;">
-          <textarea 
-            name="message" 
-            id="message-input"
-            required
-            rows="5"
-            style="width: 100%; padding: 15px; background: #3d3c3c; border: 2px solid transparent; border-radius: 6px; color: white; font-size: 1rem; resize: vertical; transition: all 0.3s;"
-            onfocus="this.style.borderColor='#c78dd8'; document.getElementById('message-label').style.transform='translateY(-25px)'; document.getElementById('message-label').style.fontSize='0.9rem';"
-            onblur="this.style.borderColor='transparent'; if(this.value === '') { document.getElementById('message-label').style.transform='none'; document.getElementById('message-label').style.fontSize='1rem'; }"
-          ></textarea>
-          <label 
-            id="message-label"
-            for="message-input"
-            style="position: absolute; left: 15px; top: 15px; color: #aaa; font-size: 1rem; pointer-events: none; transition: all 0.3s;"
-          >
-            Your Message
-          </label>
-        </div>
-        
-        <!-- Submit Button -->
-        <button 
-          type="submit"
-          style="padding: 15px 30px; background: linear-gradient(135deg, #c78dd8, #9c5dbf); color: white; border: none; border-radius: 30px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: all 0.3s; align-self: flex-start; display: flex; align-items: center; gap: 8px;"
-          onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(156,93,191,0.4)'"
-          onmouseout="this.style.transform='none'; this.style.boxShadow='none'"
-        >
-          Send Message
-          <svg style="width: 20px; height: 20px; fill: white;" viewBox="0 0 24 24">
-            <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
-          </svg>
-        </button>
-      </form>
-    </div>
-    
-    <!-- Decorative Elements -->
-    <div style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(199,141,216,0.1) 0%, rgba(199,141,216,0) 70%); z-index: 1;"></div>
-    <div style="position: absolute; bottom: -100px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(199,141,216,0.1) 0%, rgba(199,141,216,0) 70%); z-index: 1;"></div>
-  </div>
-</section>
 
-<!-- SEAMLESS FOOTER -->
-<footer style="background-color: black; color: white; text-align: center; padding: 20px; font-size: 14px; margin: 0;">
-  © 2024 by Rare Disease Club
-</footer>
+  <!-- Monthly Events Section -->
+  <section style="background-color: #fce8f5; padding: 60px 20px;">
+    <h2 style="text-align: center; font-size: 48px; color: #000; margin-bottom: 40px;">Monthly Events</h2>
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; max-width: 1200px; margin: 0 auto;">
+      
+      <!-- Selling at Jewelry Markets -->
+      <div style="text-align: center; max-width: 325px;">
+        <img src="selling.png" alt="Jewelry Market" style="width: 100%; border: 2px solid #000; border-radius: 12px;">
+        <h3 style="margin-top: 20px; font-size: 22px;">SELLING AT JEWELRY MARKETS</h3>
+        <p style="margin-top: 10px; font-size: 18px;">We design and sell handmade jewelry at local markets to raise funds for rare disease research and awareness initiatives.</p>
+      </div>
 
-const nordSection = document.querySelector('.nord-section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, { threshold: 0.1 });
-    observer.observe(nordSection);
-  </script>
-</body>
-</html>
+      <!-- Fundraisers -->
+      <div style="text-align: center; max-width: 325px;">
+        <img src="donate.png" alt="Fundraisers" style="width: 100%; border: 2px solid #000; border-radius: 12px;">
+        <h3 style="margin-top: 20px; font-size: 22px;">FUNDRAISERS</h3>
+        <p style="margin-top: 10px; font-size: 18px;">We host restaurant fundraisers, organize blanket drives, and donate care packages to support patients and families affected by rare diseases.</p>
+      </div>
+
+      <!-- Guest Speaking -->
+      <div style="text-align: center; max-width: 325px;">
+        <img src="rdcshare.png" alt="Guest Speaking" style="width: 100%; border: 2px solid #000; border-radius: 12px;">
+        <h3 style="margin-top: 20px; font-size: 22px;">GUEST SPEAKING</h3>
+        <p style="margin-top: 10px; font-size: 18px;">We share our story and raise awareness by speaking at schools, community events, and online spaces, encouraging others to learn and get involved.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" style="background-color: #1a1a1a; padding: 80px 20px; position: relative; overflow: hidden;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+      
+      <!-- Left Contact Column -->
+      <div style="flex: 1; min-width: 300px; color: white; padding: 20px; position: relative; z-index: 2;">
+        <h2 style="font-size: 2.5rem; color: #c78dd8; margin-bottom: 30px; position: relative;">
+          Get In Touch
+          <span style="position: absolute; bottom: -10px; left: 0; width: 80px; height: 3px; background: #c78dd8;"></span>
+        </h2>
+        
+        <!-- Contact Info -->
+        <div style="margin-bottom: 30px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+            <svg style="width: 24px; height: 24px; fill: #c78dd8;" viewBox="0 0 24 24">
+              <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+            </svg>
+            <h3 style="font-size: 1.3rem; color: #f9dff4;">Email Us</h3>
+          </div>
+          <a href="mailto:rarediseaseclub@example.com" style="font-size: 1.1rem; color: white; text-decoration: none; display: block; padding-left: 34px;">
+            rarediseaseclub@example.com
+          </a>
+        </div>
+        
+        <!-- Social Media -->
+        <div style="margin-bottom: 40px;">
+          <h3 style="font-size: 1.3rem; color: #f9dff4; margin-bottom: 15px;">Follow Us</h3>
+          <div style="display: flex; gap: 15px; padding-left: 10px;">
+            <!-- Social icons would go here -->
+          </div>
+        </div>
+        
+        <!-- Organization Info -->
+        <div style="display: flex; gap: 20px; align-items: center; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border: 1px solid rgba(199,141,216,0.2);">
+          <img src="rdc.png" alt="RDC Logo" style="width: 80px; height: 80px; object-fit: contain;">
+          <p style="font-size: 1rem; line-height: 1.5;">
+            <strong>Rare Disease Club</strong><br>
+            Empowering awareness through education and community.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Right Form Column -->
+      <div style="flex: 1; min-width: 300px; background: #2a2a2a; border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); position: relative; z-index: 2;">
+        <h2 style="font-size: 2rem; color: white; margin-bottom: 30px; position: relative;">
+          Send Us a Message
+          <span style="position: absolute; bottom: -10px; left: 0; width: 80px; height: 3px; background: #c78dd8;"></span>
+        </h2>
+        
+        <!-- Contact Form -->
+        <form action="https://formspree.io/f/mblkaeak" method="POST" style="display: flex; flex-direction: column; gap: 25px;">
+          <!-- Name Field -->
+          <div style="position: relative;">
+            <input 
+              type="text" 
+              name="name" 
+              id="name-input"
+              required
+              style="width: 100%; padding: 15px; background: #3d3c3c; border: 2px solid transparent; border-radius: 6px; color: white; font-size: 1rem; transition: all 0.3s;"
+              onfocus="this.style.borderColor='#c78dd8'; document.getElementById('name-label').style.transform='translateY(-25px)'; document.getElementById('name-label').style.fontSize='0.9rem';"
+              onblur="this.style.borderColor='transparent'; if(
