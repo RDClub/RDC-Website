@@ -818,6 +818,7 @@
       <!-- Right Contact Form -->
    <!-- NO-GAP CONTACT SECTION -->
 <!-- FULL WIDTH CONTACT SECTION -->
+<!-- FULL WIDTH CONTACT SECTION -->
 <section style="background-color: #1a1a1a; id="#contact"; padding: 80px 20px; position: relative; overflow: hidden;">
   <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
     
@@ -825,6 +826,44 @@
     <div style="flex: 1; min-width: 300px; color: white; padding: 20px; position: relative; z-index: 2;">
       <h2 style="font-size: 2.5rem; color: #c78dd8; margin-bottom: 30px; position: relative;">
         Get In Touch
+        <span style="position: absolute; bottom: -10px; left: 0; width: 80px; height: 3px; background: #c78dd8;"></span>
+      </h2>
+      
+      <!-- Contact Info -->
+      <div style="margin-bottom: 30px;">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+          <svg style="width: 24px; height: 24px; fill: #c78dd8;" viewBox="0 0 24 24">
+            <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+          </svg>
+          <h3 style="font-size: 1.3rem; color: #f9dff4;">Email Us</h3>
+        </div>
+        <a href="mailto:rarediseaseclub@example.com" style="font-size: 1.1rem; color: white; text-decoration: none; display: block; padding-left: 34px;">
+          rarediseaseclub@example.com
+        </a>
+      </div>
+      
+      <!-- Social Media -->
+      <div style="margin-bottom: 40px;">
+        <h3 style="font-size: 1.3rem; color: #f9dff4; margin-bottom: 15px;">Follow Us</h3>
+        <div style="display: flex; gap: 15px; padding-left: 10px;">
+          <!-- Social icons would go here -->
+        </div>
+      </div>
+      
+      <!-- Organization Info -->
+      <div style="display: flex; gap: 20px; align-items: center; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border: 1px solid rgba(199,141,216,0.2);">
+        <img src="rdc.png" alt="RDC Logo" style="width: 80px; height: 80px; object-fit: contain;">
+        <p style="font-size: 1rem; line-height: 1.5;">
+          <strong>Rare Disease Club</strong><br>
+          Empowering awareness through education and community.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Right Form Column (WITH PROPER FLOATING LABELS) -->
+    <div style="flex: 1; min-width: 300px; background: #2a2a2a; border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); position: relative; z-index: 2;">
+      <h2 style="font-size: 2rem; color: white; margin-bottom: 30px; position: relative;">
+        Send Us a Message
         <span style="position: absolute; bottom: -10px; left: 0; width: 80px; height: 3px; background: #c78dd8;"></span>
       </h2>
       
@@ -916,21 +955,7 @@
   © 2024 by Rare Disease Club
 </footer>
 
-<!-- FIXED FOOTER -->
-  <!-- FOOTER (DIRECTLY ATTACHED) -->
-  <script>
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    // Scroll animation for NORD section
-    const nordSection = document.querySelector('.nord-section');
+const nordSection = document.querySelector('.nord-section');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -941,42 +966,4 @@
     observer.observe(nordSection);
   </script>
 </body>
-</html> height: 3px; background: #c78dd8;"></span>
-      </h2>
-      
-      <!-- Contact Info -->
-      <div style="margin-bottom: 30px;">
-        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-          <svg style="width: 24px; height: 24px; fill: #c78dd8;" viewBox="0 0 24 24">
-            <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
-          </svg>
-          <h3 style="font-size: 1.3rem; color: #f9dff4;">Email Us</h3>
-        </div>
-        <a href="mailto:rarediseaseclub@example.com" style="font-size: 1.1rem; color: white; text-decoration: none; display: block; padding-left: 34px;">
-          rarediseaseclub@example.com
-        </a>
-      </div>
-      
-      <!-- Social Media -->
-      <div style="margin-bottom: 40px;">
-        <h3 style="font-size: 1.3rem; color: #f9dff4; margin-bottom: 15px;">Follow Us</h3>
-        <div style="display: flex; gap: 15px; padding-left: 10px;">
-          <!-- Social icons would go here -->
-        </div>
-      </div>
-      
-      <!-- Organization Info -->
-      <div style="display: flex; gap: 20px; align-items: center; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; border: 1px solid rgba(199,141,216,0.2);">
-        <img src="rdc.png" alt="RDC Logo" style="width: 80px; height: 80px; object-fit: contain;">
-        <p style="font-size: 1rem; line-height: 1.5;">
-          <strong>Rare Disease Club</strong><br>
-          Empowering awareness through education and community.
-        </p>
-      </div>
-    </div>
-    
-    <!-- Right Form Column (WITH PROPER FLOATING LABELS) -->
-    <div style="flex: 1; min-width: 300px; background: #2a2a2a; border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); position: relative; z-index: 2;">
-      <h2 style="font-size: 2rem; color: white; margin-bottom: 30px; position: relative;">
-        Send Us a Message
-        <span style="position: absolute; bottom: -10px; left: 0; width: 80px;
+</html>
