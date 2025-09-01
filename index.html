@@ -40,6 +40,30 @@
       min-height: 100vh;
     }
 
+    /* Banner Styles */
+    .top-banner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px 0;
+      background-color: #fce8f5;
+    }
+
+    .motto-img {
+      height: 60px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+
+    .rdc-title-banner {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: 0 auto;
+      padding: 10px 0;
+    }
+
     /* Header and Logo Styles */
     .logo-container {
       display: flex;
@@ -284,21 +308,6 @@
       background-color: #784461;
     }
 
-    .motto-img {
-      height: 60px;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
-    }
-    
-    .rdc-title-banner {
-      width: 100%;
-      max-width: 600px;
-      display: block;
-      margin: 0 auto;
-      padding: 10px 0;
-    }
-
     /* What We Do Section */
     .what-we-do-section {
       background-color: #f9dff4; 
@@ -513,16 +522,23 @@
       .contact-form {
         padding: 25px;
       }
+      
+      .motto-img {
+        height: 50px;
+      }
+      
+      .rdc-title-banner {
+        max-width: 90%;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="logo-container">
-  <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
-  <div class="rdc-logo-wrapper">
-    <img src="RDC.png" alt="RDC Logo" class="rdc-logo">
+  <!-- Banner Section -->
+  <div class="top-banner">
+    <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
+    <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
   </div>
-</div>
 
   <!-- Navigation -->
   <nav>
