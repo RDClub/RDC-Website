@@ -40,28 +40,30 @@
       min-height: 100vh;
     }
 
-    /* Banner Styles */
-    .top-banner {
+    /* Full-width Banner Styles */
+    .full-width-banner {
+      width: 100%;
+      background-color: #fce8f5;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 15px 0;
-      background-color: #fce8f5;
     }
 
     .motto-img {
-      height: 60px;
-      object-fit: contain;
+      width: 100%;
+      max-width: 800px;
+      height: auto;
       display: block;
       margin: 0 auto 10px auto;
     }
 
     .rdc-title-banner {
       width: 100%;
-      max-width: 600px;
+      max-width: 800px;
+      height: auto;
       display: block;
       margin: 0 auto;
-      padding: 10px 0;
     }
 
     /* Header and Logo Styles */
@@ -523,19 +525,15 @@
         padding: 25px;
       }
       
-      .motto-img {
-        height: 50px;
-      }
-      
-      .rdc-title-banner {
-        max-width: 90%;
+      .motto-img, .rdc-title-banner {
+        max-width: 95%;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Banner Section -->
-  <div class="top-banner">
+  <!-- Full Width Banner -->
+  <div class="full-width-banner">
     <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
     <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
   </div>
