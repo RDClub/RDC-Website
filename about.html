@@ -3,48 +3,196 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Us - Rare Disease Club</title>
+  <meta name="Rare Disease Club" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. Join us to make a difference and support our community." />
+  <link rel="canonical" href="https://www.rarediseaseclubs.com" />
   <link rel="icon" href="rdc.png" type="image/png" />
+  <title>About Rare Disease Club - Spreading Awareness About Rare Diseases</title>
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="About Rare Disease Club - Spreading Awareness About Rare Diseases" />
+  <meta property="og:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families." />
+  <meta property="og:image" content="https://rarediseaseclubs.com/RDCLogo.png" />
+  <meta property="og:url" content="https://rarediseaseclubs.com/about" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Rare Disease Club - Spreading Awareness About Rare Diseases" />
+  <meta name="twitter:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating our community about these diseases and their impact on individuals and families." />
+  <meta name="twitter:image" content="https://rarediseaseclubs.com/RDCLogo.png" />
+
+  <!-- Animate.css CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-    html, body {
-      height: 100%;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background: #f9dff4;
-      width: 100vw;
-    }
-    body {
-      font-family: 'Playfair Display', Georgia, serif;
-      color: #19171a;
-      margin: 0;
-      min-height: 100vh;
     }
 
-    .about-section {
-      border-top: 3px solid #222;
-      background: #f9dff4;
-      min-height: 100vh;
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fce8f5;
+      color: #333;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      padding: 0;
+      min-height: 100vh;
     }
 
-    .about-row {
+    /* Full-width Banner Styles */
+    .full-width-banner {
+      width: 100%;
+      background-color: #F9EAF6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px 0;
+    }
+
+    .full-width-banner img {
+      width: 100%;
+      height: auto;
+      max-width: none;
+      display: block;
+    }
+
+    .motto-img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+
+    .rdc-title-banner {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Header and Logo Styles */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background-color: white;
+      width: 100%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+    }
+
+    .rdc-img {
+      height: 300px;
+      width: 300px;
+      margin-left: 10px;
+    }
+
+    .title-image {
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .rdc-logo-wrapper {
+      background-color: white;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .rdc-logo {
+      height: 50px;
+    }
+
+    /* Navigation Styles */
+    nav {
+      background-color: #fce8f5;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 0;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .home-btn {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      padding: 10px 20px;
+      border: 3px solid black;
+      border-radius: 16px;
+      background-color: white;
+      transition: all 0.3s ease;
+    }
+
+    .home-btn:hover {
+      background-color: #f0f0f0;
+    }
+
+    .home-btn.active {
+      background-color: #B96794;
+      color: white;
+      border-color: #B96794;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #B96794;
+    }
+
+    .nav-links a.active {
+      color: #B96794;
+    }
+
+    /* --- ABOUT SECTION - NEW LAYOUT --- */
+    .about-section {
+      background: #f9dff4;
+      border-top: 3px solid #222;
+      width: 100%;
+      min-height: 70vh;
       display: flex;
       flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-      max-width: 1700px;
-      margin: 0 auto;
-      padding: 50px 40px 0 40px;
-      box-sizing: border-box;
-      gap: 48px;
+      justify-content: center;
+      align-items: stretch;
+      padding: 0;
+      margin: 0;
     }
-
+    .about-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 40px 60px 50px;
+    }
     .about-logo {
       width: 140px;
       height: 140px;
@@ -53,47 +201,33 @@
       border-radius: 50%;
       border: 2px solid #222;
       box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-      display: block;
-      margin-bottom: 40px;
+      margin-bottom: 35px;
     }
-
-    .about-left {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-width: 340px;
-      padding: 0 10px;
-    }
-
     .about-title {
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 2.9rem;
       letter-spacing: 2px;
       margin-bottom: 32px;
-      margin-top: 0;
       font-weight: 400;
       text-align: center;
+      color: #19171a;
     }
-
     .about-desc {
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 2.1rem;
       text-align: center;
-      line-height: 1.31;
       color: #19171a;
+      line-height: 1.31;
       max-width: 800px;
-      margin-bottom: 0;
       font-weight: 400;
     }
-
     .about-right {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-width: 320px;
+      padding: 60px 50px 60px 40px;
     }
-
     .about-image {
       width: 100%;
       max-width: 480px;
@@ -102,16 +236,15 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.10);
       object-fit: cover;
     }
-
     @media (max-width: 1100px) {
-      .about-row {
+      .about-section {
         flex-direction: column;
         align-items: center;
-        gap: 32px;
-        padding: 40px 10px 0 10px;
+        justify-content: center;
+        padding: 0;
       }
-      .about-left {
-        margin-bottom: 15px;
+      .about-left, .about-right {
+        padding: 40px 10px 20px 10px;
       }
       .about-image {
         max-width: 95vw;
@@ -122,22 +255,45 @@
       .about-desc { font-size: 1.1rem; }
       .about-logo { width: 90px; height: 90px; margin-bottom: 25px; }
     }
+
   </style>
 </head>
 <body>
-  <div class="about-section">
-    <div class="about-row">
-      <div class="about-left">
-        <img src="rdc.png" alt="RDC Logo" class="about-logo"/>
-        <div class="about-title">ABOUT US</div>
-        <div class="about-desc">
-          At the Rare Disease Club, we work to raise awareness about rare diseases and their impact on individuals and families. Through education, advocacy, and support, we aim to empower those affected and build a more informed community
-        </div>
-      </div>
-      <div class="about-right">
-        <img src="about-photo.jpg" alt="RDC Event Table" class="about-image"/>
+  <!-- Full Width Banner -->
+  <div class="full-width-banner">
+    <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
+    <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
+  </div>
+
+  <!-- Navigation - EXACTLY as provided -->
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">HOME</a>
+    </div>
+    <div class="nav-links">
+      <a href="about.html" class="home-btn">About</a>
+    </div>
+    <div class="nav-links">
+      <a href="events.html">Events</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="getinvolved.html">Get Involved</a>
+    </div>
+  </nav>
+
+  <!-- ABOUT SECTION (NEW) -->
+  <section class="about-section">
+    <div class="about-left">
+      <img src="rdc.png" alt="RDC Logo" class="about-logo"/>
+      <div class="about-title">ABOUT US</div>
+      <div class="about-desc">
+        At the Rare Disease Club, we work to raise awareness about rare diseases and their impact on individuals and families. Through education, advocacy, and support, we aim to empower those affected and build a more informed community
       </div>
     </div>
-  </div>
+    <div class="about-right">
+      <img src="about-photo.jpg" alt="RDC Event Table" class="about-image"/>
+    </div>
+  </section>
+
 </body>
 </html>
