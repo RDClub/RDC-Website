@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="Rare Disease Club" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. Join us to make a difference and support patients and families." />
+  <meta name="Rare Disease Club" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. Join us to make a difference and support those affected." />
   <link rel="canonical" href="https://www.rarediseaseclubs.com" />
   <link rel="icon" href="rdc.png" type="image/png" />
   <title>About Rare Disease Club - Spreading Awareness About Rare Diseases</title>
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="About Rare Disease Club - Spreading Awareness About Rare Diseases" />
-  <meta property="og:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating and supporting patients and families." />
+  <meta property="og:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating and supporting those affected." />
   <meta property="og:image" content="https://rarediseaseclubs.com/RDCLogo.png" />
   <meta property="og:url" content="https://rarediseaseclubs.com/about" />
   <meta property="og:type" content="website" />
@@ -18,7 +18,7 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="About Rare Disease Club - Spreading Awareness About Rare Diseases" />
-  <meta name="twitter:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating and supporting patients and families." />
+  <meta name="twitter:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating and supporting those affected." />
   <meta name="twitter:image" content="https://rarediseaseclubs.com/RDCLogo.png" />
 
   <!-- Animate.css CDN -->
@@ -68,7 +68,7 @@
 
     .rdc-title-banner {
       width: 100%;
-      max-width: 800px;
+      max-width: 250px;
       height: auto;
       display: block;
       margin: 0 auto;
@@ -137,145 +137,340 @@
       color: #B96794;
     }
 
-    /* EVENTS PAGE STYLES */
-    .events-header {
+    /* --- ABOUT SECTION - NEW LAYOUT --- */
+    .about-section {
       background: #f9dff4;
       border-top: 3px solid #222;
-      border-bottom: 3px solid #222;
       width: 100%;
-      padding: 30px 0 18px 0;
-      text-align: center;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+      padding: 0;
+      margin: 0;
     }
-    .events-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #19171a;
-      margin-bottom: 10px;
-    }
-    .events-desc {
-      font-size: 1.25rem;
-      font-family: 'Playfair Display', Georgia, serif;
-      color: #222;
-      max-width: 950px;
-      margin: 0 auto;
-      line-height: 1.5;
-    }
-
-    /* Event Card - OUTLINED STYLE */
-    .event-section {
-      width: 100%;
-      background: #fce8f5; /* Match rest of page, not pink */
-      border: 3px solid #B96794; /* Outlined border */
-      border-radius: 18px;
-      box-shadow: 0 2px 10px rgba(185,103,148,0.08);
-      padding: 40px 0;
+    .about-left {
+      flex: 1;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      margin: 40px auto 0 auto;
-      max-width: 950px;
-    }
-    .event-title {
-      font-size: 1.65rem;
-      font-family: 'Playfair Display', Georgia, serif;
-      color: #19171a;
-      text-align: center;
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-    .event-date {
-      font-size: 1.12rem;
-      color: #444;
-      text-align: center;
-      margin-bottom: 8px;
-      font-family: 'Georgia', serif;
-    }
-    .event-desc {
-      font-size: 1.15rem;
-      color: #333;
-      text-align: center;
-      margin-bottom: 22px;
-      max-width: 850px;
-      font-family: 'Georgia', serif;
-      line-height: 1.5;
-    }
-    .event-media-row {
-      display: flex;
-      gap: 40px;
       justify-content: center;
       align-items: flex-start;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
+      padding: 60px 40px 60px 50px;
     }
-    .event-img {
+    .about-logo {
       width: 260px;
-      max-width: 100%;
-      border-radius: 10px;
-      border: 3px solid #B96794;
-      box-shadow: 0 2px 12px rgba(185,103,148,0.12);
-      object-fit: cover;
-      background: #f9eaf6;
-      margin-bottom: 12px;
-    }
-    .event-video {
-      width: 340px;
-      max-width: 100%;
-      height: 210px;
-      border-radius: 10px;
-      border: 2px solid #B96794;
-      box-shadow: 0 2px 12px rgba(185,103,148,0.12);
-      background: #f9eaf6;
-    }
-    .divider {
-      width: 100%;
-      height: 4px;
-      background: #B96794;
-      margin: 45px 0 0 0;
+      height: auto;
+      margin-bottom: 35px;
+      margin-left: 0;
+      background: none;
       border: none;
+      border-radius: 0;
+      box-shadow: none;
+      display: block;
     }
-    /* Secondary event (if any) - keep same color as main, outlined if needed */
-    .event-section-alt {
-      width: 100%;
-      background: #fce8f5;
-      border: 3px solid #7c57c3;
-      border-radius: 18px;
-      box-shadow: 0 2px 10px rgba(124,87,195,0.08);
-      padding: 40px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 40px auto 0 auto;
-      max-width: 950px;
+    .about-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 32px;
+      font-weight: 400;
+      text-align: left;
+      color: #19171a;
     }
-    .event-media-row-alt {
+    .about-desc {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.1rem;
+      text-align: left;
+      color: #19171a;
+      line-height: 1.31;
+      max-width: 800px;
+      font-weight: 400;
+    }
+    .about-right {
+      flex: 1;
       display: flex;
-      gap: 30px;
       justify-content: center;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
+      align-items: center;
+      padding: 60px 50px 60px 40px;
     }
-    @media (max-width: 900px) {
-      .event-media-row, .event-media-row-alt {
+    .about-image {
+      width: 100%;
+      max-width: 480px;
+      border: 4px solid #19171a;
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+      object-fit: cover;
+    }
+    @media (max-width: 1100px) {
+      .about-section {
         flex-direction: column;
-        gap: 20px;
         align-items: center;
+        justify-content: center;
+        padding: 0;
       }
-      .event-img, .event-video {
-        width: 90vw;
-        max-width: 340px;
+      .about-left, .about-right {
+        padding: 40px 10px 20px 10px;
       }
-      .event-section, .event-section-alt {
-        padding: 20px 0;
-        margin: 20px auto 0 auto;
+      .about-image {
+        max-width: 95vw;
+      }
+      .about-logo {
+        width: 180px;
       }
     }
     @media (max-width: 700px) {
-      .events-title { font-size: 1.2rem; }
-      .event-title { font-size: 1.1rem; }
-      .event-desc { font-size: 1rem; }
-      .event-date { font-size: 1rem; }
+      .about-title { font-size: 2rem; }
+      .about-desc { font-size: 1.1rem; }
+      .about-logo { width: 120px; margin-bottom: 20px; }
+    }
+
+    /* COFOUNDERS SIDEBYSIDE SECTION */
+    .cofounders-section {
+      width: 100%;
+      background: #fff;
+      padding: 60px 0 40px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-top: 3px solid #ccc;
+    }
+    .cofounders-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      color: #19171a;
+      text-align: center;
+      width: 100%;
+      border-bottom: 3px solid #B96794;
+      padding-bottom: 8px;
+      max-width: 1100px;
+    }
+    .cofounders-intro {
+      font-size: 1.18rem;
+      text-align: center;
+      color: #222;
+      max-width: 900px;
+      margin-bottom: 38px;
+      font-family: 'Playfair Display', Georgia, serif;
+      line-height: 1.52;
+    }
+    .cofounders-row {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      width: 100%;
+      max-width: 1100px;
+      margin-bottom: 30px;
+    }
+    .cofounder-row {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      gap: 0; /* No gap between image and box */
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    .cofounder-img-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 370px;
+      max-width: 100%;
+    }
+    .cofounder-img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      object-fit: cover;
+      border: 3px solid #222;
+      background: #fff;
+      margin-bottom: 0;
+      box-shadow: none;
+      border-radius: 0;
+      display: block;
+    }
+    .cofounder-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 10px;
+      text-align: left;
+      color: #19171a;
+      width: 100%;
+    }
+    .cofounder-box {
+      flex: 1;
+      background: #f9dff4;
+      padding: 0px 0px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      color: #19171a;
+      box-sizing: border-box;
+      min-height: 300px;
+      line-height: 1.32;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      max-width: 600px;
+    }
+    /* Samhita reverse row */
+    .cofounder-row-reverse {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: stretch;
+      gap: 0; /* No gap between image and box */
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    .cofounder-img-container-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 370px;
+      max-width: 100%;
+    }
+    .cofounder-img-right {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      object-fit: cover;
+      border: 3px solid #222;
+      background: #fff;
+      margin-bottom: 0;
+      box-shadow: none;
+      border-radius: 0;
+      display: block;
+    }
+    .cofounder-name-right {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 10px;
+      text-align: right;
+      color: #19171a;
+      width: 100%;
+    }
+    .cofounder-box-right {
+      flex: 1;
+      background: #f9dff4;
+      padding: 0px 0px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      color: #19171a;
+      box-sizing: border-box;
+      min-height: 300px;
+      line-height: 1.32;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      max-width: 600px;
+    }
+    @media (max-width: 900px) {
+      .cofounders-row {
+        gap: 28px;
+      }
+      .cofounder-row,
+      .cofounder-row-reverse {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+      }
+      .cofounder-img-container,
+      .cofounder-img-container-right {
+        width: 100%;
+        max-width: 200px;
+      }
+      .cofounder-box,
+      .cofounder-box-right {
+        max-width: 100%;
+        min-height: 200px;
+        padding: 10px 0;
+      }
+      .cofounder-name,
+      .cofounder-name-right {
+        text-align: center;
+      }
+    }
+
+    /* EXECUTIVE BOARD SECTION */
+    .executive-board-section {
+      width: 100%;
+      background: #f9eaf6;
+      padding: 50px 0 40px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-top: 3px solid #B96794;
+    }
+    .executive-board-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+      color: #19171a;
+      text-align: center;
+      width: 100%;
+      max-width: 1100px;
+    }
+    .executive-board-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 90px;
+      width: 100%;
+      max-width: 1100px;
+    }
+    .executive-board-member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 340px;
+      max-width: 100%;
+    }
+    .executive-board-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      text-align: center;
+      color: #19171a;
+    }
+    .executive-board-img {
+      width: 320px;
+      height: 400px;
+      object-fit: cover;
+      border: 4px solid #222;
+      border-radius: 5px;
+      background: #fff;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 12px rgba(185,103,148,0.13);
+      max-width: 100%;
+    }
+    @media (max-width: 900px) {
+      .executive-board-row {
+        flex-direction: column;
+        gap: 38px;
+        align-items: center;
+      }
+      .executive-board-member {
+        width: 95vw;
+        max-width: 340px;
+      }
+      .executive-board-img {
+        width: 95vw;
+        max-width: 320px;
+      }
+    }
+    @media (max-width: 700px) {
+      .executive-board-title { font-size: 1.6rem; }
+      .executive-board-name { font-size: 1.1rem; margin-bottom: 8px;}
+      .executive-board-img { width: 85vw; max-width: 260px; height: auto;}
     }
   </style>
 </head>
@@ -295,48 +490,81 @@
       <a href="about.html" class="home-btn">About</a>
     </div>
     <div class="nav-links">
-      <a href="events.html" class="home-btn active">Events</a>
+      <a href="events.html">Events</a>
       <a href="newsletter.html">Newsletter</a>
       <a href="index.html#contact">Contact</a>
       <a href="getinvolved.html">Get Involved</a>
     </div>
   </nav>
 
-  <!-- Events & Impact Header -->
-  <div class="events-header">
-    <div class="events-title">🌟 Our Events & Impact</div>
-    <div class="events-desc">
-      At the Rare Disease Club, we believe in turning passion into action. Here’s a look at some of the events and initiatives we’ve led to raise awareness, fund research, and support patients and families affected by rare diseases.
+  <!-- ABOUT SECTION (UPDATED LOGO ONLY) -->
+  <section class="about-section">
+    <div class="about-left">
+      <img src="rdc.png" alt="RDC Logo" class="about-logo"/>
+      <div class="about-title">ABOUT US</div>
+      <div class="about-desc">
+        At the Rare Disease Club, we work to raise awareness about rare diseases and their impact on individuals and families. Through education, advocacy, and support, we aim to empower those affected and build a more informed community.
+      </div>
     </div>
-  </div>
-
-  <!-- Example Outlined Event -->
-  <section class="event-section">
-    <div class="event-title">🦩 Summer Camp Fundraiser — July 2024</div>
-    <div class="event-desc">
-      We hosted a summer camp that raised $1,000 for Cure Rare Disease. Young students participated in engaging activities while contributing to meaningful advocacy.
-    </div>
-    <div class="event-media-row">
-      <img src="rdc-camp-flyer.jpg" alt="RDC Public Speaking & Debate Camp Flyer" class="event-img" />
-      <video controls class="event-video">
-        <source src="rdc-camp-video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+    <div class="about-right">
+      <img src="about-photo.jpg" alt="RDC Event Table" class="about-image"/>
     </div>
   </section>
-  <hr class="divider">
 
-  <!-- Example Secondary Outlined Event -->
-  <section class="event-section-alt">
-    <div class="event-title">📚 Bracelet Workshop — September 2024</div>
-    <div class="event-desc">
-      In preparation for Falcon Fest, members gathered to craft handmade bracelets, combining creativity and community spirit to support our upcoming fundraiser.
+  <!-- COFOUNDERS SIDEWAYS SECTION -->
+  <section class="cofounders-section">
+    <div class="cofounders-title">OUR COFOUNDERS</div>
+    <div class="cofounders-intro">
+     At 15 years old, Parnika and Samhita co-founded Rare Disease Collective (RDC), an initiative to raise awareness about rare diseases in their community. The idea came after an English class discussion, where their teacher shared a personal story about a family member who had passed away from a rare disease. The story highlighted how a lack of research and public knowledge had delayed diagnosis and treatment. Realizing how common this issue actually was—and how little people knew about it—they decided to take action.
     </div>
-    <div class="event-media-row-alt">
-      <img src="bracelet1.jpg" alt="Bracelet Workshop - Members Creating Bracelets" class="event-img" />
-      <img src="bracelet2.jpg" alt="Bracelet Workshop - Members at Table" class="event-img" />
-      <img src="bracelet3.jpg" alt="Bracelet Workshop - Making Bracelets Together" class="event-img" />
+    <!-- PARNIKA SECTION - No Gap -->
+    <div class="cofounder-row">
+      <div class="cofounder-img-container">
+        <div class="cofounder-name">
+          CoFounder: Parnika Khatri
+        </div>
+        <img 
+          src="Parnikas.jpeg" 
+          alt="Parnika Khatri" 
+          class="cofounder-img"
+        />
+      </div>
+      <div class="cofounder-box">
+        Parnika, who had always been drawn to health and science topics, was especially struck by how preventable the situation might have been with more awareness. She started reading more about how rare diseases often go unnoticed or misdiagnosed due to limited resources and attention. Wanting to help change that, she brought her ideas to Samhita and began thinking about ways they could educate people their age about the issue.
+      </div>
+    </div>
+    <!-- SAMHITA SECTION - No Gap, reversed row, image right, text left -->
+    <div class="cofounder-row-reverse">
+      <div class="cofounder-img-container-right">
+        <div class="cofounder-name-right">
+          CoFounder: Samhita Ramesh
+        </div>
+        <img 
+          src="Samhitas.jpeg" 
+          alt="Samhita Ramesh" 
+          class="cofounder-img-right"
+        />
+      </div>
+      <div class="cofounder-box-right">
+        Samhita, with a strong interest in advocacy and communication, immediately connected with the cause. She saw how easily important health issues get overlooked, especially ones that don’t affect large groups. Inspired by the idea that students could lead meaningful change, she worked with Parnika to create RDC as a space for spreading reliable information and encouraging conversation. Together, they combined their strengths to launch a platform that helps others learn about and engage with the topic of rare diseases.
+      </div>
     </div>
   </section>
+
+  <!-- EXECUTIVE BOARD SECTION (NEW) -->
+  <section class="executive-board-section">
+    <div class="executive-board-title">OUR EXECUTIVE BOARD</div>
+    <div class="executive-board-row">
+      <div class="executive-board-member">
+        <div class="executive-board-name">Secretary: Anushka Chitre</div>
+        <img src="anushka.jpeg" alt="Secretary: Anushka Chitre" class="executive-board-img" />
+      </div>
+      <div class="executive-board-member">
+        <div class="executive-board-name">Treasurer: Daisy Hu</div>
+        <img src="daisy.jpeg" alt="Treasurer: Daisy Hu" class="executive-board-img" />
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
