@@ -14,7 +14,6 @@
       margin: 0;
       padding: 0;
     }
-    /* --- Banner and Navigation --- */
     .full-width-banner {
       width: 100%;
       background-color: #F9EAF6;
@@ -70,8 +69,8 @@
       border-color: #B96794;
     }
 
-    /* --- ABOUT SECTION (formatted) --- */
-    .about-section-v4 {
+    /* --- ABOUT SECTION FORMATTED --- */
+    .about-section-v5 {
       background: #f9dff4;
       border-top: 3px solid #222;
       width: 100%;
@@ -83,7 +82,7 @@
       padding: 0;
       margin: 0;
     }
-    .about-left-v4 {
+    .about-left-v5 {
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -91,7 +90,7 @@
       align-items: flex-start;
       padding: 60px 40px 60px 50px;
     }
-    .about-logo-v4 {
+    .about-logo-v5 {
       width: 260px;
       height: auto;
       margin-bottom: 35px;
@@ -102,7 +101,7 @@
       box-shadow: none;
       display: block;
     }
-    .about-title-v4 {
+    .about-title-v5 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 2.5rem;
       letter-spacing: 2px;
@@ -111,7 +110,7 @@
       text-align: left;
       color: #19171a;
     }
-    .about-desc-v4 {
+    .about-desc-v5 {
       background: #fae3f5;
       border-radius: 12px;
       padding: 30px 40px;
@@ -119,19 +118,20 @@
       font-size: 1.35rem;
       color: #19171a;
       text-align: center;
-      line-height: 1.35;
+      line-height: 1.45;
       width: 100%;
       box-sizing: border-box;
       margin-top: 20px;
+      margin-bottom: 20px;
     }
-    .about-right-v4 {
+    .about-right-v5 {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 60px 50px 60px 40px;
     }
-    .about-image-v4 {
+    .about-image-v5 {
       width: 100%;
       max-width: 480px;
       border: 4px solid #19171a;
@@ -140,29 +140,29 @@
       object-fit: cover;
     }
     @media (max-width: 1100px) {
-      .about-section-v4 {
+      .about-section-v5 {
         flex-direction: column;
         align-items: center;
         justify-content: center;
       }
-      .about-left-v4, .about-right-v4 {
+      .about-left-v5, .about-right-v5 {
         padding: 40px 10px 20px 10px;
       }
-      .about-image-v4 {
+      .about-image-v5 {
         max-width: 95vw;
       }
-      .about-logo-v4 {
+      .about-logo-v5 {
         width: 180px;
       }
-      .about-desc-v4 {
+      .about-desc-v5 {
         padding: 18px 10px;
         font-size: 1.1rem;
       }
     }
     @media (max-width: 700px) {
-      .about-title-v4 { font-size: 2rem; }
-      .about-desc-v4 { font-size: 1rem; padding: 12px 6px;}
-      .about-logo-v4 { width: 120px; margin-bottom: 20px; }
+      .about-title-v5 { font-size: 2rem; }
+      .about-desc-v5 { font-size: 1rem; padding: 12px 6px;}
+      .about-logo-v5 { width: 120px; margin-bottom: 20px; }
     }
 
     /* --- COFOUNDERS SECTION --- */
@@ -199,18 +199,18 @@
     }
 
     /* --- COFOUNDER ROWS NO GAP --- */
-    .cofounder-row-v4 {
+    .cofounder-row-v5 {
       display: flex;
       flex-direction: row;
       align-items: stretch;
       width: 100%;
       margin-bottom: 30px;
-      gap: 0; /* NO GAP */
+      gap: 0;
     }
-    .cofounder-row-v4.reverse {
+    .cofounder-row-v5.reverse {
       flex-direction: row-reverse;
     }
-    .cofounder-content-box-v4 {
+    .cofounder-content-box-v5 {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -221,7 +221,7 @@
       margin: 0;
       padding: 0;
     }
-    .cofounder-name-v4 {
+    .cofounder-name-v5 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 2rem;
       font-weight: 400;
@@ -230,7 +230,7 @@
       color: #19171a;
       text-align: left;
     }
-    .cofounder-img-v4 {
+    .cofounder-img-v5 {
       width: 250px;
       height: 320px;
       object-fit: cover;
@@ -242,7 +242,7 @@
       padding: 0;
       display: block;
     }
-    .cofounder-desc-box-v4 {
+    .cofounder-desc-box-v5 {
       background: #fae3f5;
       border-radius: 12px;
       padding: 30px 40px;
@@ -255,27 +255,27 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      line-height: 1.35;
-      margin: 0; /* NO margin between image and text */
+      line-height: 1.45;
+      margin: 0;
     }
     @media (max-width: 900px) {
-      .cofounder-row-v4,
-      .cofounder-row-v4.reverse {
+      .cofounder-row-v5,
+      .cofounder-row-v5.reverse {
         flex-direction: column !important;
         align-items: center;
       }
-      .cofounder-content-box-v4,
-      .cofounder-desc-box-v4 {
+      .cofounder-content-box-v5,
+      .cofounder-desc-box-v5 {
         width: 100%;
         text-align: center;
         min-width: unset;
       }
-      .cofounder-desc-box-v4 {
+      .cofounder-desc-box-v5 {
         width: 100%;
         padding: 18px 10px;
         min-height: unset;
       }
-      .cofounder-img-v4 {
+      .cofounder-img-v5 {
         width: 95vw;
         max-width: 260px;
         height: auto;
@@ -380,16 +380,16 @@
     </div>
   </nav>
   <!-- ABOUT SECTION (formatted) -->
-  <section class="about-section-v4">
-    <div class="about-left-v4">
-      <img src="rdc.png" alt="RDC Logo" class="about-logo-v4"/>
-      <div class="about-title-v4">ABOUT US</div>
-      <div class="about-desc-v4">
+  <section class="about-section-v5">
+    <div class="about-left-v5">
+      <img src="rdc.png" alt="RDC Logo" class="about-logo-v5"/>
+      <div class="about-title-v5">ABOUT US</div>
+      <div class="about-desc-v5">
         At the Rare Disease Club, we work to raise awareness about rare diseases and their impact on individuals and families. Through education, advocacy, and support, we aim to empower those affected and build a stronger, more informed community.
       </div>
     </div>
-    <div class="about-right-v4">
-      <img src="about-photo.jpg" alt="RDC Event Table" class="about-image-v4"/>
+    <div class="about-right-v5">
+      <img src="about-photo.jpg" alt="RDC Event Table" class="about-image-v5"/>
     </div>
   </section>
   <!-- COFOUNDERS SECTION -->
@@ -399,22 +399,22 @@
       At 15 years old, Parnika and Samhita co-founded Rare Disease Collective (RDC), an initiative to raise awareness about rare diseases in their community. The idea came after an English class discussion about health equity and the challenges people face with rare conditions.
     </div>
     <!-- PARNIKA SECTION (no gap) -->
-    <div class="cofounder-row-v4">
-      <div class="cofounder-content-box-v4">
-        <div class="cofounder-name-v4">CoFounder: Parnika Khatri</div>
-        <img src="Parnikas.jpeg" alt="Parnika Khatri" class="cofounder-img-v4"/>
+    <div class="cofounder-row-v5">
+      <div class="cofounder-content-box-v5">
+        <div class="cofounder-name-v5">CoFounder: Parnika Khatri</div>
+        <img src="Parnikas.jpeg" alt="Parnika Khatri" class="cofounder-img-v5"/>
       </div>
-      <div class="cofounder-desc-box-v4">
+      <div class="cofounder-desc-box-v5">
         Parnika, who had always been drawn to health and science topics, was especially struck by how preventable the situation might have been with more awareness. She started reading more about how rare diseases often go unnoticed or misdiagnosed due to limited resources and attention. Wanting to help change that, she brought her ideas to Samhita and began thinking about ways they could educate people their age about the issue.
       </div>
     </div>
     <!-- SAMHITA SECTION (no gap, image on right) -->
-    <div class="cofounder-row-v4 reverse">
-      <div class="cofounder-content-box-v4">
-        <div class="cofounder-name-v4">CoFounder: Samhita Ramesh</div>
-        <img src="Samhitas.jpeg" alt="Samhita Ramesh" class="cofounder-img-v4"/>
+    <div class="cofounder-row-v5 reverse">
+      <div class="cofounder-content-box-v5">
+        <div class="cofounder-name-v5">CoFounder: Samhita Ramesh</div>
+        <img src="Samhitas.jpeg" alt="Samhita Ramesh" class="cofounder-img-v5"/>
       </div>
-      <div class="cofounder-desc-box-v4">
+      <div class="cofounder-desc-box-v5">
         Samhita, with a strong interest in advocacy and communication, immediately connected with the cause. She saw how easily important health issues get overlooked, especially ones that don’t affect large populations. She wanted to use her skills to make a difference and help bring attention to rare disease awareness.
       </div>
     </div>
