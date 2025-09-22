@@ -14,14 +14,7 @@
       margin: 0;
       padding: 0;
     }
-    .full-width-banner {
-      width: 100%;
-      background-color: #F9EAF6;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 15px 0;
-    }
+    
     .motto-img {
       width: 100%;
       max-width: 800px;
@@ -36,21 +29,65 @@
       display: block;
       margin: 0 auto;
     }
-    nav {
-      background-color: #fce8f5;
-      border-top: 3px solid black;
-      border-bottom: 3px solid black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 15px 0;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-    .nav-links {
-      display: flex;
-      gap: 20px;
-    }
+    .full-width-banner {
+  width: 100%;
+  max-width: 100vw;
+  background-color: #fce8f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
+  overflow: hidden; /* Prevent horizontal scroll */
+}
+
+.motto-img, .rdc-title-banner {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+  object-fit: scale-down; /* Prevent overflow */
+}
+
+/* Navigation - single row, matching button style */
+nav {
+  background-color: #fce8f5;
+  border-top: 3px solid #B96794;
+  border-bottom: 3px solid #B96794;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.home-btn {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  padding: 10px 20px;
+  border: 2.5px solid #B96794;
+  border-radius: 16px;
+  background-color: white;
+  transition: all 0.3s ease;
+  margin: 0 3px;
+}
+
+.home-btn:hover,
+.home-btn.active {
+  background-color: #B96794;
+  color: white;
+  border-color: #B96794;
+}
+
+@media (max-width: 900px) {
+  .motto-img, .rdc-title-banner {
+    max-width: 95vw;
+  }
+}
     .home-btn {
       text-decoration: none;
       color: black;
@@ -414,19 +451,17 @@
 <body>
   <!-- Full Width Banner -->
 <!-- Full Width Banner - FORMATTED -->
-<div class="site-header-banner">
-  <div class="banner-content">
-    <img src="motto3.png" alt="Educate Donate Motto" class="banner-motto-img">
-    <img src="RDC.png" alt="RDC Logo" class="banner-title-img">
-  </div>
-  <nav class="site-nav">
-    <a href="rarediseaseclubs.com" class="nav-btn active">HOME</a>
-    <a href="about.html" class="nav-btn">About</a>
-    <a href="events.html" class="nav-btn">Events</a>
-    <a href="newsletter.html" class="nav-btn">Newsletter</a>
-    <a href="#contact" class="nav-btn">Contact</a>
-    <a href="getinvolved.html" class="nav-btn">Get Involved</a>
-  </nav>
+
+
+<!-- Navigation -->
+<nav>
+  <a href="rarediseaseclubs.com" class="home-btn active">HOME</a>
+  <a href="about.html" class="home-btn">About</a>
+  <a href="events.html" class="home-btn">Events</a>
+  <a href="newsletter.html" class="home-btn">Newsletter</a>
+  <a href="#contact" class="home-btn">Contact</a>
+  <a href="getinvolved.html" class="home-btn">Get Involved</a>
+</nav>
 </div>
   <!-- ABOUT SECTION (formatted) -->
   <section class="about-section-v5">
