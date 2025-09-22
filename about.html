@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="Rare Disease Club" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. Join us to make a difference and support those affected." />
+  <meta name="Rare Disease Club" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. Join us to make a difference and be part of the movement." />
   <link rel="canonical" href="https://www.rarediseaseclubs.com" />
   <link rel="icon" href="rdc.png" type="image/png" />
   <title>About Rare Disease Club - Spreading Awareness About Rare Diseases</title>
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="About Rare Disease Club - Spreading Awareness About Rare Diseases" />
-  <meta property="og:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating and supporting those affected." />
+  <meta property="og:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating and advocating for individuals affected by rare conditions." />
   <meta property="og:image" content="https://rarediseaseclubs.com/RDCLogo.png" />
   <meta property="og:url" content="https://rarediseaseclubs.com/about" />
   <meta property="og:type" content="website" />
@@ -18,7 +18,7 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="About Rare Disease Club - Spreading Awareness About Rare Diseases" />
-  <meta name="twitter:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating and supporting those affected." />
+  <meta name="twitter:description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. We are committed to educating and advocating for individuals affected by rare conditions." />
   <meta name="twitter:image" content="https://rarediseaseclubs.com/RDCLogo.png" />
 
   <!-- Animate.css CDN -->
@@ -206,112 +206,95 @@
       .about-desc { font-size: 1.1rem; }
       .about-logo { width: 120px; margin-bottom: 20px; }
     }
-    /* COFOUNDERS SIDEBYSIDE SECTION */
-    .cofounders-section {
-      width: 100%;
-      background: #fff;
-      padding: 60px 0 40px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border-top: 3px solid #ccc;
-    }
-    .cofounders-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-      color: #19171a;
-      text-align: center;
-      width: 100%;
-      border-bottom: 3px solid #B96794;
-      padding-bottom: 8px;
-      max-width: 1100px;
-    }
-    .cofounders-intro {
-      font-size: 1.18rem;
-      text-align: center;
-      color: #222;
-      max-width: 900px;
-      margin-bottom: 38px;
-      font-family: 'Playfair Display', Georgia, serif;
-      line-height: 1.52;
-    }
-    /* --- Custom Parnika Section with No Gap --- */
+
+    /* --- PARNIKA SECTION (matches Image 2) --- */
     .cofounder-parnika-row {
       display: flex;
       flex-direction: row;
-      align-items: stretch;
+      align-items: flex-start;
       width: 100%;
       margin-bottom: 30px;
       gap: 0;
     }
-    .cofounder-parnika-content-box {
+    .cofounder-parnika-content-box-new {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      min-width: 210px;
-      width: 175px;
+      align-items: flex-start;
+      min-width: 270px;
+      width: 270px;
       background: #fff;
-      justify-content: center;
-      margin: 0; /* NO margin */
-      padding: 0; /* NO padding */
+      justify-content: flex-start;
+      margin: 0;
+      padding: 0;
     }
-    .cofounder-parnika-img {
-      width: 210px;
-      height: 270px;
-      object-fit: cover;
-      border: 3px solid #B96794;
-      border-radius: 8px;
-      box-shadow: 0 2px 12px rgba(185,103,148,0.10);
-      background: #f9eaf6;
-      margin: 0; /* NO margin */
-      padding: 0; /* NO padding */
-      display: block;
-    }
-    .cofounder-name {
+    .cofounder-name-new {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.15rem;
-      font-weight: bold;
-      margin-bottom: 12px;
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 18px;
+      margin-top: 8px;
       color: #19171a;
       text-align: left;
-      width: 100%;
     }
-    .cofounder-desc-box {
+    .cofounder-parnika-img-new {
+      width: 250px;
+      height: 320px;
+      object-fit: cover;
+      border: 4px solid #19171a;   /* solid black border */
+      border-radius: 0;            /* no rounded corners */
+      box-shadow: none;
+      background: white;
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+    .cofounder-desc-box-new {
       background: #fae3f5;
-      border-radius: 8px;
-      padding: 10px 15px;
-      font-size: 1.2rem;
-      color: #222;
-      font-family: 'Playfair Display', serif;
-      box-shadow: 0 2px 10px rgba(185,103,148,0.09);
-      min-height: 175px;
-      text-align: left;
-      width: 60%;
+      border-radius: 12px;
+      padding: 30px 30px;
+      font-family: 'Playfair Display', Georgia, serif;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0; /* NO margin */
-      border-left: none; /* NO border between */
+      width: 70%;
+      min-height: 320px;
+    }
+    .cofounder-desc-border {
+      border: 4px solid #7c3aed; /* Purple border */
+      border-radius: 8px;
+      padding: 20px 24px;
+      font-size: 1.55rem;
+      color: #19171a;
+      text-align: center;
+      font-family: 'Playfair Display', Georgia, serif;
+      background: none;
+      width: 100%;
+      box-sizing: border-box;
     }
     @media (max-width: 900px) {
       .cofounder-parnika-row {
         flex-direction: column;
         align-items: center;
       }
-      .cofounder-parnika-content-box,
-      .cofounder-desc-box {
+      .cofounder-parnika-content-box-new,
+      .cofounder-desc-box-new {
         width: 100%;
         text-align: center;
         min-width: unset;
       }
-      .cofounder-desc-box {
+      .cofounder-desc-box-new {
         width: 100%;
+        padding: 18px 10px;
+        min-height: unset;
+      }
+      .cofounder-parnika-img-new {
+        width: 95vw;
+        max-width: 260px;
+        height: auto;
       }
     }
-    /* --- Samhita Section --- */
+
+    /* --- Samhita Section --- (unchanged) */
     .cofounder-samhita-row {
       display: flex;
       flex-direction: row-reverse;
@@ -372,6 +355,7 @@
         text-align: center;
       }
     }
+
     /* EXECUTIVE BOARD SECTION */
     .executive-board-section {
       width: 100%;
@@ -476,7 +460,7 @@
       <img src="rdc.png" alt="RDC Logo" class="about-logo"/>
       <div class="about-title">ABOUT US</div>
       <div class="about-desc">
-        At the Rare Disease Club, we work to raise awareness about rare diseases and their impact on individuals and families. Through education, advocacy, and support, we aim to empower those affected and build a more informed community.
+        At the Rare Disease Club, we work to raise awareness about rare diseases and their impact on individuals and families. Through education, advocacy, and support, we aim to empower those affected and build a stronger, more informed community.
       </div>
     </div>
     <div class="about-right">
@@ -487,16 +471,18 @@
   <section class="cofounders-section">
     <div class="cofounders-title">OUR COFOUNDERS</div>
     <div class="cofounders-intro">
-      At 15 years old, Parnika and Samhita co-founded Rare Disease Collective (RDC), an initiative to raise awareness about rare diseases in their community. The idea came after an English class discussion, where their teacher shared a personal story about a family member who had passed away from a rare disease. The story highlighted how a lack of research and public knowledge had delayed diagnosis and treatment. Realizing how common this issue actually was—and how little people knew about it—they decided to take action.
+      At 15 years old, Parnika and Samhita co-founded Rare Disease Collective (RDC), an initiative to raise awareness about rare diseases in their community. The idea came after an English class discussion about health equity and the challenges people face with rare conditions.
     </div>
-    <!-- PARNIKA SECTION (no gap) -->
+    <!-- PARNIKA SECTION (updated for new look) -->
     <div class="cofounder-parnika-row">
-      <div class="cofounder-parnika-content-box">
-        <div class="cofounder-name">CoFounder: Parnika Khatri</div>
-        <img src="Parnikas.jpeg" alt="Parnika Khatri" class="cofounder-parnika-img"/>
+      <div class="cofounder-parnika-content-box-new">
+        <div class="cofounder-name-new">CoFounder: Parnika Khatri</div>
+        <img src="Parnikas.jpeg" alt="Parnika Khatri" class="cofounder-parnika-img-new"/>
       </div>
-      <div class="cofounder-desc-box">
-        Parnika, who had always been drawn to health and science topics, was especially struck by how preventable the situation might have been with more awareness. She started reading more about how rare diseases often go unnoticed or misdiagnosed due to limited resources and attention. Wanting to help change that, she brought her ideas to Samhita and began thinking about ways they could educate people their age about the issue.
+      <div class="cofounder-desc-box-new">
+        <div class="cofounder-desc-border">
+          Parnika, who had always been drawn to health and science topics, was especially struck by how preventable the situation might have been with more awareness. She started reading more about how rare diseases often go unnoticed or misdiagnosed due to limited resources and attention. Wanting to help change that, she brought her ideas to Samhita and began thinking about ways they could educate people their age about the issue.
+        </div>
       </div>
     </div>
     <!-- SAMHITA SECTION -->
@@ -505,7 +491,7 @@
       <div class="cofounder-samhita-content">
         <div class="cofounder-name-right">Cofounder: Samhita Ramesh</div>
         <div class="cofounder-desc-box-right">
-          Samhita, with a strong interest in advocacy and communication, immediately connected with the cause. She saw how easily important health issues get overlooked, especially ones that don’t affect large groups. Inspired by the idea that students could lead meaningful change, she worked with Parnika to create RDC as a space for spreading reliable information and encouraging conversation. Together, they combined their strengths to launch a platform that helps others learn about and engage with the topic of rare diseases.
+          Samhita, with a strong interest in advocacy and communication, immediately connected with the cause. She saw how easily important health issues get overlooked, especially ones that don’t affect large populations. She wanted to use her skills to make a difference and help bring attention to rare disease awareness.
         </div>
       </div>
     </div>
