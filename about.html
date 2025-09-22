@@ -245,15 +245,18 @@
       align-items: stretch;
       width: 100%;
       margin-bottom: 30px;
+      gap: 0;
     }
     .cofounder-parnika-content-box {
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-width: 240px;
-      width: 260px;
+      min-width: 210px;
+      width: 210px;
       background: #fff;
       justify-content: center;
+      margin: 0; /* NO margin */
+      padding: 0; /* NO padding */
     }
     .cofounder-parnika-img {
       width: 210px;
@@ -263,7 +266,9 @@
       border-radius: 8px;
       box-shadow: 0 2px 12px rgba(185,103,148,0.10);
       background: #f9eaf6;
-      margin-bottom: 0;
+      margin: 0; /* NO margin */
+      padding: 0; /* NO padding */
+      display: block;
     }
     .cofounder-name {
       font-family: 'Playfair Display', Georgia, serif;
@@ -284,10 +289,12 @@
       box-shadow: 0 2px 10px rgba(185,103,148,0.09);
       min-height: 225px;
       text-align: left;
-      width: calc(100% - 260px);
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin: 0; /* NO margin */
+      border-left: none; /* NO border between */
     }
     @media (max-width: 900px) {
       .cofounder-parnika-row {
