@@ -14,7 +14,6 @@
       margin: 0;
       padding: 0;
     }
-    /* Banner and Navigation - unchanged */
     .full-width-banner {
       width: 100%;
       background-color: #F9EAF6;
@@ -69,6 +68,7 @@
       color: white;
       border-color: #B96794;
     }
+
     /* --- ABOUT SECTION (formatted) --- */
     .about-section-v4 {
       background: #f9dff4;
@@ -163,6 +163,7 @@
       .about-desc-v4 { font-size: 1rem; padding: 12px 6px;}
       .about-logo-v4 { width: 120px; margin-bottom: 20px; }
     }
+
     /* --- COFOUNDERS SECTION --- */
     .cofounders-section {
       width: 100%;
@@ -195,7 +196,8 @@
       font-family: 'Playfair Display', Georgia, serif;
       line-height: 1.52;
     }
-    /* --- PARNIKA & SAMHITA, NO GAP --- */
+
+    /* --- COFOUNDER ROWS NO GAP --- */
     .cofounder-row-v4 {
       display: flex;
       flex-direction: row;
@@ -203,6 +205,9 @@
       width: 100%;
       margin-bottom: 30px;
       gap: 0; /* NO GAP */
+    }
+    .cofounder-row-v4.reverse {
+      flex-direction: row-reverse;
     }
     .cofounder-content-box-v4 {
       display: flex;
@@ -253,8 +258,9 @@
       margin: 0; /* NO margin between image and text */
     }
     @media (max-width: 900px) {
-      .cofounder-row-v4 {
-        flex-direction: column;
+      .cofounder-row-v4,
+      .cofounder-row-v4.reverse {
+        flex-direction: column !important;
         align-items: center;
       }
       .cofounder-content-box-v4,
@@ -401,8 +407,8 @@
         Parnika, who had always been drawn to health and science topics, was especially struck by how preventable the situation might have been with more awareness. She started reading more about how rare diseases often go unnoticed or misdiagnosed due to limited resources and attention. Wanting to help change that, she brought her ideas to Samhita and began thinking about ways they could educate people their age about the issue.
       </div>
     </div>
-    <!-- SAMHITA SECTION (no gap) -->
-    <div class="cofounder-row-v4">
+    <!-- SAMHITA SECTION (no gap, image on right) -->
+    <div class="cofounder-row-v4 reverse">
       <div class="cofounder-content-box-v4">
         <div class="cofounder-name-v4">CoFounder: Samhita Ramesh</div>
         <img src="Samhitas.jpeg" alt="Samhita Ramesh" class="cofounder-img-v4"/>
