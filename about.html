@@ -30,8 +30,7 @@
       margin: 0 auto;
     }
     .full-width-banner {
-  width: 100%;
-  max-width: 100vw;
+  width: 100vw;
   background-color: #fce8f5;
   display: flex;
   flex-direction: column;
@@ -41,12 +40,12 @@
 }
 
 .motto-img, .rdc-title-banner {
-  width: 100%;
-  max-width: 800px;
+  width: 100vw;
+  max-width: 100vw;
   height: auto;
   display: block;
   margin: 0 auto 10px auto;
-  object-fit: scale-down; /* Prevent overflow */
+  object-fit: contain; /* always show whole image, never crop */
 }
 
 /* Navigation - single row, matching button style */
