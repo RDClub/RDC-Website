@@ -73,21 +73,64 @@
       font-size: 20px;
       font-weight: bold;
       font-family: 'Georgia', serif;
-      padding: 10px 20px;
-      border: 3px solid black;
-      border-radius: 16px;
-      background-color: white;
-      transition: all 0.3s ease;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
     }
 
     .home-btn:hover {
-      background-color: #f0f0f0;
+      color: #B96794;
     }
 
     .home-btn.active {
       background-color: #B96794;
       color: white;
       border-color: #B96794;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-links a:hover {
+      color: #B96794;
+    }
+
+    .nav-links a.active {
+      color: black;
+      background-color: white;
+      border: 3px solid black;
+      border-radius: 16px;
+      padding: 10px 20px;
+    }
+
+    /* Mobile navigation */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .nav-links {
+        gap: 15px;
+        justify-content: center;
+      }
+      
+      .nav-links a {
+        font-size: 18px;
+      }
     }
 
     /* --- ABOUT SECTION --- */
@@ -101,28 +144,7 @@
       justify-content: center;
       align-items: stretch;
     }
-        .nav-links {
-      display: flex;
-      gap: 20px;
-    }
 
-    .nav-links a {
-      text-decoration: none;
-      color: black;
-      font-size: 20px;
-      font-weight: bold;
-      font-family: 'Georgia', serif;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-    }
-    
-    .nav-links a:hover {
-      color: #B96794;
-    }
-
-    .nav-links a.active {
-      color: #B96794;
-    }
     .about-left-v5 {
       flex: 1;
       display: flex;
@@ -392,6 +414,45 @@
       .executive-board-name { font-size: 1.1rem; margin-bottom: 8px;}
       .executive-board-img { width: 85vw; max-width: 260px; height: auto;}
     }
+
+    /* Contact Section */
+    #contact {
+      width: 100%;
+      background: #fff;
+      padding: 60px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-top: 3px solid #B96794;
+    }
+
+    .contact-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+      color: #19171a;
+      text-align: center;
+    }
+
+    .contact-info {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.2rem;
+      text-align: center;
+      color: #333;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .contact-info a {
+      color: #B96794;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -403,9 +464,9 @@
 
 <!-- Navigation -->
 <nav>
-    <a href="rarediseaseclubs.com" class="home-btn">HOME</a>
+    <a href="index.html" class="home-btn">HOME</a>
     <div class="nav-links">
-      <a href="about.html">About</a>
+      <a href="about.html" class="active">About</a>
       <a href="events.html">Events</a>
       <a href="newsletter.html">Newsletter</a>
       <a href="#contact">Contact</a>
@@ -452,7 +513,7 @@
       <img src="SAMITHA.png" alt="Samhita Ramesh" class="cofounder-img-v5"/>
     </div>
     <div class="cofounder-desc-box-v5">
-Samhita, with a strong interest in advocacy and communication, immediately connected with the cause. She saw how easily important health issues get overlooked, especially ones that don’t affect large groups. Inspired by the idea that students could lead meaningful change, she worked with Parnika to create RDC as a space for spreading reliable information and encouraging conversation. Together, they combined their strengths to launch a platform that helps others learn about and engage with the topic of rare diseases.
+Samhita, with a strong interest in advocacy and communication, immediately connected with the cause. She saw how easily important health issues get overlooked, especially ones that don't affect large groups. Inspired by the idea that students could lead meaningful change, she worked with Parnika to create RDC as a space for spreading reliable information and encouraging conversation. Together, they combined their strengths to launch a platform that helps others learn about and engage with the topic of rare diseases.
     </div>
   </div>
 </section>
@@ -469,6 +530,18 @@ Samhita, with a strong interest in advocacy and communication, immediately conne
       <div class="executive-board-name">Treasurer: Daisy Hu</div>
       <img src="daisy.jpeg" alt="Treasurer: Daisy Hu" class="executive-board-img" />
     </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+  <div class="contact-title">CONTACT US</div>
+  <div class="contact-info">
+    <p>Have questions about rare diseases or want to get involved with RDC?</p>
+    <p>We'd love to hear from you!</p>
+    <br>
+    <p>Email us at: <a href="mailto:info@rarediseaseclub.org">info@rarediseaseclub.org</a></p>
+    <p>Follow us on social media for updates and events</p>
   </div>
 </section>
 </body>
