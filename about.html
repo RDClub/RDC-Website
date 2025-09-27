@@ -371,7 +371,6 @@
       gap: 90px;
       max-width: 1100px;
       width: 100%;
-      align-items: flex-start;
     }
 
     .executive-board-member {
@@ -387,14 +386,6 @@
       margin-bottom: 16px;
       text-align: center;
       color: #19171a;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      width: 100%;
-      min-height: 2.4rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .executive-board-img {
@@ -417,29 +408,12 @@
         width: 95vw;
         max-width: 320px;
       }
-      .executive-board-name {
-        white-space: normal;
-        overflow: visible;
-        text-overflow: unset;
-      }
     }
 
     @media (max-width: 700px) {
       .executive-board-title { font-size: 1.6rem; }
-      .executive-board-name { 
-        font-size: 1.4rem; 
-        margin-bottom: 8px;
-        white-space: normal;
-        overflow: visible;
-        text-overflow: unset;
-      }
+      .executive-board-name { font-size: 1.1rem; margin-bottom: 8px;}
       .executive-board-img { width: 85vw; max-width: 260px; height: auto;}
-    }
-
-    @media (max-width: 500px) {
-      .executive-board-name {
-        font-size: 1.2rem;
-      }
     }
   </style>
 </head>
@@ -511,7 +485,6 @@ Samhita, with a strong interest in advocacy and communication, immediately conne
   <div class="executive-board-title">OUR EXECUTIVE BOARD</div>
   <div class="executive-board-row">
     <div class="executive-board-member">
-      
       <img src="anushka.jpeg" alt="Secretary: Anushka Chitre" class="executive-board-img" />
       <div class="executive-board-name">Secretary: Anushka Chitre</div>
     </div>
