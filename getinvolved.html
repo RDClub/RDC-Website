@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Get Involved - Rare Disease Club</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fce8f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Banner */
+    .full-width-banner {
+      width: 100%;
+      background-color: #fce8f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px 0;
+    }
+
+    .full-width-banner img {
+      width: 100%;
+      height: auto;
+      max-width: none;
+      display: block;
+    }
+
+    .motto-img {
+      max-width: 800px;
+      margin: 0 auto 10px auto;
+    }
+
+    .rdc-title-banner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #fce8f5;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      padding: 15px 0;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .home-btn {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .home-btn:hover {
+      color: #B96794;
+    }
+
+    .home-btn.active {
+      background-color: #B96794;
+      color: white;
+      border-color: #B96794;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-links a:hover {
+      color: #B96794;
+    }
+
+    .nav-links a.active {
+      color: black;
+      background-color: white;
+      border: 3px solid black;
+      border-radius: 16px;
+      padding: 10px 20px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .nav-links {
+        gap: 15px;
+        justify-content: center;
+      }
+      .nav-links a {
+        font-size: 18px;
+      }
+    }
+
+    /* --- GET INVOLVED SECTION --- */
+    .get-involved-hero {
+      position: relative;
+      width: 100%;
+      height: 340px;
+      background: #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .get-involved-hero img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 1;
+      filter: brightness(0.6);
+    }
+    .get-involved-hero h1 {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      font-size: 3rem;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      text-align: center;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.22);
+    }
+    @media (max-width: 700px) {
+      .get-involved-hero { height: 180px;}
+      .get-involved-hero h1 { font-size: 1.6rem;}
+    }
+
+    .get-involved-cards-section {
+      width: 100%;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 0 48px 0;
+    }
+
+    .get-involved-cards-row {
+      display: flex;
+      flex-direction: row;
+      gap: 38px;
+      justify-content: center;
+      width: 100%;
+      max-width: 1200px;
+      margin-top: 0;
+    }
+
+    .get-involved-card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(185,103,148,0.11);
+      display: flex;
+      flex-direction: column;
+      width: 340px;
+      overflow: hidden;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .get-involved-card-img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      object-position: center;
+      border-bottom: 3px solid #19171a;
+    }
+
+    .get-involved-card-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 500;
+      text-align: center;
+      margin: 18px 0 10px 0;
+    }
+
+    .get-involved-card-desc {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      color: #19171a;
+      text-align: center;
+      padding: 0 18px 12px 18px;
+      margin-bottom: 6px;
+    }
+
+    .get-involved-learn-btn {
+      margin: 16px auto 20px auto;
+      background: #fce8f5;
+      color: #19171a;
+      border: 2px solid #B96794;
+      border-radius: 22px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 10px 32px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+      display: inline-block;
+    }
+    .get-involved-learn-btn:hover {
+      background: #B96794;
+      color: #fff;
+    }
+
+    @media (max-width: 1100px) {
+      .get-involved-cards-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 34px;
+      }
+      .get-involved-card {
+        width: 98vw;
+        max-width: 400px;
+      }
+      .get-involved-card-img {
+        height: 190px;
+      }
+    }
+    @media (max-width: 700px) {
+      .get-involved-cards-section {
+        padding: 15px 0;
+      }
+      .get-involved-card-title { font-size: 1.2rem;}
+      .get-involved-card-img { height: 130px;}
+    }
+  </style>
+</head>
+<body>
+<!-- Full Width Banner -->
+<div class="full-width-banner">
+  <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
+  <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
+</div>
+
+<!-- Navigation -->
+<nav>
+    <a href="index.html" class="home-btn">HOME</a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="index.com#contact">Contact</a>
+      <a href="getinvolved.html" class="active">Get Involved</a>
+    </div>
+</nav>
+
+<!-- GET INVOLVED HERO -->
+<section class="get-involved-hero">
+  <img src="getinvolved-hero.jpg" alt="Group at RDC event" />
+  <h1>Get Involved</h1>
+</section>
+
+<!-- GET INVOLVED CARDS -->
+<section class="get-involved-cards-section">
+  <div class="get-involved-cards-row">
+    <!-- Volunteer Card -->
+    <div class="get-involved-card">
+      <img src="volunteer.jpg" alt="RDC Volunteers" class="get-involved-card-img" />
+      <div class="get-involved-card-title">Volunteer</div>
+      <div class="get-involved-card-desc">
+        Our volunteers are the heart of RDC. Without their dedication, we would not be able to spread rare disease awareness, create meaningful opportunities, and support the community the way we do today. Learn how to become an RDC volunteer and make a difference on this page.
+      </div>
+      <a href="#" class="get-involved-learn-btn">Learn More</a>
+    </div>
+    <!-- Start a Chapter Card -->
+    <div class="get-involved-card">
+      <img src="start-chapter.jpg" alt="Start a Chapter" class="get-involved-card-img" />
+      <div class="get-involved-card-title">Start a Chapter</div>
+      <div class="get-involved-card-desc">
+        Interested in leading a group to carry out RDC’s mission of spreading rare disease awareness and advocacy in your local community? Start a chapter in your area today! Starting a chapter takes time, dedication, and strong leadership and collaboration skills. Not every application will be approved, so make sure you are ready to commit before registering to start an RDC chapter.
+      </div>
+      <a href="#" class="get-involved-learn-btn">Learn More</a>
+    </div>
+    <!-- Mission 7K Card -->
+    <div class="get-involved-card">
+      <img src="mission7k.jpg" alt="Mission 7K" class="get-involved-card-img" />
+      <div class="get-involved-card-title">Mission 7K</div>
+      <div class="get-involved-card-desc">
+        Support RDC by donating to Mission 7K, our initiative to raise awareness and drive action for the 7,000 known rare diseases affecting millions worldwide. Every contribution helps us expand outreach, provide resources, and empower students to make a difference. Join us in bringing visibility to rare diseases — your donation fuels our mission.
+      </div>
+      <a href="#" class="get-involved-learn-btn">Learn More</a>
+    </div>
+  </div>
+</section>
+</body>
+</html>
