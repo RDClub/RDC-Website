@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Social Media Team - Rare Disease Club</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fce8f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .full-width-banner {
+      width: 100%;
+      background-color: #fce8f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px 0;
+    }
+
+    .full-width-banner img {
+      width: 100%;
+      height: auto;
+      max-width: none;
+      display: block;
+    }
+
+    .motto-img {
+      max-width: 800px;
+      margin: 0 auto 10px auto;
+    }
+
+    .rdc-title-banner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    nav {
+      background-color: #fce8f5;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      padding: 15px 0;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .home-btn {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .home-btn:hover {
+      color: #B96794;
+    }
+
+    .home-btn.active {
+      background-color: #B96794;
+      color: white;
+      border-color: #B96794;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: #B96794;
+    }
+
+    .nav-links a.active {
+      color: black;
+      background-color: white;
+      border: 3px solid black;
+      border-radius: 16px;
+      padding: 10px 20px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .nav-links {
+        gap: 15px;
+        justify-content: center;
+      }
+      .nav-links a {
+        font-size: 18px;
+      }
+    }
+
+    /* --- SOCIAL MEDIA TEAM SECTION --- */
+    .socialmedia-section {
+      width: 100%;
+      background: #fff;
+      padding: 48px 0 48px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .socialmedia-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+      color: #19171a;
+      text-align: center;
+      width: 100%;
+    }
+
+    .socialmedia-intro {
+      font-size: 1.15rem;
+      text-align: center;
+      color: #222;
+      max-width: 900px;
+      margin-bottom: 34px;
+      font-family: 'Playfair Display', Georgia, serif;
+      line-height: 1.52;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .sm-general-manager-section {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 24px;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 34px auto;
+    }
+    .sm-gm-img {
+      width: 270px;
+      height: 270px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 3px solid #19171a;
+      background: #fff;
+      display: block;
+    }
+    .sm-gm-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #f7d5ea;
+      border-radius: 8px;
+      padding: 28px 18px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      color: #19171a;
+      line-height: 1.45;
+      min-width: 0;
+      flex: 1;
+      margin-left: 0;
+    }
+    .sm-gm-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #19171a;
+      text-align: left;
+      width: 100%;
+    }
+    @media (max-width: 900px) {
+      .sm-general-manager-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+      .sm-gm-img {
+        width: 95vw;
+        max-width: 270px;
+        height: auto;
+      }
+      .sm-gm-info {
+        padding: 18px 6px;
+        font-size: 1rem;
+      }
+    }
+
+    /* --- SOCIAL MEDIA MANAGERS CARDS --- */
+    .sm-managers-row {
+      display: flex;
+      flex-direction: row;
+      gap: 42px;
+      justify-content: center;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .sm-manager-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 220px;
+    }
+    .sm-manager-img {
+      width: 200px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 3px solid #19171a;
+      background: #fff;
+      margin-bottom: 10px;
+    }
+    .sm-manager-role {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 500;
+      font-size: 1.18rem;
+      margin-bottom: 2px;
+      text-align: center;
+      color: #19171a;
+    }
+    .sm-manager-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.04rem;
+      text-align: center;
+      color: #19171a;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 900px) {
+      .sm-managers-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+      .sm-manager-card {
+        width: 98vw;
+        max-width: 250px;
+      }
+      .sm-manager-img {
+        width: 95vw;
+        max-width: 200px;
+      }
+    }
+    @media (max-width: 700px) {
+      .socialmedia-title { font-size: 1.5rem;}
+      .sm-manager-role { font-size: 1rem;}
+      .sm-manager-img { height: 140px;}
+    }
+  </style>
+</head>
+<body>
+<!-- Full Width Banner -->
+<div class="full-width-banner">
+  <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
+  <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
+</div>
+
+<!-- Navigation -->
+<nav>
+    <a href="index.html" class="home-btn">HOME</a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="index.com#contact">Contact</a>
+      <a href="getinvolved.html">Get Involved</a>
+      <a href="socialmedia.html" class="active">Social Media</a>
+    </div>
+</nav>
+
+<!-- SOCIAL MEDIA TEAM SECTION -->
+<section class="socialmedia-section">
+  <div class="socialmedia-title">Our Social Media Team</div>
+  <div class="socialmedia-intro">
+    Our social media team is the voice of RDC online. From creating posts that raise awareness about rare diseases to sharing updates about events and opportunities, this team helps spread our mission to a wider audience. Joining the social media team is a chance to build leadership, creativity, and communication skills while making an impact.
+  </div>
+
+  <!-- General Manager -->
+  <div class="sm-general-manager-section">
+    <img src="anushka-reddy.jpg" alt="General Manager: Anushka Reddy" class="sm-gm-img" />
+    <div class="sm-gm-info">
+      <div class="sm-gm-title">General Manager</div>
+      Anushka Reddy serves as RDC’s General Manager, overseeing operations and supporting the growth of our initiatives. She plays a key role in coordinating projects, managing volunteers, and ensuring our mission to raise rare disease awareness is carried out effectively. With strong leadership and organizational skills, Anushka helps guide RDC’s impact in the community.
+    </div>
+  </div>
+
+  <!-- Managers Row -->
+  <div class="sm-managers-row">
+    <div class="sm-manager-card">
+      <img src="selena-y.jpg" alt="Design Manager: Selena Y" class="sm-manager-img" />
+      <div class="sm-manager-role">Design Manager</div>
+      <div class="sm-manager-name">Selena Y</div>
+    </div>
+    <div class="sm-manager-card">
+      <img src="surya-v.jpg" alt="Graphics Manager: Surya V" class="sm-manager-img" />
+      <div class="sm-manager-role">Graphics Manager</div>
+      <div class="sm-manager-name">Surya V</div>
+    </div>
+    <div class="sm-manager-card">
+      <img src="deeksha-p.jpg" alt="Video Manager: Deeksha P" class="sm-manager-img" />
+      <div class="sm-manager-role">Video Manager</div>
+      <div class="sm-manager-name">Deeksha P</div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
