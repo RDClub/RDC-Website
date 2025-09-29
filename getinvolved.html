@@ -22,6 +22,80 @@
       flex-direction: column;
       min-height: 100vh;
     }
+    /* Dropdown styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 120%;
+  left: 0;
+  min-width: 210px;
+  background-color: #111;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+  z-index: 99;
+  flex-direction: column;
+  padding: 0;
+  transition: opacity 0.2s;
+}
+
+.dropdown-menu a {
+  color: #fff;
+  padding: 14px 24px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  border-bottom: 1px solid #222;
+  transition: background .2s, color .2s;
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+  background: #B96794;
+  color: #fff;
+}
+
+/* Show dropdown on hover (desktop) */
+.dropdown:hover .dropdown-menu {
+  display: flex;
+  opacity: 1;
+}
+
+/* Show dropdown on click (mobile) */
+@media (max-width: 900px) {
+  .dropdown-menu {
+    position: static;
+    min-width: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .dropdown.active .dropdown-menu {
+    display: flex;
+  }
+}
+
+/* Optional: Add caret ▼ to About for dropdown visual cue */
+.dropdown-toggle:after {
+  content: ' ▼';
+  font-size: 0.7em;
+  color: #19171a;
+}
+
+/* JS for click on mobile */
 
     /* Banner */
     .full-width-banner {
@@ -274,15 +348,22 @@
 </div>
 
 <!-- Navigation -->
+<!-- Navigation WITH DROPDOWN FOR ABOUT -->
 <nav>
-    <a href="index.html" class="home-btn">HOME</a>
-    <div class="nav-links">
-      <a href="about.html">About</a>
-      <a href="events.html">Events</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="getinvolved.html" class="active">Get Involved</a>
+  <a href="index.html" class="home-btn">HOME</a>
+  <div class="nav-links">
+    <div class="dropdown">
+      <a href="about.html" class="active dropdown-toggle">About</a>
+      <div class="dropdown-menu">
+        <a href="socialmedia.html">Social Media Team</a>
+        <a href="#executive-board-section">Executive Board</a>
+      </div>
     </div>
+    <a href="events.html">Events</a>
+    <a href="newsletter.html">Newsletter</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="getinvolved.html">Get Involved</a>
+  </div>
 </nav>
 
 <!-- GET INVOLVED HERO -->
