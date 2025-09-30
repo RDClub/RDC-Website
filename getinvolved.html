@@ -7,17 +7,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+    html { scroll-behavior: smooth; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Georgia', serif;
       background-color: #fce8f5;
       color: #333;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
     }
     .full-width-banner {
-      width: 100%;
+      width: 100vw;
       background-color: #fce8f5;
       display: flex;
       flex-direction: column;
@@ -26,23 +27,16 @@
     }
     .full-width-banner img {
       width: 100%;
+      max-width: 95vw;
       height: auto;
-      max-width: none;
       display: block;
     }
-    .motto-img {
+    .motto-img, .rdc-title-banner {
       width: 100%;
       max-width: 800px;
       height: auto;
       display: block;
       margin: 0 auto 10px auto;
-    }
-    .rdc-title-banner {
-      width: 100%;
-      max-width: 800px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
     }
     nav {
       background-color: #fce8f5;
@@ -51,116 +45,85 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0;
-      gap: 0;
       flex-wrap: wrap;
-      min-height: 72px; /* for consistent height */
+      min-height: 56px;
+      width: 100%;
+      padding: 0;
     }
-    html { scroll-behavior: smooth; }
-    .home-btn {
+    .home-btn, .nav-links a, .dropdown-toggle {
       text-decoration: none;
       color: black;
-      font-size: 20px;
+      font-size: 1.1rem;
       font-weight: bold;
       font-family: 'Georgia', serif;
       text-transform: uppercase;
       transition: all 0.3s ease;
-      padding: 0 24px;
+      padding: 0 20px;
       border: none;
       background: none;
       border-radius: 0;
       margin: 0;
-      height: 72px;
-      line-height: 72px;
+      height: 56px;
+      line-height: 56px;
       display: flex;
       align-items: center;
       box-sizing: border-box;
+      cursor: pointer;
     }
-    .home-btn:hover {
-      color: #B96794;
-      background: none;
-    }
-    .home-btn.active {
-      color: #B96794;
-      background: none;
-      border: none;
+    .home-btn.active,
+    .nav-links a.active[href="getinvolved.html"] {
+      background: white;
+      color: black;
+      border: 3px solid black;
+      border-radius: 18px;
+      padding: 0 20px;
+      height: 44px;
+      line-height: 44px;
+      margin-left: 8px;
     }
     .nav-links {
       display: flex;
       gap: 0;
       align-items: center;
-      height: 72px;
+      height: 56px;
     }
-    .nav-links a,
-    .nav-links .dropdown-toggle {
-      text-decoration: none;
-      color: black;
-      font-size: 20px;
-      font-weight: bold;
-      font-family: 'Georgia', serif;
-      text-transform: uppercase;
-      background: none;
-      border: none;
-      border-radius: 0;
-      padding: 0 24px;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      height: 72px;
-      line-height: 72px;
-      box-sizing: border-box;
-      transition: color 0.3s, background 0.3s, border 0.3s;
-      cursor: pointer;
-      position: relative;
-    }
-    /* Dropdown styles */
     .dropdown {
       position: relative;
       display: flex;
       align-items: center;
-      height: 72px;
+      height: 56px;
     }
     .dropdown-toggle:after {
       content: ' ▼';
-      font-size: 0.7em;
+      font-size: 0.8em;
       color: #19171a;
       margin-left: 2px;
-    }
-    .dropdown-toggle.active,
-    .dropdown-toggle:focus {
-      color: #B96794;
-      background: none;
-      border: none;
     }
     .dropdown-menu {
       display: none;
       position: absolute;
       top: 100%;
       left: 0;
-      min-width: 210px;
+      min-width: 170px;
       background-color: #111;
       border-radius: 0 0 12px 12px;
       box-shadow: 0 8px 22px rgba(0,0,0,0.15);
       z-index: 99;
       flex-direction: column;
       padding: 0;
-      transition: opacity 0.2s;
     }
     .dropdown-menu a {
       color: #fff;
-      padding: 14px 24px;
-      text-decoration: none;
-      display: block;
-      font-family: 'Georgia', serif;
-      font-size: 18px;
+      padding: 12px 20px;
+      font-size: 1rem;
       border-bottom: 1px solid #222;
-      transition: background .2s, color .2s;
       background: none;
       border: none;
       border-radius: 0;
       margin: 0;
       height: auto;
       line-height: 1.5;
+      display: block;
     }
     .dropdown-menu a:last-child { border-bottom: none; }
     .dropdown-menu a:hover,
@@ -168,77 +131,55 @@
       background: #B96794;
       color: #fff;
     }
-    .dropdown:hover .dropdown-menu {
+    .dropdown:hover .dropdown-menu,
+    .dropdown.active .dropdown-menu {
       display: flex;
-      opacity: 1;
-    }
-    @media (max-width: 900px) {
-      .dropdown-menu {
-        position: static;
-        min-width: 0;
-        box-shadow: none;
-        border-radius: 0;
-      }
-      .dropdown.active .dropdown-menu {
-        display: flex;
-      }
-    }
-    /* Only Get Involved gets white rounded rectangle when active */
-    .nav-links a.active[href="getinvolved.html"] {
-      background: white;
-      color: black;
-      border: 4px solid black;
-      border-radius: 24px;
-      box-sizing: border-box;
-      padding: 0 24px;
-      margin: 0;
-      height: 56px;
-      line-height: 56px;
-      align-items: center;
-      margin-top: 0;
-      margin-bottom: 0;
-      margin-left: 16px;
-      margin-right: 0;
-      position: relative;
-      top: 0;
-      display: flex;
-      justify-content: center;
     }
     .nav-links a:not(.active):hover,
     .nav-links .dropdown-toggle:not(.active):hover {
       color: #B96794;
     }
-    @media (max-width: 768px) {
+    /* Mobile nav */
+    @media (max-width: 700px) {
       nav {
         flex-direction: column;
-        gap: 0;
+        min-height: auto;
       }
       .nav-links {
+        flex-direction: column;
+        align-items: stretch;
         gap: 0;
-        justify-content: center;
+        width: 100%;
       }
-      .nav-links a, .dropdown-toggle {
-        font-size: 18px;
-        height: 48px;
-        line-height: 48px;
-        padding: 0 14px;
-      }
-      .nav-links a.active[href="getinvolved.html"] {
+      .home-btn, .nav-links a, .dropdown-toggle {
+        font-size: 1rem;
         height: 44px;
         line-height: 44px;
-        border-radius: 18px;
-        padding: 0 16px;
+        padding: 0 10px;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .home-btn.active,
+      .nav-links a.active[href="getinvolved.html"] {
         margin-left: 0;
+        border-radius: 14px;
       }
       .dropdown {
-        height: 48px;
+        height: 44px;
+      }
+      .dropdown-menu {
+        position: static;
+        min-width: 0;
+        box-shadow: none;
+        border-radius: 0;
+        width: 100vw;
       }
     }
-    /* --- GET INVOLVED SECTION --- */
+    /* Hero section */
     .get-involved-hero {
       position: relative;
-      width: 100%;
-      height: 340px;
+      width: 100vw;
+      min-height: 180px;
       background: #222;
       display: flex;
       align-items: center;
@@ -259,80 +200,82 @@
       position: relative;
       z-index: 2;
       color: #fff;
-      font-size: 3rem;
+      font-size: 2.2rem;
       font-family: 'Playfair Display', Georgia, serif;
       font-weight: 700;
       text-align: center;
       text-shadow: 0 2px 12px rgba(0,0,0,0.22);
     }
-    @media (max-width: 700px) {
-      .get-involved-hero { height: 180px;}
-      .get-involved-hero h1 { font-size: 1.6rem;}
+    @media (max-width: 500px) {
+      .get-involved-hero { min-height: 90px;}
+      .get-involved-hero h1 { font-size: 1.1rem;}
     }
+    /* Cards section */
     .get-involved-cards-section {
-      width: 100%;
+      width: 100vw;
       background: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 48px 0 48px 0;
+      padding: 32px 0;
     }
     .get-involved-cards-row {
       display: flex;
       flex-direction: row;
-      gap: 38px;
+      gap: 28px;
       justify-content: center;
       width: 100%;
       max-width: 1200px;
-      margin-top: 0;
     }
     .get-involved-card {
       background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 2px 12px rgba(185,103,148,0.11);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(185,103,148,0.11);
       display: flex;
       flex-direction: column;
-      width: 340px;
+      width: 320px;
+      max-width: 96vw;
       overflow: hidden;
       align-items: center;
       margin-bottom: 18px;
     }
     .get-involved-card-img {
       width: 100%;
-      height: 230px;
+      height: 170px;
       object-fit: cover;
       object-position: center;
       border-bottom: 3px solid #19171a;
     }
     .get-involved-card-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2rem;
+      font-size: 1.3rem;
       font-weight: 500;
       text-align: center;
-      margin: 18px 0 10px 0;
+      margin: 14px 0 8px 0;
     }
     .get-involved-card-desc {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.15rem;
+      font-size: 1rem;
       color: #19171a;
       text-align: center;
-      padding: 0 18px 12px 18px;
-      margin-bottom: 6px;
+      padding: 0 12px 10px 12px;
     }
     .get-involved-learn-btn {
-      margin: 16px auto 20px auto;
+      margin: 12px auto 16px auto;
       background: #fce8f5;
       color: #19171a;
       border: 2px solid #B96794;
-      border-radius: 22px;
+      border-radius: 18px;
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 700;
-      padding: 10px 32px;
+      padding: 8px 20px;
       cursor: pointer;
       text-decoration: none;
       transition: background 0.3s, color 0.3s;
       display: inline-block;
+      min-width: 120px;
+      text-align: center;
     }
     .get-involved-learn-btn:hover {
       background: #B96794;
@@ -342,60 +285,53 @@
       .get-involved-cards-row {
         flex-direction: column;
         align-items: center;
-        gap: 34px;
+        gap: 22px;
       }
       .get-involved-card {
         width: 98vw;
         max-width: 400px;
       }
       .get-involved-card-img {
-        height: 190px;
+        height: 120px;
       }
     }
-    @media (max-width: 700px) {
+    @media (max-width: 600px) {
       .get-involved-cards-section {
-        padding: 15px 0;
+        padding: 10px 0;
       }
-      .get-involved-card-title { font-size: 1.2rem;}
-      .get-involved-card-img { height: 130px;}
+      .get-involved-card-title { font-size: 1.05rem;}
+      .get-involved-card-img { height: 90px;}
+      .get-involved-card { margin-bottom: 8px; }
     }
   </style>
 </head>
 <body>
-<!-- Full Width Banner -->
 <div class="full-width-banner">
-  <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
-  <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
+  <img src="motto3.png" alt="Educate Donate Motto" class="motto-img" />
+  <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner" />
 </div>
-
-<!-- Navigation -->
 <nav>
   <a href="index.html" class="home-btn">HOME</a>
   <div class="nav-links">
     <div class="dropdown">
-        <a href="" class="dropdown-toggle">About</a>
-        <div class="dropdown-menu">
-          <a href="socialmedia.html">Social Media Team</a>
-          <a href="about.html">Executive Board</a>
-        </div>
+      <a href="#" class="dropdown-toggle">About</a>
+      <div class="dropdown-menu">
+        <a href="socialmedia.html">Social Media Team</a>
+        <a href="about.html">Executive Board</a>
       </div>
+    </div>
     <a href="events.html">Events</a>
     <a href="newsletter.html">Newsletter</a>
     <a href="index.html#contact">Contact</a>
     <a href="getinvolved.html" class="active">Get Involved</a>
   </div>
 </nav>
-
-<!-- GET INVOLVED HERO -->
 <section class="get-involved-hero">
   <img src="hart.jpeg" alt="Group at RDC event" />
   <h1>Get Involved</h1>
 </section>
-
-<!-- GET INVOLVED CARDS -->
 <section class="get-involved-cards-section">
   <div class="get-involved-cards-row">
-    <!-- Volunteer Card -->
     <div class="get-involved-card">
       <img src="people.jpeg" alt="RDC Volunteers" class="get-involved-card-img" />
       <div class="get-involved-card-title">Volunteer</div>
@@ -404,7 +340,6 @@
       </div>
       <a href="#" class="get-involved-learn-btn">Learn More</a>
     </div>
-    <!-- Start a Chapter Card -->
     <div class="get-involved-card">
       <img src="random.jpeg" alt="Start a Chapter" class="get-involved-card-img" />
       <div class="get-involved-card-title">Start a Chapter</div>
@@ -413,7 +348,6 @@
       </div>
       <a href="#" class="get-involved-learn-btn">Learn More</a>
     </div>
-    <!-- Mission 7K Card -->
     <div class="get-involved-card">
       <img src="67.jpeg" alt="Mission 7K" class="get-involved-card-img" />
       <div class="get-involved-card-title">Mission 7K</div>
