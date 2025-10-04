@@ -21,13 +21,27 @@
       flex-direction: column;
       font-size: 1.1rem;
     }
+
+    /* --- Modified Section: Everything Above nav fits screen --- */
+    .above-nav-wrapper {
+      width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      position: relative;
+      overflow: hidden;
+      background-color: #fce8f5;
+    }
     .full-width-banner {
       width: 100vw;
       background-color: #fce8f5;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 15px 0;
+      padding: 15px 0 0 0;
+      z-index: 2;
     }
     .full-width-banner img {
       width: 100%;
@@ -42,163 +56,11 @@
       display: block;
       margin: 0 auto 10px auto;
     }
-    nav {
-      background-color: #fce8f5;
-      border-top: 3px solid black;
-      border-bottom: 3px solid black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      min-height: 72px;
-      width: 100%;
-      padding: 0;
-    }
-    .home-btn, .nav-links a, .dropdown-toggle {
-      text-decoration: none;
-      color: black;
-      font-size: 1.25rem;
-      font-weight: bold;
-      font-family: 'Georgia', serif;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-      padding: 0 32px;
-      border: none;
-      background: none;
-      border-radius: 0;
-      margin: 0;
-      height: 72px;
-      line-height: 72px;
-      display: flex;
-      align-items: center;
-      box-sizing: border-box;
-      cursor: pointer;
-    }
-    .home-btn.active {
-      background: white;
-      color: black;
-      border: 3px solid black;
-      border-radius: 24px;
-      padding: 0 32px;
-      height: 56px;
-      line-height: 56px;
-      margin-left: 12px;
-      font-size: 1.2rem;
-    }
-    .nav-links {
-      display: flex;
-      gap: 0;
-      align-items: center;
-      height: 72px;
-    }
-    .dropdown {
-      position: relative;
-      display: flex;
-      align-items: center;
-      height: 72px;
-    }
-    .dropdown-toggle:after {
-      content: ' ▼';
-      font-size: 0.8em;
-      color: #19171a;
-      margin-left: 2px;
-    }
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 180px;
-      background-color: #111;
-      border-radius: 0 0 12px 12px;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
-      z-index: 99;
-      flex-direction: column;
-      padding: 0;
-    }
-    .dropdown-menu a {
-      color: #fff;
-      padding: 16px 26px;
-      font-size: 1.15rem;
-      border-bottom: 1px solid #222;
-      background: none;
-      border: none;
-      border-radius: 0;
-      margin: 0;
-      height: auto;
-      line-height: 1.6;
-      display: block;
-    }
-    .dropdown-menu a:last-child { border-bottom: none; }
-    .dropdown-menu a:hover,
-    .dropdown-menu a:focus {
-      background: #B96794;
-      color: #fff;
-    }
-    .dropdown:hover .dropdown-menu,
-    .dropdown.active .dropdown-menu {
-      display: flex;
-    }
-    .nav-links a:not(.active):hover,
-    .nav-links .dropdown-toggle:not(.active):hover {
-      color: #B96794;
-    }
 
-    /* Responsive nav */
-    @media (max-width: 900px) {
-      nav {
-        flex-direction: column;
-        min-height: auto;
-      }
-      .nav-links {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        width: 100%;
-      }
-      .home-btn, .nav-links a, .dropdown-toggle {
-        font-size: 1.08rem;
-        height: 56px;
-        line-height: 56px;
-        padding: 0 16px;
-        width: 100%;
-        justify-content: flex-start;
-      }
-      .home-btn.active {
-        margin-left: 0;
-        border-radius: 18px;
-      }
-      .dropdown {
-        height: 56px;
-      }
-      .dropdown-menu {
-        position: static;
-        min-width: 0;
-        box-shadow: none;
-        border-radius: 0;
-        width: 100vw;
-      }
-    }
-    @media (max-width: 600px) {
-      html { font-size: 17px; }
-      .home-btn, .nav-links a, .dropdown-toggle {
-        font-size: 1rem;
-        padding: 0 10px;
-        height: 48px;
-        line-height: 48px;
-      }
-      .home-btn.active {
-        border-radius: 12px;
-        height: 44px;
-        line-height: 44px;
-        font-size: 1rem;
-      }
-    }
-
-    /* Hero Section */
     .hero {
+      flex: 1 1 auto;
       width: 100vw;
-      min-height: 320px;
+      min-height: 0;
       background-image: url('darkenphoto.png');
       background-size: cover;
       background-position: center;
@@ -268,17 +130,224 @@
     .hero-btn:hover {
       background-color: rgba(255, 255, 255, 0.2);
     }
-    @media (max-width: 900px) {
-      .hero-text h1 { font-size: 2.2rem; }
-      .hero-btn { font-size: 1rem; }
+
+    /* --- End Above nav --- */
+
+    nav {
+      background-color: #fce8f5;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      min-height: 72px;
+      width: 100%;
+      padding: 0;
+      z-index: 10;
+      position: relative;
     }
-    @media (max-width: 600px) {
-      .hero-text h1 { font-size: 1.4rem; }
-      .hero-btn { padding: 12px 18px; font-size: 0.98rem; }
-      .hero { min-height: 160px; }
+    .home-btn, .nav-links a, .dropdown-toggle {
+      text-decoration: none;
+      color: black;
+      font-size: 1.25rem;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      padding: 0 32px;
+      border: none;
+      background: none;
+      border-radius: 0;
+      margin: 0;
+      height: 72px;
+      line-height: 72px;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+    .home-btn.active {
+      background: white;
+      color: black;
+      border: 3px solid black;
+      border-radius: 24px;
+      padding: 0 32px;
+      height: 56px;
+      line-height: 56px;
+      margin-left: 12px;
+      font-size: 1.2rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 0;
+      align-items: center;
+      height: 72px;
+      transition: all 0.3s;
+    }
+    .dropdown {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 72px;
+    }
+    .dropdown-toggle:after {
+      content: ' ▼';
+      font-size: 0.8em;
+      color: #19171a;
+      margin-left: 2px;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+      background-color: #111;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+      z-index: 99;
+      flex-direction: column;
+      padding: 0;
+    }
+    .dropdown-menu a {
+      color: #fff;
+      padding: 16px 26px;
+      font-size: 1.15rem;
+      border-bottom: 1px solid #222;
+      background: none;
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      height: auto;
+      line-height: 1.6;
+      display: block;
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover,
+    .dropdown-menu a:focus {
+      background: #B96794;
+      color: #fff;
+    }
+    .dropdown:hover .dropdown-menu,
+    .dropdown.active .dropdown-menu {
+      display: flex;
+    }
+    .nav-links a:not(.active):hover,
+    .nav-links .dropdown-toggle:not(.active):hover {
+      color: #B96794;
     }
 
-    /* What We Do Section */
+    /* ===================== */
+    /* MOBILE NAV IMPROVEMENTS */
+    /* ===================== */
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      margin-left: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 110;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 30px;
+      height: 4px;
+      margin: 4px 0;
+      background: #111;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+
+    /* Hamburger animation */
+    .nav-toggle.open span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .nav-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle.open span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Hide nav links on mobile by default */
+    @media (max-width: 900px) {
+      .nav-toggle {
+        display: flex;
+      }
+      .nav-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100vw;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fce8f5;
+        border-bottom: 3px solid black;
+        box-shadow: 0 8px 22px rgba(0,0,0,0.05);
+        display: none;
+        padding-bottom: 20px;
+        animation: navslidein 0.25s;
+      }
+      .nav-links.open {
+        display: flex;
+        animation: navslidein 0.25s;
+      }
+      @keyframes navslidein {
+        from { opacity: 0; transform: translateY(-16px);}
+        to { opacity: 1; transform: translateY(0);}
+      }
+      .home-btn, .nav-links a, .dropdown-toggle {
+        font-size: 1.08rem;
+        height: 56px;
+        line-height: 56px;
+        padding: 0 16px;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .home-btn.active {
+        margin-left: 0;
+        border-radius: 18px;
+      }
+      .dropdown {
+        height: 56px;
+      }
+      .dropdown-menu {
+        position: static;
+        min-width: 0;
+        box-shadow: none;
+        border-radius: 0;
+        width: 100vw;
+      }
+    }
+    @media (max-width: 600px) {
+      html { font-size: 17px; }
+      .home-btn, .nav-links a, .dropdown-toggle {
+        font-size: 1rem;
+        padding: 0 10px;
+        height: 48px;
+        line-height: 48px;
+      }
+      .home-btn.active {
+        border-radius: 12px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 1rem;
+      }
+    }
+    /* ===================== */
+    /* END MOBILE NAV IMPROVEMENTS */
+    /* ===================== */
+
+    /* ... rest of your CSS (What We Do, Impact, Events, Contact) ... */
     .what-we-do-section {
       background-color: #f9dff4; 
       padding: 40px 5vw;
@@ -323,7 +392,6 @@
       .what-we-do-content p { font-size: 1rem;}
     }
 
-    /* Impact Section */
     .nord-section {
       padding: 28px 6vw;
       background-color: #fff;
@@ -391,7 +459,6 @@
       background-color: #784461;
     }
 
-    /* Events Section */
     .events-section {
       background-color: #fce8f5; 
       padding: 50px 6vw;
@@ -431,7 +498,6 @@
       line-height: 1.4;
     }
 
-    /* Contact Section */
     .contact-section {
       background-color: #1a1a1a; 
       padding: 80px 6vw; 
@@ -541,12 +607,34 @@
   </style>
 </head>
 <body>
-  <div class="full-width-banner">
-    <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
-    <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
+  <div class="above-nav-wrapper" style="min-height: 100vh;">
+    <div class="full-width-banner">
+      <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
+      <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
+    </div>
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Together For Rare</h1>
+          <h1>Lives</h1>
+          <p>Rare doesn't mean alone. Together, we're</p>
+          <p>turning awareness into action and hope into</p>
+          <p>impact.</p>
+        </div>
+        <div class="hero-btn-container">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform" class="hero-btn">JOIN NOW</a>
+        </div>
+      </div>
+    </section>
   </div>
   <nav>
     <a href="index.html" class="home-btn active">HOME</a>
+    <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <div class="nav-links">
       <div class="dropdown">
         <a href="#" class="dropdown-toggle">About</a>
@@ -561,21 +649,6 @@
       <a href="getinvolved.html">Get Involved</a>
     </div>
   </nav>
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1>Together For Rare</h1>
-        <h1>Lives</h1>
-        <p>Rare doesn't mean alone. Together, we're</p>
-        <p>turning awareness into action and hope into</p>
-        <p>impact.</p>
-      </div>
-      <div class="hero-btn-container">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform" class="hero-btn">JOIN NOW</a>
-      </div>
-    </div>
-  </section>
   <section class="what-we-do-section">
     <div class="what-we-do-container">
       <img src="photocopy.jpeg" alt="What We Do" class="what-we-do-image">
@@ -728,8 +801,26 @@
     </div>
   </section>
   <script>
-    // Enable About dropdown for mobile
+    // Hamburger nav toggle for mobile
     document.addEventListener('DOMContentLoaded', function() {
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      navToggle.addEventListener('click', function() {
+        navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', navLinks.classList.contains('open'));
+      });
+      // Close nav when clicking outside on mobile
+      document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 900) {
+          if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+            navLinks.classList.remove('open');
+            navToggle.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+      // Dropdown toggle for About on mobile
       document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
           if(window.innerWidth <= 900) {
