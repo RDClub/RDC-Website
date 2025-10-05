@@ -46,7 +46,7 @@
       margin: 0 auto 10px auto;
     }
 
-    /* --- ORIGINAL NAVIGATION FORMAT --- */
+    /* --- EXACT NAVIGATION FROM FIRST PAGE --- */
     nav {
       background-color: #fce8f5;
       border-top: 3px solid black;
@@ -56,10 +56,9 @@
       align-items: center;
       flex-wrap: wrap;
       min-height: 72px;
-      width: 100vw;
+      width: 100%;
       padding: 0;
     }
-
     .home-btn, .nav-links a, .dropdown-toggle {
       text-decoration: none;
       color: black;
@@ -80,9 +79,7 @@
       box-sizing: border-box;
       cursor: pointer;
     }
-
-    .home-btn.active,
-    .nav-links a.active[href="about.html"] {
+    .home-btn.active {
       background: white;
       color: black;
       border: 3px solid black;
@@ -93,28 +90,24 @@
       margin-left: 12px;
       font-size: 1.2rem;
     }
-
     .nav-links {
       display: flex;
       gap: 0;
       align-items: center;
       height: 72px;
     }
-
     .dropdown {
       position: relative;
       display: flex;
       align-items: center;
       height: 72px;
     }
-
     .dropdown-toggle:after {
       content: ' ▼';
       font-size: 0.8em;
       color: #19171a;
       margin-left: 2px;
     }
-
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -128,7 +121,6 @@
       flex-direction: column;
       padding: 0;
     }
-
     .dropdown-menu a {
       color: #fff;
       padding: 16px 26px;
@@ -142,19 +134,16 @@
       line-height: 1.6;
       display: block;
     }
-
     .dropdown-menu a:last-child { border-bottom: none; }
     .dropdown-menu a:hover,
     .dropdown-menu a:focus {
       background: #B96794;
       color: #fff;
     }
-
     .dropdown:hover .dropdown-menu,
     .dropdown.active .dropdown-menu {
       display: flex;
     }
-
     .nav-links a:not(.active):hover,
     .nav-links .dropdown-toggle:not(.active):hover {
       color: #B96794;
@@ -180,8 +169,7 @@
         width: 100%;
         justify-content: flex-start;
       }
-      .home-btn.active,
-      .nav-links a.active[href="about.html"] {
+      .home-btn.active {
         margin-left: 0;
         border-radius: 18px;
       }
@@ -196,7 +184,6 @@
         width: 100vw;
       }
     }
-
     @media (max-width: 600px) {
       .home-btn, .nav-links a, .dropdown-toggle {
         font-size: 1rem;
@@ -204,8 +191,7 @@
         height: 48px;
         line-height: 48px;
       }
-      .home-btn.active,
-      .nav-links a.active[href="about.html"] {
+      .home-btn.active {
         border-radius: 12px;
         height: 44px;
         line-height: 44px;
@@ -506,23 +492,23 @@
   <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
 </div>
 
-<!-- Navigation - Original Format -->
+<!-- Navigation - EXACTLY like first page -->
 <nav>
-    <a href="index.html" class="home-btn">HOME</a>
-    <div class="nav-links">
-      <div class="dropdown">
-        <a href="#" class="dropdown-toggle">About</a>
-        <div class="dropdown-menu">
-          <a href="socialmedia.html">Social Media Team</a>
-          <a href="about.html">Executive Board</a>
-        </div>
+  <a href="index.html" class="home-btn">HOME</a>
+  <div class="nav-links">
+    <div class="dropdown">
+      <a href="#" class="dropdown-toggle active">About</a>
+      <div class="dropdown-menu">
+        <a href="socialmedia.html">Social Media Team</a>
+        <a href="about.html" class="active">Executive Board</a>
       </div>
-      <a href="events.html">Events</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="getinvolved.html">Get Involved</a>
     </div>
-  </nav>
+    <a href="events.html">Events</a>
+    <a href="newsletter.html">Newsletter</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="getinvolved.html">Get Involved</a>
+  </div>
+</nav>
 
 <!-- ABOUT SECTION -->
 <section class="about-section-v5">
