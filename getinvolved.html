@@ -60,7 +60,7 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      min-height: 72px;
+      min-height: 48px;
       width: 100%;
       padding: 0;
     }
@@ -71,30 +71,35 @@
       font-weight: bold;
       font-family: 'Georgia', serif;
       text-transform: uppercase;
-      transition: all 0.3s ease;
-      padding: 0 32px;
+      padding: 0 18px;
       border: none;
       background: none;
       border-radius: 0;
       margin: 0;
-      height: 72px;
-      line-height: 72px;
+      height: 48px;
+      line-height: 48px;
       display: flex;
       align-items: center;
       box-sizing: border-box;
       cursor: pointer;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
     }
-    /* Active button on Get Involved, not Home */
-    .nav-links a.active[href="getinvolved.html"], .home-btn.active {
+
+    /* Active button for HOME and ABOUT (smaller, matches request) */
+    .home-btn.active,
+    .nav-links .dropdown-toggle.active {
       background: white;
       color: black;
-      border: 3px solid black;
-      border-radius: 24px;
-      padding: 0 32px;
-      height: 56px;
-      line-height: 56px;
-      margin-left: 12px;
-      font-size: 1.2rem;
+      border: 2.5px solid black;
+      border-radius: 15px;
+      padding: 0 18px;
+      height: 38px;
+      line-height: 38px;
+      font-size: 1.08rem;
+      font-weight: bold;
+      margin: 0 8px 0 0;
+      box-sizing: border-box;
     }
     .home-btn.active { /* Remove active style unless on home page */
       background: none;
@@ -363,21 +368,21 @@
   </div>
   <!-- Navigation -->
   <nav>
-    <a href="index.html" class="home-btn">HOME</a>
-    <div class="nav-links">
-      <div class="dropdown">
-        <a href="#" class="dropdown-toggle">About</a>
-        <div class="dropdown-menu">
-          <a href="socialmedia.html">Social Media Team</a>
-          <a href="about.html">Executive Board</a>
-        </div>
+  <a href="index.html" class="home-btn">HOME</a>
+  <div class="nav-links">
+    <div class="dropdown">
+      <a href="#" class="dropdown-toggle active">ABOUT</a>
+      <div class="dropdown-menu">
+        <a href="socialmedia.html">Social Media Team</a>
+        <a href="about.html" class="active">Executive Board</a>
       </div>
-      <a href="events.html">Events</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="getinvolved.html" class="active">Get Involved</a>
     </div>
-  </nav>
+    <a href="events.html">EVENTS</a>
+    <a href="newsletter.html">NEWSLETTER</a>
+    <a href="index.html#contact">CONTACT</a>
+    <a href="getinvolved.html">GET INVOLVED</a>
+  </div>
+</nav>
   <!-- GET INVOLVED HERO -->
   <section class="get-involved-hero">
     <img src="hart.jpeg" alt="Group at RDC event" />
