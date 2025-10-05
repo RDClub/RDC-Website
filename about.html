@@ -54,7 +54,7 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      min-height: 48px;
+      min-height: 56px;
       width: 100%;
       padding: 0;
     }
@@ -65,60 +65,47 @@
       font-weight: bold;
       font-family: 'Georgia', serif;
       text-transform: uppercase;
-      padding: 0 18px;
+      transition: all 0.3s ease;
+      padding: 0 32px;
       border: none;
       background: none;
       border-radius: 0;
       margin: 0;
-      height: 48px;
-      line-height: 48px;
+      height: 56px;
+      line-height: 56px;
       display: flex;
       align-items: center;
       box-sizing: border-box;
       cursor: pointer;
-      transition: all 0.3s ease;
-      letter-spacing: 0.5px;
     }
-
-    /* Active button for HOME and ABOUT (smaller, matches request) */
-    .home-btn.active,
-    .nav-links .dropdown-toggle.active {
+    .dropdown-toggle.active {
       background: white;
       color: black;
-      border: 2.5px solid black;
-      border-radius: 15px;
-      padding: 0 18px;
-      height: 38px;
-      line-height: 38px;
-      font-size: 1.08rem;
-      font-weight: bold;
-      margin: 0 8px 0 0;
-      box-sizing: border-box;
-    }
-    .dropdown-toggle:after {
-      content: '▼';
-      font-size: 1rem;
-      color: #19171a;
-      margin-left: 6px;
-      font-weight: bold;
+      border: 3px solid black;
+      border-radius: 24px;
+      padding: 0 32px;
+      height: 56px;
+      line-height: 56px;
+      margin-left: 12px;
+      font-size: 1.25rem;
     }
     .nav-links {
       display: flex;
       gap: 0;
       align-items: center;
-      height: 48px;
+      height: 56px;
     }
-    /* Events link style (purple) */
-    .nav-links a[href="events.html"] {
-      color: #B96794;
-      font-weight: bold;
-    }
-
     .dropdown {
       position: relative;
       display: flex;
       align-items: center;
-      height: 48px;
+      height: 56px;
+    }
+    .dropdown-toggle:after {
+      content: ' ▼';
+      font-size: 0.9em;
+      color: #19171a;
+      margin-left: 4px;
     }
     .dropdown-menu {
       display: none;
@@ -135,8 +122,8 @@
     }
     .dropdown-menu a {
       color: #fff;
-      padding: 14px 22px;
-      font-size: 1.02rem;
+      padding: 16px 26px;
+      font-size: 1.15rem;
       border-bottom: 1px solid #222;
       background: none;
       border: none;
@@ -173,35 +160,40 @@
         width: 100%;
       }
       .home-btn, .nav-links a, .dropdown-toggle {
-        font-size: 0.96rem;
-        height: 38px;
-        line-height: 38px;
-        padding: 0 10px;
+        font-size: 1.08rem;
+        height: 48px;
+        line-height: 48px;
+        padding: 0 16px;
         width: 100%;
         justify-content: flex-start;
       }
-      .home-btn.active,
-      .nav-links .dropdown-toggle.active {
-        border-radius: 10px;
-        height: 32px;
-        line-height: 32px;
-        font-size: 0.96rem;
-        margin: 0;
+      .dropdown-toggle.active {
+        margin-left: 0;
+        border-radius: 18px;
+      }
+      .dropdown {
+        height: 48px;
+      }
+      .dropdown-menu {
+        position: static;
+        min-width: 0;
+        box-shadow: none;
+        border-radius: 0;
+        width: 100vw;
       }
     }
     @media (max-width: 600px) {
       .home-btn, .nav-links a, .dropdown-toggle {
-        font-size: 0.85rem;
-        padding: 0 7px;
-        height: 32px;
-        line-height: 32px;
+        font-size: 1rem;
+        padding: 0 10px;
+        height: 40px;
+        line-height: 40px;
       }
-      .home-btn.active,
-      .nav-links .dropdown-toggle.active {
-        border-radius: 6px;
-        height: 23px;
-        line-height: 23px;
-        font-size: 0.85rem;
+      .dropdown-toggle.active {
+        border-radius: 12px;
+        height: 36px;
+        line-height: 36px;
+        font-size: 1rem;
       }
     }
 
@@ -503,16 +495,16 @@
   <a href="index.html" class="home-btn">HOME</a>
   <div class="nav-links">
     <div class="dropdown">
-      <a href="#" class="dropdown-toggle active">ABOUT</a>
+      <a href="#" class="dropdown-toggle active">About</a>
       <div class="dropdown-menu">
         <a href="socialmedia.html">Social Media Team</a>
         <a href="about.html" class="active">Executive Board</a>
       </div>
     </div>
-    <a href="events.html">EVENTS</a>
-    <a href="newsletter.html">NEWSLETTER</a>
-    <a href="index.html#contact">CONTACT</a>
-    <a href="getinvolved.html">GET INVOLVED</a>
+    <a href="events.html">Events</a>
+    <a href="newsletter.html">Newsletter</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="getinvolved.html">Get Involved</a>
   </div>
 </nav>
 
@@ -594,6 +586,6 @@ Samhita, with a strong interest in advocacy and communication, immediately conne
     });
   });
 </script>
-
+ 
 </body>
 </html>
