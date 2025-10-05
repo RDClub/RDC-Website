@@ -21,10 +21,12 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
+    /* --- FIXED: BANNER --- */
     .full-width-banner {
-      width: 100%;
+      width: 100vw;
       background-color: #fce8f5;
       display: flex;
       flex-direction: column;
@@ -34,104 +36,186 @@
 
     .full-width-banner img {
       width: 100%;
+      max-width: 100%;
       height: auto;
-      max-width: none;
       display: block;
     }
 
-    .motto-img {
-      max-width: 800px;
+    .motto-img, .rdc-title-banner {
+      max-width: 100%;
       margin: 0 auto 10px auto;
     }
 
-    .rdc-title-banner {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
+    /* --- FIXED: ORIGINAL NAVIGATION FORMAT --- */
     nav {
       background-color: #fce8f5;
       border-top: 3px solid black;
       border-bottom: 3px solid black;
       display: flex;
       justify-content: center;
-      align-items: baseline;
-      padding: 15px 0;
-      gap: 30px;
+      align-items: center;
       flex-wrap: wrap;
+      min-height: 72px;
+      width: 100vw;
+      padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    .home-btn {
+    .home-btn, .nav-links a, .dropdown-toggle {
       text-decoration: none;
       color: black;
-      font-size: 20px;
+      font-size: 1.25rem;
       font-weight: bold;
       font-family: 'Georgia', serif;
       text-transform: uppercase;
-      transition: color 0.3s ease;
+      transition: all 0.3s ease;
+      padding: 0 32px;
+      border: none;
+      background: none;
+      border-radius: 0;
+      margin: 0;
+      height: 72px;
+      line-height: 72px;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      cursor: pointer;
     }
 
-    .home-btn:hover {
-      color: #B96794;
-    }
-
-    .home-btn.active {
-      background-color: #B96794;
-      color: white;
-      border-color: #B96794;
+    .home-btn.active,
+    .nav-links a.active[href="socialmedia.html"] {
+      background: white;
+      color: black;
+      border: 3px solid black;
+      border-radius: 24px;
+      padding: 0 32px;
+      height: 56px;
+      line-height: 56px;
+      margin-left: 12px;
+      font-size: 1.2rem;
     }
 
     .nav-links {
       display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      align-items: baseline;
+      gap: 0;
+      align-items: center;
+      height: 72px;
     }
 
-    .nav-links a {
-      text-decoration: none;
-      color: black;
-      font-size: 20px;
-      font-weight: bold;
-      font-family: 'Georgia', serif;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
+    .dropdown {
       position: relative;
+      display: flex;
+      align-items: center;
+      height: 72px;
     }
 
-    .nav-links a:hover {
+    .dropdown-toggle:after {
+      content: ' ▼';
+      font-size: 0.8em;
+      color: #19171a;
+      margin-left: 2px;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+      background-color: #111;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+      z-index: 99;
+      flex-direction: column;
+      padding: 0;
+    }
+
+    .dropdown-menu a {
+      color: #fff;
+      padding: 16px 26px;
+      font-size: 1.15rem;
+      border-bottom: 1px solid #222;
+      background: none;
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      height: auto;
+      line-height: 1.6;
+      display: block;
+    }
+
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover,
+    .dropdown-menu a:focus {
+      background: #B96794;
+      color: #fff;
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown.active .dropdown-menu {
+      display: flex;
+    }
+
+    .nav-links a:not(.active):hover,
+    .nav-links .dropdown-toggle:not(.active):hover {
       color: #B96794;
     }
 
-    .nav-links a.active {
-      color: black;
-      background-color: white;
-      border: 3px solid black;
-      border-radius: 16px;
-      padding: 10px 20px;
-    }
-
-    @media (max-width: 768px) {
+    /* Responsive nav */
+    @media (max-width: 900px) {
       nav {
         flex-direction: column;
-        gap: 15px;
+        min-height: auto;
       }
       .nav-links {
-        gap: 15px;
-        justify-content: center;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
       }
-      .nav-links a {
-        font-size: 18px;
+      .home-btn, .nav-links a, .dropdown-toggle {
+        font-size: 1.08rem;
+        height: 56px;
+        line-height: 56px;
+        padding: 0 16px;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .home-btn.active,
+      .nav-links a.active[href="socialmedia.html"] {
+        margin-left: 0;
+        border-radius: 18px;
+      }
+      .dropdown {
+        height: 56px;
+      }
+      .dropdown-menu {
+        position: static;
+        min-width: 0;
+        box-shadow: none;
+        border-radius: 0;
+        width: 100vw;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .home-btn, .nav-links a, .dropdown-toggle {
+        font-size: 1rem;
+        padding: 0 10px;
+        height: 48px;
+        line-height: 48px;
+      }
+      .home-btn.active,
+      .nav-links a.active[href="socialmedia.html"] {
+        border-radius: 12px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 1rem;
       }
     }
 
     /* --- SOCIAL MEDIA TEAM SECTION --- */
     .socialmedia-section {
-      width: 100%;
+      width: 100vw;
       background: #fff;
       padding: 48px 0 48px 0;
       display: flex;
@@ -204,64 +288,7 @@
       text-align: left;
       width: 100%;
     }
-    .dropdown {
-      position: relative;
-      display: flex;
-      align-items: center;
-      height: 56px;
-    }
-    .dropdown-toggle:after {
-      content: ' ▼';
-      font-size: 0.8em;
-      color: #19171a;
-      margin-left: 2px;
-    }
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 170px;
-      background-color: #111;
-      border-radius: 0 0 12px 12px;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
-      z-index: 99;
-      flex-direction: column;
-      padding: 0;
-    }
-    .dropdown-menu a {
-      color: #fff;
-      padding: 12px 20px;
-      font-size: 1rem;
-      border-bottom: 1px solid #222;
-      background: none;
-      border: none;
-      border-radius: 0;
-      margin: 0;
-      height: auto;
-      line-height: 1.5;
-      display: block;
-    }
-    .dropdown-menu a:last-child { border-bottom: none; }
-    .dropdown-menu a:hover,
-    .dropdown-menu a:focus {
-      background: #B96794;
-      color: #fff;
-    }
-    .dropdown:hover .dropdown-menu,
-    .dropdown.active .dropdown-menu {
-      display: flex;
-    }
-    .dropdown {
-        height: 44px;
-      }
-      .dropdown-menu {
-        position: static;
-        min-width: 0;
-        box-shadow: none;
-        border-radius: 0;
-        width: 100vw;
-      }
+
     @media (max-width: 900px) {
       .sm-general-manager-section {
         flex-direction: column;
@@ -319,26 +346,7 @@
       color: #19171a;
       margin-bottom: 8px;
     }
-    .home-btn, .nav-links a, .dropdown-toggle {
-      text-decoration: none;
-      color: black;
-      font-size: 1.1rem;
-      font-weight: bold;
-      font-family: 'Georgia', serif;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-      padding: 0 20px;
-      border: none;
-      background: none;
-      border-radius: 0;
-      margin: 0;
-      height: 56px;
-      line-height: 56px;
-      display: flex;
-      align-items: center;
-      box-sizing: border-box;
-      cursor: pointer;
-    }
+
     @media (max-width: 900px) {
       .sm-managers-row {
         flex-direction: column;
@@ -368,20 +376,20 @@
   <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
 </div>
 
-<!-- Navigation -->
+<!-- Navigation - Fixed with Original Format -->
 <nav>
     <a href="index.html" class="home-btn">HOME</a>
     <div class="nav-links">
-      <a href="about.html">About</a>
       <div class="dropdown">
         <a href="#" class="dropdown-toggle">About</a>
         <div class="dropdown-menu">
-          <a href="socialmedia.html">Social Media Team</a>
+          <a href="socialmedia.html" class="active">Social Media Team</a>
           <a href="about.html">Executive Board</a>
         </div>
       </div>
+      <a href="events.html">Events</a>
       <a href="newsletter.html">Newsletter</a>
-      <a href="index.com#contact">Contact</a>
+      <a href="index.html#contact">Contact</a>
       <a href="getinvolved.html">Get Involved</a>
     </div>
 </nav>
@@ -398,7 +406,7 @@
     <img src="anushka-reddy.jpg" alt="General Manager: Anushka Reddy" class="sm-gm-img" />
     <div class="sm-gm-info">
       <div class="sm-gm-title">General Manager</div>
-      Anushka Reddy serves as RDC’s General Manager, overseeing operations and supporting the growth of our initiatives. She plays a key role in coordinating projects, managing volunteers, and ensuring our mission to raise rare disease awareness is carried out effectively. With strong leadership and organizational skills, Anushka helps guide RDC’s impact in the community.
+      Anushka Reddy serves as RDC's General Manager, overseeing operations and supporting the growth of our initiatives. She plays a key role in coordinating projects, managing volunteers, and ensuring our mission to raise rare disease awareness is carried out effectively. With strong leadership and organizational skills, Anushka helps guide RDC's impact in the community.
     </div>
   </div>
 
@@ -421,5 +429,25 @@
     </div>
   </div>
 </section>
+
+<script>
+  // Enable About dropdown for mobile
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        if(window.innerWidth <= 900) {
+          e.preventDefault();
+          const dropdown = this.parentElement;
+          dropdown.classList.toggle('active');
+        }
+      });
+    });
+    document.addEventListener('click', function(e) {
+      document.querySelectorAll('.dropdown.active').forEach(function(drop) {
+        if (!drop.contains(e.target)) drop.classList.remove('active');
+      });
+    });
+  });
+</script>
 </body>
 </html>
