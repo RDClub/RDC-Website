@@ -54,14 +54,14 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      min-height: 56px;
+      min-height: 72px;
       width: 100%;
       padding: 0;
     }
     .home-btn, .nav-links a, .dropdown-toggle {
       text-decoration: none;
       color: black;
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: bold;
       font-family: 'Georgia', serif;
       text-transform: uppercase;
@@ -71,8 +71,8 @@
       background: none;
       border-radius: 0;
       margin: 0;
-      height: 56px;
-      line-height: 56px;
+      height: 72px;
+      line-height: 72px;
       display: flex;
       align-items: center;
       box-sizing: border-box;
@@ -161,12 +161,43 @@
       }
       .home-btn, .nav-links a, .dropdown-toggle {
         font-size: 1.25rem;
-        height: 48px;
-        line-height: 48px;
+        height: 56px;
+        line-height: 56px;
         padding: 0 16px;
         width: 100%;
         justify-content: flex-start;
       }
+      .home-btn.active {
+        margin-left: 0;
+        border-radius: 18px;
+      }
+      .dropdown {
+        height: 56px;
+      }
+      .dropdown-menu {
+        position: static;
+        min-width: 0;
+        box-shadow: none;
+        border-radius: 0;
+        width: 100vw;
+      }
+    }
+    @media (max-width: 600px) {
+      html { font-size: 17px; }
+      .home-btn, .nav-links a, .dropdown-toggle {
+        font-size: 1rem;
+        padding: 0 10px;
+        height: 48px;
+        line-height: 48px;
+      }
+      .home-btn.active {
+        border-radius: 12px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 1rem;
+      }
+    }
+    
       .dropdown-toggle.active {
         margin-left: 0;
         border-radius: 18px;
