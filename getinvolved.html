@@ -18,26 +18,34 @@
       min-height: 100vh;
       font-size: 1.1rem;
     }
-    .full-width-banner {
+    /* --- BANNER & NAV --- */
+    .above-nav {
+      height: 100vh;
       width: 100vw;
-      background-color: #fce8f5;
+      display: flex;
+      flex-direction: column;
+      background: #fce8f5;
+      margin-bottom: 0;
+    }
+    .full-width-banner {
+      flex: 1 1 0%;
+      width: 100vw;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 15px 0;
+      justify-content: center;
+      gap: 2vh;
+      padding: 0;
+      margin: 0;
     }
-    .full-width-banner img {
-      width: 100%;
-      max-width: 95vw;
-      height: auto;
+    .motto-img,
+    .rdc-title-banner {
+      width: 90vw;
+      max-width: none;
+      height: 35vh;
+      object-fit: contain;
       display: block;
-    }
-    .motto-img, .rdc-title-banner {
-      width: 100%;
-      max-width: 800px;
-      height: auto;
-      display: block;
-      margin: 0 auto 10px auto;
+      margin: 0 auto;
     }
     nav {
       background-color: #fce8f5;
@@ -48,8 +56,10 @@
       align-items: center;
       flex-wrap: wrap;
       min-height: 72px;
-      width: 100%;
+      width: 100vw;
       padding: 0;
+      position: static;
+      z-index: 2;
     }
     .home-btn, .nav-links a, .dropdown-toggle {
       text-decoration: none;
@@ -141,8 +151,6 @@
     .nav-links .dropdown-toggle:not(.active):hover {
       color: #B96794;
     }
-
-    /* Responsive nav */
     @media (max-width: 900px) {
       nav {
         flex-direction: column;
@@ -177,6 +185,8 @@
         border-radius: 0;
         width: 100vw;
       }
+      .above-nav { height: 60vh; }
+      .motto-img, .rdc-title-banner { height: 25vh; }
     }
     @media (max-width: 600px) {
       html { font-size: 17px; }
@@ -193,8 +203,9 @@
         line-height: 44px;
         font-size: 1rem;
       }
+      .above-nav { height: 45vh; }
+      .motto-img, .rdc-title-banner { height: 18vh; }
     }
-
     /* --- GET INVOLVED SECTION --- */
     .get-involved-hero {
       position: relative;
@@ -338,28 +349,30 @@
   </style>
 </head>
 <body>
-<!-- Full Width Banner -->
-<div class="full-width-banner">
-  <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
-  <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
-</div>
-
-<!-- Navigation -->
-<nav>
-  <a href="index.html" class="home-btn">HOME</a>
-  <div class="nav-links">
-    <div class="dropdown">
+<!-- Banner and Nav: now fills the screen above nav -->
+<div class="above-nav">
+  <div class="full-width-banner">
+    <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
+    <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
+  </div>
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="home-btn">HOME</a>
+    <div class="nav-links">
+      <div class="dropdown">
         <a href="#" class="dropdown-toggle">About</a>
         <div class="dropdown-menu">
           <a href="socialmedia.html">Social Media Team</a>
           <a href="about.html">Executive Board</a>
         </div>
       </div>
-    <a href="events.html">Events</a>
-    <a href="newsletter.html">Newsletter</a>
-    <a href="index.html#contact">Contact</a>
-  </div>
-</nav>
+      <a href="events.html">Events</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="getinvolved.html" class="active">Get Involved</a>
+    </div>
+  </nav>
+</div>
 
 <!-- GET INVOLVED HERO -->
 <section class="get-involved-hero">
