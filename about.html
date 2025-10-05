@@ -78,6 +78,7 @@
       box-sizing: border-box;
       cursor: pointer;
     }
+    /* Only the About dropdown gets the button style */
     .dropdown-toggle.active {
       background: white;
       color: black;
@@ -167,10 +168,6 @@
         width: 100%;
         justify-content: flex-start;
       }
-      .home-btn.active {
-        margin-left: 0;
-        border-radius: 18px;
-      }
       .dropdown {
         height: 56px;
       }
@@ -190,20 +187,15 @@
         height: 48px;
         line-height: 48px;
       }
-      .home-btn.active {
+      .dropdown-toggle.active {
         border-radius: 12px;
         height: 44px;
         line-height: 44px;
         font-size: 1rem;
-      }
-    }
-    
-      .dropdown-toggle.active {
         margin-left: 0;
-        border-radius: 18px;
       }
       .dropdown {
-        height: 48px;
+        height: 44px;
       }
       .dropdown-menu {
         position: static;
@@ -211,20 +203,6 @@
         box-shadow: none;
         border-radius: 0;
         width: 100vw;
-      }
-    }
-    @media (max-width: 600px) {
-      .home-btn, .nav-links a, .dropdown-toggle {
-        font-size: 1rem;
-        padding: 0 10px;
-        height: 40px;
-        line-height: 40px;
-      }
-      .dropdown-toggle.active {
-        border-radius: 12px;
-        height: 36px;
-        line-height: 36px;
-        font-size: 1rem;
       }
     }
 
