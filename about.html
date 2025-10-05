@@ -24,7 +24,6 @@
       overflow-x: hidden;
     }
 
-    /* --- FIXED: BANNER --- */
     .full-width-banner {
       width: 100vw;
       background-color: #fce8f5;
@@ -46,7 +45,7 @@
       margin: 0 auto 10px auto;
     }
 
-    /* --- EXACT NAVIGATION FROM FIRST PAGE --- */
+    /* --- NAVIGATION --- */
     nav {
       background-color: #fce8f5;
       border-top: 3px solid black;
@@ -79,7 +78,7 @@
       box-sizing: border-box;
       cursor: pointer;
     }
-    .home-btn.active {
+    .dropdown-toggle.active {
       background: white;
       color: black;
       border: 3px solid black;
@@ -149,7 +148,6 @@
       color: #B96794;
     }
 
-    /* Responsive nav */
     @media (max-width: 900px) {
       nav {
         flex-direction: column;
@@ -169,7 +167,7 @@
         width: 100%;
         justify-content: flex-start;
       }
-      .home-btn.active {
+      .dropdown-toggle.active {
         margin-left: 0;
         border-radius: 18px;
       }
@@ -191,7 +189,7 @@
         height: 48px;
         line-height: 48px;
       }
-      .home-btn.active {
+      .dropdown-toggle.active {
         border-radius: 12px;
         height: 44px;
         line-height: 44px;
@@ -492,7 +490,7 @@
   <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
 </div>
 
-<!-- Navigation - EXACTLY like first page -->
+<!-- Navigation -->
 <nav>
   <a href="index.html" class="home-btn">HOME</a>
   <div class="nav-links">
