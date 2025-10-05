@@ -10,8 +10,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-    html { scroll-behavior: smooth; font-size: 20px; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { 
+      scroll-behavior: smooth; 
+      font-size: 20px; 
+    }
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
     body {
       font-family: 'Georgia', serif;
       background-color: #fce8f5;
@@ -20,7 +27,10 @@
       display: flex;
       flex-direction: column;
       font-size: 1.1rem;
+      overflow-x: hidden; /* Prevent horizontal scroll */
     }
+    
+    /* FIXED: Full-width banner section */
     .full-width-banner {
       width: 100vw;
       background-color: #fce8f5;
@@ -28,20 +38,24 @@
       flex-direction: column;
       align-items: center;
       padding: 15px 0;
+      margin: 0;
+      box-sizing: border-box;
     }
     .full-width-banner img {
       width: 100%;
-      max-width: 95vw;
+      max-width: 100%; /* Changed from 95vw to 100% */
       height: auto;
       display: block;
     }
     .motto-img, .rdc-title-banner {
       width: 100%;
-      max-width: 800px;
+      max-width: 100%; /* Ensure full width */
       height: auto;
       display: block;
       margin: 0 auto 10px auto;
     }
+    
+    /* Rest of your CSS remains the same */
     nav {
       background-color: #fce8f5;
       border-top: 3px solid black;
