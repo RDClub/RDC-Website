@@ -43,9 +43,19 @@
       display: block;
       margin: 0 auto 10px auto;
     }
+    .nav-top-bar {
+      width: 100vw;
+      height: 6px;
+      background: #000;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
     nav {
       background-color: #fce8f5;
-      border-top: 3px solid black;
       border-bottom: 3px solid black;
       display: flex;
       justify-content: center;
@@ -58,7 +68,7 @@
     .home-btn, .nav-links a, .dropdown-toggle {
       text-decoration: none;
       color: black;
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: bold;
       font-family: 'Georgia', serif;
       text-transform: uppercase;
@@ -144,6 +154,7 @@
     .nav-links .dropdown-toggle:not(.active):hover {
       color: #B96794;
     }
+
     @media (max-width: 900px) {
       nav {
         flex-direction: column;
@@ -156,7 +167,7 @@
         width: 100%;
       }
       .home-btn, .nav-links a, .dropdown-toggle {
-        font-size: 1.08rem;
+        font-size: 1.25rem;
         height: 56px;
         line-height: 56px;
         padding: 0 16px;
@@ -539,6 +550,7 @@
     <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
     <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
   </div>
+  <div class="nav-top-bar"></div>
   <nav>
     <a href="index.html" class="home-btn active">HOME</a>
     <div class="nav-links">
