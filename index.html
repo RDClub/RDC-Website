@@ -10,15 +10,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-    html { 
-      scroll-behavior: smooth; 
-      font-size: 20px; 
-    }
-    * { 
-      box-sizing: border-box; 
-      margin: 0; 
-      padding: 0; 
-    }
+    html { scroll-behavior: smooth; font-size: 20px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Georgia', serif;
       background-color: #fce8f5;
@@ -27,35 +20,47 @@
       display: flex;
       flex-direction: column;
       font-size: 1.1rem;
-      overflow-x: hidden; /* Prevent horizontal scroll */
     }
-    
-    /* FIXED: Full-width banner section */
     .full-width-banner {
       width: 100vw;
+      height: 100vh; /* Full viewport height */
       background-color: #fce8f5;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding: 15px 0;
+      justify-content: center;   /* Vertically center */
+      align-items: center;       /* Horizontally center */
+      position: relative;
+      padding: 0;
       margin: 0;
-      box-sizing: border-box;
     }
-    .full-width-banner img {
+    .banner-content {
       width: 100%;
-      max-width: 100%; /* Changed from 95vw to 100% */
-      height: auto;
-      display: block;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
     .motto-img, .rdc-title-banner {
       width: 100%;
-      max-width: 100%; /* Ensure full width */
+      max-width: 800px;
       height: auto;
       display: block;
-      margin: 0 auto 10px auto;
+      margin: 0 0 10px 0;
     }
-    
-    /* Rest of your CSS remains the same */
+    @media (max-width: 900px) {
+      .banner-content,
+      .motto-img, .rdc-title-banner {
+        max-width: 95vw;
+      }
+    }
+    @media (max-width: 600px) {
+      .banner-content,
+      .motto-img, .rdc-title-banner {
+        max-width: 98vw;
+      }
+    }
+
     nav {
       background-color: #fce8f5;
       border-top: 3px solid black;
@@ -71,7 +76,7 @@
     .home-btn, .nav-links a, .dropdown-toggle {
       text-decoration: none;
       color: black;
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       font-weight: bold;
       font-family: 'Georgia', serif;
       text-transform: uppercase;
@@ -171,7 +176,7 @@
         width: 100%;
       }
       .home-btn, .nav-links a, .dropdown-toggle {
-        font-size: 1.25rem;
+        font-size: 1.08rem;
         height: 56px;
         line-height: 56px;
         padding: 0 16px;
@@ -556,8 +561,10 @@
 </head>
 <body>
   <div class="full-width-banner">
-    <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
-    <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
+    <div class="banner-content">
+      <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
+      <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
+    </div>
   </div>
   <nav>
     <a href="index.html" class="home-btn active">HOME</a>
