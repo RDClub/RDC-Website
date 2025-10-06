@@ -7,15 +7,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-    html { 
-      scroll-behavior: smooth; 
-      font-size: 20px; 
-    }
-    * { 
-      box-sizing: border-box; 
-      margin: 0; 
-      padding: 0; 
-    }
+    html { scroll-behavior: smooth; font-size: 20px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Georgia', serif;
       background-color: #fce8f5;
@@ -24,11 +17,10 @@
       flex-direction: column;
       min-height: 100vh;
       font-size: 1.1rem;
-      overflow-x: hidden; /* Prevent horizontal scroll */
     }
-    
-    /* --- FIXED: BANNER & NAV --- */
+    /* --- BANNER & NAV --- */
     .above-nav {
+      height: 100vh;
       width: 100vw;
       display: flex;
       flex-direction: column;
@@ -36,21 +28,21 @@
       margin-bottom: 0;
     }
     .full-width-banner {
+      flex: 1 1 0%;
       width: 100vw;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 2vh;
-      padding: 2vh 0;
+      padding: 0;
       margin: 0;
     }
     .motto-img,
     .rdc-title-banner {
-      width: 100%; /* Changed from 90vw to 100% */
-      max-width: 100%; /* Ensure full width */
-      height: auto; /* Changed from fixed height to auto */
-      max-height: 35vh; /* Limit maximum height */
+      width: 90vw;
+      max-width: none;
+      height: 35vh;
       object-fit: contain;
       display: block;
       margin: 0 auto;
@@ -193,9 +185,8 @@
         border-radius: 0;
         width: 100vw;
       }
-      .motto-img, .rdc-title-banner { 
-        max-height: 25vh; 
-      }
+      .above-nav { height: 60vh; }
+      .motto-img, .rdc-title-banner { height: 25vh; }
     }
     @media (max-width: 600px) {
       html { font-size: 17px; }
@@ -212,11 +203,9 @@
         line-height: 44px;
         font-size: 1rem;
       }
-      .motto-img, .rdc-title-banner { 
-        max-height: 18vh; 
-      }
+      .above-nav { height: 45vh; }
+      .motto-img, .rdc-title-banner { height: 18vh; }
     }
-    
     /* --- GET INVOLVED SECTION --- */
     .get-involved-hero {
       position: relative;
@@ -257,7 +246,6 @@
       .get-involved-hero { min-height: 70px;}
       .get-involved-hero h1 { font-size: 1.4rem;}
     }
-    
     .get-involved-cards-section {
       width: 100vw;
       background: #fff;
@@ -409,7 +397,7 @@
       <img src="random.jpeg" alt="Start a Chapter" class="get-involved-card-img" />
       <div class="get-involved-card-title">Start a Chapter</div>
       <div class="get-involved-card-desc">
-        Interested in leading a group to carry out RDC's mission of spreading rare disease awareness and advocacy in your local community? Start a chapter in your area today! Starting a chapter takes time, dedication, and strong leadership and collaboration skills. Not every application will be approved, so make sure you are ready to commit before registering to start an RDC chapter.
+        Interested in leading a group to carry out RDC’s mission of spreading rare disease awareness and advocacy in your local community? Start a chapter in your area today! Starting a chapter takes time, dedication, and strong leadership and collaboration skills. Not every application will be approved, so make sure you are ready to commit before registering to start an RDC chapter.
       </div>
       <a href="#" class="get-involved-learn-btn">Learn More</a>
     </div>
