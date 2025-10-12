@@ -84,6 +84,7 @@
     .nav-links { display: flex; gap: 0; align-items: center; height: 72px; }
     .dropdown { position: relative; display: flex; align-items: center; height: 72px; }
     .dropdown-toggle:after { content: ' ▼'; font-size: 0.8em; color: #19171a; margin-left: 2px; }
+    .nav-links a[href="getinvolved.html"] { font-size: 1.7rem; }
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -135,6 +136,7 @@
         width: 100%;
         justify-content: flex-start;
       }
+      .nav-links a[href="getinvolved.html"] { font-size: 1.5rem; }
       .home-btn.active { margin-left: 0; border-radius: 18px; }
       .dropdown { height: 56px; }
       .dropdown-menu {
@@ -144,6 +146,8 @@
         border-radius: 0;
         width: 100vw;
       }
+      .hero { min-height: 420px; padding: 42px 0; }
+      .what-we-do-image { width: 86%; }
     }
     @media (max-width: 600px) {
       html { font-size: 17px; } /* About uses this bump on small screens */
@@ -153,18 +157,23 @@
         height: 48px;
         line-height: 48px;
       }
+      .nav-links a[href="getinvolved.html"] { font-size: 1.3rem; }
       .home-btn.active {
         border-radius: 12px;
         height: 44px;
         line-height: 44px;
         font-size: 1rem;
       }
+      .hero { min-height: 360px; padding: 36px 0; }
+      .hero-text h1 { font-size: clamp(2.9rem, 11vw, 4.2rem); }
+      .hero-text p { font-size: 0.95rem; }
+      .what-we-do-image { width: 100%; max-width: 420px; }
     }
 
     /* --- HERO (scaled to sit nicely under the About-sized nav) --- */
     .hero {
       width: 100vw;
-      min-height: 320px;
+      min-height: 460px;
       background-image: url('darkenphoto.png');
       background-size: cover;
       background-position: center;
@@ -172,7 +181,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      padding: 32px 0;
+      padding: 48px 0;
     }
     .hero::after {
       content: "";
@@ -185,18 +194,21 @@
     .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; width: 100%; text-align: center; padding: 16px; }
     .hero-text { color: #fff; margin-bottom: 24px; max-width: 800px; }
     .hero-text h1 {
-      font-size: 2.2rem;      /* balanced under About-sized nav */
+      font-size: clamp(3.4rem, 8vw, 5.6rem);
       margin-bottom: 12px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      line-height: 1.15;
+      line-height: 1.02;
     }
-    .hero-text p { font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+    .hero-text p {
+      font-size: 1rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
     .hero-btn-container { width: 100%; display: flex; justify-content: center; }
     .hero-btn {
       display: inline-block;
-      padding: 14px 32px;
+      padding: 12px 28px;
       color: #fff;
-      font-size: 1rem;
+      font-size: 0.8rem;
       font-weight: bold;
       font-family: 'Georgia', serif;
       text-transform: uppercase;
@@ -211,36 +223,42 @@
 
     /* --- What We Do --- */
     .what-we-do-section { background: #f9dff4; padding: 40px 5vw; position: relative; }
-    .what-we-do-container { max-width: 825px; margin: 0 auto; position: relative; }
-    .what-we-do-image { width: 100%; border-radius: 24px; border: 3px solid #000; display: block; }
+    .what-we-do-container { max-width: 825px; margin: 0 auto; position: relative; display: flex; flex-direction: column; align-items: center; }
+    .what-we-do-image {
+      width: 78%;
+      max-width: 520px;
+      border-radius: 24px;
+      border: 3px solid #000;
+      display: block;
+    }
     .what-we-do-content {
-      background: #000; color: #fff; padding: 28px;
-      width: 95%; max-width: 600px; margin: -50px auto 0 auto;
+      background: #000; color: #fff; padding: 18px;
+      width: 88%; max-width: 520px; margin: -50px auto 0 auto;
       border-radius: 24px; z-index: 2; position: relative;
     }
-    .what-we-do-content h2 { font-size: 2rem; color: #f9dff4; margin-bottom: 16px; text-align: center; }
-    .what-we-do-content p { font-size: 1.05rem; line-height: 1.6; text-align: center; }
+    .what-we-do-content h2 { font-size: 1.05rem; color: #f9dff4; margin-bottom: 10px; text-align: center; letter-spacing: 1px; }
+    .what-we-do-content p { font-size: 0.75rem; line-height: 1.5; text-align: center; }
 
     /* --- Impact Cards --- */
     .nord-section { padding: 28px 6vw; background: #fff; margin: 24px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.07); opacity: 0; transform: translateY(50px); transition: all .8s ease; }
     .nord-section.show { opacity: 1; transform: translateY(0); }
-    .nord-section h2 { color: #000; text-align: center; margin-bottom: 18px; font-size: 1.9rem; }
+    .nord-section h2 { color: #000; text-align: center; margin-bottom: 18px; font-size: 1.4rem; }
     .services-grid { display: flex; flex-wrap: wrap; gap: 26px; max-width: 1200px; margin: 0 auto; justify-content: center; }
     .service-card { background: #f9f9f9; border-radius: 12px; padding: 22px; text-align: center; transition: transform .3s ease; width: 94vw; max-width: 340px; }
     .service-card:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,.1); }
-    .service-card h3 { color: #000; margin-bottom: 10px; font-size: 1.4rem; }
-    .service-card p { margin-bottom: 14px; color: #555; font-size: 1.05rem; line-height: 1.45; }
-    .service-btn { display: inline-block; padding: 12px 22px; background: #000; color: #fff; text-decoration: none; border-radius: 8px; font-size: 1.02rem; min-width: 140px; }
+    .service-card h3 { color: #000; margin-bottom: 10px; font-size: 1.05rem; }
+    .service-card p { margin-bottom: 14px; color: #555; font-size: 0.88rem; line-height: 1.45; }
+    .service-btn { display: inline-block; padding: 10px 20px; background: #000; color: #fff; text-decoration: none; border-radius: 8px; font-size: 0.88rem; min-width: 130px; }
     .service-btn:hover { background: #784461; }
 
     /* --- Events --- */
     .events-section { background: #fce8f5; padding: 46px 6vw; }
-    .events-section h2 { text-align: center; font-size: 2rem; color: #000; margin-bottom: 28px; }
+    .events-section h2 { text-align: center; font-size: 1.4rem; color: #000; margin-bottom: 28px; }
     .events-container { display: flex; flex-wrap: wrap; gap: 26px; max-width: 1200px; margin: 0 auto; justify-content: center; }
     .event-card { text-align: center; max-width: 340px; width: 94vw; }
     .event-image { width: 100%; border: 2px solid #000; border-radius: 14px; }
-    .event-card h3 { margin-top: 14px; font-size: 1.35rem; }
-    .event-card p { margin-top: 8px; font-size: 1.05rem; margin-bottom: 12px; line-height: 1.45; }
+    .event-card h3 { margin-top: 14px; font-size: 0.98rem; }
+    .event-card p { margin-top: 8px; font-size: 0.88rem; margin-bottom: 12px; line-height: 1.45; }
 
     /* --- Contact --- */
     .contact-section { background: #1a1a1a; padding: 70px 6vw; color: #FCE8F5; }
