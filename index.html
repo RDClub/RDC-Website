@@ -9,226 +9,265 @@
   <title>Rare Disease Club - Spreading Awareness About Rare Diseases</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
-    /* ===== Base (smaller, consistent) ===== */
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-    html { scroll-behavior: smooth; font-size: 15px; }     /* Global zoom knob */
-    *, *::before, *::after { box-sizing: border-box; }
+
+    /* --- Base (match About page zoom) --- */
+    /* No custom html font-size => browser default ~16px (same as About) */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
       font-family: 'Georgia', serif;
-      background: #fce8f5;
-      color: #222;
-      line-height: 1.55;
+      background-color: #fce8f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       overflow-x: hidden;
+      line-height: 1.5;
     }
 
-    /* Helpers */
-    .container      { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 5vw; }
-    .container-narrow{ width: 100%; max-width: 900px;  margin: 0 auto; padding: 0 5vw; }
-
-    /* ===== Top banners (your images) ===== */
+    /* Full width banners (same) */
     .full-width-banner {
       width: 100vw;
-      background: #fce8f5;
+      background-color: #fce8f5;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 10px 0;
+      padding: 15px 0;
     }
-    .full-width-banner img { width: 100%; height: auto; display: block; }
+    .full-width-banner img { width: 100%; max-width: 100%; height: auto; display: block; }
+    .motto-img, .rdc-title-banner { max-width: 100%; margin: 0 auto 10px auto; }
 
-    /* ===== NAV (compact + uniform) ===== */
+    /* --- NAVIGATION (exactly like About) --- */
     nav {
-      background: #fce8f5;
-      border-top: 3px solid #000;
-      border-bottom: 3px solid #000;
+      background-color: #fce8f5;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      min-height: 58px;
+      min-height: 72px;
       width: 100%;
+      padding: 0;
     }
     .home-btn, .nav-links a, .dropdown-toggle {
       text-decoration: none;
-      color: #000;
-      font-weight: 700;
+      color: black;
+      font-size: 1.35rem;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
       text-transform: uppercase;
-      font-size: 1.05rem;                   /* smaller nav text */
-      padding: 0 22px;
-      height: 58px;
-      line-height: 58px;
+      transition: all 0.3s ease;
+      padding: 0 32px;
+      border: none;
+      background: none;
+      border-radius: 0;
+      margin: 0;
+      height: 72px;
+      line-height: 72px;
       display: flex;
       align-items: center;
-      transition: color .25s ease, background .25s ease;
+      box-sizing: border-box;
+      cursor: pointer;
     }
     .home-btn.active {
-      background: #fff;
-      border: 2px solid #000;
-      border-radius: 16px;
-      height: 40px;
-      line-height: 40px;
-      padding: 0 18px;
-      margin-left: 8px;
-      font-size: .98rem;
+      background: white;
+      color: black;
+      border: 3px solid black;
+      border-radius: 24px;
+      padding: 0 32px;
+      height: 56px;
+      line-height: 56px;
+      margin-left: 12px;
+      font-size: 1.2rem;
     }
-    .nav-links { display: flex; gap: 0; align-items: center; }
-    .dropdown { position: relative; display: flex; align-items: center; }
-    .dropdown-toggle::after { content: ' ▼'; font-size: .8em; margin-left: 2px; }
+    .nav-links { display: flex; gap: 0; align-items: center; height: 72px; }
+    .dropdown { position: relative; display: flex; align-items: center; height: 72px; }
+    .dropdown-toggle:after { content: ' ▼'; font-size: 0.8em; color: #19171a; margin-left: 2px; }
     .dropdown-menu {
-      position: absolute; top: 100%; left: 0;
-      display: none; flex-direction: column; min-width: 180px;
-      background: #111; border-radius: 0 0 10px 10px;
-      box-shadow: 0 8px 22px rgba(0,0,0,.15); z-index: 20;
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+      background-color: #111;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+      z-index: 99;
+      flex-direction: column;
+      padding: 0;
     }
     .dropdown-menu a {
-      color: #fff; padding: 12px 18px; font-size: .98rem;
+      color: #fff;
+      padding: 16px 26px;
+      font-size: 1.15rem;
       border-bottom: 1px solid #222;
+      background: none;
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      height: auto;
+      line-height: 1.6;
+      display: block;
     }
     .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover,
+    .dropdown-menu a:focus { background: #B96794; color: #fff; }
     .dropdown:hover .dropdown-menu,
     .dropdown.active .dropdown-menu { display: flex; }
     .nav-links a:not(.active):hover,
     .nav-links .dropdown-toggle:not(.active):hover { color: #B96794; }
 
-    /* Responsive nav */
+    /* Responsive nav — same as About */
     @media (max-width: 900px) {
-      nav { flex-direction: column; }
-      .nav-links { width: 100%; flex-direction: column; align-items: stretch; }
-      .home-btn, .nav-links a, .dropdown-toggle {
-        width: 100%; justify-content: flex-start; padding: 0 16px;
-        height: 52px; line-height: 52px; font-size: 1rem;
+      nav { flex-direction: column; min-height: auto; }
+      .nav-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
       }
-      .home-btn.active { margin-left: 0; border-radius: 14px; height: 40px; line-height: 40px; }
-      .dropdown-menu { position: static; min-width: 0; box-shadow: none; border-radius: 0; width: 100vw; }
+      .home-btn, .nav-links a, .dropdown-toggle {
+        font-size: 1.25rem;
+        height: 56px;
+        line-height: 56px;
+        padding: 0 16px;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .home-btn.active { margin-left: 0; border-radius: 18px; }
+      .dropdown { height: 56px; }
+      .dropdown-menu {
+        position: static;
+        min-width: 0;
+        box-shadow: none;
+        border-radius: 0;
+        width: 100vw;
+      }
     }
     @media (max-width: 600px) {
-      html { font-size: 14px; }    /* one more notch smaller on phones */
+      html { font-size: 17px; } /* About uses this bump on small screens */
+      .home-btn, .nav-links a, .dropdown-toggle {
+        font-size: 1rem;
+        padding: 0 10px;
+        height: 48px;
+        line-height: 48px;
+      }
+      .home-btn.active {
+        border-radius: 12px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 1rem;
+      }
     }
 
-    /* ===== HERO (smaller headings + tighter) ===== */
+    /* --- HERO (scaled to sit nicely under the About-sized nav) --- */
     .hero {
-      width: 100vw; min-height: 260px;
-      background: url('darkenphoto.png') center/cover no-repeat;
-      position: relative; display: flex; align-items: center; justify-content: center;
-      padding: 24px 0;
+      width: 100vw;
+      min-height: 320px;
+      background-image: url('darkenphoto.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 32px 0;
     }
-    .hero::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.5); }
-    .hero-content { position: relative; z-index: 1; text-align: center; padding: 10px; }
-    .hero-text { color: #fff; margin-bottom: 16px; max-width: 760px; }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100vw; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+    .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; width: 100%; text-align: center; padding: 16px; }
+    .hero-text { color: #fff; margin-bottom: 24px; max-width: 800px; }
     .hero-text h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 700;
-      font-size: 1.95rem;            /* was huge; now compact */
-      letter-spacing: .5px;
-      margin: 0 0 8px 0;
-      text-shadow: 1px 1px 2px rgba(0,0,0,.5);
-      line-height: 1.2;
+      font-size: 2.2rem;      /* balanced under About-sized nav */
+      margin-bottom: 12px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      line-height: 1.15;
     }
-    .hero-text p {
-      font-size: 1rem;
-      margin: 0;
-      text-shadow: 1px 1px 2px rgba(0,0,0,.45);
-    }
-    .hero-btn-container { display: flex; justify-content: center; }
+    .hero-text p { font-size: 1.1rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+    .hero-btn-container { width: 100%; display: flex; justify-content: center; }
     .hero-btn {
-      display: inline-block; padding: 10px 22px; min-width: 130px;
-      color: #fff; font-size: .98rem; font-weight: 700; text-transform: uppercase; text-decoration: none;
-      border: 2px solid #fff; border-radius: 12px; background: transparent; transition: background .25s ease;
+      display: inline-block;
+      padding: 14px 32px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 2px solid #fff;
+      background: transparent;
+      transition: all .3s ease;
+      border-radius: 16px;
+      min-width: 150px;
     }
     .hero-btn:hover { background: rgba(255,255,255,.2); }
 
-    /* ===== WHAT WE DO (consistent width/scale) ===== */
-    .what-we-do-section { background: #f9dff4; padding: 28px 0; }
-    .what-we-do-container { max-width: 900px; margin: 0 auto; padding: 0 5vw; }
-    .what-we-do-image { width: 100%; border-radius: 16px; border: 2px solid #000; display: block; }
+    /* --- What We Do --- */
+    .what-we-do-section { background: #f9dff4; padding: 40px 5vw; position: relative; }
+    .what-we-do-container { max-width: 825px; margin: 0 auto; position: relative; }
+    .what-we-do-image { width: 100%; border-radius: 24px; border: 3px solid #000; display: block; }
     .what-we-do-content {
-      background: #000; color: #fff; padding: 18px 20px;
-      width: 92%; max-width: 540px; margin: -34px auto 0 auto;
-      border-radius: 14px;
+      background: #000; color: #fff; padding: 28px;
+      width: 95%; max-width: 600px; margin: -50px auto 0 auto;
+      border-radius: 24px; z-index: 2; position: relative;
     }
-    .what-we-do-content h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.45rem; color: #f9dff4; margin: 0 0 8px 0; text-align: center;
-    }
-    .what-we-do-content p { font-size: .98rem; margin: 0; text-align: center; }
+    .what-we-do-content h2 { font-size: 2rem; color: #f9dff4; margin-bottom: 16px; text-align: center; }
+    .what-we-do-content p { font-size: 1.05rem; line-height: 1.6; text-align: center; }
 
-    /* ===== IMPACT (cards) ===== */
-    .nord-section {
-      padding: 22px 0; background: #fff; margin: 18px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,.07);
-      opacity: 0; transform: translateY(36px); transition: all .8s ease;
-    }
+    /* --- Impact Cards --- */
+    .nord-section { padding: 28px 6vw; background: #fff; margin: 24px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.07); opacity: 0; transform: translateY(50px); transition: all .8s ease; }
     .nord-section.show { opacity: 1; transform: translateY(0); }
-    .nord-section h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      text-align: center; font-size: 1.45rem; margin: 0 0 14px 0; color: #000;
-    }
-    .services-grid {
-      display: flex; flex-wrap: wrap; gap: 18px; justify-content: center;
-      max-width: 1100px; margin: 0 auto; padding: 0 5vw;
-    }
-    .service-card {
-      background: #f9f9f9; border-radius: 10px; padding: 16px; text-align: center;
-      transition: transform .25s ease, box-shadow .25s ease;
-      width: 94vw; max-width: 300px;
-    }
+    .nord-section h2 { color: #000; text-align: center; margin-bottom: 18px; font-size: 1.9rem; }
+    .services-grid { display: flex; flex-wrap: wrap; gap: 26px; max-width: 1200px; margin: 0 auto; justify-content: center; }
+    .service-card { background: #f9f9f9; border-radius: 12px; padding: 22px; text-align: center; transition: transform .3s ease; width: 94vw; max-width: 340px; }
     .service-card:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,.1); }
-    .service-card h3 { font-size: 1.1rem; margin: 0 0 8px 0; color: #000; }
-    .service-card p { font-size: .98rem; margin: 0 0 12px 0; color: #555; }
-    .service-btn {
-      display: inline-block; padding: 8px 16px; min-width: 118px;
-      background: #000; color: #fff; text-decoration: none; border-radius: 8px; font-size: .95rem;
-    }
+    .service-card h3 { color: #000; margin-bottom: 10px; font-size: 1.4rem; }
+    .service-card p { margin-bottom: 14px; color: #555; font-size: 1.05rem; line-height: 1.45; }
+    .service-btn { display: inline-block; padding: 12px 22px; background: #000; color: #fff; text-decoration: none; border-radius: 8px; font-size: 1.02rem; min-width: 140px; }
     .service-btn:hover { background: #784461; }
 
-    /* ===== EVENTS ===== */
-    .events-section { background: #fce8f5; padding: 30px 0; }
-    .events-section h2 {
-      font-family: 'Playfair Display', Georgia, serif; text-align: center;
-      font-size: 1.45rem; margin: 0 0 18px 0; color: #000;
-    }
-    .events-container {
-      display: flex; flex-wrap: wrap; gap: 18px; justify-content: center;
-      max-width: 1100px; margin: 0 auto; padding: 0 5vw;
-    }
-    .event-card { text-align: center; max-width: 300px; width: 94vw; }
-    .event-image { width: 100%; border: 2px solid #000; border-radius: 10px; display: block; }
-    .event-card h3 { margin: 12px 0 6px 0; font-size: 1.05rem; }
-    .event-card p { margin: 6px 0 10px 0; font-size: .98rem; }
+    /* --- Events --- */
+    .events-section { background: #fce8f5; padding: 46px 6vw; }
+    .events-section h2 { text-align: center; font-size: 2rem; color: #000; margin-bottom: 28px; }
+    .events-container { display: flex; flex-wrap: wrap; gap: 26px; max-width: 1200px; margin: 0 auto; justify-content: center; }
+    .event-card { text-align: center; max-width: 340px; width: 94vw; }
+    .event-image { width: 100%; border: 2px solid #000; border-radius: 14px; }
+    .event-card h3 { margin-top: 14px; font-size: 1.35rem; }
+    .event-card p { margin-top: 8px; font-size: 1.05rem; margin-bottom: 12px; line-height: 1.45; }
 
-    /* ===== CONTACT ===== */
-    .contact-section { background: #1a1a1a; color: #FCE8F5; padding: 40px 0; }
-    .contact-container { max-width: 1100px; margin: 0 auto; padding: 0 5vw; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-    .contact-info, .contact-form { flex: 1; min-width: 280px; max-width: 460px; }
-    .contact-info h2, .contact-form h2 { font-size: 1.35rem; margin: 0 0 14px 0; }
-    .contact-detail { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 1rem; }
-    .contact-form {
-      background: #2a2a2a; border-radius: 12px; padding: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.3);
-    }
-    .contact-form form { display: flex; flex-direction: column; gap: 12px; }
+    /* --- Contact --- */
+    .contact-section { background: #1a1a1a; padding: 70px 6vw; color: #FCE8F5; }
+    .contact-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; }
+    .contact-info, .contact-form { flex: 1; min-width: 290px; max-width: 480px; padding: 22px; }
+    .contact-info h2, .contact-form h2 { font-size: 1.9rem; margin-bottom: 18px; }
+    .contact-detail { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 1.05rem; }
+    .contact-form { background: #2a2a2a; border-radius: 16px; padding: 26px; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+    .contact-form form { display: flex; flex-direction: column; gap: 14px; }
     .contact-form input, .contact-form textarea {
-      width: 100%; padding: 10px 12px; background: #3d3c3c; border: 2px solid transparent;
-      border-radius: 8px; color: #FCE8F5; font-size: 1rem; transition: border-color .25s ease;
+      width: 100%; padding: 14px 16px; background: #3d3c3c; border: 2px solid transparent; border-radius: 8px; color: #FCE8F5; font-size: 1.05rem; transition: border-color .3s;
     }
-    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #FCE8F5; }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: #FCE8F5; outline: none; }
     .contact-form button[type="submit"] {
-      padding: 10px 18px; background: linear-gradient(135deg, #FCE8F5, #B96794);
-      color: #1a1a1a; border: none; border-radius: 18px; font-size: 1rem; font-weight: 700;
-      cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: transform .2s ease, box-shadow .2s ease;
+      padding: 14px 24px; background: linear-gradient(135deg, #FCE8F5, #B96794); color: #1a1a1a; border: none; border-radius: 22px; font-size: 1.05rem; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: transform .2s, box-shadow .2s;
     }
-    .contact-form button[type="submit"]:hover { transform: translateY(-1px); box-shadow: 0 5px 14px rgba(252,232,245,.35); }
+    .contact-form button[type="submit"]:hover { transform: translateY(-1px); box-shadow: 0 5px 15px rgba(252,232,245,.4); }
   </style>
 </head>
 <body>
-  <!-- Top banner images -->
+  <!-- Top banners -->
   <div class="full-width-banner">
     <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
     <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
   </div>
 
-  <!-- NAV -->
+  <!-- NAV (About clone) -->
   <nav>
     <a href="index.html" class="home-btn active">HOME</a>
     <div class="nav-links">
@@ -255,7 +294,7 @@
         <p>Rare doesn't mean alone. Together, we're turning awareness into action and hope into impact.</p>
       </div>
       <div class="hero-btn-container">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform" class="hero-btn">Join Now</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform" class="hero-btn">JOIN NOW</a>
       </div>
     </div>
   </section>
@@ -265,7 +304,7 @@
     <div class="what-we-do-container">
       <img src="photocopy.jpeg" alt="What We Do" class="what-we-do-image">
       <div class="what-we-do-content">
-        <h2>What We Do</h2>
+        <h2>WHAT WE DO</h2>
         <p>
           Rare Disease Collective (RDC) is a student-led initiative working to raise awareness about rare diseases.
           We aim to educate communities, support early diagnosis, and promote conversations around conditions that
@@ -325,7 +364,7 @@
       <div class="contact-info">
         <h2>Get In Touch</h2>
         <div class="contact-detail">
-          <svg style="width: 18px; height: 18px; fill: #FCE8F5;" viewBox="0 0 24 24" aria-hidden="true">
+          <svg style="width: 20px; height: 20px; fill: #FCE8F5;" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
           </svg>
           <span>Email Us</span>
@@ -335,12 +374,12 @@
       <div class="contact-form">
         <h2>Send Us a Message</h2>
         <form action="https://formspree.io/f/mblkaeak" method="POST">
-          <input type="text"   name="name"     placeholder="Your Name"     required />
-          <input type="email"  name="_replyto" placeholder="Email Address" required />
-          <textarea            name="message"  rows="5" placeholder="Your Message" required></textarea>
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="_replyto" placeholder="Email Address" required />
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
           <button type="submit">
             Send Message
-            <svg style="width: 16px; height: 16px; fill: #1a1a1a;" viewBox="0 0 24 24" aria-hidden="true">
+            <svg style="width: 18px; height: 18px; fill: #1a1a1a;" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
             </svg>
           </button>
@@ -351,26 +390,29 @@
 
   <!-- Scripts -->
   <script>
-    // Mobile dropdown toggle
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.dropdown-toggle').forEach(function (toggle) {
-        toggle.addEventListener('click', function (e) {
+    // Enable About dropdown for mobile (same behavior)
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
           if (window.innerWidth <= 900) {
             e.preventDefault();
-            this.parentElement.classList.toggle('active');
+            const dropdown = this.parentElement;
+            dropdown.classList.toggle('active');
           }
         });
       });
-      document.addEventListener('click', function (e) {
-        document.querySelectorAll('.dropdown.active').forEach(function (drop) {
+      document.addEventListener('click', function(e) {
+        document.querySelectorAll('.dropdown.active').forEach(function(drop) {
           if (!drop.contains(e.target)) drop.classList.remove('active');
         });
       });
 
-      // Impact fade-up
+      // Impact section animation
       const impactSection = document.querySelector('.nord-section');
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('show');
+        });
       }, { threshold: 0.2 });
       if (impactSection) observer.observe(impactSection);
     });
