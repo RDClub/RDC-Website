@@ -146,6 +146,8 @@
         border-radius: 0;
         width: 100vw;
       }
+      .hero { min-height: 420px; padding: 42px 0; }
+      .what-we-do-image { width: 86%; }
     }
     @media (max-width: 600px) {
       html { font-size: 17px; } /* About uses this bump on small screens */
@@ -162,12 +164,16 @@
         line-height: 44px;
         font-size: 1rem;
       }
+      .hero { min-height: 360px; padding: 36px 0; }
+      .hero-text h1 { font-size: clamp(2.9rem, 11vw, 4.2rem); }
+      .hero-text p { font-size: 0.95rem; }
+      .what-we-do-image { width: 100%; max-width: 420px; }
     }
 
     /* --- HERO (scaled to sit nicely under the About-sized nav) --- */
     .hero {
       width: 100vw;
-      min-height: 320px;
+      min-height: 460px;
       background-image: url('darkenphoto.png');
       background-size: cover;
       background-position: center;
@@ -175,7 +181,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      padding: 32px 0;
+      padding: 48px 0;
     }
     .hero::after {
       content: "";
@@ -214,8 +220,14 @@
 
     /* --- What We Do --- */
     .what-we-do-section { background: #f9dff4; padding: 40px 5vw; position: relative; }
-    .what-we-do-container { max-width: 825px; margin: 0 auto; position: relative; }
-    .what-we-do-image { width: 100%; border-radius: 24px; border: 3px solid #000; display: block; }
+    .what-we-do-container { max-width: 825px; margin: 0 auto; position: relative; display: flex; flex-direction: column; align-items: center; }
+    .what-we-do-image {
+      width: 78%;
+      max-width: 520px;
+      border-radius: 24px;
+      border: 3px solid #000;
+      display: block;
+    }
     .what-we-do-content {
       background: #000; color: #fff; padding: 18px;
       width: 88%; max-width: 520px; margin: -50px auto 0 auto;
