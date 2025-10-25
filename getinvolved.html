@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Discover how to volunteer, start a chapter, or support Mission 7K with the Rare Disease Club." />
   <title>Get Involved - Rare Disease Club</title>
+  <link rel="icon" href="rdc.png" type="image/png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-    html { scroll-behavior: smooth; font-size: 20px; }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Georgia', serif;
@@ -16,37 +18,21 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      font-size: 1.1rem;
+      overflow-x: hidden;
+      line-height: 1.5;
     }
-    /* --- BANNER & NAV --- */
-    .above-nav {
-      height: 100vh;
-      width: 100vw;
-      display: flex;
-      flex-direction: column;
-      background: #fce8f5;
-      margin-bottom: 0;
-    }
+
     .full-width-banner {
-      flex: 1 1 0%;
       width: 100vw;
+      background-color: #fce8f5;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 2vh;
-      padding: 0;
-      margin: 0;
+      padding: 15px 0;
     }
-    .motto-img,
-    .rdc-title-banner {
-      width: 90vw;
-      max-width: none;
-      height: 35vh;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
-    }
+    .full-width-banner img { width: 100%; max-width: 100%; height: auto; display: block; }
+    .motto-img, .rdc-title-banner { max-width: 100%; margin: 0 auto 10px auto; }
+
     nav {
       background-color: #fce8f5;
       border-top: 3px solid black;
@@ -56,15 +42,13 @@
       align-items: center;
       flex-wrap: wrap;
       min-height: 72px;
-      width: 100vw;
+      width: 100%;
       padding: 0;
-      position: static;
-      z-index: 2;
     }
     .home-btn, .nav-links a, .dropdown-toggle {
       text-decoration: none;
       color: black;
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: bold;
       font-family: 'Georgia', serif;
       text-transform: uppercase;
@@ -81,8 +65,9 @@
       box-sizing: border-box;
       cursor: pointer;
     }
+    .nav-links { display: flex; gap: 0; align-items: center; height: 72px; }
     .home-btn.active,
-    .nav-links a.active[href="getinvolved.html"] {
+    .nav-links a.active {
       background: white;
       color: black;
       border: 3px solid black;
@@ -93,24 +78,8 @@
       margin-left: 12px;
       font-size: 1.2rem;
     }
-    .nav-links {
-      display: flex;
-      gap: 0;
-      align-items: center;
-      height: 72px;
-    }
-    .dropdown {
-      position: relative;
-      display: flex;
-      align-items: center;
-      height: 72px;
-    }
-    .dropdown-toggle:after {
-      content: ' ▼';
-      font-size: 0.8em;
-      color: #19171a;
-      margin-left: 2px;
-    }
+    .dropdown { position: relative; display: flex; align-items: center; height: 72px; }
+    .dropdown-toggle:after { content: ' ▼'; font-size: 0.8em; color: #19171a; margin-left: 2px; }
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -139,23 +108,14 @@
     }
     .dropdown-menu a:last-child { border-bottom: none; }
     .dropdown-menu a:hover,
-    .dropdown-menu a:focus {
-      background: #B96794;
-      color: #fff;
-    }
+    .dropdown-menu a:focus { background: #B96794; color: #fff; }
     .dropdown:hover .dropdown-menu,
-    .dropdown.active .dropdown-menu {
-      display: flex;
-    }
+    .dropdown.active .dropdown-menu { display: flex; }
     .nav-links a:not(.active):hover,
-    .nav-links .dropdown-toggle:not(.active):hover {
-      color: #B96794;
-    }
+    .nav-links .dropdown-toggle:not(.active):hover { color: #B96794; }
+
     @media (max-width: 900px) {
-      nav {
-        flex-direction: column;
-        min-height: auto;
-      }
+      nav { flex-direction: column; min-height: auto; }
       .nav-links {
         flex-direction: column;
         align-items: stretch;
@@ -171,22 +131,18 @@
         justify-content: flex-start;
       }
       .home-btn.active,
-      .nav-links a.active[href="getinvolved.html"] {
+      .nav-links a.active {
         margin-left: 0;
         border-radius: 18px;
       }
-      .dropdown {
-        height: 56px;
-      }
+      .dropdown { height: 56px; width: 100%; }
       .dropdown-menu {
         position: static;
         min-width: 0;
         box-shadow: none;
         border-radius: 0;
-        width: 100vw;
+        width: 100%;
       }
-      .above-nav { height: 60vh; }
-      .motto-img, .rdc-title-banner { height: 25vh; }
     }
     @media (max-width: 600px) {
       html { font-size: 17px; }
@@ -197,165 +153,249 @@
         line-height: 48px;
       }
       .home-btn.active,
-      .nav-links a.active[href="getinvolved.html"] {
+      .nav-links a.active {
         border-radius: 12px;
         height: 44px;
         line-height: 44px;
         font-size: 1rem;
       }
-      .above-nav { height: 45vh; }
-      .motto-img, .rdc-title-banner { height: 18vh; }
     }
-    /* --- GET INVOLVED SECTION --- */
-    .get-involved-hero {
-      position: relative;
+
+    .hero {
       width: 100vw;
-      min-height: 260px;
-      background: #222;
+      min-height: 440px;
+      background-image: url('hart.jpeg');
+      background-size: cover;
+      background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      position: relative;
+      padding: 48px 0;
     }
-    .get-involved-hero img {
+    .hero::after {
+      content: "";
       position: absolute;
       top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      z-index: 1;
-      filter: brightness(0.6);
+      width: 100vw; height: 100%;
+      background-color: rgba(0,0,0,0.55);
+      z-index: 0;
     }
-    .get-involved-hero h1 {
+    .hero-content {
       position: relative;
       z-index: 2;
-      color: #fff;
-      font-size: 3.5rem;
-      font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 700;
-      text-align: center;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.22);
-      line-height: 1.15;
-    }
-    @media (max-width: 900px) {
-      .get-involved-hero { min-height: 120px;}
-      .get-involved-hero h1 { font-size: 2.2rem;}
-    }
-    @media (max-width: 500px) {
-      .get-involved-hero { min-height: 70px;}
-      .get-involved-hero h1 { font-size: 1.4rem;}
-    }
-    .get-involved-cards-section {
-      width: 100vw;
-      background: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 48px 0 48px 0;
+      text-align: center;
+      padding: 16px;
+      gap: 18px;
+      max-width: 960px;
     }
-    .get-involved-cards-row {
+    .hero h1 {
+      font-size: clamp(2.6rem, 6vw, 3.8rem);
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    .hero p {
+      color: #fff;
+      max-width: 720px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    }
+    .hero a {
+      display: inline-block;
+      padding: 12px 32px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 3px solid #fff;
+      border-radius: 22px;
+      transition: background 0.3s ease;
+    }
+    .hero a:hover { background: rgba(255,255,255,0.2); }
+
+    .intro-section {
+      background: #fff;
+      padding: 40px 6vw;
+    }
+    .intro-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #19171a;
+    }
+    .intro-section p {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.05rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .pathways {
+      background: #f9dff4;
+      padding: 46px 6vw;
+    }
+    .pathways h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #000;
+      margin-bottom: 28px;
+    }
+    .pathway-grid {
       display: flex;
-      flex-direction: row;
-      gap: 38px;
-      justify-content: center;
-      width: 100%;
+      flex-wrap: wrap;
+      gap: 26px;
       max-width: 1200px;
-      margin-top: 0;
+      margin: 0 auto;
+      justify-content: center;
     }
-    .get-involved-card {
+    .pathway-card {
       background: #fff;
       border-radius: 18px;
-      box-shadow: 0 2px 12px rgba(185,103,148,0.11);
-      display: flex;
-      flex-direction: column;
-      width: 340px;
-      max-width: 98vw;
-      overflow: hidden;
-      align-items: center;
-      margin-bottom: 18px;
-    }
-    .get-involved-card-img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      object-position: center;
-      border-bottom: 3px solid #19171a;
-    }
-    .get-involved-card-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2rem;
-      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 26px;
+      width: 94vw;
+      max-width: 340px;
       text-align: center;
-      margin: 18px 0 10px 0;
+      border: 2px solid #19171a;
     }
-    .get-involved-card-desc {
-      font-family: 'Playfair Display', Georgia, serif;
+    .pathway-card h3 {
       font-size: 1.3rem;
+      margin-bottom: 12px;
       color: #19171a;
-      text-align: center;
-      padding: 0 18px 16px 18px;
-      margin-bottom: 6px;
-      line-height: 1.4;
     }
-    .get-involved-learn-btn {
-      margin: 16px auto 20px auto;
+    .pathway-card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .pathway-card a {
+      display: inline-block;
+      padding: 10px 22px;
+      background: #19171a;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    .pathway-card a:hover { background: #784461; }
+
+    .detail-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 36px;
+      padding: 50px 6vw;
+      background: #fff;
+    }
+    .detail-section.alt { background: #fce8f5; }
+    .detail-image {
+      flex: 1 1 320px;
+      max-width: 460px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 3px solid #19171a;
+    }
+    .detail-image img { width: 100%; height: auto; display: block; }
+    .detail-copy {
+      flex: 1 1 360px;
+      max-width: 520px;
+    }
+    .detail-copy h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 14px;
+      color: #19171a;
+    }
+    .detail-copy p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .detail-copy ul { padding-left: 18px; margin-bottom: 18px; }
+    .detail-copy li { margin-bottom: 10px; color: #555; }
+    .detail-copy a {
+      display: inline-block;
+      padding: 12px 26px;
+      background: #19171a;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 22px;
+      font-size: 0.95rem;
+    }
+    .detail-copy a:hover { background: #784461; }
+
+    .support-strip {
+      background: #1a1a1a;
+      color: #fce8f5;
+      text-align: center;
+      padding: 40px 6vw;
+    }
+    .support-strip h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .support-strip p {
+      font-size: 1rem;
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .connect-section {
+      background: #fff;
+      padding: 50px 6vw 70px;
+      text-align: center;
+    }
+    .connect-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #19171a;
+    }
+    .connect-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+    }
+    .connect-links a {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #19171a;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      min-width: 190px;
+    }
+    .connect-links a:hover { background: #784461; }
+
+    footer {
+      text-align: center;
+      padding: 24px 12px;
       background: #fce8f5;
       color: #19171a;
-      border: 2px solid #B96794;
-      border-radius: 22px;
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      padding: 14px 36px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.3s, color 0.3s;
-      display: inline-block;
-      min-width: 140px;
-      text-align: center;
-    }
-    .get-involved-learn-btn:hover {
-      background: #B96794;
-      color: #fff;
-    }
-    @media (max-width: 1100px) {
-      .get-involved-cards-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 34px;
-      }
-      .get-involved-card {
-        width: 98vw;
-        max-width: 400px;
-      }
-      .get-involved-card-img {
-        height: 190px;
-      }
-    }
-    @media (max-width: 700px) {
-      .get-involved-cards-section {
-        padding: 15px 0;
-      }
-      .get-involved-card-title { font-size: 1.2rem;}
-      .get-involved-card-img { height: 130px;}
-    }
-    @media (max-width: 600px) {
-      .get-involved-card-title { font-size: 1.1rem; }
-      .get-involved-card-desc { font-size: 1rem; }
-      .get-involved-learn-btn { font-size: 1rem; padding: 10px 18px;}
-      .get-involved-card-img { height: 90px;}
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-<!-- Banner and Nav: now fills the screen above nav -->
-<div class="above-nav">
   <div class="full-width-banner">
     <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
     <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
   </div>
-  <!-- Navigation -->
+
   <nav>
     <a href="index.html" class="home-btn">HOME</a>
     <div class="nav-links">
@@ -372,64 +412,124 @@
       <a href="getinvolved.html" class="active">Get Involved</a>
     </div>
   </nav>
-</div>
 
-<!-- GET INVOLVED HERO -->
-<section class="get-involved-hero">
-  <img src="hart.jpeg" alt="Group at RDC event" />
-  <h1>Get Involved</h1>
-</section>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Get Involved</h1>
+      <p>Every action helps us champion the 7,000 known rare diseases that impact millions of families. Explore the pathways below to find the opportunity that speaks to you.</p>
+      <a href="mailto:rarediseaseclub44@gmail.com">Reach Out</a>
+    </div>
+  </section>
 
-<!-- GET INVOLVED CARDS -->
-<section class="get-involved-cards-section">
-  <div class="get-involved-cards-row">
-    <!-- Volunteer Card -->
-    <div class="get-involved-card">
-      <img src="people.jpeg" alt="RDC Volunteers" class="get-involved-card-img" />
-      <div class="get-involved-card-title">Volunteer</div>
-      <div class="get-involved-card-desc">
-        Our volunteers are the heart of RDC. Without their dedication, we would not be able to spread rare disease awareness, create meaningful opportunities, and support the community the way we do today. Learn how to become an RDC volunteer and make a difference on this page.
+  <section class="intro-section">
+    <h2>Join the Movement</h2>
+    <p>Rare Disease Club is a student-led community dedicated to raising awareness, supporting early diagnosis, and uplifting families navigating rare conditions. Whether you have an hour a week or want to launch an entire chapter, there is a place for you here.</p>
+  </section>
+
+  <section class="pathways">
+    <h2>Ways to Participate</h2>
+    <div class="pathway-grid">
+      <div class="pathway-card">
+        <h3>Volunteer Locally</h3>
+        <p>Support events, host awareness booths, and create educational content alongside passionate students.</p>
+        <a href="#volunteer">Learn More</a>
       </div>
-      <a href="#" class="get-involved-learn-btn">Learn More</a>
-    </div>
-    <!-- Start a Chapter Card -->
-    <div class="get-involved-card">
-      <img src="random.jpeg" alt="Start a Chapter" class="get-involved-card-img" />
-      <div class="get-involved-card-title">Start a Chapter</div>
-      <div class="get-involved-card-desc">
-        Interested in leading a group to carry out RDC’s mission of spreading rare disease awareness and advocacy in your local community? Start a chapter in your area today! Starting a chapter takes time, dedication, and strong leadership and collaboration skills. Not every application will be approved, so make sure you are ready to commit before registering to start an RDC chapter.
+      <div class="pathway-card">
+        <h3>Start a Chapter</h3>
+        <p>Bring RDC programming to your campus or city and lead a team committed to rare disease advocacy.</p>
+        <a href="#chapter">Learn More</a>
       </div>
-      <a href="#" class="get-involved-learn-btn">Learn More</a>
-    </div>
-    <!-- Mission 7K Card -->
-    <div class="get-involved-card">
-      <img src="67.jpeg" alt="Mission 7K" class="get-involved-card-img" />
-      <div class="get-involved-card-title">Mission 7K</div>
-      <div class="get-involved-card-desc">
-        Support RDC by donating to Mission 7K, our initiative to raise awareness and drive action for the 7,000 known rare diseases affecting millions worldwide. Every contribution helps us expand outreach, provide resources, and empower students to make a difference. Join us in bringing visibility to rare diseases — your donation fuels our mission.
+      <div class="pathway-card">
+        <h3>Mission 7K</h3>
+        <p>Power our signature campaign that highlights every rare disease through donations and monthly support.</p>
+        <a href="#mission7k">Learn More</a>
       </div>
-      <a href="#" class="get-involved-learn-btn">Learn More</a>
     </div>
-  </div>
-</section>
-<script>
-  // Enable click-to-toggle dropdown on mobile
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
-      toggle.addEventListener('click', function(e) {
-        if(window.innerWidth <= 900) {
-          e.preventDefault();
-          const dropdown = this.parentElement;
-          dropdown.classList.toggle('active');
-        }
+  </section>
+
+  <section id="volunteer" class="detail-section">
+    <div class="detail-image">
+      <img src="people7k.png" alt="RDC volunteers supporting families">
+    </div>
+    <div class="detail-copy">
+      <h3>Volunteer With Us</h3>
+      <p>Volunteers are the heartbeat of our outreach. From assembling awareness kits to designing social campaigns, you can match your talents with community needs.</p>
+      <ul>
+        <li>Lead awareness workshops for classrooms and clubs.</li>
+        <li>Design graphics and stories that amplify rare disease voices.</li>
+        <li>Coordinate fundraisers that benefit local and national partners.</li>
+      </ul>
+      <a href="https://forms.gle/tqP7WvkzRgHDus3R8" target="_blank" rel="noopener">Submit Volunteer Interest</a>
+    </div>
+  </section>
+
+  <section id="chapter" class="detail-section alt">
+    <div class="detail-image">
+      <img src="photocopy.jpeg" alt="Students planning an RDC chapter">
+    </div>
+    <div class="detail-copy">
+      <h3>Launch a Chapter</h3>
+      <p>Ready to lead? Start an RDC chapter to connect students, families, and healthcare professionals in your community.</p>
+      <ul>
+        <li>Receive a starter toolkit with agendas, outreach templates, and event ideas.</li>
+        <li>Collaborate with our executive board for mentorship and partnership introductions.</li>
+        <li>Host quarterly programs that spotlight local rare disease stories.</li>
+      </ul>
+      <a href="https://forms.gle/DcqQkWAGUrG8Mkf88" target="_blank" rel="noopener">Apply to Start a Chapter</a>
+    </div>
+  </section>
+
+  <section id="mission7k" class="detail-section">
+    <div class="detail-image">
+      <img src="rdcshare.png" alt="Mission 7K fundraiser materials">
+    </div>
+    <div class="detail-copy">
+      <h3>Support Mission 7K</h3>
+      <p>Mission 7K fuels scholarships, family care packages, and educational outreach for each of the 7,000 known rare diseases.</p>
+      <ul>
+        <li>Every donation extends our educational resources and family support efforts.</li>
+        <li>Monthly gifts sustain year-round awareness campaigns and events.</li>
+        <li>Corporate sponsorships amplify impact through matching programs.</li>
+      </ul>
+      <a href="https://cureraredisease.raisely.com/parnika-khatri" target="_blank" rel="noopener">Donate to Mission 7K</a>
+    </div>
+  </section>
+
+  <section class="support-strip">
+    <h2>Every Story Matters</h2>
+    <p>Your voice brings visibility to conditions that are too often overlooked. Thank you for standing with Rare Disease Club and the families we serve.</p>
+  </section>
+
+  <section class="connect-section">
+    <h2>Stay Connected</h2>
+    <div class="connect-links">
+      <a href="mailto:rarediseaseclub44@gmail.com">Email Our Team</a>
+      <a href="https://www.instagram.com/rarediseaseclub" target="_blank" rel="noopener">Follow on Instagram</a>
+      <a href="newsletter.html">Join the Newsletter</a>
+    </div>
+  </section>
+
+  <footer>
+    © Rare Disease Club. All rights reserved.
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('active');
+          }
+        });
+      });
+
+      document.addEventListener('click', function(e) {
+        document.querySelectorAll('.dropdown.active').forEach(function(drop) {
+          if (!drop.contains(e.target)) drop.classList.remove('active');
+        });
       });
     });
-    document.addEventListener('click', function(e) {
-      document.querySelectorAll('.dropdown.active').forEach(function(drop) {
-        if (!drop.contains(e.target)) drop.classList.remove('active');
-      });
-    });
-  });
-</script>
+  </script>
 </body>
 </html>
