@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-    html { scroll-behavior: smooth; font-size: 20px; }
+
+    /* --- Base (match index page) --- */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Georgia', serif;
@@ -16,37 +17,23 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      font-size: 1.1rem;
+      overflow-x: hidden;
+      line-height: 1.5;
     }
-    /* --- BANNER & NAV --- */
-    .above-nav {
-      height: 100vh;
-      width: 100vw;
-      display: flex;
-      flex-direction: column;
-      background: #fce8f5;
-      margin-bottom: 0;
-    }
+
+    /* Full width banners */
     .full-width-banner {
-      flex: 1 1 0%;
       width: 100vw;
+      background-color: #fce8f5;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 2vh;
-      padding: 0;
-      margin: 0;
+      padding: 15px 0;
     }
-    .motto-img,
-    .rdc-title-banner {
-      width: 90vw;
-      max-width: none;
-      height: 35vh;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
-    }
+    .full-width-banner img { width: 100%; max-width: 100%; height: auto; display: block; }
+    .motto-img, .rdc-title-banner { max-width: 100%; margin: 0 auto 10px auto; }
+
+    /* --- NAVIGATION (match index) --- */
     nav {
       background-color: #fce8f5;
       border-top: 3px solid black;
@@ -56,15 +43,13 @@
       align-items: center;
       flex-wrap: wrap;
       min-height: 72px;
-      width: 100vw;
+      width: 100%;
       padding: 0;
-      position: static;
-      z-index: 2;
     }
     .home-btn, .nav-links a, .dropdown-toggle {
       text-decoration: none;
       color: black;
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: bold;
       font-family: 'Georgia', serif;
       text-transform: uppercase;
@@ -82,7 +67,7 @@
       cursor: pointer;
     }
     .home-btn.active,
-    .nav-links a.active[href="getinvolved.html"] {
+    .nav-links a.active {
       background: white;
       color: black;
       border: 3px solid black;
@@ -93,24 +78,10 @@
       margin-left: 12px;
       font-size: 1.2rem;
     }
-    .nav-links {
-      display: flex;
-      gap: 0;
-      align-items: center;
-      height: 72px;
-    }
-    .dropdown {
-      position: relative;
-      display: flex;
-      align-items: center;
-      height: 72px;
-    }
-    .dropdown-toggle:after {
-      content: ' ▼';
-      font-size: 0.8em;
-      color: #19171a;
-      margin-left: 2px;
-    }
+    .nav-links { display: flex; gap: 0; align-items: center; height: 72px; }
+    .dropdown { position: relative; display: flex; align-items: center; height: 72px; }
+    .dropdown-toggle:after { content: ' ▼'; font-size: 0.8em; color: #19171a; margin-left: 2px; }
+    .nav-links a[href="getinvolved.html"] { font-size: 1.35rem; }
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -139,23 +110,15 @@
     }
     .dropdown-menu a:last-child { border-bottom: none; }
     .dropdown-menu a:hover,
-    .dropdown-menu a:focus {
-      background: #B96794;
-      color: #fff;
-    }
+    .dropdown-menu a:focus { background: #B96794; color: #fff; }
     .dropdown:hover .dropdown-menu,
-    .dropdown.active .dropdown-menu {
-      display: flex;
-    }
+    .dropdown.active .dropdown-menu { display: flex; }
     .nav-links a:not(.active):hover,
-    .nav-links .dropdown-toggle:not(.active):hover {
-      color: #B96794;
-    }
+    .nav-links .dropdown-toggle:not(.active):hover { color: #B96794; }
+
+    /* Responsive nav */
     @media (max-width: 900px) {
-      nav {
-        flex-direction: column;
-        min-height: auto;
-      }
+      nav { flex-direction: column; min-height: auto; }
       .nav-links {
         flex-direction: column;
         align-items: stretch;
@@ -163,21 +126,17 @@
         width: 100%;
       }
       .home-btn, .nav-links a, .dropdown-toggle {
-        font-size: 1.08rem;
+        font-size: 1.25rem;
         height: 56px;
         line-height: 56px;
         padding: 0 16px;
         width: 100%;
         justify-content: flex-start;
       }
+      .nav-links a[href="getinvolved.html"] { font-size: 1.25rem; }
       .home-btn.active,
-      .nav-links a.active[href="getinvolved.html"] {
-        margin-left: 0;
-        border-radius: 18px;
-      }
-      .dropdown {
-        height: 56px;
-      }
+      .nav-links a.active { margin-left: 0; border-radius: 18px; }
+      .dropdown { height: 56px; }
       .dropdown-menu {
         position: static;
         min-width: 0;
@@ -185,8 +144,6 @@
         border-radius: 0;
         width: 100vw;
       }
-      .above-nav { height: 60vh; }
-      .motto-img, .rdc-title-banner { height: 25vh; }
     }
     @media (max-width: 600px) {
       html { font-size: 17px; }
@@ -196,21 +153,21 @@
         height: 48px;
         line-height: 48px;
       }
+      .nav-links a[href="getinvolved.html"] { font-size: 1rem; }
       .home-btn.active,
-      .nav-links a.active[href="getinvolved.html"] {
+      .nav-links a.active {
         border-radius: 12px;
         height: 44px;
         line-height: 44px;
         font-size: 1rem;
       }
-      .above-nav { height: 45vh; }
-      .motto-img, .rdc-title-banner { height: 18vh; }
     }
-    /* --- GET INVOLVED SECTION --- */
+
+    /* --- GET INVOLVED HERO --- */
     .get-involved-hero {
       position: relative;
       width: 100vw;
-      min-height: 260px;
+      min-height: 400px;
       background: #222;
       display: flex;
       align-items: center;
@@ -225,137 +182,135 @@
       object-fit: cover;
       object-position: center;
       z-index: 1;
-      filter: brightness(0.6);
+      filter: brightness(0.5);
     }
     .get-involved-hero h1 {
       position: relative;
       z-index: 2;
       color: #fff;
-      font-size: 3.5rem;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
       font-family: 'Playfair Display', Georgia, serif;
       font-weight: 700;
       text-align: center;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.22);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
       line-height: 1.15;
     }
     @media (max-width: 900px) {
-      .get-involved-hero { min-height: 120px;}
-      .get-involved-hero h1 { font-size: 2.2rem;}
+      .get-involved-hero { min-height: 300px; }
     }
-    @media (max-width: 500px) {
-      .get-involved-hero { min-height: 70px;}
-      .get-involved-hero h1 { font-size: 1.4rem;}
+    @media (max-width: 600px) {
+      .get-involved-hero { min-height: 250px; }
     }
+
+    /* --- GET INVOLVED CARDS --- */
     .get-involved-cards-section {
       width: 100vw;
       background: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 48px 0 48px 0;
+      padding: 60px 20px;
     }
     .get-involved-cards-row {
       display: flex;
       flex-direction: row;
-      gap: 38px;
+      gap: 40px;
       justify-content: center;
       width: 100%;
       max-width: 1200px;
-      margin-top: 0;
+      flex-wrap: wrap;
     }
     .get-involved-card {
       background: #fff;
       border-radius: 18px;
-      box-shadow: 0 2px 12px rgba(185,103,148,0.11);
+      box-shadow: 0 4px 16px rgba(185,103,148,0.15);
       display: flex;
       flex-direction: column;
       width: 340px;
-      max-width: 98vw;
+      max-width: 100%;
       overflow: hidden;
       align-items: center;
-      margin-bottom: 18px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .get-involved-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(185,103,148,0.25);
     }
     .get-involved-card-img {
       width: 100%;
-      height: 230px;
+      height: 240px;
       object-fit: cover;
       object-position: center;
       border-bottom: 3px solid #19171a;
     }
     .get-involved-card-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2rem;
-      font-weight: 500;
+      font-size: 1.8rem;
+      font-weight: 700;
       text-align: center;
-      margin: 18px 0 10px 0;
+      margin: 24px 0 12px 0;
+      color: #19171a;
     }
     .get-involved-card-desc {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.3rem;
-      color: #19171a;
+      font-family: 'Georgia', serif;
+      font-size: 0.95rem;
+      color: #555;
       text-align: center;
-      padding: 0 18px 16px 18px;
-      margin-bottom: 6px;
-      line-height: 1.4;
+      padding: 0 20px;
+      margin-bottom: 20px;
+      line-height: 1.6;
     }
     .get-involved-learn-btn {
-      margin: 16px auto 20px auto;
+      margin: 0 auto 28px auto;
       background: #fce8f5;
       color: #19171a;
       border: 2px solid #B96794;
       border-radius: 22px;
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.15rem;
+      font-family: 'Georgia', serif;
+      font-size: 1rem;
       font-weight: 700;
-      padding: 14px 36px;
+      padding: 12px 32px;
       cursor: pointer;
       text-decoration: none;
       transition: background 0.3s, color 0.3s;
       display: inline-block;
-      min-width: 140px;
       text-align: center;
     }
     .get-involved-learn-btn:hover {
       background: #B96794;
       color: #fff;
     }
+
     @media (max-width: 1100px) {
       .get-involved-cards-row {
         flex-direction: column;
         align-items: center;
-        gap: 34px;
+        gap: 30px;
       }
       .get-involved-card {
-        width: 98vw;
-        max-width: 400px;
+        width: 90%;
+        max-width: 450px;
       }
-      .get-involved-card-img {
-        height: 190px;
-      }
-    }
-    @media (max-width: 700px) {
-      .get-involved-cards-section {
-        padding: 15px 0;
-      }
-      .get-involved-card-title { font-size: 1.2rem;}
-      .get-involved-card-img { height: 130px;}
     }
     @media (max-width: 600px) {
-      .get-involved-card-title { font-size: 1.1rem; }
-      .get-involved-card-desc { font-size: 1rem; }
-      .get-involved-learn-btn { font-size: 1rem; padding: 10px 18px;}
-      .get-involved-card-img { height: 90px;}
+      .get-involved-cards-section {
+        padding: 40px 15px;
+      }
+      .get-involved-card-img { height: 180px; }
+      .get-involved-card-title { font-size: 1.5rem; }
+      .get-involved-card-desc { font-size: 0.85rem; }
+      .get-involved-learn-btn { font-size: 0.9rem; padding: 10px 24px; }
     }
   </style>
 </head>
 <body>
-<!-- Banner and Nav: now fills the screen above nav -->
-<div class="above-nav">
+  <!-- Top banners -->
   <div class="full-width-banner">
     <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
     <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
   </div>
-  <!-- Navigation -->
+
+  <!-- NAV -->
   <nav>
     <a href="index.html" class="home-btn">HOME</a>
     <div class="nav-links">
@@ -372,64 +327,67 @@
       <a href="getinvolved.html" class="active">Get Involved</a>
     </div>
   </nav>
-</div>
 
-<!-- GET INVOLVED HERO -->
-<section class="get-involved-hero">
-  <img src="hart.jpeg" alt="Group at RDC event" />
-  <h1>Get Involved</h1>
-</section>
+  <!-- GET INVOLVED HERO -->
+  <section class="get-involved-hero">
+    <img src="hart.jpeg" alt="Group at RDC event" />
+    <h1>Get Involved</h1>
+  </section>
 
-<!-- GET INVOLVED CARDS -->
-<section class="get-involved-cards-section">
-  <div class="get-involved-cards-row">
-    <!-- Volunteer Card -->
-    <div class="get-involved-card">
-      <img src="people.jpeg" alt="RDC Volunteers" class="get-involved-card-img" />
-      <div class="get-involved-card-title">Volunteer</div>
-      <div class="get-involved-card-desc">
-        Our volunteers are the heart of RDC. Without their dedication, we would not be able to spread rare disease awareness, create meaningful opportunities, and support the community the way we do today. Learn how to become an RDC volunteer and make a difference on this page.
+  <!-- GET INVOLVED CARDS -->
+  <section class="get-involved-cards-section">
+    <div class="get-involved-cards-row">
+      <!-- Volunteer Card -->
+      <div class="get-involved-card">
+        <img src="people.jpeg" alt="RDC Volunteers" class="get-involved-card-img" />
+        <div class="get-involved-card-title">Volunteer</div>
+        <div class="get-involved-card-desc">
+          Our volunteers are the heart of RDC. Without their dedication, we would not be able to spread rare disease awareness, create meaningful opportunities, and support the community the way we do today. Learn how to become an RDC volunteer and make a difference.
+        </div>
+        <a href="#" class="get-involved-learn-btn">Learn More</a>
       </div>
-      <a href="#" class="get-involved-learn-btn">Learn More</a>
-    </div>
-    <!-- Start a Chapter Card -->
-    <div class="get-involved-card">
-      <img src="random.jpeg" alt="Start a Chapter" class="get-involved-card-img" />
-      <div class="get-involved-card-title">Start a Chapter</div>
-      <div class="get-involved-card-desc">
-        Interested in leading a group to carry out RDC’s mission of spreading rare disease awareness and advocacy in your local community? Start a chapter in your area today! Starting a chapter takes time, dedication, and strong leadership and collaboration skills. Not every application will be approved, so make sure you are ready to commit before registering to start an RDC chapter.
+
+      <!-- Start a Chapter Card -->
+      <div class="get-involved-card">
+        <img src="random.jpeg" alt="Start a Chapter" class="get-involved-card-img" />
+        <div class="get-involved-card-title">Start a Chapter</div>
+        <div class="get-involved-card-desc">
+          Interested in leading a group to carry out RDC's mission in your local community? Start a chapter today! Starting a chapter takes time, dedication, and strong leadership skills. Not every application will be approved, so make sure you are ready to commit.
+        </div>
+        <a href="#" class="get-involved-learn-btn">Learn More</a>
       </div>
-      <a href="#" class="get-involved-learn-btn">Learn More</a>
-    </div>
-    <!-- Mission 7K Card -->
-    <div class="get-involved-card">
-      <img src="67.jpeg" alt="Mission 7K" class="get-involved-card-img" />
-      <div class="get-involved-card-title">Mission 7K</div>
-      <div class="get-involved-card-desc">
-        Support RDC by donating to Mission 7K, our initiative to raise awareness and drive action for the 7,000 known rare diseases affecting millions worldwide. Every contribution helps us expand outreach, provide resources, and empower students to make a difference. Join us in bringing visibility to rare diseases — your donation fuels our mission.
+
+      <!-- Mission 7K Card -->
+      <div class="get-involved-card">
+        <img src="67.jpeg" alt="Mission 7K" class="get-involved-card-img" />
+        <div class="get-involved-card-title">Mission 7K</div>
+        <div class="get-involved-card-desc">
+          Support RDC by donating to Mission 7K, our initiative to raise awareness for the 7,000 known rare diseases affecting millions worldwide. Every contribution helps us expand outreach, provide resources, and empower students to make a difference.
+        </div>
+        <a href="#" class="get-involved-learn-btn">Learn More</a>
       </div>
-      <a href="#" class="get-involved-learn-btn">Learn More</a>
     </div>
-  </div>
-</section>
-<script>
-  // Enable click-to-toggle dropdown on mobile
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
-      toggle.addEventListener('click', function(e) {
-        if(window.innerWidth <= 900) {
-          e.preventDefault();
-          const dropdown = this.parentElement;
-          dropdown.classList.toggle('active');
-        }
+  </section>
+
+  <!-- Scripts -->
+  <script>
+    // Enable dropdown for mobile
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            const dropdown = this.parentElement;
+            dropdown.classList.toggle('active');
+          }
+        });
+      });
+      document.addEventListener('click', function(e) {
+        document.querySelectorAll('.dropdown.active').forEach(function(drop) {
+          if (!drop.contains(e.target)) drop.classList.remove('active');
+        });
       });
     });
-    document.addEventListener('click', function(e) {
-      document.querySelectorAll('.dropdown.active').forEach(function(drop) {
-        if (!drop.contains(e.target)) drop.classList.remove('active');
-      });
-    });
-  });
-</script>
+  </script>
 </body>
 </html>
