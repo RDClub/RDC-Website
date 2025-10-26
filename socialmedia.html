@@ -63,7 +63,7 @@
     .home-btn, .nav-links a, .dropdown-toggle {
       text-decoration: none;
       color: black;
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: bold;
       font-family: 'Georgia', serif;
       text-transform: uppercase;
@@ -82,7 +82,8 @@
     }
 
     .home-btn.active,
-    .nav-links a.active[href="socialmedia.html"] {
+    .nav-links a.active,
+    .dropdown.active-parent .dropdown-toggle {
       background: white;
       color: black;
       border: 3px solid black;
@@ -114,6 +115,8 @@
       color: #19171a;
       margin-left: 2px;
     }
+
+    .nav-links a[href="getinvolved.html"] { font-size: 1.35rem; }
 
     .dropdown-menu {
       display: none;
@@ -173,15 +176,17 @@
         width: 100%;
       }
       .home-btn, .nav-links a, .dropdown-toggle {
-        font-size: 1.08rem;
+        font-size: 1.25rem;
         height: 56px;
         line-height: 56px;
         padding: 0 16px;
         width: 100%;
         justify-content: flex-start;
       }
+      .nav-links a[href="getinvolved.html"] { font-size: 1.25rem; }
       .home-btn.active,
-      .nav-links a.active[href="socialmedia.html"] {
+      .nav-links a.active,
+      .dropdown.active-parent .dropdown-toggle {
         margin-left: 0;
         border-radius: 18px;
       }
@@ -198,14 +203,17 @@
     }
 
     @media (max-width: 600px) {
+      html { font-size: 17px; }
       .home-btn, .nav-links a, .dropdown-toggle {
         font-size: 1rem;
         padding: 0 10px;
         height: 48px;
         line-height: 48px;
       }
+      .nav-links a[href="getinvolved.html"] { font-size: 1rem; }
       .home-btn.active,
-      .nav-links a.active[href="socialmedia.html"] {
+      .nav-links a.active,
+      .dropdown.active-parent .dropdown-toggle {
         border-radius: 12px;
         height: 44px;
         line-height: 44px;
@@ -376,24 +384,24 @@
   <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
 </div>
 
-<!-- Navigation - Fixed with Original Format -->
+<!-- Navigation -->
 <nav>
-    <a href="index.html" class="home-btn active">HOME</a>
-    <div class="nav-links">
-      <div class="dropdown">
-        <a href="#" class="dropdown-toggle">About</a>
-        <div class="dropdown-menu">
-          <a href="socialmedia.html">Social Media Team</a>
-          <a href="about.html">Executive Board</a>
-          <a href="partnerships.html">Partnerships</a>
-        </div>
+  <a href="index.html" class="home-btn">HOME</a>
+  <div class="nav-links">
+    <div class="dropdown active-parent">
+      <a href="#" class="dropdown-toggle">About</a>
+      <div class="dropdown-menu">
+        <a href="socialmedia.html">Social Media Team</a>
+        <a href="about.html">Executive Board</a>
+        <a href="partnerships.html">Partnerships</a>
       </div>
-      <a href="events.html">Events</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="#contact">Contact</a>
-      <a href="getinvolved.html">Get Involved</a>
     </div>
-  </nav>
+    <a href="events.html">Events</a>
+    <a href="newsletter.html">Newsletter</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="getinvolved.html">Get Involved</a>
+  </div>
+</nav>
 
 <!-- SOCIAL MEDIA TEAM SECTION -->
 <section class="socialmedia-section">
