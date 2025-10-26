@@ -73,7 +73,9 @@
       box-sizing: border-box;
       cursor: pointer;
     }
-    .home-btn.active {
+    .home-btn.active,
+    .nav-links a.active,
+    .dropdown.active-parent .dropdown-toggle {
       background: white;
       color: black;
       border: 3px solid black;
@@ -102,6 +104,7 @@
       color: #19171a;
       margin-left: 2px;
     }
+    .nav-links a[href="getinvolved.html"] { font-size: 1.35rem; }
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -162,7 +165,10 @@
         width: 100%;
         justify-content: flex-start;
       }
-      .home-btn.active {
+      .nav-links a[href="getinvolved.html"] { font-size: 1.25rem; }
+      .home-btn.active,
+      .nav-links a.active,
+      .dropdown.active-parent .dropdown-toggle {
         margin-left: 0;
         border-radius: 18px;
       }
@@ -185,7 +191,10 @@
         height: 48px;
         line-height: 48px;
       }
-      .home-btn.active {
+      .nav-links a[href="getinvolved.html"] { font-size: 1rem; }
+      .home-btn.active,
+      .nav-links a.active,
+      .dropdown.active-parent .dropdown-toggle {
         border-radius: 12px;
         height: 44px;
         line-height: 44px;
@@ -460,15 +469,15 @@
   <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
 </div>
 
-<!-- Navigation (matches home page exactly) -->
+<!-- Navigation -->
 <nav>
-  <a href="index.html" class="home-btn active">HOME</a>
+  <a href="index.html" class="home-btn">HOME</a>
   <div class="nav-links">
-    <div class="dropdown">
+    <div class="dropdown active-parent">
       <a href="#" class="dropdown-toggle">About</a>
       <div class="dropdown-menu">
         <a href="socialmedia.html">Social Media Team</a>
-        <a href="about.html" class="active">Executive Board</a>
+        <a href="about.html">Executive Board</a>
         <a href="partnerships.html">Partnerships</a>
       </div>
     </div>
