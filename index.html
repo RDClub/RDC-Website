@@ -6,7 +6,7 @@
   <meta name="Rare Disease Club" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. Join us to make a difference and support our community." />
   <link rel="canonical" href="https://www.rarediseaseclubs.com" />
   <link rel="icon" href="rdc.png" type="image/png" />
-  <title>Rare Disease Club - Spreading Awareness About Rare Diseases</title>
+  <title>Rare Disease Club - Events</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
@@ -248,14 +248,95 @@
     .service-btn { display: inline-block; padding: 10px 20px; background: #000; color: #fff; text-decoration: none; border-radius: 8px; font-size: 0.88rem; min-width: 130px; }
     .service-btn:hover { background: #784461; }
 
-    /* --- Events --- */
+    /* --- Events (DESIGNED to match your screenshots: timeline + cards) --- */
     .events-section { background: #fce8f5; padding: 46px 6vw; }
     .events-section h2 { text-align: center; font-size: 1.4rem; color: #000; margin-bottom: 28px; }
-    .events-container { display: flex; flex-wrap: wrap; gap: 26px; max-width: 1200px; margin: 0 auto; justify-content: center; }
-    .event-card { text-align: center; max-width: 340px; width: 94vw; }
-    .event-image { width: 100%; border: 2px solid #000; border-radius: 14px; }
-    .event-card h3 { margin-top: 14px; font-size: 0.98rem; }
-    .event-card p { margin-top: 8px; font-size: 0.88rem; margin-bottom: 12px; line-height: 1.45; }
+
+    /* Timeline container */
+    .timeline {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      padding: 24px 12px;
+    }
+
+    /* vertical center line */
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 100%;
+      background: #f0b7d0;
+      border-radius: 6px;
+    }
+
+    .timeline-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      color: #f0b7d0;
+      margin: 40px 0 10px 0;
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 1fr 40px 1fr;
+      gap: 12px;
+      align-items: start;
+      margin: 20px 0 40px;
+    }
+
+    .timeline-item {
+      background: #fff;
+      border: 4px solid #e7afca;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+      max-width: 480px;
+    }
+    .timeline-item h3 { font-family: 'Playfair Display', serif; margin-bottom: 8px; }
+    .timeline-item p { color: #555; font-weight: 600; font-size: 15px; }
+
+    .timeline-media {
+      display: block;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 6px solid #fff;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      margin-bottom: 12px;
+    }
+    .timeline-media img { width: 100%; height: auto; display: block; }
+
+    /* the center circle connector */
+    .timeline-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: white;
+      border: 4px solid #f0b7d0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+    }
+
+    /* position left / right content */
+    .left { grid-column: 1; text-align: right; }
+    .right { grid-column: 3; text-align: left; }
+
+    /* small captions under images */
+    .caption { font-size: 0.95rem; color: #000; margin-top: 6px; font-weight: 700; }
+
+    @media (max-width: 960px) {
+      .timeline::before { left: 24px; transform: none; }
+      .timeline-row { grid-template-columns: 56px 1fr; }
+      .left { grid-column: 2; text-align: left; }
+      .right { grid-column: 2; text-align: left; }
+      .timeline-dot { grid-column: 1; margin-left: 8px; }
+    }
 
     /* --- Contact --- */
     .contact-section { background: #1a1a1a; padding: 70px 6vw; color: #FCE8F5; }
@@ -273,11 +354,14 @@
       padding: 14px 24px; background: linear-gradient(135deg, #FCE8F5, #B96794); color: #1a1a1a; border: none; border-radius: 22px; font-size: 1.05rem; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: transform .2s, box-shadow .2s;
     }
     .contact-form button[type="submit"]:hover { transform: translateY(-1px); box-shadow: 0 5px 15px rgba(252,232,245,.4); }
+
+    footer { text-align: center; padding: 26px 12px; background: #fce8f5; border-top: 3px solid #e6c2d4; margin-top: 40px;}
   </style>
 </head>
 <body>
   <!-- Top banners -->
   <div class="full-width-banner">
+    <!-- Replace these with your assets -->
     <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
     <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
   </div>
@@ -352,26 +436,147 @@
     </div>
   </section>
 
-  <!-- EVENTS -->
+  <!-- EVENTS (timeline layout matching screenshots) -->
   <section class="events-section">
-    <h2>Monthly Events</h2>
-    <div class="events-container">
-      <div class="event-card">
-        <img src="selling.png" alt="Jewelry Market" class="event-image">
-        <h3>Selling at Jewelry Markets</h3>
-        <p>We design and sell handmade jewelry to raise funds for research and awareness initiatives.</p>
+    <h2>Events & Fundraisers</h2>
+
+    <div class="timeline">
+      <!-- 2025 -->
+      <div class="timeline-year">2025</div>
+
+      <!-- Falcon Fest (right) -->
+      <div class="timeline-row">
+        <div class="left"></div>
+        <div class="timeline-dot" aria-hidden="true"> </div>
+        <div class="right">
+          <div class="timeline-item">
+            <div class="timeline-media">
+              <!-- image1 should be your hero/falconfest screenshot -->
+              <img src="images/image1.jpg" alt="Falcon Fest jewelry booth">
+            </div>
+            <div class="caption">Falcon Fest 2025</div>
+            <h3>Falcon Fest 2025</h3>
+            <p>For spooky season, we joined Falcon Fest 2025 with our jewelry booth — filled with fall spirit and creativity! Every purchase helped raise funds for RDC’s ongoing mission to support rare disease research and awareness.</p>
+          </div>
+        </div>
       </div>
-      <div class="event-card">
-        <img src="donate.png" alt="Fundraisers" class="event-image">
-        <h3>Fundraisers</h3>
-        <p>Restaurant fundraisers, blanket drives, and care packages for patients and families.</p>
+
+      <!-- San Jose Makers Market (left) -->
+      <div class="timeline-row">
+        <div class="left">
+          <div class="timeline-item">
+            <div class="timeline-media">
+              <img src="images/image2.jpg" alt="San Jose Makers Market">
+            </div>
+            <div class="caption">San Jose Makers Market</div>
+            <h3>San Jose Makers Market</h3>
+            <p>Continuing our passion for creativity and advocacy, we sold our handmade jewelry at the San Jose Makers Market, connecting with new supporters and sharing our story with the local community.</p>
+          </div>
+        </div>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="right"></div>
       </div>
-      <div class="event-card">
-        <img src="rdcshare.png" alt="Guest Speaking" class="event-image">
-        <h3>Guest Speaking</h3>
-        <p>We share our story at schools and community events to encourage others to get involved.</p>
+
+      <!-- Jewelry Design & Sales at SoSo Market (right) -->
+      <div class="timeline-row">
+        <div class="left"></div>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="right">
+          <div class="timeline-item">
+            <div class="timeline-media">
+              <img src="images/image2.jpg" alt="SoSo Market table">
+            </div>
+            <div class="caption">SoSo Market — Berkeley</div>
+            <h3>Jewelry Design & Sales at The SoSo Market, Berkeley</h3>
+            <p>RDC members designed and handcrafted high-quality jewelry to showcase and sell at The SoSo Market in Berkeley, raising funds to support our nonprofit mission.</p>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <!-- Chipotle Fundraiser (left) -->
+      <div class="timeline-row">
+        <div class="left">
+          <div class="timeline-item">
+            <div class="timeline-media">
+              <img src="images/image3.jpg" alt="Chipotle fundraiser poster">
+            </div>
+            <div class="caption">Chipotle Fundraiser</div>
+            <h3>Chipotle Fundraiser for Oakland Children's Hospital</h3>
+            <p>Our Chipotle fundraiser brought the community together for a great cause! Proceeds went toward purchasing toys and care packages for children at Oakland Children's Hospital, spreading smiles and hope.</p>
+          </div>
+        </div>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="right"></div>
+      </div>
+
+      <!-- Guest Speaking (right) -->
+      <div class="timeline-row">
+        <div class="left"></div>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="right">
+          <div class="timeline-item">
+            <div class="timeline-media">
+              <img src="images/image3.jpg" alt="Guest speaking at Hart Middle School">
+            </div>
+            <div class="caption">Guest Speaking</div>
+            <h3>Guest Speaking at Hart Middle School</h3>
+            <p>We kicked off 2025 by guest speaking at Hart Middle School, sharing our mission and raising awareness about rare diseases. It was an inspiring opportunity to educate students and spark compassion within the community.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2024 -->
+      <div class="timeline-year">2024</div>
+
+      <!-- Bracelet Workshop (left) -->
+      <div class="timeline-row">
+        <div class="left">
+          <div class="timeline-item">
+            <div class="timeline-media">
+              <img src="images/image2.jpg" alt="Bracelet workshop">
+            </div>
+            <div class="caption">Bracelet Workshop</div>
+            <h3>Bracelet Workshop for Falcon Fest</h3>
+            <p>Members came together for a fun, hands-on bracelet-making workshop to prepare for Falcon Fest. Participants earned volunteer hours and helped raise funds for RDC’s cause.</p>
+          </div>
+        </div>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="right"></div>
+      </div>
+
+      <!-- Holiday Drive (right) -->
+      <div class="timeline-row">
+        <div class="left"></div>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="right">
+          <div class="timeline-item">
+            <div class="timeline-media">
+              <img src="images/image1.jpg" alt="Holiday care package and blanket drive">
+            </div>
+            <div class="caption">Holiday Drive</div>
+            <h3>Holiday Care Package & Blanket Drive</h3>
+            <p>We ended the year by assembling care packages and cozy blankets for hospice patients and the Cancer Society — a heartfelt way to give back during the holiday season.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Speech and Debate Camp (left) -->
+      <div class="timeline-row">
+        <div class="left">
+          <div class="timeline-item">
+            <div class="timeline-media">
+              <img src="images/image3.jpg" alt="Speech & Debate Camp screenshot">
+            </div>
+            <div class="caption">Speech & Debate Camp 2024</div>
+            <h3>Speech and Debate Camp 2024</h3>
+            <p>Our very first RDC event! The camp brought together passionate students to strengthen public speaking skills — all in support of our mission to raise $1,000 for Cure Rare Disease.</p>
+          </div>
+        </div>
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="right"></div>
+      </div>
+
+    </div><!-- .timeline -->
   </section>
 
   <!-- CONTACT -->
@@ -404,8 +609,13 @@
     </div>
   </section>
 
-  <!-- Scripts -->
+  <footer>
+    <p>© <span id="year"></span> Rare Disease Club — Educate · Donate · Make An Impact</p>
+  </footer>
+
   <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
     // Enable About dropdown for mobile (same behavior)
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
