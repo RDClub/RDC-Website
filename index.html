@@ -12,7 +12,6 @@
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
     /* --- Base (match About page zoom) --- */
-    /* No custom html font-size => browser default ~16px (same as About) */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Georgia', serif;
@@ -25,17 +24,20 @@
       line-height: 1.5;
     }
 
-    /* Full width banners (same) */
-    .full-width-banner {
+    /* Full width header screenshot container - uses single screenshot above nav */
+    .header-screenshot {
       width: 100vw;
       background-color: #fce8f5;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 15px 0;
+      justify-content: center;
+      padding: 8px 0 0 0;
     }
-    .full-width-banner img { width: 100%; max-width: 100%; height: auto; display: block; }
-    .motto-img, .rdc-title-banner { max-width: 100%; margin: 0 auto 10px auto; }
+    .header-screenshot img {
+      width: 100%;
+      max-width: 1600px;
+      height: auto;
+      display: block;
+    }
 
     /* --- NAVIGATION (exactly like About) --- */
     nav {
@@ -146,8 +148,6 @@
         border-radius: 0;
         width: 100vw;
       }
-      .hero { min-height: 800px; padding: 42px 0; }
-      .what-we-do-image { width: 94%; }
     }
     @media (max-width: 600px) {
       html { font-size: 17px; } /* About uses this bump on small screens */
@@ -164,95 +164,34 @@
         line-height: 44px;
         font-size: 1rem;
       }
-      .hero { min-height: 420px; padding: 36px 0; }
-      .hero-text h1 { font-size: clamp(2.9rem, 11vw, 4.2rem); }
-      .hero-text p { font-size: 0.95rem; }
-      .what-we-do-image { width: 100%; max-width: 480px; }
     }
 
-    /* --- HERO (scaled to sit nicely under the About-sized nav) --- */
-    .hero {
-      width: 100vw;
-      min-height: 520px;
-      background-image: url('darkenphoto.png');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding: 48px 0;
+    /* --- Events timeline (keeps design you approved) --- */
+    .page {
+      width: calc(100% - 40px);
+      max-width: 1100px;
+      margin: 36px auto 80px;
     }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100vw; height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      z-index: 0;
-    }
-    .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; width: 100%; text-align: center; padding: 16px; }
-    .hero-text { color: #fff; margin-bottom: 36px; max-width: 960px; }
-    .hero-text h1 {
-      font-size: clamp(2.6rem, 6vw, 3.8rem);
-      margin-bottom: 12px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      line-height: 1.05;
-    }
-    .hero-text p { font-size: 0.85rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
-    .hero-btn-container { width: 100%; display: flex; justify-content: center; }
-    .hero-btn {
-      display: inline-block;
-      padding: 12px 28px;
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: bold;
-      font-family: 'Georgia', serif;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: 3px solid #fff;
-      background: transparent;
-      transition: all .3s ease;
-      border-radius: 20px;
-      min-width: 190px;
-    }
-    .hero-btn:hover { background: rgba(255,255,255,.2); }
 
-    /* --- What We Do --- */
-    .what-we-do-section { background: #f9dff4; padding: 40px 5vw; position: relative; }
-    .what-we-do-container { max-width: 825px; margin: 0 auto; position: relative; display: flex; flex-direction: column; align-items: center; }
-    .what-we-do-image {
-      width: 88%;
-      max-width: 800px;
-      border-radius: 24px;
-      border: 3px solid #000;
+    .events-hero {
       display: block;
+      height: 200px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: url('images/image1.jpg') center/cover no-repeat;
+      margin-bottom: 22px;
     }
-    .what-we-do-content {
-      background: #000; color: #fff; padding: 18px;
-      width: 88%; max-width: 520px; margin: -50px auto 0 auto;
-      border-radius: 24px; z-index: 2; position: relative;
+    .events-hero h2 {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      text-shadow: 1px 2px 8px rgba(0,0,0,0.5);
+      text-align: center;
+      padding-top: 56px;
     }
-    .what-we-do-content h2 { font-size: 1.05rem; color: #f9dff4; margin-bottom: 10px; text-align: center; letter-spacing: 1px; }
-    .what-we-do-content p { font-size: 0.75rem; line-height: 1.5; text-align: center; }
 
-    /* --- Impact Cards --- */
-    .nord-section { padding: 28px 6vw; background: #fff; margin: 24px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.07); opacity: 0; transform: translateY(50px); transition: all .8s ease; }
-    .nord-section.show { opacity: 1; transform: translateY(0); }
-    .nord-section h2 { color: #000; text-align: center; margin-bottom: 18px; font-size: 1.4rem; }
-    .services-grid { display: flex; flex-wrap: wrap; gap: 26px; max-width: 1200px; margin: 0 auto; justify-content: center; }
-    .service-card { background: #f9f9f9; border-radius: 12px; padding: 22px; text-align: center; transition: transform .3s ease; width: 94vw; max-width: 340px; }
-    .service-card:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,.1); }
-    .service-card h3 { color: #000; margin-bottom: 10px; font-size: 1.05rem; }
-    .service-card p { margin-bottom: 14px; color: #555; font-size: 0.88rem; line-height: 1.45; }
-    .service-btn { display: inline-block; padding: 10px 20px; background: #000; color: #fff; text-decoration: none; border-radius: 8px; font-size: 0.88rem; min-width: 130px; }
-    .service-btn:hover { background: #784461; }
-
-    /* --- Events (DESIGNED to match your screenshots: timeline + cards) --- */
-    .events-section { background: #fce8f5; padding: 46px 6vw; }
-    .events-section h2 { text-align: center; font-size: 1.4rem; color: #000; margin-bottom: 28px; }
-
-    /* Timeline container */
     .timeline {
       max-width: 1100px;
       margin: 0 auto;
@@ -260,7 +199,6 @@
       padding: 24px 12px;
     }
 
-    /* vertical center line */
     .timeline::before {
       content: '';
       position: absolute;
@@ -309,7 +247,6 @@
     }
     .timeline-media img { width: 100%; height: auto; display: block; }
 
-    /* the center circle connector */
     .timeline-dot {
       width: 40px;
       height: 40px;
@@ -323,11 +260,9 @@
       box-shadow: 0 6px 12px rgba(0,0,0,0.06);
     }
 
-    /* position left / right content */
     .left { grid-column: 1; text-align: right; }
     .right { grid-column: 3; text-align: left; }
 
-    /* small captions under images */
     .caption { font-size: 0.95rem; color: #000; margin-top: 6px; font-weight: 700; }
 
     @media (max-width: 960px) {
@@ -336,16 +271,17 @@
       .left { grid-column: 2; text-align: left; }
       .right { grid-column: 2; text-align: left; }
       .timeline-dot { grid-column: 1; margin-left: 8px; }
+      .events-hero { height: 240px; }
     }
 
     footer { text-align: center; padding: 26px 12px; background: #fce8f5; border-top: 3px solid #e6c2d4; margin-top: 40px;}
   </style>
 </head>
 <body>
-  <!-- Top banners (IDENTICAL STRUCTURE to the HTML you insisted on) -->
-  <div class="full-width-banner">
-    <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
-    <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
+  <!-- USE YOUR SINGLE SCREENSHOT IMAGE FOR EVERYTHING ABOVE NAV -->
+  <!-- Put your header screenshot file at images/image4.jpg (or change the path below) -->
+  <div class="header-screenshot" aria-hidden="true">
+    <img src="images/image4.jpg" alt="Header screenshot showing logo, big title banner, and top nav area">
   </div>
 
   <!-- NAV (About clone - unchanged) -->
@@ -360,76 +296,23 @@
           <a href="partnerships.html">Partnerships</a>
         </div>
       </div>
-      <a href="events.html">Events</a>
+      <a href="events.html" class="active">Events</a>
       <a href="newsletter.html">Newsletter</a>
-      <a href="index.html#contact">Contact</a>
       <a href="getinvolved.html">Get Involved</a>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1>Together For Rare</h1>
-        <h1>Lives</h1>
-        <p>Rare doesn't mean alone. Together, we're turning awareness into action and hope into impact.</p>
-      </div>
-      <div class="hero-btn-container">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform" class="hero-btn">JOIN NOW</a>
-      </div>
-    </div>
-  </section>
+  <!-- MAIN PAGE CONTENT (events timeline, contact removed per your instruction) -->
+  <div class="page">
+    <div class="events-hero" role="img" aria-label="Events hero"></div>
 
-  <!-- WHAT WE DO -->
-  <section class="what-we-do-section">
-    <div class="what-we-do-container">
-      <img src="photocopy.jpeg" alt="What We Do" class="what-we-do-image">
-      <div class="what-we-do-content">
-        <h2>WHAT WE DO</h2>
-        <p>
-          Rare Disease Collective (RDC) is a student-led initiative working to raise awareness about rare diseases.
-          We aim to educate communities, support early diagnosis, and promote conversations around conditions that
-          often go unnoticed due to limited research and public understanding.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- IMPACT -->
-  <section class="nord-section">
-    <h2>How You Can Make an Impact</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Donating</h3>
-        <p>Donate to CRD and their research facilities of rare disease treatment and support.</p>
-        <a href="https://cureraredisease.raisely.com/parnika-khatri" target="_blank" class="service-btn">Donate</a>
-      </div>
-      <div class="service-card">
-        <h3>Volunteering</h3>
-        <p>Get a chance to make a difference by volunteering.</p>
-        <a href="#" class="service-btn">Search Now</a>
-      </div>
-      <div class="service-card">
-        <h3>Partnerships</h3>
-        <p>Explore our current partnerships!</p>
-        <a href="partner.html" class="service-btn">Learn More</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- EVENTS (timeline layout matching screenshots) -->
-  <section class="events-section">
-    <h2>Events & Fundraisers</h2>
-
-    <div class="timeline">
-      <!-- 2025 -->
-      <div class="timeline-year">2025</div>
+    <section class="timeline" aria-labelledby="events-heading">
+      <h2 id="events-heading" class="timeline-year">2025</h2>
 
       <!-- Falcon Fest (right) -->
       <div class="timeline-row">
         <div class="left"></div>
-        <div class="timeline-dot" aria-hidden="true"> </div>
+        <div class="timeline-dot" aria-hidden="true"></div>
         <div class="right">
           <div class="timeline-item">
             <div class="timeline-media">
@@ -458,7 +341,7 @@
         <div class="right"></div>
       </div>
 
-      <!-- Jewelry Design & Sales at SoSo Market (right) -->
+      <!-- SoSo Market (right) -->
       <div class="timeline-row">
         <div class="left"></div>
         <div class="timeline-dot" aria-hidden="true"></div>
@@ -506,7 +389,6 @@
         </div>
       </div>
 
-      <!-- 2024 -->
       <div class="timeline-year">2024</div>
 
       <!-- Bracelet Workshop (left) -->
@@ -557,10 +439,10 @@
         <div class="right"></div>
       </div>
 
-    </div><!-- .timeline -->
-  </section>
+    </section>
+  </div>
 
-  <!-- NO CONTACT SECTION (removed per your instruction) -->
+  <!-- no contact section as requested -->
 
   <footer>
     <p>© <span id="year"></span> Rare Disease Club — Educate · Donate · Make An Impact</p>
@@ -569,7 +451,7 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Enable About dropdown for mobile (same behavior)
+    // Dropdown mobile behavior (same as About)
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
@@ -585,15 +467,6 @@
           if (!drop.contains(e.target)) drop.classList.remove('active');
         });
       });
-
-      // Impact section animation
-      const impactSection = document.querySelector('.nord-section');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('show');
-        });
-      }, { threshold: 0.2 });
-      if (impactSection) observer.observe(impactSection);
     });
   </script>
 </body>
