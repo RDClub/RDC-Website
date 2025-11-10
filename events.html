@@ -8,267 +8,206 @@
   <link rel="icon" href="rdc.png" type="image/png" />
   <title>Rare Disease Club - Events</title>
 
-  <!-- Playfair for headings like the screenshots + a clean serif fallback -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
   <style>
-    /* ---------- Base (keeps the original site look but tuned for the "magazine" timeline) ---------- */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html,body { height: 100%; }
     body {
       font-family: 'Georgia', serif;
-      background-color: #ffffff;
+      background-color: #fce8f5;
       color: #111;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.45;
     }
 
-    /* --- Top banners, nav and hero remain visually similar to your original — simplified here --- */
-    .full-width-banner {
-      width: 100%;
-      background: #f9e6ef;
-      padding: 18px 0;
-      text-align: center;
+    /* HEADER SCREENSHOT (fits the viewport cleanly) */
+    /* The user provided a single screenshot to use above the nav (images/image4.jpg).
+       This container constrains the screenshot so it always fits the screen width
+       and keeps the header area height reasonable on all devices. */
+    .header-screenshot {
+      width: 100vw;
+      overflow: hidden;
+      background: #fce8f5;
+      display: block;
+      /* Responsive height: small on very small screens, larger on desktop */
+      height: clamp(120px, 20vh, 260px);
+      /* keep the screenshot visually centered */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    .full-width-banner img { max-width: 100%; height: auto; display: inline-block; }
+    .header-screenshot img {
+      /* force the screenshot to cover the container without stretching */
+      width: 100vw;
+      height: 100%;
+      object-fit: cover;    /* crop if necessary to keep it filling */
+      object-position: center center;
+      display: block;
+      -webkit-user-drag: none;
+      user-select: none;
+    }
 
+    /* NAV (keeps same About-style sizing/behavior) */
     nav {
-      background-color: #fdeef6;
-      border-top: 3px solid #000;
-      border-bottom: 3px solid #000;
-      padding: 8px 12px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
+      background-color: #fce8f5;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      min-height: 72px;
+      width: 100%;
     }
-    nav a { text-decoration:none; color:#000; font-weight:700; padding:8px 14px; font-family:'Georgia', serif; }
+    .home-btn, .nav-links a, .dropdown-toggle {
+      text-decoration: none;
+      color: black;
+      font-size: 1.35rem;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      padding: 0 32px;
+      height: 72px;
+      line-height: 72px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    .home-btn.active {
+      background: white;
+      color: black;
+      border: 3px solid black;
+      border-radius: 24px;
+      padding: 0 32px;
+      height: 56px;
+      line-height: 56px;
+      margin-left: 12px;
+      font-size: 1.2rem;
+    }
+    .nav-links { display: flex; gap: 24px; align-items: center; height: 72px; }
 
-    .hero {
-      min-height: 260px;
-      background-image: url('darkenphoto.png');
-      background-size: cover;
-      background-position: center;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      padding: 36px 16px;
+    @media (max-width: 900px) {
+      .home-btn, .nav-links a, .dropdown-toggle { font-size: 1.25rem; height: 56px; line-height: 56px; padding: 0 16px; width: 100%; justify-content: flex-start; }
+      nav { flex-direction: column; }
+      .header-screenshot { height: clamp(120px, 24vh, 320px); }
     }
-    .hero::after {
-      content:"";
-      position:absolute;
-      inset:0;
-      background: rgba(0,0,0,0.45);
-    }
-    .hero h1 {
-      position:relative;
-      color:#fff;
-      font-family:'Playfair Display', serif;
-      font-weight:700;
-      font-size:44px;
-      letter-spacing:0.6px;
+    @media (max-width: 600px) {
+      html { font-size: 17px; }
+      .home-btn, .nav-links a, .dropdown-toggle { font-size: 1rem; height: 48px; line-height: 48px; padding: 0 10px; }
+      .header-screenshot { height: clamp(100px, 26vh, 300px); }
     }
 
-    /* ---------- TIMELINE / EVENTS (DESIGNED to match the provided screenshots) ---------- */
-
-    .events-section {
-      padding: 48px 6vw;
-      background: #fff;
+    /* Page container & timeline (kept from earlier working layout) */
+    .page {
+      width: calc(100% - 40px);
+      max-width: 1100px;
+      margin: 36px auto 80px;
     }
 
-    /* big centered page heading above timeline */
-    .events-section > h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      text-align: center;
-      margin-bottom: 30px;
-      color: #111;
-      letter-spacing: .6px;
+    .events-hero {
+      display: block;
+      height: 200px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: url('images/image1.jpg') center/cover no-repeat;
+      margin-bottom: 22px;
     }
 
     .timeline {
-      position: relative;
       max-width: 1100px;
       margin: 0 auto;
-      padding: 48px 12px;
+      position: relative;
+      padding: 24px 12px;
     }
-
-    /* horizontal pink bar at the top across the timeline like screenshot */
     .timeline::before {
-      content: "";
-      position: absolute;
-      top: 10px;
-      left: 0;
-      right: 0;
-      height: 8px;
-      background: #f6cfe0; /* soft pink */
-      border-bottom: 3px solid rgba(0,0,0,0.06);
-      z-index: 1;
-    }
-
-    /* vertical center line (pink stroke) */
-    .timeline::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      top: 0;
-      bottom: 0;
-      width: 8px;
-      background: #f6cfe0;
-      z-index: 0;
+      width: 6px;
+      height: 100%;
+      background: #f0b7d0;
+      border-radius: 6px;
     }
-
-    /* Large year label placed on the left edge of the timeline area */
     .timeline-year {
       font-family: 'Playfair Display', serif;
-      font-size: 92px;
-      color: #f6cfe0;
-      position: absolute;
-      left: -20px;
-      top: 20px;
-      z-index: 2;
-      pointer-events: none;
+      font-size: 56px;
+      color: #f0b7d0;
+      margin: 40px 0 10px 0;
     }
-
-    /* Each row alternates left / right. Use 3-column grid so center col is the vertical bar/dot */
     .timeline-row {
       display: grid;
-      grid-template-columns: 1fr 56px 1fr;
+      grid-template-columns: 1fr 40px 1fr;
       gap: 12px;
       align-items: start;
-      margin: 18px 0 44px;
-      position: relative;
-      z-index: 2;
+      margin: 20px 0 40px;
     }
-
-    /* center connector (circle) sits on top of the center pink bar */
-    .timeline-dot {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: #fff;
-      border: 4px solid #f6cfe0;
-      margin: 0 auto;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.06);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    /* timeline item card style to match magazine: white card with strong pink frame */
     .timeline-item {
       background: #fff;
-      border: 6px solid #f6cfe0;
-      border-radius: 6px;
-      padding: 14px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-      max-width: 520px;
-      margin: 0 auto;
+      border: 4px solid #e7afca;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+      max-width: 480px;
     }
-    .timeline-item .timeline-media {
-      overflow: hidden;
-      border-radius: 4px;
-      border: 6px solid #fff;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.06);
-      margin-bottom: 12px;
-      background: #000;
-    }
-    .timeline-item .timeline-media img {
-      display:block;
-      width:100%;
-      height:auto;
-    }
+    .timeline-item h3 { font-family: 'Playfair Display', serif; margin-bottom: 8px; }
+    .timeline-item p { color: #555; font-weight: 600; font-size: 15px; }
+    .timeline-media { border-radius: 8px; overflow: hidden; border: 6px solid #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.08); margin-bottom: 12px; }
+    .timeline-media img { width: 100%; height: auto; display: block; }
+    .timeline-dot { width: 40px; height: 40px; border-radius: 50%; background: white; border: 4px solid #f0b7d0; margin: 0 auto; box-shadow: 0 6px 12px rgba(0,0,0,0.06); }
 
-    /* caption (small heading under image) */
-    .caption {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #000;
-      text-align: center;
-      margin-bottom: 8px;
-    }
-
-    /* item title and descriptive paragraph — centered like the example; Playfair for headings */
-    .timeline-item h3 {
-      font-family: 'Playfair Display', serif;
-      text-align: center;
-      font-size: 20px;
-      margin-bottom: 10px;
-      color: #111;
-    }
-    .timeline-item p {
-      text-align: center;
-      font-size: 15px;
-      color: #222;
-      font-weight: 600;
-      line-height: 1.45;
-      margin: 0 auto;
-    }
-
-    /* left / right helper classes (align the cards to the side visually like the screenshot) */
-    .left { grid-column: 1; text-align: left; }
+    .left { grid-column: 1; text-align: right; }
     .right { grid-column: 3; text-align: left; }
+    .caption { font-size: 0.95rem; color: #000; margin-top: 6px; font-weight: 700; }
 
-    /* On smaller screens collapse to a single column timeline with the pink line on the left */
     @media (max-width: 960px) {
-      .timeline::after { left: 28px; transform: none; width: 6px; }
+      .timeline::before { left: 24px; transform: none; }
       .timeline-row { grid-template-columns: 56px 1fr; }
-      .left, .right { grid-column: 2; text-align: left; }
+      .left { grid-column: 2; text-align: left; }
+      .right { grid-column: 2; text-align: left; }
       .timeline-dot { grid-column: 1; margin-left: 8px; }
-      .timeline-year { position: static; font-size: 56px; margin-bottom: 16px; left: 0; text-align: left; }
-      .timeline { padding-left: 6px; padding-right: 6px; }
     }
 
-    @media (max-width: 520px) {
-      .timeline-item { padding: 12px; border-width: 5px; }
-      .timeline::before { top: 6px; height:6px; }
-      .timeline-year { font-size: 44px; }
-    }
-
-    /* small aesthetic niceties */
-    .timeline-item h3 + p { margin-top: 8px; }
-    .events-section .note { text-align:center; color:#666; margin-top: 8px; font-size:14px; }
+    footer { text-align: center; padding: 26px 12px; background: #fce8f5; border-top: 3px solid #e6c2d4; margin-top: 40px;}
   </style>
 </head>
 <body>
-  <!-- Top banners (kept for context, replace images with your assets) -->
-  <div class="full-width-banner">
-    <img src="motto3.png" alt="Educate Donate Motto" style="height:56px;">
-    <img src="RDC.png" alt="RDC Logo" style="height:58px; margin-left:18px;">
+  <!-- USE YOUR SINGLE HEADER SCREENSHOT (place at images/image4.jpg) -->
+  <div class="header-screenshot" aria-hidden="true">
+    <img src="images/image4.jpg" alt="Header screenshot (logo, banner, thin divider and top nav artwork)">
   </div>
 
-  <!-- minimal nav -->
+  <!-- NAV -->
   <nav>
-    <a href="index.html">HOME</a>
-    <a href="about.html">ABOUT</a>
-    <a href="events.html" style="text-decoration:underline;">EVENTS</a>
-    <a href="newsletter.html">NEWSLETTER</a>
-    <a href="getinvolved.html">GET INVOLVED</a>
+    <a href="index.html" class="home-btn active">HOME</a>
+    <div class="nav-links" role="navigation" aria-label="Main">
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle">About</a>
+        <div class="dropdown-menu" aria-hidden="true">
+          <a href="socialmedia.html">Social Media Team</a>
+          <a href="about.html">Executive Board</a>
+          <a href="partnerships.html">Partnerships</a>
+        </div>
+      </div>
+      <a href="events.html">Events</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="getinvolved.html">Get Involved</a>
+    </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Events</h1>
-  </section>
+  <!-- MAIN: timeline (contact removed) -->
+  <div class="page">
+    <div class="events-hero" role="img" aria-label="Events hero"></div>
 
-  <!-- EVENTS (timeline layout) -->
-  <section class="events-section">
-    <h2>Events & Fundraisers</h2>
+    <section class="timeline" aria-labelledby="events-heading">
+      <h2 id="events-heading" class="timeline-year">2025</h2>
 
-    <div class="timeline">
-      <!-- YEAR label -->
-      <div class="timeline-year">2025</div>
-
-      <!-- Falcon Fest (right) -->
-      <div class="timeline-row">
+      <div class="timeline-row" aria-label="Falcon Fest 2025">
         <div class="left"></div>
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="right">
           <div class="timeline-item">
             <div class="timeline-media">
-              <!-- image1 should be your hero/falconfest screenshot -->
               <img src="images/image1.jpg" alt="Falcon Fest jewelry booth">
             </div>
             <div class="caption">Falcon Fest 2025</div>
@@ -278,8 +217,7 @@
         </div>
       </div>
 
-      <!-- San Jose Makers Market (left) -->
-      <div class="timeline-row">
+      <div class="timeline-row" aria-label="San Jose Makers Market">
         <div class="left">
           <div class="timeline-item">
             <div class="timeline-media">
@@ -294,8 +232,7 @@
         <div class="right"></div>
       </div>
 
-      <!-- SoSo Market (right) -->
-      <div class="timeline-row">
+      <div class="timeline-row" aria-label="SoSo Market Berkeley">
         <div class="left"></div>
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="right">
@@ -310,8 +247,7 @@
         </div>
       </div>
 
-      <!-- Chipotle Fundraiser (left) -->
-      <div class="timeline-row">
+      <div class="timeline-row" aria-label="Chipotle Fundraiser">
         <div class="left">
           <div class="timeline-item">
             <div class="timeline-media">
@@ -326,8 +262,7 @@
         <div class="right"></div>
       </div>
 
-      <!-- Guest Speaking (right) -->
-      <div class="timeline-row">
+      <div class="timeline-row" aria-label="Guest Speaking at Hart Middle School">
         <div class="left"></div>
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="right">
@@ -342,11 +277,9 @@
         </div>
       </div>
 
-      <!-- YEAR 2024 -->
-      <div class="timeline-year" style="left:-20px; top: 680px;">2024</div>
+      <h2 class="timeline-year">2024</h2>
 
-      <!-- Bracelet Workshop (left) -->
-      <div class="timeline-row" style="margin-top: 40px;">
+      <div class="timeline-row" aria-label="Bracelet Workshop">
         <div class="left">
           <div class="timeline-item">
             <div class="timeline-media">
@@ -361,8 +294,7 @@
         <div class="right"></div>
       </div>
 
-      <!-- Holiday Drive (right) -->
-      <div class="timeline-row">
+      <div class="timeline-row" aria-label="Holiday Drive">
         <div class="left"></div>
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="right">
@@ -377,14 +309,13 @@
         </div>
       </div>
 
-      <!-- Speech and Debate Camp (left) -->
-      <div class="timeline-row">
+      <div class="timeline-row" aria-label="Speech & Debate Camp 2024">
         <div class="left">
           <div class="timeline-item">
             <div class="timeline-media">
               <img src="images/image3.jpg" alt="Speech & Debate Camp screenshot">
             </div>
-            <div class="caption">Speech & Debate Camp 2024</div>
+            <div class="caption">Speech and Debate Camp 2024</div>
             <h3>Speech and Debate Camp 2024</h3>
             <p>Our very first RDC event! The camp brought together passionate students to strengthen public speaking skills — all in support of our mission to raise $1,000 for Cure Rare Disease.</p>
           </div>
@@ -393,15 +324,33 @@
         <div class="right"></div>
       </div>
 
-    </div><!-- .timeline -->
-  </section>
+    </section>
+  </div>
 
-  <footer style="text-align:center; padding:24px; border-top:3px solid #f6cfe0;">
-    <p style="font-family:'Playfair Display', serif; font-size:14px; color:#222;">© <span id="year"></span> Rare Disease Club — Educate · Donate · Make An Impact</p>
+  <footer>
+    <p>© <span id="year"></span> Rare Disease Club — Educate · Donate · Make An Impact</p>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile dropdown behavior (same as About)
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            const dropdown = this.parentElement;
+            dropdown.classList.toggle('active');
+          }
+        });
+      });
+      document.addEventListener('click', function(e) {
+        document.querySelectorAll('.dropdown.active').forEach(function(drop) {
+          if (!drop.contains(e.target)) drop.classList.remove('active');
+        });
+      });
+    });
   </script>
 </body>
 </html>
