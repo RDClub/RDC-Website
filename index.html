@@ -338,35 +338,17 @@
       .timeline-dot { grid-column: 1; margin-left: 8px; }
     }
 
-    /* --- Contact --- */
-    .contact-section { background: #1a1a1a; padding: 70px 6vw; color: #FCE8F5; }
-    .contact-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; }
-    .contact-info, .contact-form { flex: 1; min-width: 290px; max-width: 480px; padding: 22px; }
-    .contact-info h2, .contact-form h2 { font-size: 1.9rem; margin-bottom: 18px; }
-    .contact-detail { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 1.05rem; }
-    .contact-form { background: #2a2a2a; border-radius: 16px; padding: 26px; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
-    .contact-form form { display: flex; flex-direction: column; gap: 14px; }
-    .contact-form input, .contact-form textarea {
-      width: 100%; padding: 14px 16px; background: #3d3c3c; border: 2px solid transparent; border-radius: 8px; color: #FCE8F5; font-size: 1.05rem; transition: border-color .3s;
-    }
-    .contact-form input:focus, .contact-form textarea:focus { border-color: #FCE8F5; outline: none; }
-    .contact-form button[type="submit"] {
-      padding: 14px 24px; background: linear-gradient(135deg, #FCE8F5, #B96794); color: #1a1a1a; border: none; border-radius: 22px; font-size: 1.05rem; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: transform .2s, box-shadow .2s;
-    }
-    .contact-form button[type="submit"]:hover { transform: translateY(-1px); box-shadow: 0 5px 15px rgba(252,232,245,.4); }
-
     footer { text-align: center; padding: 26px 12px; background: #fce8f5; border-top: 3px solid #e6c2d4; margin-top: 40px;}
   </style>
 </head>
 <body>
-  <!-- Top banners -->
+  <!-- Top banners (IDENTICAL STRUCTURE to the HTML you insisted on) -->
   <div class="full-width-banner">
-    <!-- Replace these with your assets -->
     <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
     <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
   </div>
 
-  <!-- NAV (About clone) -->
+  <!-- NAV (About clone - unchanged) -->
   <nav>
     <a href="index.html" class="home-btn active">HOME</a>
     <div class="nav-links">
@@ -451,7 +433,6 @@
         <div class="right">
           <div class="timeline-item">
             <div class="timeline-media">
-              <!-- image1 should be your hero/falconfest screenshot -->
               <img src="images/image1.jpg" alt="Falcon Fest jewelry booth">
             </div>
             <div class="caption">Falcon Fest 2025</div>
@@ -579,35 +560,7 @@
     </div><!-- .timeline -->
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact-section">
-    <div class="contact-container">
-      <div class="contact-info">
-        <h2>Get In Touch</h2>
-        <div class="contact-detail">
-          <svg style="width: 20px; height: 20px; fill: #FCE8F5;" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
-          </svg>
-          <span>Email Us</span>
-        </div>
-        <a href="mailto:rarediseaseclub44@gmail.com" style="color:#FCE8F5; text-decoration:none;">rarediseaseclub44@gmail.com</a>
-      </div>
-      <div class="contact-form">
-        <h2>Send Us a Message</h2>
-        <form action="https://formspree.io/f/mblkaeak" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="_replyto" placeholder="Email Address" required />
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit">
-            Send Message
-            <svg style="width: 18px; height: 18px; fill: #1a1a1a;" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
-            </svg>
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
+  <!-- NO CONTACT SECTION (removed per your instruction) -->
 
   <footer>
     <p>© <span id="year"></span> Rare Disease Club — Educate · Donate · Make An Impact</p>
