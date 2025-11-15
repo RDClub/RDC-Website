@@ -11,9 +11,8 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
-    /* --- Base (match index page zoom and typography) --- */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html,body { height: 100%; }
+    html, body { height: 100%; }
     body {
       font-family: 'Georgia', serif;
       background-color: #fce8f5;
@@ -25,7 +24,7 @@
       line-height: 1.5;
     }
 
-    /* Full width banners (IDENTICAL to index) */
+    /* small top banners (keeps index look) */
     .full-width-banner {
       width: 100%;
       background-color: #fce8f5;
@@ -34,39 +33,10 @@
       align-items: center;
       padding: 15px 0;
     }
-    .banner-inner {
-      width: calc(100% - 40px);
-      max-width: 1400px;
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-    .motto-img {
-      width: 160px;
-      height: 84px;
-      object-fit: contain;
-      display:block;
-    }
-    .rdc-title-banner {
-      flex: 1;
-      background: #fff;
-      padding: 18px 28px;
-      text-align: center;
-      border: 1px solid rgba(0,0,0,0.06);
-    }
-    .rdc-title-banner img { width: 100%; height: auto; object-fit: contain; display:block; }
+    .full-width-banner img { width: 100%; max-width: 100%; height: auto; display: block; }
+    .motto-img, .rdc-title-banner { max-width: 100%; margin: 0 auto 10px auto; }
 
-    /* thin divider lines to match screenshot */
-    .thin-lines {
-      width: 100%;
-      max-width: 1400px;
-      height: 6px;
-      border-top: 3px solid #111;
-      border-bottom: 3px solid rgba(0,0,0,0.05);
-      margin-top: 10px;
-    }
-
-    /* --- NAVIGATION (exactly like index) --- */
+    /* NAV (same as index) */
     nav {
       background-color: #fce8f5;
       border-top: 3px solid black;
@@ -79,107 +49,133 @@
       width: 100%;
       padding: 0;
     }
-    .nav-inner {
-      width: calc(100% - 40px);
-      max-width: 1400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 56px;
-      padding: 8px 12px;
-    }
-    .nav-inner a {
+    .home-btn, .nav-links a, .dropdown-toggle {
       text-decoration: none;
-      color: #111;
-      font-weight: 700;
-      font-size: 1.25rem;
+      color: black;
+      font-size: 1.35rem;
+      font-weight: bold;
       font-family: 'Georgia', serif;
       text-transform: uppercase;
-      padding: 6px 10px;
+      transition: all 0.3s ease;
+      padding: 0 32px;
+      background: none;
+      margin: 0;
+      height: 72px;
+      line-height: 72px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
     }
-    .home-btn {
-      background: #fff;
-      border: 3px solid #111;
-      border-radius: 28px;
-      padding: 10px 28px;
-      box-shadow: 0 6px 0 rgba(0,0,0,0.06);
-      font-size: 1.1rem;
+    .home-btn.active {
+      background: white;
+      color: black;
+      border: 3px solid black;
+      border-radius: 24px;
+      padding: 0 32px;
+      height: 56px;
+      line-height: 56px;
+      margin-left: 12px;
+      font-size: 1.2rem;
     }
-    .nav-inner a.active { text-decoration: underline; }
+    .nav-links { display: flex; gap: 0; align-items: center; height: 72px; }
+    .dropdown { position: relative; display: flex; align-items: center; height: 72px; }
+    .dropdown-toggle:after { content: ' ▼'; font-size: 0.8em; color: #19171a; margin-left: 2px; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+      background-color: #111;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+      z-index: 99;
+      flex-direction: column;
+      padding: 0;
+    }
+    .dropdown-menu a {
+      color: #fff;
+      padding: 16px 26px;
+      font-size: 1.15rem;
+      border-bottom: 1px solid #222;
+      display: block;
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover,
+    .dropdown-menu a:focus { background: #B96794; color: #fff; }
+    .dropdown:hover .dropdown-menu,
+    .dropdown.active .dropdown-menu { display: flex; }
+    .nav-links a:not(.active):hover,
+    .nav-links .dropdown-toggle:not(.active):hover { color: #B96794; }
 
-    /* small screens */
     @media (max-width: 900px) {
-      .banner-inner { width: calc(100% - 24px); gap: 10px; }
-      .nav-inner { gap: 22px; padding: 0 8px; flex-wrap: wrap; }
-      .home-btn { padding: 8px 18px; }
+      nav { flex-direction: column; min-height: auto; }
+      .nav-links { flex-direction: column; align-items: stretch; width: 100%; }
+      .home-btn, .nav-links a, .dropdown-toggle {
+        font-size: 1.25rem;
+        height: 56px;
+        line-height: 56px;
+        padding: 0 16px;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .home-btn.active { margin-left: 0; border-radius: 18px; }
     }
     @media (max-width: 600px) {
       html { font-size: 17px; }
-      .motto-img { width: 110px; height: auto; }
-      .rdc-title-banner { padding: 12px; }
-      .nav-inner { gap: 12px; }
+      .home-btn, .nav-links a, .dropdown-toggle {
+        font-size: 1rem;
+        padding: 0 10px;
+        height: 48px;
+        line-height: 48px;
+      }
+      .home-btn.active {
+        border-radius: 12px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 1rem;
+      }
     }
 
-    /* --- BELOW NAV PHOTO (new as requested) --- */
-    .below-nav-photo {
+    /* EVENTS HERO: the large photo that must appear below the nav */
+    .events-hero {
       width: 100%;
-      display: block;
+      position: relative;
       overflow: hidden;
       background: #000;
-      /* height tuned to look good across devices; adjust if you want taller/shorter */
-      height: clamp(140px, 20vh, 360px);
     }
-    .below-nav-photo img {
+    .events-hero img {
       width: 100%;
-      height: 100%;
+      height: clamp(220px, 30vh, 420px); /* responsive height */
       object-fit: cover;
-      object-position: center;
       display: block;
     }
-
-    /* --- HERO (same as index beneath nav) --- */
-    .hero {
-      width: 100%;
-      min-height: 460px;
-      background-image: url('darkenphoto.png');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding: 48px 0;
-    }
-    .hero::after {
-      content: "";
+    .events-hero .overlay {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.45);
-      z-index: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      text-align: center;
+      z-index: 2;
+      pointer-events: none;
     }
-    .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; width: 100%; text-align: center; padding: 16px; }
-    .hero-text { color: #fff; margin-bottom: 24px; max-width: 920px; }
-    .hero-text h1 { font-size: clamp(2.6rem, 6vw, 3.8rem); margin: 0; line-height: 1.02; font-family: 'Playfair Display', serif; }
-    .hero-text p { font-size: 0.95rem; margin-top: 12px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
-    .hero-btn { display:inline-block; padding:12px 28px; color:#fff; border:3px solid #fff; border-radius:20px; text-transform:uppercase; font-weight:700; text-decoration:none; }
+    .events-hero .overlay h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 12px rgba(0,0,0,0.6);
+      margin: 0;
+    }
 
-    /* --- What We Do & Impact (same as index) --- */
+    /* keep the rest of the page styling consistent with index */
     .what-we-do-section { background: #f9dff4; padding: 40px 5vw; position: relative; }
     .what-we-do-container { max-width: 825px; margin: 0 auto; position: relative; display: flex; flex-direction: column; align-items: center; }
     .what-we-do-image { width: 88%; max-width: 800px; border-radius: 24px; border: 3px solid #000; display: block; }
-    .what-we-do-content { background: #000; color: #fff; padding: 18px; width: 88%; max-width: 520px; margin: -50px auto 0; border-radius: 24px; z-index: 2; position: relative; }
-    .what-we-do-content h2 { font-size: 1.05rem; color: #f9dff4; margin-bottom: 10px; text-align: center; letter-spacing: 1px; }
-    .what-we-do-content p { font-size: 0.75rem; line-height: 1.5; text-align: center; }
-
+    .what-we-do-content { background: #000; color: #fff; padding: 18px; width: 88%; max-width: 520px; margin: -50px auto 0 auto; border-radius: 24px; z-index: 2; position: relative; }
     .nord-section { padding: 28px 6vw; background: #fff; margin: 24px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.07); opacity: 0; transform: translateY(50px); transition: all .8s ease; }
     .nord-section.show { opacity: 1; transform: translateY(0); }
-    .services-grid { display: flex; flex-wrap: wrap; gap: 26px; max-width: 1200px; margin: 0 auto; justify-content: center; }
-    .service-card { background: #f9f9f9; border-radius: 12px; padding: 22px; text-align: center; transition: transform .3s ease; width: 94vw; max-width: 340px; }
-    .service-btn { display: inline-block; padding: 10px 20px; background: #000; color: #fff; text-decoration: none; border-radius: 8px; font-size: 0.88rem; min-width: 130px; }
-    .service-btn:hover { background: #784461; }
 
-    /* --- Events timeline (keeps earlier working layout) --- */
     .events-section { background: #fce8f5; padding: 46px 6vw; }
     .events-section h2 { text-align: center; font-size: 1.4rem; color: #000; margin-bottom: 28px; }
 
@@ -188,20 +184,12 @@
     .timeline-year { font-family: 'Playfair Display', serif; font-size: 56px; color: #f0b7d0; margin: 40px 0 10px 0; }
     .timeline-row { display: grid; grid-template-columns: 1fr 40px 1fr; gap: 12px; align-items: start; margin: 20px 0 40px; }
     .timeline-item { background: #fff; border: 4px solid #e7afca; border-radius: 8px; padding: 16px; box-shadow: 0 10px 24px rgba(0,0,0,0.06); max-width: 480px; }
-    .timeline-item h3 { font-family: 'Playfair Display', serif; margin-bottom: 8px; }
-    .timeline-item p { color: #555; font-weight: 600; font-size: 15px; }
-    .timeline-media { display: block; width: 100%; border-radius: 8px; overflow: hidden; border: 6px solid #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.08); margin-bottom: 12px; }
     .timeline-media img { width: 100%; height: auto; display: block; }
-    .timeline-dot { width: 40px; height: 40px; border-radius: 50%; background: white; border: 4px solid #f0b7d0; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 6px 12px rgba(0,0,0,0.06); }
-    .left { grid-column: 1; text-align: right; }
-    .right { grid-column: 3; text-align: left; }
-    .caption { font-size: 0.95rem; color: #000; margin-top: 6px; font-weight: 700; }
+    .timeline-dot { width: 40px; height: 40px; border-radius: 50%; background: white; border: 4px solid #f0b7d0; margin: 0 auto; box-shadow: 0 6px 12px rgba(0,0,0,0.06); }
 
     @media (max-width: 960px) {
       .timeline::before { left: 24px; transform: none; }
       .timeline-row { grid-template-columns: 56px 1fr; }
-      .left { grid-column: 2; text-align: left; }
-      .right { grid-column: 2; text-align: left; }
       .timeline-dot { grid-column: 1; margin-left: 8px; }
     }
 
@@ -209,98 +197,49 @@
   </style>
 </head>
 <body>
-  <!-- TOP: identical to index - two-banner approach -->
-  <div class="full-width-banner" role="banner" aria-hidden="false">
-    <div class="banner-inner">
-      <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
-      <div class="rdc-title-banner" aria-hidden="true">
-        <img src="RDC.png" alt="RARE DISEASE CLUB banner">
-      </div>
-    </div>
-    <div class="thin-lines" aria-hidden="true"></div>
+
+  <!-- small top banners (optional; same as index) -->
+  <div class="full-width-banner">
+    <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
+    <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
   </div>
 
-  <!-- NAV (About clone, identical to index) -->
-  <nav role="navigation" aria-label="Main Navigation">
-    <div class="nav-inner">
-      <a href="index.html" class="home-btn">HOME</a>
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="home-btn">HOME</a>
+    <div class="nav-links">
       <div class="dropdown">
-        <a href="#" class="dropdown-toggle">ABOUT</a>
-        <div class="dropdown-menu" aria-hidden="true">
+        <a href="#" class="dropdown-toggle">About</a>
+        <div class="dropdown-menu">
           <a href="socialmedia.html">Social Media Team</a>
           <a href="about.html">Executive Board</a>
           <a href="partnerships.html">Partnerships</a>
         </div>
       </div>
-      <a href="events.html" class="active">EVENTS</a>
-      <a href="newsletter.html">NEWSLETTER</a>
-      <a href="getinvolved.html">GET INVOLVED</a>
+      <a href="events.html" class="home-btn active">Events</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="getinvolved.html">Get Involved</a>
     </div>
   </nav>
 
-  <!-- NEW: photo directly below nav as you requested -->
-  <!-- Place the image file at images/image6.jpg -->
-  <div class="below-nav-photo" aria-hidden="false">
-    <img src="images/image6.jpg" alt="Events table with members at a market — hero image">
+  <!-- EVENTS HERO (THIS PHOTO IS BELOW NAV) -->
+  <div class="events-hero" aria-hidden="false">
+    <!-- use the large event photo here; replace with your filename -->
+    <img src="images/image1.jpg" alt="Events hero photo">
+    <div class="overlay" aria-hidden="true">
+      <h1>Events</h1>
+    </div>
   </div>
 
-  <!-- HERO (below the below-nav-photo) -->
-  <section class="hero" role="img" aria-label="Hero banner">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1>Together For Rare</h1>
-        <h1>Lives</h1>
-        <p>Rare doesn't mean alone. Together, we're turning awareness into action and hope into impact.</p>
-      </div>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform" class="hero-btn">JOIN NOW</a>
-    </div>
-  </section>
-
-  <!-- WHAT WE DO (restored to match index) -->
-  <section class="what-we-do-section" aria-labelledby="what-we-do">
-    <div class="what-we-do-container">
-      <img src="photocopy.jpeg" alt="What We Do" class="what-we-do-image">
-      <div class="what-we-do-content" id="what-we-do">
-        <h2>WHAT WE DO</h2>
-        <p>
-          Rare Disease Collective (RDC) is a student-led initiative working to raise awareness about rare diseases.
-          We aim to educate communities, support early diagnosis, and promote conversations around conditions that
-          often go unnoticed due to limited research and public understanding.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- IMPACT (restored to match index) -->
-  <section class="nord-section" aria-labelledby="impact">
-    <h2 id="impact">How You Can Make an Impact</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Donating</h3>
-        <p>Donate to CRD and their research facilities of rare disease treatment and support.</p>
-        <a href="https://cureraredisease.raisely.com/parnika-khatri" target="_blank" class="service-btn">Donate</a>
-      </div>
-      <div class="service-card">
-        <h3>Volunteering</h3>
-        <p>Get a chance to make a difference by volunteering.</p>
-        <a href="#" class="service-btn">Search Now</a>
-      </div>
-      <div class="service-card">
-        <h3>Partnerships</h3>
-        <p>Explore our current partnerships!</p>
-        <a href="partner.html" class="service-btn">Learn More</a>
-      </div>
-    </div>
-  </section>
-
   <!-- EVENTS (timeline) -->
-  <section class="events-section" aria-labelledby="events-heading">
-    <h2 id="events-heading">Events & Fundraisers</h2>
+  <section class="events-section">
+    <h2>Events & Fundraisers</h2>
 
-    <div class="timeline" role="list">
+    <div class="timeline">
       <div class="timeline-year">2025</div>
 
-      <div class="timeline-row" role="listitem" aria-label="Falcon Fest 2025">
+      <div class="timeline-row">
         <div class="left"></div>
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="right">
@@ -315,7 +254,7 @@
         </div>
       </div>
 
-      <div class="timeline-row" role="listitem" aria-label="San Jose Makers Market">
+      <div class="timeline-row">
         <div class="left">
           <div class="timeline-item">
             <div class="timeline-media">
@@ -330,7 +269,7 @@
         <div class="right"></div>
       </div>
 
-      <div class="timeline-row" role="listitem" aria-label="SoSo Market Berkeley">
+      <div class="timeline-row">
         <div class="left"></div>
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="right">
@@ -345,7 +284,7 @@
         </div>
       </div>
 
-      <div class="timeline-row" role="listitem" aria-label="Chipotle Fundraiser">
+      <div class="timeline-row">
         <div class="left">
           <div class="timeline-item">
             <div class="timeline-media">
@@ -360,7 +299,7 @@
         <div class="right"></div>
       </div>
 
-      <div class="timeline-row" role="listitem" aria-label="Guest Speaking at Hart Middle School">
+      <div class="timeline-row">
         <div class="left"></div>
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="right">
@@ -377,7 +316,7 @@
 
       <div class="timeline-year">2024</div>
 
-      <div class="timeline-row" role="listitem" aria-label="Bracelet Workshop">
+      <div class="timeline-row">
         <div class="left">
           <div class="timeline-item">
             <div class="timeline-media">
@@ -392,7 +331,7 @@
         <div class="right"></div>
       </div>
 
-      <div class="timeline-row" role="listitem" aria-label="Holiday Drive">
+      <div class="timeline-row">
         <div class="left"></div>
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="right">
@@ -407,7 +346,7 @@
         </div>
       </div>
 
-      <div class="timeline-row" role="listitem" aria-label="Speech and Debate Camp 2024">
+      <div class="timeline-row">
         <div class="left">
           <div class="timeline-item">
             <div class="timeline-media">
@@ -430,40 +369,33 @@
   </footer>
 
   <script>
-    // set year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Dropdown mobile behavior (same as index)
     document.addEventListener('DOMContentLoaded', function() {
+      // mobile dropdown toggle
       document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
           if (window.innerWidth <= 900) {
             e.preventDefault();
             const dropdown = this.parentElement;
             dropdown.classList.toggle('active');
-            const menu = dropdown.querySelector('.dropdown-menu');
-            if (menu) menu.style.display = dropdown.classList.contains('active') ? 'flex' : 'none';
           }
         });
       });
       document.addEventListener('click', function(e) {
         document.querySelectorAll('.dropdown.active').forEach(function(drop) {
-          if (!drop.contains(e.target)) {
-            drop.classList.remove('active');
-            const menu = drop.querySelector('.dropdown-menu');
-            if (menu) menu.style.display = 'none';
-          }
+          if (!drop.contains(e.target)) drop.classList.remove('active');
         });
       });
 
-      // Impact section animation
+      // impact section reveal if present
       const impactSection = document.querySelector('.nord-section');
       if (impactSection) {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('show');
           });
-        }, { threshold: 0.18 });
+        }, { threshold: 0.2 });
         observer.observe(impactSection);
       }
     });
