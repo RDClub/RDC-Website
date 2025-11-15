@@ -13,6 +13,7 @@
 
     /* --- Base (match index page zoom and typography) --- */
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height: 100%; }
     body {
       font-family: 'Georgia', serif;
       background-color: #fce8f5;
@@ -26,15 +27,44 @@
 
     /* Full width banners (IDENTICAL to index) */
     .full-width-banner {
-      width: 100vw;
+      width: 100%;
       background-color: #fce8f5;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 15px 0;
     }
-    .full-width-banner img { width: 100%; max-width: 100%; height: auto; display: block; }
-    .motto-img, .rdc-title-banner { max-width: 100%; margin: 0 auto 10px auto; }
+    .banner-inner {
+      width: calc(100% - 40px);
+      max-width: 1400px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .motto-img {
+      width: 160px;
+      height: 84px;
+      object-fit: contain;
+      display:block;
+    }
+    .rdc-title-banner {
+      flex: 1;
+      background: #fff;
+      padding: 18px 28px;
+      text-align: center;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .rdc-title-banner img { width: 100%; height: auto; object-fit: contain; display:block; }
+
+    /* thin divider lines to match screenshot */
+    .thin-lines {
+      width: 100%;
+      max-width: 1400px;
+      height: 6px;
+      border-top: 3px solid #111;
+      border-bottom: 3px solid rgba(0,0,0,0.05);
+      margin-top: 10px;
+    }
 
     /* --- NAVIGATION (exactly like index) --- */
     nav {
@@ -49,126 +79,68 @@
       width: 100%;
       padding: 0;
     }
-    .home-btn, .nav-links a, .dropdown-toggle {
-      text-decoration: none;
-      color: black;
-      font-size: 1.35rem;
-      font-weight: bold;
-      font-family: 'Georgia', serif;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-      padding: 0 32px;
-      border: none;
-      background: none;
-      border-radius: 0;
-      margin: 0;
-      height: 72px;
-      line-height: 72px;
+    .nav-inner {
+      width: calc(100% - 40px);
+      max-width: 1400px;
       display: flex;
       align-items: center;
-      box-sizing: border-box;
-      cursor: pointer;
+      justify-content: center;
+      gap: 56px;
+      padding: 8px 12px;
     }
-    .home-btn.active {
-      background: white;
-      color: black;
-      border: 3px solid black;
-      border-radius: 24px;
-      padding: 0 32px;
-      height: 56px;
-      line-height: 56px;
-      margin-left: 12px;
-      font-size: 1.2rem;
+    .nav-inner a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 700;
+      font-size: 1.25rem;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      padding: 6px 10px;
     }
-    .nav-links { display: flex; gap: 0; align-items: center; height: 72px; }
-    .dropdown { position: relative; display: flex; align-items: center; height: 72px; }
-    .dropdown-toggle:after { content: ' ▼'; font-size: 0.8em; color: #19171a; margin-left: 2px; }
-    .nav-links a[href="getinvolved.html"] { font-size: 1.35rem; }
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 180px;
-      background-color: #111;
-      border-radius: 0 0 12px 12px;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
-      z-index: 99;
-      flex-direction: column;
-      padding: 0;
+    .home-btn {
+      background: #fff;
+      border: 3px solid #111;
+      border-radius: 28px;
+      padding: 10px 28px;
+      box-shadow: 0 6px 0 rgba(0,0,0,0.06);
+      font-size: 1.1rem;
     }
-    .dropdown-menu a {
-      color: #fff;
-      padding: 16px 26px;
-      font-size: 1.15rem;
-      border-bottom: 1px solid #222;
-      background: none;
-      border: none;
-      border-radius: 0;
-      margin: 0;
-      height: auto;
-      line-height: 1.6;
-      display: block;
-    }
-    .dropdown-menu a:last-child { border-bottom: none; }
-    .dropdown-menu a:hover,
-    .dropdown-menu a:focus { background: #B96794; color: #fff; }
-    .dropdown:hover .dropdown-menu,
-    .dropdown.active .dropdown-menu { display: flex; }
-    .nav-links a:not(.active):hover,
-    .nav-links .dropdown-toggle:not(.active):hover { color: #B96794; }
+    .nav-inner a.active { text-decoration: underline; }
 
-    /* Responsive nav */
+    /* small screens */
     @media (max-width: 900px) {
-      nav { flex-direction: column; min-height: auto; }
-      .nav-links {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        width: 100%;
-      }
-      .home-btn, .nav-links a, .dropdown-toggle {
-        font-size: 1.25rem;
-        height: 56px;
-        line-height: 56px;
-        padding: 0 16px;
-        width: 100%;
-        justify-content: flex-start;
-      }
-      .nav-links a[href="getinvolved.html"] { font-size: 1.25rem; }
-      .home-btn.active { margin-left: 0; border-radius: 18px; }
-      .dropdown { height: 56px; }
-      .dropdown-menu {
-        position: static;
-        min-width: 0;
-        box-shadow: none;
-        border-radius: 0;
-        width: 100vw;
-      }
-      .hero { min-height: 800px; padding: 42px 0; }
-      .what-we-do-image { width: 94%; }
+      .banner-inner { width: calc(100% - 24px); gap: 10px; }
+      .nav-inner { gap: 22px; padding: 0 8px; flex-wrap: wrap; }
+      .home-btn { padding: 8px 18px; }
     }
     @media (max-width: 600px) {
-      html { font-size: 17px; } /* keep same scale as index */
-      .home-btn, .nav-links a, .dropdown-toggle {
-        font-size: 1rem;
-        padding: 0 10px;
-        height: 48px;
-        line-height: 48px;
-      }
-      .nav-links a[href="getinvolved.html"] { font-size: 1rem; }
-      .home-btn.active {
-        border-radius: 12px;
-        height: 44px;
-        line-height: 44px;
-        font-size: 1rem;
-      }
+      html { font-size: 17px; }
+      .motto-img { width: 110px; height: auto; }
+      .rdc-title-banner { padding: 12px; }
+      .nav-inner { gap: 12px; }
+    }
+
+    /* --- BELOW NAV PHOTO (new as requested) --- */
+    .below-nav-photo {
+      width: 100%;
+      display: block;
+      overflow: hidden;
+      background: #000;
+      /* height tuned to look good across devices; adjust if you want taller/shorter */
+      height: clamp(140px, 20vh, 360px);
+    }
+    .below-nav-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
     /* --- HERO (same as index beneath nav) --- */
     .hero {
-      width: 100vw;
-      min-height: 520px;
+      width: 100%;
+      min-height: 460px;
       background-image: url('darkenphoto.png');
       background-size: cover;
       background-position: center;
@@ -182,42 +154,21 @@
       content: "";
       position: absolute;
       top: 0; left: 0;
-      width: 100vw; height: 100%;
-      background-color: rgba(0,0,0,0.5);
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.45);
       z-index: 0;
     }
     .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; width: 100%; text-align: center; padding: 16px; }
-    .hero-text { color: #fff; margin-bottom: 36px; max-width: 960px; }
-    .hero-text h1 {
-      font-size: clamp(2.6rem, 6vw, 3.8rem);
-      margin-bottom: 12px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      line-height: 1.05;
-    }
-    .hero-text p { font-size: 0.85rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
-    .hero-btn-container { width: 100%; display: flex; justify-content: center; }
-    .hero-btn {
-      display: inline-block;
-      padding: 12px 28px;
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: bold;
-      font-family: 'Georgia', serif;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: 3px solid #fff;
-      background: transparent;
-      transition: all .3s ease;
-      border-radius: 20px;
-      min-width: 190px;
-    }
-    .hero-btn:hover { background: rgba(255,255,255,.2); }
+    .hero-text { color: #fff; margin-bottom: 24px; max-width: 920px; }
+    .hero-text h1 { font-size: clamp(2.6rem, 6vw, 3.8rem); margin: 0; line-height: 1.02; font-family: 'Playfair Display', serif; }
+    .hero-text p { font-size: 0.95rem; margin-top: 12px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+    .hero-btn { display:inline-block; padding:12px 28px; color:#fff; border:3px solid #fff; border-radius:20px; text-transform:uppercase; font-weight:700; text-decoration:none; }
 
-    /* --- WHAT WE DO & IMPACT same as index --- */
+    /* --- What We Do & Impact (same as index) --- */
     .what-we-do-section { background: #f9dff4; padding: 40px 5vw; position: relative; }
     .what-we-do-container { max-width: 825px; margin: 0 auto; position: relative; display: flex; flex-direction: column; align-items: center; }
     .what-we-do-image { width: 88%; max-width: 800px; border-radius: 24px; border: 3px solid #000; display: block; }
-    .what-we-do-content { background: #000; color: #fff; padding: 18px; width: 88%; max-width: 520px; margin: -50px auto 0 auto; border-radius: 24px; z-index: 2; position: relative; }
+    .what-we-do-content { background: #000; color: #fff; padding: 18px; width: 88%; max-width: 520px; margin: -50px auto 0; border-radius: 24px; z-index: 2; position: relative; }
     .what-we-do-content h2 { font-size: 1.05rem; color: #f9dff4; margin-bottom: 10px; text-align: center; letter-spacing: 1px; }
     .what-we-do-content p { font-size: 0.75rem; line-height: 1.5; text-align: center; }
 
@@ -259,44 +210,97 @@
 </head>
 <body>
   <!-- TOP: identical to index - two-banner approach -->
-  <div class="full-width-banner">
-    <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
-    <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
+  <div class="full-width-banner" role="banner" aria-hidden="false">
+    <div class="banner-inner">
+      <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
+      <div class="rdc-title-banner" aria-hidden="true">
+        <img src="RDC.png" alt="RARE DISEASE CLUB banner">
+      </div>
+    </div>
+    <div class="thin-lines" aria-hidden="true"></div>
   </div>
 
   <!-- NAV (About clone, identical to index) -->
-  <nav>
-    <a href="index.html">HOME</a>
-    <div class="nav-links">
+  <nav role="navigation" aria-label="Main Navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="home-btn">HOME</a>
       <div class="dropdown">
-        <a href="#" class="dropdown-toggle">About</a>
-        <div class="dropdown-menu">
+        <a href="#" class="dropdown-toggle">ABOUT</a>
+        <div class="dropdown-menu" aria-hidden="true">
           <a href="socialmedia.html">Social Media Team</a>
           <a href="about.html">Executive Board</a>
           <a href="partnerships.html">Partnerships</a>
         </div>
       </div>
-      <a href="events.html" class="home-btn active">Events</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="getinvolved.html">Get Involved</a>
+      <a href="events.html" class="active">EVENTS</a>
+      <a href="newsletter.html">NEWSLETTER</a>
+      <a href="getinvolved.html">GET INVOLVED</a>
     </div>
   </nav>
 
+  <!-- NEW: photo directly below nav as you requested -->
+  <!-- Place the image file at images/image6.jpg -->
+  <div class="below-nav-photo" aria-hidden="false">
+    <img src="images/image6.jpg" alt="Events table with members at a market — hero image">
+  </div>
 
-  
+  <!-- HERO (below the below-nav-photo) -->
+  <section class="hero" role="img" aria-label="Hero banner">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Together For Rare</h1>
+        <h1>Lives</h1>
+        <p>Rare doesn't mean alone. Together, we're turning awareness into action and hope into impact.</p>
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform" class="hero-btn">JOIN NOW</a>
+    </div>
+  </section>
 
-  <!-- IMPACT (kept identical to index) -->
-  
+  <!-- WHAT WE DO (restored to match index) -->
+  <section class="what-we-do-section" aria-labelledby="what-we-do">
+    <div class="what-we-do-container">
+      <img src="photocopy.jpeg" alt="What We Do" class="what-we-do-image">
+      <div class="what-we-do-content" id="what-we-do">
+        <h2>WHAT WE DO</h2>
+        <p>
+          Rare Disease Collective (RDC) is a student-led initiative working to raise awareness about rare diseases.
+          We aim to educate communities, support early diagnosis, and promote conversations around conditions that
+          often go unnoticed due to limited research and public understanding.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT (restored to match index) -->
+  <section class="nord-section" aria-labelledby="impact">
+    <h2 id="impact">How You Can Make an Impact</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Donating</h3>
+        <p>Donate to CRD and their research facilities of rare disease treatment and support.</p>
+        <a href="https://cureraredisease.raisely.com/parnika-khatri" target="_blank" class="service-btn">Donate</a>
+      </div>
+      <div class="service-card">
+        <h3>Volunteering</h3>
+        <p>Get a chance to make a difference by volunteering.</p>
+        <a href="#" class="service-btn">Search Now</a>
+      </div>
+      <div class="service-card">
+        <h3>Partnerships</h3>
+        <p>Explore our current partnerships!</p>
+        <a href="partner.html" class="service-btn">Learn More</a>
+      </div>
+    </div>
+  </section>
 
   <!-- EVENTS (timeline) -->
-  <section class="events-section">
-    <h2>Events & Fundraisers</h2>
+  <section class="events-section" aria-labelledby="events-heading">
+    <h2 id="events-heading">Events & Fundraisers</h2>
 
-    <div class="timeline">
+    <div class="timeline" role="list">
       <div class="timeline-year">2025</div>
 
-      <div class="timeline-row">
+      <div class="timeline-row" role="listitem" aria-label="Falcon Fest 2025">
         <div class="left"></div>
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="right">
@@ -311,7 +315,7 @@
         </div>
       </div>
 
-      <div class="timeline-row">
+      <div class="timeline-row" role="listitem" aria-label="San Jose Makers Market">
         <div class="left">
           <div class="timeline-item">
             <div class="timeline-media">
@@ -326,7 +330,7 @@
         <div class="right"></div>
       </div>
 
-      <div class="timeline-row">
+      <div class="timeline-row" role="listitem" aria-label="SoSo Market Berkeley">
         <div class="left"></div>
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="right">
@@ -341,7 +345,7 @@
         </div>
       </div>
 
-      <div class="timeline-row">
+      <div class="timeline-row" role="listitem" aria-label="Chipotle Fundraiser">
         <div class="left">
           <div class="timeline-item">
             <div class="timeline-media">
@@ -356,7 +360,7 @@
         <div class="right"></div>
       </div>
 
-      <div class="timeline-row">
+      <div class="timeline-row" role="listitem" aria-label="Guest Speaking at Hart Middle School">
         <div class="left"></div>
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="right">
@@ -373,7 +377,7 @@
 
       <div class="timeline-year">2024</div>
 
-      <div class="timeline-row">
+      <div class="timeline-row" role="listitem" aria-label="Bracelet Workshop">
         <div class="left">
           <div class="timeline-item">
             <div class="timeline-media">
@@ -388,7 +392,7 @@
         <div class="right"></div>
       </div>
 
-      <div class="timeline-row">
+      <div class="timeline-row" role="listitem" aria-label="Holiday Drive">
         <div class="left"></div>
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="right">
@@ -403,7 +407,7 @@
         </div>
       </div>
 
-      <div class="timeline-row">
+      <div class="timeline-row" role="listitem" aria-label="Speech and Debate Camp 2024">
         <div class="left">
           <div class="timeline-item">
             <div class="timeline-media">
@@ -421,16 +425,15 @@
     </div><!-- .timeline -->
   </section>
 
-  <!-- CONTACT REMOVED PER YOUR PRIOR REQUESTS -->
-
   <footer>
     <p>© <span id="year"></span> Rare Disease Club — Educate · Donate · Make An Impact</p>
   </footer>
 
   <script>
+    // set year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Enable About dropdown for mobile (same behavior as index)
+    // Dropdown mobile behavior (same as index)
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
@@ -438,23 +441,31 @@
             e.preventDefault();
             const dropdown = this.parentElement;
             dropdown.classList.toggle('active');
+            const menu = dropdown.querySelector('.dropdown-menu');
+            if (menu) menu.style.display = dropdown.classList.contains('active') ? 'flex' : 'none';
           }
         });
       });
       document.addEventListener('click', function(e) {
         document.querySelectorAll('.dropdown.active').forEach(function(drop) {
-          if (!drop.contains(e.target)) drop.classList.remove('active');
+          if (!drop.contains(e.target)) {
+            drop.classList.remove('active');
+            const menu = drop.querySelector('.dropdown-menu');
+            if (menu) menu.style.display = 'none';
+          }
         });
       });
 
-      // Impact section animation (keeps index behavior)
+      // Impact section animation
       const impactSection = document.querySelector('.nord-section');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('show');
-        });
-      }, { threshold: 0.2 });
-      if (impactSection) observer.observe(impactSection);
+      if (impactSection) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('show');
+          });
+        }, { threshold: 0.18 });
+        observer.observe(impactSection);
+      }
     });
   </script>
 </body>
