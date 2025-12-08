@@ -1,569 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Rare Disease Club - Spreading Awareness About Rare Diseases</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Georgia', serif;
-      background-color: #fce8f5;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-    .full-width-banner {
-      width: 100vw;
-      background-color: #fce8f5;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 15px 0;
-    }
-    .full-width-banner img {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-    .motto-img, .rdc-title-banner {
-      max-width: 100%;
-      margin: 0 auto 10px auto;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Rare Disease Club - Spreading Awareness About Rare Diseases</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fce8f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .full-width-banner {
+      width: 100vw;
+      background-color: #fce8f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px 0;
+    }
+    .full-width-banner img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    .motto-img, .rdc-title-banner {
+      max-width: 100%;
+      margin: 0 auto 10px auto;
+    }
 
-    /* --- NAVIGATION --- - matches home page exactly */
-    nav {
-      background-color: #fce8f5;
-      border-top: 3px solid black;
-      border-bottom: 3px solid black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      min-height: 72px;
-      width: 100%;
-      padding: 0;
-    }
-    .home-btn, .nav-links a, .dropdown-toggle {
-      text-decoration: none;
-      color: black;
-      font-size: 1.35rem;
-      font-weight: bold;
-      font-family: 'Georgia', serif;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-      padding: 0 32px;
-      border: none;
-      background: none;
-      border-radius: 0;
-      margin: 0;
-      height: 72px;
-      line-height: 72px;
-      display: flex;
-      align-items: center;
-      box-sizing: border-box;
-      cursor: pointer;
-    }
-    .home-btn.active,
-    .nav-links a.active,
-    .dropdown.active-parent .dropdown-toggle {
-      background: white;
-      color: black;
-      border: 3px solid black;
-      border-radius: 24px;
-      padding: 0 32px;
-      height: 56px;
-      line-height: 56px;
-      margin-left: 12px;
-      font-size: 1.2rem;
-    }
-    .nav-links {
-      display: flex;
-      gap: 0;
-      align-items: center;
-      height: 72px;
-    }
-    .dropdown {
-      position: relative;
-      display: flex;
-      align-items: center;
-      height: 72px;
-    }
-    .dropdown-toggle:after {
-      content: ' ▼';
-      font-size: 0.8em;
-      color: #19171a;
-      margin-left: 2px;
-    }
-    .nav-links a[href="getinvolved.html"] { font-size: 1.35rem; }
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 180px;
-      background-color: #111;
-      border-radius: 0 0 12px 12px;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
-      z-index: 99;
-      flex-direction: column;
-      padding: 0;
-    }
-    .dropdown-menu a {
-      color: #fff;
-      padding: 16px 26px;
-      font-size: 1.15rem;
-      border-bottom: 1px solid #222;
-      background: none;
-      border: none;
-      border-radius: 0;
-      margin: 0;
-      height: auto;
-      line-height: 1.6;
-      display: block;
-    }
-    .dropdown-menu a:last-child { border-bottom: none; }
-    .dropdown-menu a:hover,
-    .dropdown-menu a:focus {
-      background: #B96794;
-      color: #fff;
-    }
-    .dropdown:hover .dropdown-menu,
-    .dropdown.active .dropdown-menu {
-      display: flex;
-    }
-    .nav-links a:not(.active):hover,
-    .nav-links .dropdown-toggle:not(.active):hover {
-      color: #B96794;
-    }
+    /* --- NAVIGATION --- - matches home page exactly */
+    nav {
+      background-color: #fce8f5;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      min-height: 72px;
+      width: 100%;
+      padding: 0;
+    }
+    .home-btn, .nav-links a, .dropdown-toggle {
+      text-decoration: none;
+      color: black;
+      font-size: 1.35rem;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      padding: 0 32px;
+      border: none;
+      background: none;
+      border-radius: 0;
+      margin: 0;
+      height: 72px;
+      line-height: 72px;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+    .home-btn.active,
+    .nav-links a.active,
+    .dropdown.active-parent .dropdown-toggle {
+      background: white;
+      color: black;
+      border: 3px solid black;
+      border-radius: 24px;
+      padding: 0 32px;
+      height: 56px;
+      line-height: 56px;
+      margin-left: 12px;
+      font-size: 1.2rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 0;
+      align-items: center;
+      height: 72px;
+    }
+    .dropdown {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 72px;
+    }
+    .dropdown-toggle:after {
+      content: ' ▼';
+      font-size: 0.8em;
+      color: #19171a;
+      margin-left: 2px;
+    }
+    .nav-links a[href="getinvolved.html"] { font-size: 1.35rem; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+      background-color: #111;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+      z-index: 99;
+      flex-direction: column;
+      padding: 0;
+    }
+    .dropdown-menu a {
+      color: #fff;
+      padding: 16px 26px;
+      font-size: 1.15rem;
+      border-bottom: 1px solid #222;
+      background: none;
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      height: auto;
+      line-height: 1.6;
+      display: block;
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover,
+    .dropdown-menu a:focus {
+      background: #B96794;
+      color: #fff;
+    }
+    .dropdown:hover .dropdown-menu,
+    .dropdown.active .dropdown-menu {
+      display: flex;
+    }
+    .nav-links a:not(.active):hover,
+    .nav-links .dropdown-toggle:not(.active):hover {
+      color: #B96794;
+    }
 
-    @media (max-width: 900px) {
-      nav {
-        flex-direction: column;
-        min-height: auto;
-      }
-      .nav-links {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        width: 100%;
-      }
-      .home-btn, .nav-links a, .dropdown-toggle {
-        font-size: 1.25rem;
-        height: 56px;
-        line-height: 56px;
-        padding: 0 16px;
-        width: 100%;
-        justify-content: flex-start;
-      }
-      .nav-links a[href="getinvolved.html"] { font-size: 1.25rem; }
-      .home-btn.active,
-      .nav-links a.active,
-      .dropdown.active-parent .dropdown-toggle {
-        margin-left: 0;
-        border-radius: 18px;
-      }
-      .dropdown {
-        height: 56px;
-      }
-      .dropdown-menu {
-        position: static;
-        min-width: 0;
-        box-shadow: none;
-        border-radius: 0;
-        width: 100vw;
-      }
-    }
-    @media (max-width: 600px) {
-      html { font-size: 17px; }
-      .home-btn, .nav-links a, .dropdown-toggle {
-        font-size: 1rem;
-        padding: 0 10px;
-        height: 48px;
-        line-height: 48px;
-      }
-      .nav-links a[href="getinvolved.html"] { font-size: 1rem; }
-      .home-btn.active,
-      .nav-links a.active,
-      .dropdown.active-parent .dropdown-toggle {
-        border-radius: 12px;
-        height: 44px;
-        line-height: 44px;
-        font-size: 1rem;
-      }
-    }
+    @media (max-width: 900px) {
+      nav {
+        flex-direction: column;
+        min-height: auto;
+      }
+      .nav-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+      }
+      .home-btn, .nav-links a, .dropdown-toggle {
+        font-size: 1.25rem;
+        height: 56px;
+        line-height: 56px;
+        padding: 0 16px;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .nav-links a[href="getinvolved.html"] { font-size: 1.25rem; }
+      .home-btn.active,
+      .nav-links a.active,
+      .dropdown.active-parent .dropdown-toggle {
+        margin-left: 0;
+        border-radius: 18px;
+      }
+      .dropdown {
+        height: 56px;
+      }
+      .dropdown-menu {
+        position: static;
+        min-width: 0;
+        box-shadow: none;
+        border-radius: 0;
+        width: 100vw;
+      }
+    }
+    @media (max-width: 600px) {
+      html { font-size: 17px; }
+      .home-btn, .nav-links a, .dropdown-toggle {
+        font-size: 1rem;
+        padding: 0 10px;
+        height: 48px;
+        line-height: 48px;
+      }
+      .nav-links a[href="getinvolved.html"] { font-size: 1rem; }
+      .home-btn.active,
+      .nav-links a.active,
+      .dropdown.active-parent .dropdown-toggle {
+        border-radius: 12px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 1rem;
+      }
+    }
 
-    /* --- ABOUT SECTION --- */
-    .about-section-v5 {
-  background: #f9dff4;        /* Solid background color */
-  border-top: 3px solid #222; /* Valid border */
-  width: 100vw;               /* Full viewport width */
-  min-height: 70vh;           /* Minimum 70% of viewport height */
-  display: flex;              /* Flex container */
-  flex-direction: row;        /* Children laid out horizontally */
-  justify-content: center;    /* Center children along main axis */
-  align-items: stretch;       /* Stretch children vertically */
-}
-    .about-left-v5 {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 60px 40px 60px 50px;
-    }
-    .about-logo-v5 {
-      width: 260px;
-      margin-bottom: 35px;
-    }
-    .about-title-v5 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2.5rem;
-      letter-spacing: 2px;
-      margin-bottom: 32px;
-      font-weight: 400;
-      text-align:center;
-      color: #19171a;
-    }
-    .about-desc-v5 {
-      background: #fae3f5;
-      border-radius: 12px;
-      padding: 30px 40px;
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.45rem;
-      color: #19171a;
-      text-align: center;
-      line-height: 1.45;
-      width: 100%;
-      margin: 20px 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .about-right-v5 {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 60px 50px 60px 40px;
-    }
-    .about-image-v5 {
-      width: 100%;
-      height: 550px;
-      max-width: 480px;
-      border: 4px solid #19171a;
-      background: white;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.10);
-      object-fit: cover;
-    }
-    @media (max-width: 1100px) {
-      .about-section-v5 {
-        flex-direction: column;
-        align-items: center;
-      }
-      .about-left-v5, .about-right-v5 {
-        padding: 40px 10px;
-      }
-      .about-image-v5 {
-        max-width: 95vw;
-      }
-      .about-logo-v5 {
-        width: 120px;
-      }
-      .about-desc-v5 {
-        padding: 18px 10px;
-        font-size: 1.1rem;
-      }
-    }
-    @media (max-width: 700px) {
-      .about-title-v5 { font-size: 2rem; }
-      .about-desc-v5 { font-size: 1rem; padding: 12px 6px;}
-      .about-logo-v5 { width: 120px; margin-bottom: 20px; }
-    }
-    /* --- COFOUNDERS --- */
-    .cofounders-section {
-      width: 100vw;
-      background: #fff;
-      padding: 60px 0 40px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border-top: 3px solid #ccc;
-    }
-    .cofounders-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-      color: #19171a;
-      text-align: center;
-      width: 100%;
-      border-bottom: 3px solid #B96794;
-      padding-bottom: 8px;
-      max-width: 1100px;
-    }
-    .cofounders-intro {
-      font-size: 1.18rem;
-      text-align: center;
-      color: #222;
-      max-width: 900px;
-      margin-bottom: 38px;
-      font-family: 'Playfair Display', Georgia, serif;
-      line-height: 1.52;
-    }
-    .cofounder-row-v5,
-    .cofounder-row-v5.reverse {
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto 30px auto;
-      gap: 0;
-    }
-    .cofounder-row-v5.reverse {
-      flex-direction: row-reverse;
-    }
-    .cofounder-content-box-v5 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 270px;
-      background: #fff;
-      flex-shrink: 0;
-    }
-    .cofounder-name-v5 {
-      font-weight: bold;
-      margin-bottom: 8px;
-      font-size: 1.2rem;
-      text-align: center;
-      width: 100%;
-    }
-    .cofounder-img-v5 {
-      width: 250px;
-      height: 320px;
-      object-fit: cover;
-      border: 4px solid #19171a;
-      background: white;
-      display: block;
-      margin: 0;
-    }
-    .cofounder-desc-box-v5 {
-      background: #fae3f5;
-      border-radius: 12px;
-      padding: 30px 40px;
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.35rem;
-      color: #19171a;
-      text-align: center;
-      min-height: 320px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1.45;
-      flex: 1;
-      margin: 0;
-    }
-    @media (max-width: 900px) {
-      .cofounder-row-v5,
-      .cofounder-row-v5.reverse {
-        flex-direction: column !important;
-        align-items: center;
-      }
-      .cofounder-content-box-v5,
-      .cofounder-desc-box-v5 {
-        width: 100%;
-      }
-      .cofounder-desc-box-v5 {
-        padding: 18px 10px;
-        min-height: unset;
-      }
-      .cofounder-img-v5 {
-        width: 95vw;
-        max-width: 260px;
-        height: auto;
-      }
-    }
-    /* --- EXECUTIVE BOARD --- */
-    .executive-board-section {
-      width: 100vw;
-      background: #f9eaf6;
-      padding: 50px 0 40px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border-top: 3px solid #B96794;
-    }
-    .executive-board-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 24px;
-      letter-spacing: 1px;
-      color: #19171a;
-      text-align: center;
-      width: 100%;
-      max-width: 1100px;
-    }
-    .executive-board-row {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: 90px;
-      max-width: 1100px;
-      width: 100%;
-    }
-    .executive-board-member {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 340px;
-    }
-    .executive-board-name {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2rem;
-      margin-bottom: 16px;
-      text-align: center;
-      color: #19171a;
-    }
-    .executive-board-img {
-      width: 320px;
-      height: 400px;
-      object-fit: cover;
-      border: 4px solid #222;
-      background: #fff;
-      margin-bottom: 10px;
-      box-shadow: 0 2px 12px rgba(185,103,148,0.13);
-    }
-    @media (max-width: 900px) {
-      .executive-board-row {
-        flex-direction: column;
-        gap: 38px;
-        align-items: center;
-      }
-      .executive-board-img {
-        width: 95vw;
-        max-width: 320px;
-      }
-    }
-    @media (max-width: 700px) {
-      .executive-board-title { font-size: 1.6rem; }
-      .executive-board-name { font-size: 1.1rem; margin-bottom: 8px;}
-      .executive-board-img { width: 85vw; max-width: 260px; height: auto;}
-    }
-  </style>
+    /* --- ABOUT SECTION --- */
+    .about-section-v5 {
+      background: #f9dff4;
+      border-top: 3px solid #222;
+      width: 100vw;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+    }
+    .about-left-v5 {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* FIX: Center the content */
+      align-items: center; 
+      padding: 60px 40px 60px 50px;
+    }
+    .about-logo-v5 {
+      /* FIX: Make logo smaller */
+      width: 160px;
+      margin-bottom: 25px; /* Adjusted margin */
+    }
+    .about-title-v5 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 32px;
+      font-weight: 400;
+      text-align: center; /* Keep explicit center for safety */
+      color: #19171a;
+      max-width: 400px; /* New: Prevent title from getting too wide */
+    }
+    .about-desc-v5 {
+      background: #fae3f5;
+      border-radius: 12px;
+      padding: 30px 40px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.45rem;
+      color: #19171a;
+      text-align: center;
+      line-height: 1.45;
+      width: 100%;
+      max-width: 500px; /* FIX: Limit width to keep text block centered and readable */
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .about-right-v5 {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 50px 60px 40px;
+    }
+    .about-image-v5 {
+      width: 100%;
+      height: 550px;
+      max-width: 480px;
+      border: 4px solid #19171a;
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+      object-fit: cover;
+    }
+    @media (max-width: 1100px) {
+      .about-section-v5 {
+        flex-direction: column;
+        align-items: center;
+      }
+      .about-left-v5, .about-right-v5 {
+        padding: 40px 10px;
+      }
+      .about-image-v5 {
+        max-width: 95vw;
+      }
+      .about-logo-v5 {
+        /* FIX: Adjusted size for mobile */
+        width: 120px;
+        margin-bottom: 20px; 
+      }
+      .about-desc-v5 {
+        padding: 18px 10px;
+        font-size: 1.1rem;
+        max-width: 90vw; /* Keep it constrained on mobile */
+      }
+    }
+    @media (max-width: 700px) {
+      .about-title-v5 { font-size: 2rem; }
+      .about-desc-v5 { font-size: 1rem; padding: 12px 6px;}
+      .about-logo-v5 { width: 100px; margin-bottom: 15px; } /* Further small adjustment */
+    }
+    /* --- COFOUNDERS --- */
+    .cofounders-section {
+      width: 100vw;
+      background: #fff;
+      padding: 60px 0 40px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-top: 3px solid #ccc;
+    }
+    .cofounders-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      color: #19171a;
+      text-align: center;
+      width: 100%;
+      border-bottom: 3px solid #B96794;
+      padding-bottom: 8px;
+      max-width: 1100px;
+    }
+    .cofounders-intro {
+      font-size: 1.18rem;
+      text-align: center;
+      color: #222;
+      max-width: 900px;
+      margin-bottom: 38px;
+      font-family: 'Playfair Display', Georgia, serif;
+      line-height: 1.52;
+    }
+    .cofounder-row-v5,
+    .cofounder-row-v5.reverse {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto 30px auto;
+      gap: 0;
+    }
+    .cofounder-row-v5.reverse {
+      flex-direction: row-reverse;
+    }
+    .cofounder-content-box-v5 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 270px;
+      background: #fff;
+      flex-shrink: 0;
+    }
+    .cofounder-name-v5 {
+      font-weight: bold;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+      text-align: center;
+      width: 100%;
+    }
+    .cofounder-img-v5 {
+      width: 250px;
+      height: 320px;
+      object-fit: cover;
+      border: 4px solid #19171a;
+      background: white;
+      display: block;
+      margin: 0;
+    }
+    .cofounder-desc-box-v5 {
+      background: #fae3f5;
+      border-radius: 12px;
+      padding: 30px 40px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      color: #19171a;
+      text-align: center;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.45;
+      flex: 1;
+      margin: 0;
+    }
+    @media (max-width: 900px) {
+      .cofounder-row-v5,
+      .cofounder-row-v5.reverse {
+        flex-direction: column !important;
+        align-items: center;
+      }
+      .cofounder-content-box-v5,
+      .cofounder-desc-box-v5 {
+        width: 100%;
+      }
+      .cofounder-desc-box-v5 {
+        padding: 18px 10px;
+        min-height: unset;
+      }
+      .cofounder-img-v5 {
+        width: 95vw;
+        max-width: 260px;
+        height: auto;
+      }
+    }
+    /* --- EXECUTIVE BOARD --- */
+    .executive-board-section {
+      width: 100vw;
+      background: #f9eaf6;
+      padding: 50px 0 40px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-top: 3px solid #B96794;
+    }
+    .executive-board-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+      color: #19171a;
+      text-align: center;
+      width: 100%;
+      max-width: 1100px;
+    }
+    .executive-board-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 90px;
+      max-width: 1100px;
+      width: 100%;
+    }
+    .executive-board-member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 340px;
+    }
+    .executive-board-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      margin-bottom: 16px;
+      text-align: center;
+      color: #19171a;
+    }
+    .executive-board-img {
+      width: 320px;
+      height: 400px;
+      object-fit: cover;
+      border: 4px solid #222;
+      background: #fff;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 12px rgba(185,103,148,0.13);
+    }
+    @media (max-width: 900px) {
+      .executive-board-row {
+        flex-direction: column;
+        gap: 38px;
+        align-items: center;
+      }
+      .executive-board-img {
+        width: 95vw;
+        max-width: 320px;
+      }
+    }
+    @media (max-width: 700px) {
+      .executive-board-title { font-size: 1.6rem; }
+      .executive-board-name { font-size: 1.1rem; margin-bottom: 8px;}
+      .executive-board-img { width: 85vw; max-width: 260px; height: auto;}
+    }
+  </style>
 </head>
 <body>
- <!-- Full Width Banner -->
-<div class="full-width-banner">
-  <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
-  <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
+ <div class="full-width-banner">
+  <img src="motto3.png" alt="Educate Donate Motto" class="motto-img">
+  <img src="RDC.png" alt="RDC Logo" class="rdc-title-banner">
 </div>
 
-<!-- Navigation -->
 <nav>
-  <a href="index.html" class="home-btn">HOME</a>
-  <div class="nav-links">
-    <div class="dropdown active-parent">
-      <a href="#" class="dropdown-toggle">About</a>
-      <div class="dropdown-menu">
-        <a href="socialmedia.html">Social Media Team</a>
-        <a href="about.html">Executive Board</a>
-        <a href="partnerships.html">Partnerships</a>
-      </div>
-    </div>
-    <a href="events.html">Events</a>
-    <a href="newsletter.html">Newsletter</a>
-    <a href="index.html#contact">Contact</a>
-    <a href="getinvolved.html">Get Involved</a>
-  </div>
+  <a href="index.html" class="home-btn">HOME</a>
+  <div class="nav-links">
+    <div class="dropdown active-parent">
+      <a href="#" class="dropdown-toggle">About</a>
+      <div class="dropdown-menu">
+        <a href="socialmedia.html">Social Media Team</a>
+        <a href="about.html">Executive Board</a>
+        <a href="partnerships.html">Partnerships</a>
+      </div>
+      </div>
+    <a href="events.html">Events</a>
+    <a href="newsletter.html">Newsletter</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="getinvolved.html">Get Involved</a>
+  </div>
 </nav>
 
-<!-- ABOUT SECTION -->
 <section class="about-section-v5">
-  <div class="about-left-v5">
-    <img src="rdc.png" alt="RDC Logo" class="about-logo-v5"/>
-    <div class="about-title-v5">ABOUT US</div>
-    <div class="about-desc-v5">
-      At the Rare Disease Club, we work to raise awareness about rare diseases and their impact on individuals and families. Through education, advocacy, and support, we aim to empower those affected and build a more informed community
-    </div>
-  </div>
-  <div class="about-right-v5">
-    <img src="L1070775.jpeg" alt="RDC Event Table" class="about-image-v5"/>
-  </div>
+  <div class="about-left-v5">
+    <img src="rdc.png" alt="RDC Logo" class="about-logo-v5"/>
+    <div class="about-title-v5">ABOUT US</div>
+    <div class="about-desc-v5">
+      At the Rare Disease Club, we work to raise awareness about rare diseases and their impact on individuals and families. Through education, advocacy, and support, we aim to empower those affected and build a more informed community
+    </div>
+  </div>
+  <div class="about-right-v5">
+    <img src="L1070775.jpeg" alt="RDC Event Table" class="about-image-v5"/>
+  </div>
 </section>
 
-<!-- COFOUNDERS SECTION -->
 <section class="cofounders-section">
-  <div class="cofounders-title">OUR COFOUNDERS</div>
-  <div class="cofounders-intro">
-  At 15 years old, Parnika and Samhita co-founded Rare Disease Collective (RDC), an initiative to raise awareness about rare diseases in their community. The idea came after an English class discussion, where their teacher shared a personal story about a family member who had passed away from a rare disease. The story highlighted how a lack of research and public knowledge had delayed diagnosis and treatment. Realizing how common this issue actually was—and how little people knew about it—they decided to take action.
-  </div>
-  <!-- PARNIKA -->
-  <div class="cofounder-row-v5">
-    <div class="cofounder-content-box-v5">
-      <div class="cofounder-name-v5">CoFounder: Parnika Khatri</div>
-      <img src="Parnikas.jpeg" alt="Parnika Khatri" class="cofounder-img-v5"/>
-    </div>
-    <div class="cofounder-desc-box-v5">
-      Parnika, who had always been drawn to health and science topics, was especially struck by how preventable the situation might have been with more awareness. She started reading more about how rare diseases often go unnoticed or misdiagnosed due to limited resources and attention. Wanting to help change that, she brought her ideas to Samhita and began thinking about ways they could educate people their age about the issue.
-    </div>
-  </div>
-  <!-- SAMHITA -->
-  <div class="cofounder-row-v5 reverse">
-    <div class="cofounder-content-box-v5">
-      <div class="cofounder-name-v5">CoFounder: Samhita Ramesh</div>
-      <img src="SAMITHA.png" alt="Samhita Ramesh" class="cofounder-img-v5"/>
-    </div>
-    <div class="cofounder-desc-box-v5">
+  <div class="cofounders-title">OUR COFOUNDERS</div>
+  <div class="cofounders-intro">
+  At 15 years old, Parnika and Samhita co-founded Rare Disease Collective (RDC), an initiative to raise awareness about rare diseases in their community. The idea came after an English class discussion, where their teacher shared a personal story about a family member who had passed away from a rare disease. The story highlighted how a lack of research and public knowledge had delayed diagnosis and treatment. Realizing how common this issue actually was—and how little people knew about it—they decided to take action.
+  </div>
+    <div class="cofounder-row-v5">
+    <div class="cofounder-content-box-v5">
+      <div class="cofounder-name-v5">CoFounder: Parnika Khatri</div>
+      <img src="Parnikas.jpeg" alt="Parnika Khatri" class="cofounder-img-v5"/>
+    </div>
+    <div class="cofounder-desc-box-v5">
+      Parnika, who had always been drawn to health and science topics, was especially struck by how preventable the situation might have been with more awareness. She started reading more about how rare diseases often go unnoticed or misdiagnosed due to limited resources and attention. Wanting to help change that, she brought her ideas to Samhita and began thinking about ways they could educate people their age about the issue.
+    </div>
+  </div>
+    <div class="cofounder-row-v5 reverse">
+    <div class="cofounder-content-box-v5">
+      <div class="cofounder-name-v5">CoFounder: Samhita Ramesh</div>
+      <img src="SAMITHA.png" alt="Samhita Ramesh" class="cofounder-img-v5"/>
+    </div>
+    <div class="cofounder-desc-box-v5">
 Samhita, with a strong interest in advocacy and communication, immediately connected with the cause. She saw how easily important health issues get overlooked, especially ones that don't affect large groups. Inspired by the idea that students could lead meaningful change, she worked with Parnika to create RDC as a space for spreading reliable information and encouraging conversation. Together, they combined their strengths to launch a platform that helps others learn about and engage with the topic of rare diseases.
-    </div>
-  </div>
+    </div>
+  </div>
 </section>
 
-<!-- EXECUTIVE BOARD -->
 <section class="executive-board-section">
-  <div class="executive-board-title">OUR EXECUTIVE BOARD</div>
-  <div class="executive-board-row">
-    <div class="executive-board-member">
-      <img src="anushka.jpeg" alt="Secretary: Anushka Chitre" class="executive-board-img" />
-      <div class="executive-board-name">Secretary: Anushka Chitre</div>
-    </div>
-    <div class="executive-board-member">
-      <img src="DAISy.jpeg" alt="Treasurer: Daisy Hu" class="executive-board-img" />
-      <div class="executive-board-name">Treasurer: Daisy Hu</div>
-    </div>
-  </div>
+  <div class="executive-board-title">OUR EXECUTIVE BOARD</div>
+  <div class="executive-board-row">
+    <div class="executive-board-member">
+      <img src="anushka.jpeg" alt="Secretary: Anushka Chitre" class="executive-board-img" />
+      <div class="executive-board-name">Secretary: Anushka Chitre</div>
+    </div>
+    <div class="executive-board-member">
+      <img src="DAISy.jpeg" alt="Treasurer: Daisy Hu" class="executive-board-img" />
+      <div class="executive-board-name">Treasurer: Daisy Hu</div>
+    </div>
+  </div>
 </section>
 
 <script>
-  // Enable About dropdown for mobile
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
-      toggle.addEventListener('click', function(e) {
-        if(window.innerWidth <= 900) {
-          e.preventDefault();
-          const dropdown = this.parentElement;
-          dropdown.classList.toggle('active');
-        }
-      });
-    });
-    document.addEventListener('click', function(e) {
-      document.querySelectorAll('.dropdown.active').forEach(function(drop) {
-        if (!drop.contains(e.target)) drop.classList.remove('active');
-      });
-    });
-  });
+  // Enable About dropdown for mobile
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        if(window.innerWidth <= 900) {
+          e.preventDefault();
+          const dropdown = this.parentElement;
+          dropdown.classList.toggle('active');
+        }
+      });
+    });
+    document.addEventListener('click', function(e) {
+      document.querySelectorAll('.dropdown.active').forEach(function(drop) {
+        if (!drop.contains(e.target)) drop.classList.remove('active');
+      });
+    });
+  });
 </script>
 </body>
 </html>
