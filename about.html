@@ -40,7 +40,7 @@
       margin: 0 auto 10px auto;
     }
 
-    /* --- NAVIGATION --- - matches home page exactly */
+    /* --- NAVIGATION --- */
     nav {
       background-color: #fce8f5;
       border-top: 3px solid black;
@@ -204,30 +204,34 @@
 
     /* --- ABOUT SECTION --- */
     .about-section-v5 {
-      background: #f9dff4;        /* Solid background color */
-      border-top: 3px solid #222; /* Valid border */
-      width: 100vw;               /* Full viewport width */
-      min-height: 70vh;           /* Minimum 70% of viewport height */
-      display: flex;              /* Flex container */
-      flex-direction: row;        /* Children laid out horizontally */
-      justify-content: center;    /* Center children along main axis */
-      align-items: stretch;       /* Stretch children vertically */
+      background: #f9dff4;
+      border-top: 3px solid #222;
+      width: 100vw;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+      position: relative; /* allow absolute children if needed */
     }
-    /* Center the content inside the left column and ensure text is centered */
+    /* left column: keep content centered, but allow an absolute-positioned logo in the corner */
     .about-left-v5 {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center; /* changed from flex-start to center */
-      text-align: center;  /* ensure text centers */
-      padding: 60px 40px;  /* tightened padding for symmetry */
+      align-items: center;
+      text-align: center;
+      padding: 120px 40px 60px 40px; /* extra top padding so content doesn't overlap the logo */
+      position: relative; /* logo positioned relative to this column */
     }
-    /* Make the logo smaller on desktop and responsive */
+    /* logo positioned in the top-left corner of the left column */
     .about-logo-v5 {
-      width: 160px;
-      max-width: 80%;
-      margin-bottom: 20px;
+      position: absolute;
+      left: 28px;
+      top: 24px;
+      width: 140px;
+      max-width: none;
       display: block;
     }
     .about-title-v5 {
@@ -247,8 +251,8 @@
       color: #19171a;
       line-height: 1.45;
       width: 100%;
-      max-width: 720px;     /* constrain width for better reading */
-      margin: 12px auto 0 auto; /* center horizontally */
+      max-width: 720px;
+      margin: 12px auto 0 auto;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -270,6 +274,8 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.10);
       object-fit: cover;
     }
+
+    /* responsive adjustments: switch logo to normal flow on narrow screens */
     @media (max-width: 1100px) {
       .about-section-v5 {
         flex-direction: column;
@@ -281,8 +287,11 @@
       .about-image-v5 {
         max-width: 95vw;
       }
+      /* place logo into the normal flow above the heading on narrow screens */
       .about-logo-v5 {
-        width: 120px; /* keep smaller on narrow screens */
+        position: static;
+        width: 120px;
+        margin-bottom: 18px;
       }
       .about-desc-v5 {
         padding: 18px 10px;
@@ -294,8 +303,10 @@
       .about-title-v5 { font-size: 2rem; }
       .about-desc-v5 { font-size: 1rem; padding: 12px 6px;}
       .about-logo-v5 { width: 110px; margin-bottom: 14px; }
+      .about-left-v5 { padding-top: 60px; } /* reduce top padding on very small screens */
     }
-    /* --- COFOUNDERS --- */
+
+    /* --- COFOUNDERS / EXECUTIVE BOARD (unchanged) --- */
     .cofounders-section {
       width: 100vw;
       background: #fff;
@@ -400,7 +411,6 @@
         height: auto;
       }
     }
-    /* --- EXECUTIVE BOARD --- */
     .executive-board-section {
       width: 100vw;
       background: #f9eaf6;
