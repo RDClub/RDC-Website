@@ -198,9 +198,10 @@
       max-width: none;
     }
 
+    /* Slightly bigger images than before (small upward tweak) */
     .timeline-media img {
       width: 100%;
-      height: clamp(360px, 52vh, 760px); /* significantly larger images on wide screens */
+      height: clamp(400px, 56vh, 820px); /* slightly larger on wide screens */
       object-fit: cover;
       display: block;
       border-radius: 16px;
@@ -226,7 +227,7 @@
     .timeline-dot { width: 56px; height: 56px; border-radius: 50%; background: white; border: 5px solid #f0b7d0; margin: 0 auto; box-shadow: 0 8px 18px rgba(0,0,0,0.08); } /* bigger dot for balance */
 
     @media (max-width: 1200px) {
-      .timeline-media img { height: clamp(320px, 48vh, 620px); }
+      .timeline-media img { height: clamp(360px, 52vh, 700px); } /* slightly larger than previous setting */
       .timeline-row { margin: 32px 0 64px; gap: 20px; grid-template-columns: 1fr 56px 1fr; }
       .timeline-dot { width: 52px; height: 52px; border-width: 4px; }
     }
@@ -235,13 +236,13 @@
       .timeline::before { left: 28px; transform: none; }
       .timeline-row { grid-template-columns: 72px 1fr; gap: 18px; } /* switch to single column layout with the line on the left */
       .timeline-dot { grid-column: 1; margin-left: 12px; width: 48px; height: 48px; }
-      .timeline-media img { height: clamp(220px, 36vh, 420px); } /* still larger than before on mobile */
+      .timeline-media img { height: clamp(240px, 38vh, 460px); } /* bumped up modestly for tablets/phones */
       .timeline { padding: 36px 16px; }
       .timeline-year { font-size: 48px; }
     }
 
     @media (max-width: 600px) {
-      .timeline-media img { height: clamp(180px, 30vh, 320px); }
+      .timeline-media img { height: clamp(200px, 32vh, 360px); } /* slightly bigger on small phones */
       .timeline-row { margin: 24px 0 48px; gap: 14px; }
       .timeline-dot { margin-left: 10px; width: 44px; height: 44px; }
       .timeline { padding: 28px 12px; }
