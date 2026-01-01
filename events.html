@@ -137,17 +137,16 @@
       }
     }
 
-    /* EVENTS HERO: the large photo that must appear below the nav */
+    /* EVENTS HERO: taller screenshot right below nav (user requested more presence) */
     .events-hero {
       width: 100%;
       position: relative;
       overflow: hidden;
       background: #000;
     }
-    /* made taller so the screenshot (hero) is more present */
     .events-hero img {
       width: 100%;
-      height: clamp(360px, 50vh, 720px); /* taller hero */
+      height: clamp(360px, 50vh, 720px);
       object-fit: cover;
       display: block;
       transform-origin: center;
@@ -169,134 +168,140 @@
       margin: 0;
       color: rgba(0,0,0,0.85);
       text-shadow: 0 2px 8px rgba(255,255,255,0.15);
-      background: rgba(255,255,255,0.0);
       padding: 6px 10px;
     }
 
-    /* keep the rest of the page styling consistent with index */
-    .what-we-do-section { background: #f9dff4; padding: 40px 5vw; position: relative; }
-    .what-we-do-container { max-width: 825px; margin: 0 auto; position: relative; display: flex; flex-direction: column; align-items: center; }
-    .what-we-do-image { width: 88%; max-width: 800px; border-radius: 24px; border: 3px solid #000; display: block; }
-    .what-we-do-content { background: #000; color: #fff; padding: 18px; width: 88%; max-width: 520px; margin: -50px auto 0 auto; border-radius: 24px; z-index: 2; position: relative; }
-    .nord-section { padding: 28px 6vw; background: #fff; margin: 24px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.07); opacity: 0; transform: translateY(50px); transition: all .8s ease; }
-    .nord-section.show { opacity: 1; transform: translateY(0); }
+    .events-section { background: #fce8f5; padding: 28px 4vw 56px; }
+    .events-section h2 {
+      text-align: left;
+      font-family: 'Playfair Display', serif;
+      color: #f0b7d0;
+      margin: 18px 0 18px;
+      font-size: 1.6rem;
+    }
 
-    .events-section { background: #fce8f5; padding: 46px 6vw; }
-    .events-section h2 { text-align: center; font-size: 1.4rem; color: #000; margin-bottom: 28px; }
-
-    /* TIMELINE - alternating 3-column layout, wider container so images can extend toward line */
+    /* TIMELINE base - alternating 3-column layout preserved */
     .timeline {
       max-width: 1400px;
       margin: 0 auto;
       position: relative;
-      padding: 48px 24px;
+      padding: 28px 24px;
     }
-    .timeline::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); width: 8px; height: 100%; background: #f0b7d0; border-radius: 6px; } /* vertical center line */
-    .timeline-year { font-family: 'Playfair Display', serif; font-size: 64px; color: #f0b7d0; margin: 40px 0 10px 0; }
-
-    .timeline-row { display: grid; grid-template-columns: 1fr 60px 1fr; gap: 24px; align-items: start; margin: 36px 0 48px; position: relative; }
-
-    .timeline-item {
-      background: transparent;
-      border: none;
-      padding: 0;
-      box-shadow: none;
-      max-width: none;
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 100%;
+      background: #f0b7d0;
+      border-radius: 6px;
     }
+    .timeline-year { font-family: 'Playfair Display', serif; font-size: 64px; color: #f0b7d0; margin: 30px 0 10px 0; }
 
-    /* Make images a little taller (user requested "a little more taller") but keep width behavior */
-    .timeline-media img {
-      width: 100%;
-      height: clamp(260px, 38vh, 520px); /* increased from previous */
-      object-fit: cover;
+    /* tighter vertical rhythm so leaves are closer vertically */
+    .timeline-row { display: grid; grid-template-columns: 1fr 60px 1fr; gap: 20px; align-items: start; margin: 18px 0 28px; position: relative; }
+
+    .timeline-item { background: transparent; padding: 0; box-shadow: none; }
+
+    /* timeline-media is now a leaf container so we can place main leaf + a small leaf near the branch */
+    .timeline-media { position: relative; overflow: visible; }
+
+    /* MAIN LEAF (the event photo shaped as a leaf). wider visually by extending toward center */
+    .leaf {
       display: block;
-      border-radius: 16px;
-      border: 3px solid rgba(231,175,202,0.35);
+      width: 100%;
+      height: clamp(300px, 40vh, 560px); /* a little taller per your request */
+      object-fit: cover;
+      border-radius: 999px; /* rounded boundary to soften */
+      -webkit-clip-path: ellipse(50% 65% at 50% 45%);
+              clip-path: ellipse(50% 65% at 50% 45%); /* leaf shape */
+      border: 3px solid rgba(231,175,202,0.28);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.08);
       transition: transform .25s ease;
-    }
-
-    /* Keep the "wider" visual effect by extending images slightly toward center on large screens,
-       but on smaller screens the extension is removed for safety. */
-    .timeline-row .left .timeline-media img { margin-right: -56px; width: calc(100% + 56px); }
-    .timeline-row .right .timeline-media img { margin-left: -56px; width: calc(100% + 56px); }
-
-    /* Replace the circular dot with a horizontal branch (stick) protruding from the center line.
-       We'll add a .timeline-branch element in the center column for each row and toggle the direction
-       using .align-right or .align-left on the .timeline-row. */
-    .timeline-branch {
-      grid-column: 2;
-      width: 60px;
-      height: 1px;
       position: relative;
-      align-self: start;
-      justify-self: center;
-      pointer-events: none;
+      background-color: #fff;
     }
 
-    /* the visible stick that extends from the center line toward the content */
+    /* small secondary leaf to create a cluster of leaves that are closer together */
+    .leaf.small {
+      position: absolute;
+      width: 46%;
+      height: 46%;
+      bottom: 10%;
+      z-index: 2;
+      -webkit-clip-path: ellipse(50% 60% at 50% 50%);
+              clip-path: ellipse(50% 60% at 50% 50%);
+      border: 3px solid rgba(231,175,202,0.26);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      background-color: #fff;
+    }
+
+    /* WIDER visual effect: extend toward the center line (left images push right, right images push left).
+       Increased extension per your request to make leaves wider visually. */
+    .timeline-row .left .leaf.main { margin-right: -80px; width: calc(100% + 80px); transform: rotate(-6deg); }
+    .timeline-row .right .leaf.main { margin-left: -80px; width: calc(100% + 80px); transform: rotate(6deg); }
+
+    /* position the small leaf close to the main leaf, attached near the branch */
+    .timeline-row.align-right .leaf.small { left: -12%; transform: rotate(-14deg); } /* small leaf sits closer to the center */
+    .timeline-row.align-left .leaf.small  { right: -12%; transform: rotate(14deg); }
+
+    /* BRANCH segment: a short rounded segment sticking out from the center line toward the content */
+    .timeline-branch { grid-column: 2; width: 60px; height: 1px; position: relative; align-self: start; justify-self: center; pointer-events: none; }
     .timeline-branch .branch-stick {
       position: absolute;
-      top: 18px; /* vertical offset from top of row */
+      top: 26px; /* vertical offset to match leaves */
       height: 8px;
-      border-radius: 4px;
+      border-radius: 999px;
       background: #f0b7d0;
-      box-shadow: 0 6px 12px rgba(240,183,208,0.15);
+      box-shadow: 0 6px 12px rgba(240,183,208,0.12);
     }
-
-    /* when content is on the right, extend the stick rightwards */
     .timeline-row.align-right .timeline-branch .branch-stick {
       left: 50%;
-      transform: translateX(8px); /* start just after the center line */
-      width: 220px; /* length of branch toward the right */
+      transform: translateX(8px);
+      width: 260px; /* branch length — pointing right */
     }
-
-    /* when content is on the left, extend the stick leftwards */
     .timeline-row.align-left .timeline-branch .branch-stick {
       right: 50%;
       transform: translateX(-8px);
-      width: 220px;
+      width: 260px; /* branch length — pointing left */
     }
 
-    /* timeline text spacing */
-    .timeline-item h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      margin: 12px 0 6px;
-      color: #000;
-    }
-    .timeline-item p {
-      margin: 0 0 12px 0;
-      color: #333;
-    }
+    /* text */
+    .timeline-item h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; margin: 12px 0 6px; color: #000; }
+    .timeline-item p { margin: 0 0 12px 0; color: #333; }
 
-    /* hide old .timeline-dot if any remain */
+    /* hide old circular dots */
     .timeline-dot { display: none; }
 
+    /* responsive adjustments */
     @media (max-width: 1200px) {
-      .timeline-media img { height: clamp(220px, 34vh, 460px); }
-      .timeline-row { margin: 32px 0 44px; gap: 20px; grid-template-columns: 1fr 56px 1fr; }
-      .timeline-row .left .timeline-media img,
-      .timeline-row .right .timeline-media img { margin-left: 0; margin-right: 0; width: 100%; } /* cancel visual stretch on smaller viewports */
-      .timeline-branch .branch-stick { display: none; } /* remove branch on medium/smaller screens to avoid overlap */
+      /* reduce extension on smaller screens and hide secondary leaf & branch to avoid overlap */
+      .timeline-row .left .leaf.main,
+      .timeline-row .right .leaf.main { margin-left: 0; margin-right: 0; width: 100%; transform: none; }
+      .leaf.small { display: none; }
+      .timeline-branch .branch-stick { display: none; }
+      .timeline-media .leaf { height: clamp(240px, 34vh, 420px); }
+      .timeline-row { gap: 18px; margin: 20px 0 30px; }
     }
 
     @media (max-width: 960px) {
       .timeline::before { left: 28px; transform: none; }
-      .timeline-row { grid-template-columns: 72px 1fr; gap: 18px; } /* collapse to single-column layout */
-      .timeline-branch { display: none; } /* no branch needed when layout collapses */
-      .timeline-media img { height: clamp(240px, 38vh, 460px); } /* bumped modestly for tablets/phones */
-      .timeline { padding: 36px 16px; }
-      .timeline-year { font-size: 48px; }
+      .timeline-row { grid-template-columns: 72px 1fr; gap: 16px; } /* collapse to single-column layout */
+      .timeline-branch { display: none; }
+      .leaf { height: clamp(240px, 36vh, 420px); -webkit-clip-path: ellipse(50% 75% at 50% 50%); clip-path: ellipse(50% 75% at 50% 50%); }
+      .events-hero img { height: clamp(280px, 38vh, 480px); }
+      .events-hero .overlay h1 { font-size: clamp(2rem, 7vw, 3rem); color: rgba(0,0,0,0.9); }
     }
 
     @media (max-width: 600px) {
-      .timeline-media img { height: clamp(220px, 36vh, 420px); }
-      .timeline-row { margin: 24px 0 36px; gap: 14px; }
-      .timeline { padding: 28px 12px; }
+      .leaf { height: clamp(220px, 34vh, 360px); }
+      .timeline-row { margin: 14px 0 22px; gap: 12px; }
+      .timeline { padding: 20px 12px; }
       .timeline-year { font-size: 40px; }
     }
 
-    footer { text-align: center; padding: 26px 12px; background: #fce8f5; border-top: 3px solid #e6c2d4; margin-top: 40px;}
+    footer { text-align: center; padding: 22px 12px; background: #fce8f5; border-top: 3px solid #e6c2d4; margin-top: 30px;}
   </style>
 </head>
 <body>
@@ -340,11 +345,10 @@
     <div class="timeline">
       <div class="timeline-year">2025</div>
 
-      <!-- align-right: content sits on the right column, branch should point right -->
+      <!-- RIGHT: content on right; branch points right -->
       <div class="timeline-row align-right">
         <div class="left"></div>
 
-        <!-- branch (replaces the circle/dot) -->
         <div class="timeline-branch" aria-hidden="true">
           <div class="branch-stick" aria-hidden="true"></div>
         </div>
@@ -352,7 +356,9 @@
         <div class="right">
           <div class="timeline-item">
             <div class="timeline-media">
-              <img src="ffphoto.jpeg" alt="Falcon Fest jewelry booth" loading="lazy">
+              <!-- two images: main leaf + small leaf (same src) to create a cluster of "leaves" closely grouped -->
+              <img class="leaf main" src="ffphoto.jpeg" alt="Falcon Fest jewelry booth" loading="lazy">
+              <img class="leaf small" src="ffphoto.jpeg" alt="" aria-hidden="true" loading="lazy">
             </div>
             <h3>Falcon Fest 2025</h3>
             <p>For spooky season, we joined Falcon Fest 2025 with our jewelry booth — filled with fall spirit and creativity! Every purchase helped raise funds for RDC’s ongoing mission to support rare disease research and awareness.</p>
@@ -360,12 +366,13 @@
         </div>
       </div>
 
-      <!-- align-left: content sits on the left, branch should point left -->
+      <!-- LEFT: content on left; branch points left -->
       <div class="timeline-row align-left">
         <div class="left">
           <div class="timeline-item">
             <div class="timeline-media">
-              <img src="PARNIKAMONKEY.jpeg" alt="San Jose Makers Market" loading="lazy">
+              <img class="leaf main" src="PARNIKAMONKEY.jpeg" alt="San Jose Makers Market" loading="lazy">
+              <img class="leaf small" src="PARNIKAMONKEY.jpeg" alt="" aria-hidden="true" loading="lazy">
             </div>
             <h3>San Jose Makers Market</h3>
             <p>Continuing our passion for creativity and advocacy, we sold our handmade jewelry at the San Jose Makers Market, connecting with new supporters and sharing our story with the local community.</p>
@@ -387,7 +394,8 @@
         <div class="right">
           <div class="timeline-item">
             <div class="timeline-media">
-              <img src="IMG_5304.jpeg" alt="SoSo Market table" loading="lazy">
+              <img class="leaf main" src="IMG_5304.jpeg" alt="SoSo Market table" loading="lazy">
+              <img class="leaf small" src="IMG_5304.jpeg" alt="" aria-hidden="true" loading="lazy">
             </div>
             <h3>Jewelry Design & Sales at The SoSo Market, Berkeley</h3>
             <p>RDC members designed and handcrafted high-quality jewelry to showcase and sell at The SoSo Market in Berkeley, raising funds to support our nonprofit mission.</p>
@@ -399,7 +407,8 @@
         <div class="left">
           <div class="timeline-item">
             <div class="timeline-media">
-              <img src="539601-flyer.jpeg" alt="Chipotle fundraiser poster" loading="lazy">
+              <img class="leaf main" src="539601-flyer.jpeg" alt="Chipotle fundraiser poster" loading="lazy">
+              <img class="leaf small" src="539601-flyer.jpeg" alt="" aria-hidden="true" loading="lazy">
             </div>
             <h3>Chipotle Fundraiser for Oakland Children's Hospital</h3>
             <p>Our Chipotle fundraiser brought the community together for a great cause! Proceeds went toward purchasing toys and care packages for children at Oakland Children's Hospital, spreading smiles and hope.</p>
@@ -421,7 +430,8 @@
         <div class="right">
           <div class="timeline-item">
             <div class="timeline-media">
-              <img src="hart.jpeg" alt="Guest speaking at Hart Middle School" loading="lazy">
+              <img class="leaf main" src="hart.jpeg" alt="Guest speaking at Hart Middle School" loading="lazy">
+              <img class="leaf small" src="hart.jpeg" alt="" aria-hidden="true" loading="lazy">
             </div>
             <h3>Guest Speaking at Hart Middle School</h3>
             <p>We kicked off 2025 by guest speaking at Hart Middle School, sharing our mission and raising awareness about rare diseases. It was an inspiring opportunity to educate students and spark compassion within the community.</p>
@@ -435,7 +445,8 @@
         <div class="left">
           <div class="timeline-item">
             <div class="timeline-media">
-              <img src="DA2D33E9-DC91-493F-9688-0AFB6D8669ECIMG_3847.jpeg" alt="Bracelet workshop" loading="lazy">
+              <img class="leaf main" src="DA2D33E9-DC91-493F-9688-0AFB6D8669ECIMG_3847.jpeg" alt="Bracelet workshop" loading="lazy">
+              <img class="leaf small" src="DA2D33E9-DC91-493F-9688-0AFB6D8669ECIMG_3847.jpeg" alt="" aria-hidden="true" loading="lazy">
             </div>
             <h3>Bracelet Workshop for Falcon Fest</h3>
             <p>Members came together for a fun, hands-on bracelet-making workshop to prepare for Falcon Fest. Participants earned volunteer hours and helped raise funds for RDC’s cause.</p>
@@ -457,7 +468,8 @@
         <div class="right">
           <div class="timeline-item">
             <div class="timeline-media">
-              <img src="BB4FBE63-5171-4CA5-8D94-2037D9E180F3IMG_4198.jpeg" alt="Holiday care package and blanket drive" loading="lazy">
+              <img class="leaf main" src="BB4FBE63-5171-4CA5-8D94-2037D9E180F3IMG_4198.jpeg" alt="Holiday care package and blanket drive" loading="lazy">
+              <img class="leaf small" src="BB4FBE63-5171-4CA5-8D94-2037D9E180F3IMG_4198.jpeg" alt="" aria-hidden="true" loading="lazy">
             </div>
             <h3>Holiday Care Package & Blanket Drive</h3>
             <p>We ended the year by assembling care packages and cozy blankets for hospice patients and the Cancer Society — a heartfelt way to give back during the holiday season.</p>
@@ -469,10 +481,12 @@
         <div class="left">
           <div class="timeline-item">
             <div class="timeline-media">
-              <video width="100%" height="auto" controls>
+              <video class="leaf main" controls>
                 <source src="Snapinsta.app_video_An_-neZ5gkilhfO46hFsaXOzcxnfZ9mi5LHk4huoTa6ZsH7O4j20Blhh2Gf5KKKCY1UkIjt8osvppBgbwV7QniqU.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
+              <!-- small thumbnail for the video to create the leaf cluster (optional) -->
+              <img class="leaf small" src="IMG_5304.jpeg" alt="" aria-hidden="true" loading="lazy">
             </div>
             <h3>Speech and Debate Camp 2024</h3>
             <p>Our very first RDC event! The camp brought together passionate students to strengthen public speaking skills — all in support of our mission to raise $1,000 for Cure Rare Disease.</p>
@@ -519,7 +533,7 @@
         });
       });
 
-      // impact section reveal if present
+      // intersection reveal (if present)
       const impactSection = document.querySelector('.nord-section');
       if (impactSection) {
         const observer = new IntersectionObserver((entries) => {
