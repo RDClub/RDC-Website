@@ -1,14 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="Rare Disease Club" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases." />
+  <meta name="description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases." />
   <title>Rare Disease Club - Events</title>
-  <link rel="icon" href="rdc.png" type="image/png" />
+  <link rel="icon" href="rdc-favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-
     :root{
       --pink: #f0b7d0;
       --bg: #fdeef5;
@@ -26,7 +26,29 @@
       -moz-osx-font-smoothing:grayscale;
     }
 
+    /* skip link */
+    .skip-link{
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus{
+      left: 8px;
+      top: 8px;
+      width: auto;
+      height: auto;
+      background:#fff;
+      padding:8px 12px;
+      z-index:9999;
+      border-radius:4px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.12);
+    }
+
     /* simple nav */
+    header { background:var(--bg); }
     nav{
       background:var(--bg);
       border-top:3px solid #000;
@@ -37,9 +59,30 @@
       min-height:72px;
       padding:0 16px;
     }
-    .nav-links { display:flex; gap:12px; align-items:center; }
+    .nav-inner{ max-width:1200px; width:100%; display:flex; justify-content:space-between; align-items:center; gap:12px; }
     .home-btn { font-weight:700; text-transform:uppercase; text-decoration:none; color:#111; padding:0 20px; height:72px; display:flex; align-items:center; }
     .home-btn.active{ background:#fff; border:3px solid #000; border-radius:20px; height:56px; line-height:56px; padding:0 18px; }
+
+    .nav-links { display:flex; gap:12px; align-items:center; list-style:none; }
+    .nav-links a { text-decoration:none; color:#111; padding:8px 10px; display:inline-block; }
+    .dropdown{ position:relative; }
+    .dropdown-toggle{ cursor:pointer; }
+    .dropdown-menu{
+      display:none;
+      position:absolute;
+      left:0;
+      top:calc(100% + 6px);
+      background:#fff;
+      border:1px solid rgba(0,0,0,0.08);
+      box-shadow:0 8px 24px rgba(0,0,0,0.08);
+      padding:8px 0;
+      border-radius:8px;
+      min-width:200px;
+      z-index:20;
+    }
+    .dropdown-menu a{ display:block; padding:8px 14px; color:#111; white-space:nowrap; }
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu{ display:block; }
 
     /* HERO (screenshot under nav) */
     .events-hero{
@@ -50,7 +93,7 @@
     }
     .events-hero img{
       width:100%;
-      height: clamp(360px, 44vh, 680px); /* taller and prominent */
+      height: clamp(360px, 44vh, 680px);
       object-fit:cover;
       display:block;
     }
@@ -96,6 +139,7 @@
       color:var(--pink);
       font-size:56px;
       margin:18px 0 28px;
+      text-align:center;
     }
 
     /* each row: left column, center (branch), right column */
@@ -112,7 +156,7 @@
     .card{
       display:block;
       width:100%;
-      height: clamp(260px, 34vh, 420px); /* slightly taller */
+      height: clamp(260px, 34vh, 420px);
       object-fit:cover;
       border-radius:10px;
       border:3px solid var(--card-border);
@@ -138,7 +182,7 @@
 
     /* Make cards visually wider toward center on large screens but not too rotated */
     .timeline-row.align-right .card.main{
-      margin-left:-84px; /* pull toward center */
+      margin-left:-84px;
       width: calc(100% + 84px);
       transform: rotate(3deg);
     }
@@ -164,13 +208,12 @@
     }
     .branch-stick{
       position:absolute;
-      top: calc(50px); /* align visually with card top; adjusted below in responsive rules */
+      top: 50px;
       height:12px;
       border-radius:999px;
       background:var(--pink);
       box-shadow: 0 12px 20px rgba(240,183,208,0.12);
     }
-    /* branch pointing directions - length adjusted so it reaches under the card */
     .timeline-row.align-right .branch-stick{
       left:50%;
       transform:translateX(10px);
@@ -187,7 +230,7 @@
     .timeline-row.align-left .card.main::before{
       content:"";
       position:absolute;
-      top:48px; /* matches branch-stick top */
+      top:48px;
       width:36px;
       height:12px;
       border-radius:999px;
@@ -203,8 +246,11 @@
     .timeline-item h3{ font-family:'Playfair Display', serif; font-size:1.05rem; margin-bottom:8px; color:#111; }
     .timeline-item p{ margin:0;color:#333; font-size:0.95rem; }
 
-    /* remove previous dot */
+    /* decorative dot removed */
     .timeline-dot{ display:none; }
+
+    /* helpers */
+    .card-wrap{ position:relative; }
 
     /* responsive adjustments */
     @media (max-width:1200px){
@@ -226,7 +272,7 @@
       .card{ height: clamp(200px, 34vh, 360px); }
       .events-hero img{ height: clamp(260px,34vh,420px); }
       .events-hero h1{ font-size: clamp(2rem,6vw,3rem); }
-      .timeline-year{ font-size:44px; }
+      .timeline-year{ font-size:44px; text-align:left; margin-left:40px; }
     }
 
     @media (max-width:600px){
@@ -237,56 +283,67 @@
 
     /* small polish: hover */
     .card:hover{ transform: translateY(-6px) scale(1.01); }
+
+    /* footer */
+    footer{ text-align:center;padding:22px 12px;background:var(--bg);border-top:3px solid rgba(230,194,212,0.7); }
   </style>
 </head>
 <body>
-<div class="full-width-banner">
-    <!-- Replace these with your assets -->
-    <img src="stupidassphoto.png" alt="Educate Donate Motto" class="motto-img">
-  </div>
-  <nav>
-    <a href="index.html" class="home-btn active">HOME</a>
-    <div class="nav-links">
-      <div class="dropdown">
-        <a href="#" class="dropdown-toggle">About</a>
-        <div class="dropdown-menu">
-          <a href="socialmedia.html">Social Media Team</a>
-          <a href="about.html">Executive Board</a>
-          <a href="partnerships.html">Partnerships</a>
-        </div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <div style="max-width:1200px;margin:0 auto;padding:8px 16px;">
+      <div class="full-width-banner" aria-hidden="true">
+        <img src="motto.png" alt="Educate, Donate, Make An Impact — Rare Disease Club" class="motto-img" style="max-width:100%;height:auto;display:block;">
       </div>
-      <a href="events.html">Events</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="getinvolved.html">Get Involved</a>
     </div>
-  </nav>
+
+    <nav aria-label="Primary">
+      <div class="nav-inner" style="max-width:1200px;margin:0 auto;">
+        <a href="index.html" class="home-btn active">HOME</a>
+        <ul class="nav-links" role="menubar" aria-label="Main navigation">
+          <li class="dropdown" role="none">
+            <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" role="menu" aria-label="About menu">
+              <a role="menuitem" href="socialmedia.html">Social Media Team</a>
+              <a role="menuitem" href="about.html">Executive Board</a>
+              <a role="menuitem" href="partnerships.html">Partnerships</a>
+            </div>
+          </li>
+          <li><a href="events.html" role="menuitem">Events</a></li>
+          <li><a href="newsletter.html" role="menuitem">Newsletter</a></li>
+          <li><a href="index.html#contact" role="menuitem">Contact</a></li>
+          <li><a href="getinvolved.html" role="menuitem">Get Involved</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
   <!-- HERO -->
-  <div class="events-hero" aria-hidden="false">
-    <img src="ps.png" alt="Events hero photo">
+  <div class="events-hero">
+    <img src="ps.png" alt="Rare Disease Club event photo">
     <div class="overlay"><h1>Events</h1></div>
   </div>
 
-  <main class="events-section">
+  <main id="main" class="events-section">
     <h2>Events & Fundraisers</h2>
 
-    <div class="timeline">
+    <div class="timeline" aria-live="polite">
       <div class="timeline-year">2025</div>
 
       <!-- ROW 1: content on right -->
       <div class="timeline-row align-right">
-        <div class="left"></div>
+        <div class="left" aria-hidden="true"></div>
 
         <div class="timeline-branch" aria-hidden="true">
-          <div class="branch-stick" aria-hidden="true"></div>
+          <div class="branch-stick"></div>
         </div>
 
         <div class="right">
           <div class="timeline-item">
-            <div style="position:relative;">
+            <div class="card-wrap">
               <img class="card main" src="ffphoto.jpeg" alt="Falcon Fest jewelry booth" loading="lazy">
-              <img class="card small" src="ffphoto.jpeg" alt="" aria-hidden="true" loading="lazy">
+              <img class="card small" src="ffphoto-thumb.jpeg" alt="" aria-hidden="true" loading="lazy">
             </div>
             <h3>Falcon Fest 2025</h3>
             <p>For spooky season, we joined Falcon Fest 2025 with our jewelry booth — filled with fall spirit and creativity! Every purchase helped raise funds for RDC’s mission to support rare disease research and awareness.</p>
@@ -298,9 +355,9 @@
       <div class="timeline-row align-left">
         <div class="left">
           <div class="timeline-item">
-            <div style="position:relative;">
-              <img class="card main" src="PARNIKAMONKEY.jpeg" alt="San Jose Makers Market" loading="lazy">
-              <img class="card small" src="PARNIKAMONKEY.jpeg" alt="" aria-hidden="true" loading="lazy">
+            <div class="card-wrap">
+              <img class="card main" src="parnikamonkey.jpeg" alt="San Jose Makers Market booth" loading="lazy">
+              <img class="card small" src="parnikamonkey-thumb.jpeg" alt="" aria-hidden="true" loading="lazy">
             </div>
             <h3>San Jose Makers Market</h3>
             <p>Continuing our passion for creativity and advocacy, we sold our handmade jewelry at the San Jose Makers Market, connecting with new supporters and sharing our story with the local community.</p>
@@ -308,21 +365,21 @@
         </div>
 
         <div class="timeline-branch" aria-hidden="true">
-          <div class="branch-stick" aria-hidden="true"></div>
+          <div class="branch-stick"></div>
         </div>
 
-        <div class="right"></div>
+        <div class="right" aria-hidden="true"></div>
       </div>
 
       <!-- ROW 3: right -->
       <div class="timeline-row align-right">
-        <div class="left"></div>
-        <div class="timeline-branch" aria-hidden="true"><div class="branch-stick" aria-hidden="true"></div></div>
+        <div class="left" aria-hidden="true"></div>
+        <div class="timeline-branch" aria-hidden="true"><div class="branch-stick"></div></div>
         <div class="right">
           <div class="timeline-item">
-            <div style="position:relative;">
-              <img class="card main" src="IMG_5304.jpeg" alt="SoSo Market" loading="lazy">
-              <img class="card small" src="IMG_5304.jpeg" alt="" aria-hidden="true" loading="lazy">
+            <div class="card-wrap">
+              <img class="card main" src="IMG_5304.jpeg" alt="SoSo Market — jewelry display" loading="lazy">
+              <img class="card small" src="IMG_5304-thumb.jpeg" alt="" aria-hidden="true" loading="lazy">
             </div>
             <h3>Jewelry Design & Sales at The SoSo Market, Berkeley</h3>
             <p>RDC members showcased handcrafted jewelry at The SoSo Market in Berkeley, raising funds and awareness.</p>
@@ -334,29 +391,29 @@
       <div class="timeline-row align-left">
         <div class="left">
           <div class="timeline-item">
-            <div style="position:relative;">
-              <img class="card main" src="539601-flyer.jpeg" alt="Chipotle fundraiser" loading="lazy">
-              <img class="card small" src="539601-flyer.jpeg" alt="" aria-hidden="true" loading="lazy">
+            <div class="card-wrap">
+              <img class="card main" src="539601-flyer.jpeg" alt="Chipotle fundraiser flyer" loading="lazy">
+              <img class="card small" src="539601-flyer-thumb.jpeg" alt="" aria-hidden="true" loading="lazy">
             </div>
             <h3>Chipotle Fundraiser for Oakland Children's Hospital</h3>
             <p>Our Chipotle fundraiser brought the community together — proceeds purchased toys and care packages for children at Oakland Children's Hospital.</p>
           </div>
         </div>
 
-        <div class="timeline-branch"><div class="branch-stick"></div></div>
+        <div class="timeline-branch" aria-hidden="true"><div class="branch-stick"></div></div>
 
-        <div class="right"></div>
+        <div class="right" aria-hidden="true"></div>
       </div>
 
-      <!-- more rows ... (follow the same structure) -->
+      <!-- more rows ... -->
       <div class="timeline-row align-right">
-        <div class="left"></div>
-        <div class="timeline-branch"><div class="branch-stick"></div></div>
+        <div class="left" aria-hidden="true"></div>
+        <div class="timeline-branch" aria-hidden="true"><div class="branch-stick"></div></div>
         <div class="right">
           <div class="timeline-item">
-            <div style="position:relative;">
-              <img class="card main" src="hart.jpeg" alt="Hart Middle School" loading="lazy">
-              <img class="card small" src="hart.jpeg" alt="" aria-hidden="true" loading="lazy">
+            <div class="card-wrap">
+              <img class="card main" src="hart.jpeg" alt="Guest speaking at Hart Middle School" loading="lazy">
+              <img class="card small" src="hart-thumb.jpeg" alt="" aria-hidden="true" loading="lazy">
             </div>
             <h3>Guest Speaking at Hart Middle School</h3>
             <p>We shared our mission at Hart Middle School to raise awareness about rare diseases and inspire compassion.</p>
@@ -369,28 +426,28 @@
       <div class="timeline-row align-left">
         <div class="left">
           <div class="timeline-item">
-            <div style="position:relative;">
-              <img class="card main" src="DA2D33E9-DC91-493F-9688-0AFB6D8669ECIMG_3847.jpeg" alt="Bracelet Workshop" loading="lazy">
-              <img class="card small" src="DA2D33E9-DC91-493F-9688-0AFB6D8669ECIMG_3847.jpeg" alt="" aria-hidden="true" loading="lazy">
+            <div class="card-wrap">
+              <img class="card main" src="IMG_3847.jpeg" alt="Bracelet workshop participants" loading="lazy">
+              <img class="card small" src="IMG_3847-thumb.jpeg" alt="" aria-hidden="true" loading="lazy">
             </div>
             <h3>Bracelet Workshop for Falcon Fest</h3>
             <p>Members prepared handmade jewelry for Falcon Fest during this hands-on workshop.</p>
           </div>
         </div>
 
-        <div class="timeline-branch"><div class="branch-stick"></div></div>
+        <div class="timeline-branch" aria-hidden="true"><div class="branch-stick"></div></div>
 
-        <div class="right"></div>
+        <div class="right" aria-hidden="true"></div>
       </div>
 
       <div class="timeline-row align-right">
-        <div class="left"></div>
-        <div class="timeline-branch"><div class="branch-stick"></div></div>
+        <div class="left" aria-hidden="true"></div>
+        <div class="timeline-branch" aria-hidden="true"><div class="branch-stick"></div></div>
         <div class="right">
           <div class="timeline-item">
-            <div style="position:relative;">
-              <img class="card main" src="BB4FBE63-5171-4CA5-8D94-2037D9E180F3IMG_4198.jpeg" alt="Holiday Drive" loading="lazy">
-              <img class="card small" src="BB4FBE63-5171-4CA5-8D94-2037D9E180F3IMG_4198.jpeg" alt="" aria-hidden="true" loading="lazy">
+            <div class="card-wrap">
+              <img class="card main" src="IMG_4198.jpeg" alt="Holiday care package and blanket drive" loading="lazy">
+              <img class="card small" src="IMG_4198-thumb.jpeg" alt="" aria-hidden="true" loading="lazy">
             </div>
             <h3>Holiday Care Package & Blanket Drive</h3>
             <p>We assembled care packages and blankets for hospice patients and cancer support organizations.</p>
@@ -401,13 +458,24 @@
     </div><!-- .timeline -->
   </main>
 
-  <footer style="text-align:center;padding:22px 12px;background:var(--bg);border-top:3px solid rgba(230,194,212,0.7);">
+  <footer>
     <p>© <span id="year"></span> Rare Disease Club — Educate · Donate · Make An Impact</p>
   </footer>
 
   <script>
     // set footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // improve dropdown accessibility: toggle aria-expanded on focus/click for keyboard users
+    document.querySelectorAll('.dropdown-toggle').forEach(function(toggle){
+      toggle.addEventListener('click', function(e){
+        // prevent default so it's usable as a control; keep href="#" for graceful fallback
+        e.preventDefault();
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!expanded));
+        // show/hide handled by CSS :hover and :focus-within; aria state still useful for assistive tech
+      });
+    });
   </script>
 </body>
 </html>
