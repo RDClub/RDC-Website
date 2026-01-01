@@ -1,18 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases." />
+  <meta name="Rare Disease Club" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases." />
   <title>Rare Disease Club - Events</title>
-  <link rel="icon" href="rdc-favicon.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="rdc.png" type="image/png" />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
     :root{
       --pink: #f0b7d0;
       --bg: #fdeef5;
       --card-border: rgba(231,175,202,0.28);
+      --text: #111;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
@@ -20,35 +21,12 @@
     body{
       font-family: Georgia, serif;
       background: var(--bg);
-      color:#222;
-      line-height:1.5;
+      color:var(--text);
+      line-height:1.6;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
     }
 
-    /* skip link */
-    .skip-link{
-      position: absolute;
-      left: -999px;
-      top: auto;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-    }
-    .skip-link:focus{
-      left: 8px;
-      top: 8px;
-      width: auto;
-      height: auto;
-      background:#fff;
-      padding:8px 12px;
-      z-index:9999;
-      border-radius:4px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.12);
-    }
-
-    /* simple nav */
-    header { background:var(--bg); }
     nav{
       background:var(--bg);
       border-top:3px solid #000;
@@ -59,32 +37,11 @@
       min-height:72px;
       padding:0 16px;
     }
-    .nav-inner{ max-width:1200px; width:100%; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    .nav-links { display:flex; gap:12px; align-items:center; }
     .home-btn { font-weight:700; text-transform:uppercase; text-decoration:none; color:#111; padding:0 20px; height:72px; display:flex; align-items:center; }
     .home-btn.active{ background:#fff; border:3px solid #000; border-radius:20px; height:56px; line-height:56px; padding:0 18px; }
 
-    .nav-links { display:flex; gap:12px; align-items:center; list-style:none; }
-    .nav-links a { text-decoration:none; color:#111; padding:8px 10px; display:inline-block; }
-    .dropdown{ position:relative; }
-    .dropdown-toggle{ cursor:pointer; }
-    .dropdown-menu{
-      display:none;
-      position:absolute;
-      left:0;
-      top:calc(100% + 6px);
-      background:#fff;
-      border:1px solid rgba(0,0,0,0.08);
-      box-shadow:0 8px 24px rgba(0,0,0,0.08);
-      padding:8px 0;
-      border-radius:8px;
-      min-width:200px;
-      z-index:20;
-    }
-    .dropdown-menu a{ display:block; padding:8px 14px; color:#111; white-space:nowrap; }
-    .dropdown:hover .dropdown-menu,
-    .dropdown:focus-within .dropdown-menu{ display:block; }
-
-    /* HERO (screenshot under nav) */
+    /* HERO */
     .events-hero{
       width:100%;
       position:relative;
@@ -93,389 +50,420 @@
     }
     .events-hero img{
       width:100%;
-      height: clamp(360px, 44vh, 680px);
+      height: clamp(420px, 48vh, 760px);
       object-fit:cover;
       display:block;
+      filter: none;
     }
     .events-hero .overlay{
       position:absolute;
       top:50%;
       left:50%;
-      transform:translate(-50%,-46%);
+      transform:translate(-50%,-52%);
       pointer-events:none;
       text-align:center;
     }
     .events-hero h1{
       font-family:'Playfair Display', serif;
-      font-size:clamp(2.6rem,6vw,4.8rem);
-      color:rgba(0,0,0,0.9);
+      font-size:clamp(2.6rem,6vw,5rem);
+      color:#0b0b0b;
       margin:0;
-      text-shadow:0 2px 6px rgba(255,255,255,0.15);
+      text-shadow:0 2px 6px rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.0);
+      padding:0 8px;
     }
 
-    /* timeline container */
-    .events-section{ padding:36px 4vw 80px; max-width:1400px; margin:0 auto; }
-    .events-section h2{ font-family:'Playfair Display', serif; color:var(--pink); font-size:1.6rem; margin-bottom:18px; }
+    /* TIMELINE LAYOUT */
+    .events-section{
+      padding:28px 4vw 80px;
+      max-width:1200px;
+      margin:0 auto;
+      position:relative;
+      background: #fff;
+    }
 
+    /* big year on the left */
+    .timeline-year{
+      font-family:'Playfair Display', serif;
+      color:var(--pink);
+      font-size:110px;
+      position:absolute;
+      left:12px;
+      top:36px;
+      line-height:1;
+      opacity:0.98;
+      pointer-events:none;
+    }
+
+    /* timeline area */
     .timeline{
       position:relative;
-      padding:28px 8px;
+      padding:36px 28px 20px 220px; /* leave room on left for big year */
+      min-height: 600px;
     }
-    /* center line */
+
+    /* center vertical line (moved a bit right of center to match your example) */
     .timeline::before{
       content:'';
       position:absolute;
-      left:50%;
+      left:52%;
       transform:translateX(-50%);
-      width:8px;
+      width:6px;
       top:0;
       bottom:0;
       background:var(--pink);
       border-radius:6px;
+      box-shadow: 0 8px 18px rgba(240,183,208,0.08);
     }
 
-    .timeline-year{
-      font-family:'Playfair Display', serif;
-      color:var(--pink);
-      font-size:56px;
-      margin:18px 0 28px;
-      text-align:center;
-    }
-
-    /* each row: left column, center (branch), right column */
+    /* each event row */
+    /* increased the middle column to give the image more width (so it can reach the bar/connector) */
     .timeline-row{
       display:grid;
-      grid-template-columns: 1fr 80px 1fr;
+      grid-template-columns: 1fr 520px 1fr; /* was 1fr 420px 1fr */
       gap:24px;
       align-items:start;
       margin:48px 0;
       position:relative;
     }
 
-    /* main rectangular card (single image) */
-    .card{
-      display:block;
-      width:100%;
-      height: clamp(260px, 34vh, 420px);
-      object-fit:cover;
-      border-radius:10px;
-      border:3px solid var(--card-border);
-      box-shadow: 0 16px 30px rgba(0,0,0,0.08);
-      background:#fff;
-      position:relative;
-      transition:transform .18s ease;
-    }
-
-    /* smaller rectangular thumbnail that sits close to the branch (for cluster look) */
-    .card.small{
-      position:absolute;
-      width:46%;
-      height:46%;
-      bottom:10%;
-      z-index:2;
-      border-radius:8px;
-      border:3px solid rgba(231,175,202,0.24);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
-      background:#fff;
-      object-fit:cover;
-    }
-
-    /* Make cards visually wider toward center on large screens but not too rotated */
-    .timeline-row.align-right .card.main{
-      margin-left:-84px;
-      width: calc(100% + 84px);
-      transform: rotate(3deg);
-    }
-    .timeline-row.align-left .card.main{
-      margin-right:-84px;
-      width: calc(100% + 84px);
-      transform: rotate(-3deg);
-    }
-
-    /* position small card near the center/branch */
-    .timeline-row.align-right .card.small{ left:-10%; transform:rotate(-6deg); }
-    .timeline-row.align-left .card.small{ right:-10%; transform:rotate(6deg); }
-
-    /* PINK branch segment (rounded bar) */
-    .timeline-branch{
+    /* connectors (horizontal) */
+    .connector{
       grid-column:2;
       justify-self:center;
-      align-self:start;
       width:100%;
-      height:1px;
+      height:0;
       position:relative;
       pointer-events:none;
     }
-    .branch-stick{
+
+    .connector::after{
+      content:'';
       position:absolute;
-      top: 50px;
-      height:12px;
-      border-radius:999px;
+      left:0;
+      top:50%;
+      transform:translateY(-50%);
+      width:18px;
+      height:18px;
+      border-radius:50%;
       background:var(--pink);
-      box-shadow: 0 12px 20px rgba(240,183,208,0.12);
-    }
-    .timeline-row.align-right .branch-stick{
-      left:50%;
-      transform:translateX(10px);
-      width:280px;
-    }
-    .timeline-row.align-left .branch-stick{
-      right:50%;
-      transform:translateX(-10px);
-      width:280px;
+      box-shadow: 0 8px 14px rgba(240,183,208,0.12);
     }
 
-    /* connector stub on card to visually join branch to card */
-    .timeline-row.align-right .card.main::before,
-    .timeline-row.align-left .card.main::before{
-      content:"";
+    /* card (image) */
+    .card{
+      display:block;
+      width:100%;
+      height:320px; /* increased height slightly */
+      object-fit:cover;
+      border-radius:8px;
+      border:3px solid var(--card-border);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.06);
+      background:#fff;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .card.small{ display:none; } /* not used in this layout */
+
+    /* when the card needs to visually reach the center branch, expand it slightly toward the center */
+    .timeline-row.align-right .right-col .card{
+      margin-left: -28px; /* pull card toward center line */
+      width: calc(100% + 28px);
+    }
+    .timeline-row.align-left .left-col .card{
+      margin-right: -28px; /* pull card toward center line */
+      width: calc(100% + 28px);
+    }
+
+    /* text block under image, centered in its column */
+    .event-block{
+      background: transparent;
+    }
+    .event-block .content{
+      max-width:420px;
+      margin:12px auto 0;
+      text-align:center;
+    }
+    .event-block h3{
+      font-family:'Playfair Display', serif;
+      margin-bottom:10px;
+      font-size:1.05rem;
+      color:#111;
+    }
+    .event-block p{
+      margin:0;
+      color:#222;
+      font-size:0.98rem;
+    }
+
+    /* Place content on the right column */
+    .timeline-row.align-right .right-col{
+      grid-column:3;
+      justify-self:start;
+    }
+    .timeline-row.align-right .left-col{
+      grid-column:1;
+    }
+    .timeline-row.align-right .right-col .card{
+      /* margin-left handled above to pull toward center */
+    }
+
+    /* Place content on the left column */
+    .timeline-row.align-left .left-col{
+      grid-column:1;
+      justify-self:end;
+    }
+    .timeline-row.align-left .right-col{
+      grid-column:3;
+    }
+    .timeline-row.align-left .left-col .card{
+      /* margin-right handled above to pull toward center */
+    }
+
+    /* Make the content appear connected with the vertical line with a thin horizontal bar */
+    .timeline-row .bar{
       position:absolute;
-      top:48px;
-      width:36px;
-      height:12px;
-      border-radius:999px;
+      width:160px; /* increased width so the bar reaches closer to expanded image */
+      height:6px;
       background:var(--pink);
-      z-index:3;
-      box-shadow: 0 12px 20px rgba(240,183,208,0.12);
+      border-radius:6px;
+      top: 36px;
+      left: calc(52% - 80px); /* center the short bar on the main vertical line (half of 160) */
+      transform-origin:left center;
+      z-index:1;
     }
-    .timeline-row.align-right .card.main::before{ left:-18px; transform:translateX(-50%); }
-    .timeline-row.align-left .card.main::before{ right:-18px; transform:translateX(50%); }
+    .timeline-row.align-right .bar{ transform: translateX(0); left: calc(52% - 2px); right:auto; }
+    .timeline-row.align-left .bar{ transform: translateX(-100%); left: auto; right: calc(48% - 2px); }
 
-    /* text block */
-    .timeline-item{ padding:8px 6px; }
-    .timeline-item h3{ font-family:'Playfair Display', serif; font-size:1.05rem; margin-bottom:8px; color:#111; }
-    .timeline-item p{ margin:0;color:#333; font-size:0.95rem; }
+    /* small decorative L-shape to connect bar to image */
+    .timeline-row .bar::after{
+      content:'';
+      position:absolute;
+      right:-6px;
+      top:50%;
+      width:18px;
+      height:6px;
+      transform:translateY(-50%);
+      background:var(--pink);
+      border-radius:3px;
+    }
+    .timeline-row.align-left .bar::after{ right:auto; left:-6px; }
 
-    /* decorative dot removed */
-    .timeline-dot{ display:none; }
-
-    /* helpers */
-    .card-wrap{ position:relative; }
-
-    /* responsive adjustments */
-    @media (max-width:1200px){
-      .timeline-row{ grid-template-columns: 1fr 60px 1fr; gap:18px; margin:36px 0; }
-      .timeline-row.align-right .card.main,
-      .timeline-row.align-left .card.main{
-        margin-left:0;margin-right:0;width:100%;transform:none;
+    /* responsive */
+    @media (max-width:1100px){
+      .events-section{ max-width:980px; }
+      .timeline-row{ grid-template-columns: 1fr 380px 1fr; gap:18px; margin:40px 0; } /* slightly narrower mid column on tablet */
+      .timeline{ padding-left:180px; }
+      .timeline-year{ font-size:92px; left:8px; top:20px; }
+      .card{ height:300px; } /* slightly smaller on narrower screens */
+      .timeline-row.align-right .right-col .card,
+      .timeline-row.align-left .left-col .card{
+        margin-left: -20px;
+        margin-right: -20px;
+        width: calc(100% + 20px);
       }
-      .card.small{ display:none; }
-      .branch-stick{ display:none; }
-      .card{ height: clamp(220px,34vh,380px); }
-      .events-hero img{ height: clamp(300px,40vh,520px); }
+      .timeline-row .bar{ width:140px; left: calc(52% - 70px); }
     }
 
-    @media (max-width:960px){
+    @media (max-width:900px){
+      .timeline{
+        padding:20px 20px 20px 20px;
+      }
       .timeline::before{ left:28px; transform:none; }
-      .timeline-row{ grid-template-columns:72px 1fr; gap:14px; }
-      .timeline-branch{ display:none; }
-      .card{ height: clamp(200px, 34vh, 360px); }
-      .events-hero img{ height: clamp(260px,34vh,420px); }
-      .events-hero h1{ font-size: clamp(2rem,6vw,3rem); }
-      .timeline-year{ font-size:44px; text-align:left; margin-left:40px; }
+      .timeline-year{ position:relative; font-size:48px; left:0; margin-bottom:12px; padding-left:12px; }
+      .timeline-row{
+        grid-template-columns: 72px 1fr;
+        gap:14px;
+        margin:24px 0;
+      }
+      .timeline-row.align-right .right-col,
+      .timeline-row.align-left .left-col{
+        grid-column:2;
+        justify-self:stretch;
+      }
+      .timeline-row .bar{ display:none; }
+      .connector::after{ left:20px; }
+      .card{ height:240px; } /* slightly larger on mobile/tablet than before so it still reads substantial */
+      .event-block .content{ max-width:640px; padding:0 8px; text-align:left; }
+
+      /* reset the pulled margins on the narrow layout (they don't apply here) */
+      .timeline-row.align-right .right-col .card,
+      .timeline-row.align-left .left-col .card{
+        margin-left:0;
+        margin-right:0;
+        width:100%;
+      }
     }
 
     @media (max-width:600px){
-      .card{ height: clamp(180px,32vh,300px); }
-      .timeline-row{ margin:22px 0; gap:10px; }
+      .events-hero img{ height: clamp(220px, 35vh, 380px); }
+      .card{ height:200px; }
       .timeline-year{ font-size:36px; }
+      .event-block .content{ font-size:0.95rem; }
     }
 
-    /* small polish: hover */
-    .card:hover{ transform: translateY(-6px) scale(1.01); }
-
-    /* footer */
-    footer{ text-align:center;padding:22px 12px;background:var(--bg);border-top:3px solid rgba(230,194,212,0.7); }
+    /* small hover polish */
+    .card:hover{ transform: translateY(-6px) scale(1.01); transition:transform .18s ease; box-shadow: 0 22px 40px rgba(0,0,0,0.09); }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header>
-    <div style="max-width:1200px;margin:0 auto;padding:8px 16px;">
-      <div class="full-width-banner" aria-hidden="true">
-        <img src="motto.png" alt="Educate, Donate, Make An Impact — Rare Disease Club" class="motto-img" style="max-width:100%;height:auto;display:block;">
+  <nav>
+    <a href="index.html" class="home-btn active">HOME</a>
+    <div class="nav-links">
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle">About</a>
+        <div class="dropdown-menu">
+          <a href="socialmedia.html">Social Media Team</a>
+          <a href="about.html">Executive Board</a>
+          <a href="partnerships.html">Partnerships</a>
+        </div>
       </div>
+      <a href="events.html">Events</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="getinvolved.html">Get Involved</a>
     </div>
-
-    <nav aria-label="Primary">
-      <div class="nav-inner" style="max-width:1200px;margin:0 auto;">
-        <a href="index.html" class="home-btn active">HOME</a>
-        <ul class="nav-links" role="menubar" aria-label="Main navigation">
-          <li class="dropdown" role="none">
-            <a href="#" class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">About</a>
-            <div class="dropdown-menu" role="menu" aria-label="About menu">
-              <a role="menuitem" href="socialmedia.html">Social Media Team</a>
-              <a role="menuitem" href="about.html">Executive Board</a>
-              <a role="menuitem" href="partnerships.html">Partnerships</a>
-            </div>
-          </li>
-          <li><a href="events.html" role="menuitem">Events</a></li>
-          <li><a href="newsletter.html" role="menuitem">Newsletter</a></li>
-          <li><a href="index.html#contact" role="menuitem">Contact</a></li>
-          <li><a href="getinvolved.html" role="menuitem">Get Involved</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+  </nav>
 
   <!-- HERO -->
-  <div class="events-hero">
-    <img src="ps.png" alt="Rare Disease Club event photo">
+  <div class="events-hero" aria-hidden="false">
+    <img src="ps.png" alt="Events hero photo">
     <div class="overlay"><h1>Events</h1></div>
   </div>
 
-  <main id="main" class="events-section">
-    <h2>Events & Fundraisers</h2>
-
-    <div class="timeline" aria-live="polite">
+  <main class="events-section">
+    <div class="timeline">
       <div class="timeline-year">2025</div>
 
-      <!-- ROW 1: content on right -->
+      <!-- ROW 1: right column content -->
       <div class="timeline-row align-right">
-        <div class="left" aria-hidden="true"></div>
+        <div class="left-col"></div>
 
-        <div class="timeline-branch" aria-hidden="true">
-          <div class="branch-stick"></div>
+        <div class="connector" aria-hidden="true">
+          <!-- small circular connector sits on center line -->
         </div>
 
-        <div class="right">
-          <div class="timeline-item">
-            <div class="card-wrap">
-              <img class="card main" src="ffphoto.jpeg" alt="Falcon Fest jewelry booth" loading="lazy">
-              <img class="card small" src="ffphoto-thumb.jpeg" alt="" aria-hidden="true" loading="lazy">
+        <div class="right-col">
+          <div class="event-block">
+            <img class="card" src="ffphoto.jpeg" alt="Falcon Fest jewelry booth" loading="lazy">
+            <div class="content">
+              <h3>Falcon Fest 2025</h3>
+              <p><strong>For spooky season,</strong> we joined Falcon Fest 2025 with our jewelry booth — filled with fall spirit and creativity! Every purchase helped raise funds for RDC’s ongoing mission to support rare disease research and awareness.</p>
             </div>
-            <h3>Falcon Fest 2025</h3>
-            <p>For spooky season, we joined Falcon Fest 2025 with our jewelry booth — filled with fall spirit and creativity! Every purchase helped raise funds for RDC’s mission to support rare disease research and awareness.</p>
           </div>
         </div>
+
+        <div class="bar" aria-hidden="true"></div>
       </div>
 
-      <!-- ROW 2: content on left -->
+      <!-- ROW 2: left column content -->
       <div class="timeline-row align-left">
-        <div class="left">
-          <div class="timeline-item">
-            <div class="card-wrap">
-              <img class="card main" src="parnikamonkey.jpeg" alt="San Jose Makers Market booth" loading="lazy">
-              <img class="card small" src="parnikamonkey-thumb.jpeg" alt="" aria-hidden="true" loading="lazy">
+        <div class="left-col">
+          <div class="event-block">
+            <img class="card" src="PARNIKAMONKEY.jpeg" alt="San Jose Makers Market" loading="lazy">
+            <div class="content">
+              <h3>San Jose Makers Market</h3>
+              <p><strong>Continuing our passion for creativity and advocacy,</strong> we sold our handmade jewelry at the San Jose Makers Market, connecting with new supporters and sharing our story with the local community.</p>
             </div>
-            <h3>San Jose Makers Market</h3>
-            <p>Continuing our passion for creativity and advocacy, we sold our handmade jewelry at the San Jose Makers Market, connecting with new supporters and sharing our story with the local community.</p>
           </div>
         </div>
 
-        <div class="timeline-branch" aria-hidden="true">
-          <div class="branch-stick"></div>
-        </div>
+        <div class="connector" aria-hidden="true"></div>
 
-        <div class="right" aria-hidden="true"></div>
+        <div class="right-col"></div>
+
+        <div class="bar" aria-hidden="true"></div>
       </div>
 
-      <!-- ROW 3: right -->
+      <!-- ROW 3: right column -->
       <div class="timeline-row align-right">
-        <div class="left" aria-hidden="true"></div>
-        <div class="timeline-branch" aria-hidden="true"><div class="branch-stick"></div></div>
-        <div class="right">
-          <div class="timeline-item">
-            <div class="card-wrap">
-              <img class="card main" src="IMG_5304.jpeg" alt="SoSo Market — jewelry display" loading="lazy">
-              <img class="card small" src="IMG_5304-thumb.jpeg" alt="" aria-hidden="true" loading="lazy">
+        <div class="left-col"></div>
+
+        <div class="connector" aria-hidden="true"></div>
+
+        <div class="right-col">
+          <div class="event-block">
+            <img class="card" src="IMG_5304.jpeg" alt="SoSo Market" loading="lazy">
+            <div class="content">
+              <h3>Jewelry Design & Sales at The SoSo Market, Berkeley</h3>
+              <p><strong>RDC members showcased handcrafted jewelry</strong> at The SoSo Market in Berkeley, raising funds and awareness for our nonprofit mission.</p>
             </div>
-            <h3>Jewelry Design & Sales at The SoSo Market, Berkeley</h3>
-            <p>RDC members showcased handcrafted jewelry at The SoSo Market in Berkeley, raising funds and awareness.</p>
           </div>
         </div>
+
+        <div class="bar" aria-hidden="true"></div>
       </div>
 
-      <!-- ROW 4: left -->
+      <!-- ROW 4: left column -->
       <div class="timeline-row align-left">
-        <div class="left">
-          <div class="timeline-item">
-            <div class="card-wrap">
-              <img class="card main" src="539601-flyer.jpeg" alt="Chipotle fundraiser flyer" loading="lazy">
-              <img class="card small" src="539601-flyer-thumb.jpeg" alt="" aria-hidden="true" loading="lazy">
+        <div class="left-col">
+          <div class="event-block">
+            <img class="card" src="539601-flyer.jpeg" alt="Chipotle fundraiser" loading="lazy">
+            <div class="content">
+              <h3>Chipotle Fundraiser for Oakland Children's Hospital</h3>
+              <p><strong>Our Chipotle fundraiser</strong> brought the community together — proceeds purchased toys and care packages for children at Oakland Children's Hospital.</p>
             </div>
-            <h3>Chipotle Fundraiser for Oakland Children's Hospital</h3>
-            <p>Our Chipotle fundraiser brought the community together — proceeds purchased toys and care packages for children at Oakland Children's Hospital.</p>
           </div>
         </div>
 
-        <div class="timeline-branch" aria-hidden="true"><div class="branch-stick"></div></div>
+        <div class="connector" aria-hidden="true"></div>
 
-        <div class="right" aria-hidden="true"></div>
+        <div class="right-col"></div>
+
+        <div class="bar" aria-hidden="true"></div>
       </div>
 
-      <!-- more rows ... -->
-      <div class="timeline-row align-right">
-        <div class="left" aria-hidden="true"></div>
-        <div class="timeline-branch" aria-hidden="true"><div class="branch-stick"></div></div>
-        <div class="right">
-          <div class="timeline-item">
-            <div class="card-wrap">
-              <img class="card main" src="hart.jpeg" alt="Guest speaking at Hart Middle School" loading="lazy">
-              <img class="card small" src="hart-thumb.jpeg" alt="" aria-hidden="true" loading="lazy">
-            </div>
-            <h3>Guest Speaking at Hart Middle School</h3>
-            <p>We shared our mission at Hart Middle School to raise awareness about rare diseases and inspire compassion.</p>
-          </div>
-        </div>
-      </div>
+      <!-- MORE rows (2024) -->
+      <div style="margin-top:36px;"></div>
+      <div class="timeline-year" style="left:12px; top: 740px; font-size:72px;">2024</div>
 
-      <div class="timeline-year">2024</div>
-
-      <div class="timeline-row align-left">
-        <div class="left">
-          <div class="timeline-item">
-            <div class="card-wrap">
-              <img class="card main" src="IMG_3847.jpeg" alt="Bracelet workshop participants" loading="lazy">
-              <img class="card small" src="IMG_3847-thumb.jpeg" alt="" aria-hidden="true" loading="lazy">
+      <div class="timeline-row align-left" style="margin-top:120px;">
+        <div class="left-col">
+          <div class="event-block">
+            <img class="card" src="DA2D33E9-DC91-493F-9688-0AFB6D8669ECIMG_3847.jpeg" alt="Bracelet Workshop" loading="lazy">
+            <div class="content">
+              <h3>Bracelet Workshop for Falcon Fest</h3>
+              <p>Members prepared handmade jewelry for Falcon Fest during this hands-on workshop.</p>
             </div>
-            <h3>Bracelet Workshop for Falcon Fest</h3>
-            <p>Members prepared handmade jewelry for Falcon Fest during this hands-on workshop.</p>
           </div>
         </div>
 
-        <div class="timeline-branch" aria-hidden="true"><div class="branch-stick"></div></div>
+        <div class="connector" aria-hidden="true"></div>
 
-        <div class="right" aria-hidden="true"></div>
+        <div class="right-col"></div>
+
+        <div class="bar" aria-hidden="true"></div>
       </div>
 
       <div class="timeline-row align-right">
-        <div class="left" aria-hidden="true"></div>
-        <div class="timeline-branch" aria-hidden="true"><div class="branch-stick"></div></div>
-        <div class="right">
-          <div class="timeline-item">
-            <div class="card-wrap">
-              <img class="card main" src="IMG_4198.jpeg" alt="Holiday care package and blanket drive" loading="lazy">
-              <img class="card small" src="IMG_4198-thumb.jpeg" alt="" aria-hidden="true" loading="lazy">
+        <div class="left-col"></div>
+
+        <div class="connector" aria-hidden="true"></div>
+
+        <div class="right-col">
+          <div class="event-block">
+            <img class="card" src="BB4FBE63-5171-4CA5-8D94-2037D9E180F3IMG_4198.jpeg" alt="Holiday Drive" loading="lazy">
+            <div class="content">
+              <h3>Holiday Care Package & Blanket Drive</h3>
+              <p>We assembled care packages and blankets for hospice patients and cancer support organizations.</p>
             </div>
-            <h3>Holiday Care Package & Blanket Drive</h3>
-            <p>We assembled care packages and blankets for hospice patients and cancer support organizations.</p>
           </div>
         </div>
+
+        <div class="bar" aria-hidden="true"></div>
       </div>
 
     </div><!-- .timeline -->
   </main>
 
-  <footer>
+  <footer style="text-align:center;padding:22px 12px;background:var(--bg);border-top:3px solid rgba(230,194,212,0.7);">
     <p>© <span id="year"></span> Rare Disease Club — Educate · Donate · Make An Impact</p>
   </footer>
 
   <script>
     // set footer year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // improve dropdown accessibility: toggle aria-expanded on focus/click for keyboard users
-    document.querySelectorAll('.dropdown-toggle').forEach(function(toggle){
-      toggle.addEventListener('click', function(e){
-        // prevent default so it's usable as a control; keep href="#" for graceful fallback
-        e.preventDefault();
-        var expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', String(!expanded));
-        // show/hide handled by CSS :hover and :focus-within; aria state still useful for assistive tech
-      });
-    });
   </script>
 </body>
 </html>
