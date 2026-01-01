@@ -114,13 +114,14 @@
       background:var(--pink);
       border-radius:6px;
       box-shadow: 0 8px 18px rgba(240,183,208,0.08);
+      z-index: 0; /* make sure images can sit above */
     }
 
     /* each event row */
     /* increased the middle column to give the image more width (so it can reach the bar/connector) */
     .timeline-row{
       display:grid;
-      grid-template-columns: 1fr 520px 1fr; /* was 1fr 420px 1fr */
+      grid-template-columns: 1fr 520px 1fr; /* increased mid column so images can extend toward center */
       gap:24px;
       align-items:start;
       margin:48px 0;
@@ -148,6 +149,7 @@
       border-radius:50%;
       background:var(--pink);
       box-shadow: 0 8px 14px rgba(240,183,208,0.12);
+      z-index:1;
     }
 
     /* card (image) */
@@ -161,18 +163,49 @@
       box-shadow: 0 16px 30px rgba(0,0,0,0.06);
       background:#fff;
       transition: transform .18s ease, box-shadow .18s ease;
+      position:relative; /* needed so pseudo connector sits relative to image */
+      z-index: 3; /* sit above the horizontal bar */
+      overflow: visible;
     }
 
     .card.small{ display:none; } /* not used in this layout */
 
-    /* when the card needs to visually reach the center branch, expand it slightly toward the center */
+    /* pull the image toward the center and slightly overlap the bar.
+       Also add a small image-side pseudo-connector that visually 'bridges' the bar to the image.
+       Adjust the pull amount if you want tighter/looser overlap. */
     .timeline-row.align-right .right-col .card{
-      margin-left: -28px; /* pull card toward center line */
-      width: calc(100% + 28px);
+      margin-left: -64px; /* pull the image left toward center line */
+      width: calc(100% + 64px);
     }
+    .timeline-row.align-right .right-col .card::after{
+      /* short rounded bridge on the left edge of the image that visually attaches to the bar */
+      content: '';
+      position: absolute;
+      left: -72px; /* slightly beyond the pulled margin to overlap the bar */
+      top: 34px; /* align vertically with the bar (same top as .bar) */
+      width: 72px;
+      height: 8px; /* slightly thicker than the bar so it reads connected */
+      background: var(--pink);
+      border-radius: 6px;
+      box-shadow: 0 8px 14px rgba(240,183,208,0.12);
+      z-index: 2; /* sit between bar (z=1) and card (z=3) so it looks like part of the image */
+    }
+
     .timeline-row.align-left .left-col .card{
-      margin-right: -28px; /* pull card toward center line */
-      width: calc(100% + 28px);
+      margin-right: -64px; /* pull the image right toward center line */
+      width: calc(100% + 64px);
+    }
+    .timeline-row.align-left .left-col .card::after{
+      content: '';
+      position: absolute;
+      right: -72px;
+      top: 34px;
+      width: 72px;
+      height: 8px;
+      background: var(--pink);
+      border-radius: 6px;
+      box-shadow: 0 8px 14px rgba(240,183,208,0.12);
+      z-index: 2;
     }
 
     /* text block under image, centered in its column */
@@ -204,9 +237,6 @@
     .timeline-row.align-right .left-col{
       grid-column:1;
     }
-    .timeline-row.align-right .right-col .card{
-      /* margin-left handled above to pull toward center */
-    }
 
     /* Place content on the left column */
     .timeline-row.align-left .left-col{
@@ -215,9 +245,6 @@
     }
     .timeline-row.align-left .right-col{
       grid-column:3;
-    }
-    .timeline-row.align-left .left-col .card{
-      /* margin-right handled above to pull toward center */
     }
 
     /* Make the content appear connected with the vertical line with a thin horizontal bar */
@@ -230,7 +257,7 @@
       top: 36px;
       left: calc(52% - 80px); /* center the short bar on the main vertical line (half of 160) */
       transform-origin:left center;
-      z-index:1;
+      z-index:1; /* ensure bar sits under the image and its pseudo-connector */
     }
     .timeline-row.align-right .bar{ transform: translateX(0); left: calc(52% - 2px); right:auto; }
     .timeline-row.align-left .bar{ transform: translateX(-100%); left: auto; right: calc(48% - 2px); }
@@ -246,6 +273,7 @@
       transform:translateY(-50%);
       background:var(--pink);
       border-radius:3px;
+      z-index:1;
     }
     .timeline-row.align-left .bar::after{ right:auto; left:-6px; }
 
@@ -258,9 +286,17 @@
       .card{ height:300px; } /* slightly smaller on narrower screens */
       .timeline-row.align-right .right-col .card,
       .timeline-row.align-left .left-col .card{
-        margin-left: -20px;
-        margin-right: -20px;
-        width: calc(100% + 20px);
+        margin-left: -44px;
+        margin-right: -44px;
+        width: calc(100% + 44px);
+      }
+      .timeline-row.align-right .right-col .card::after,
+      .timeline-row.align-left .left-col .card::after {
+        width: 48px;
+        left: -52px;
+        right: -52px;
+        height: 8px;
+        top: 32px;
       }
       .timeline-row .bar{ width:140px; left: calc(52% - 70px); }
     }
@@ -293,6 +329,10 @@
         margin-right:0;
         width:100%;
       }
+      .timeline-row.align-right .right-col .card::after,
+      .timeline-row.align-left .left-col .card::after {
+        display:none;
+      }
     }
 
     @media (max-width:600px){
@@ -309,20 +349,11 @@
 <body>
 
   <nav>
-    <a href="index.html" class="home-btn active">HOME</a>
+    <a class="home-btn" href="index.html">HOME</a>
     <div class="nav-links">
-      <div class="dropdown">
-        <a href="#" class="dropdown-toggle">About</a>
-        <div class="dropdown-menu">
-          <a href="socialmedia.html">Social Media Team</a>
-          <a href="about.html">Executive Board</a>
-          <a href="partnerships.html">Partnerships</a>
-        </div>
-      </div>
-      <a href="events.html">Events</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="getinvolved.html">Get Involved</a>
+      <a class="home-btn active" href="events.html">Events</a>
+      <a class="home-btn" href="newsletter.html">Newsletter</a>
+      <a class="home-btn" href="index.html#contact">Contact</a>
     </div>
   </nav>
 
