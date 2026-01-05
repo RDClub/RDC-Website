@@ -1,191 +1,239 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rare Disease Club – Events</title>
-  <link rel="icon" href="rdc.png" type="image/png" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RDC – Events</title>
+<link rel="icon" href="rdc.png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --pink:#f0b7d0;
-      --bg:#fdeef5;
-      --text:#111;
-    }
+<style>
+:root{
+  --pink:#f0b7d0;
+  --bg:#fdeef5;
+  --text:#111;
+}
 
-    *{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box;margin:0;padding:0}
 
-    body{
-      font-family:Georgia, serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
-    }
+body{
+  font-family:Georgia, serif;
+  background:var(--bg);
+  color:var(--text);
+}
 
-    /* NAV */
-    nav{
-      background:var(--bg);
-      border-top:3px solid #000;
-      border-bottom:3px solid #000;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      min-height:72px;
-      gap:16px;
-    }
+/* ================= BANNER ================= */
+.full-width-banner img{
+  width:100%;
+  display:block;
+}
 
-    nav a{
-      text-decoration:none;
-      color:#111;
-      font-weight:700;
-      padding:10px 18px;
-    }
+/* ================= NAV ================= */
+nav{
+  background:var(--bg);
+  border-top:3px solid #000;
+  border-bottom:3px solid #000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:72px;
+}
 
-    nav a.active{
-      background:#fff;
-      border:3px solid #000;
-      border-radius:18px;
-    }
+.nav-links{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
 
-    /* HERO */
-    .hero img{
-      width:100%;
-      height:420px;
-      object-fit:cover;
-      display:block;
-    }
+nav a{
+  text-decoration:none;
+  color:#111;
+  font-weight:700;
+}
 
-    .hero h1{
-      position:absolute;
-      inset:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-family:'Playfair Display', serif;
-      font-size:4rem;
-      color:#111;
-    }
+.home-btn.active{
+  background:#fff;
+  border:3px solid #000;
+  border-radius:18px;
+  padding:8px 18px;
+}
 
-    .hero{
-      position:relative;
-    }
+/* dropdown */
+.dropdown{position:relative}
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#fff;
+  border:1px solid #ccc;
+}
+.dropdown:hover .dropdown-menu{display:block}
+.dropdown-menu a{
+  display:block;
+  padding:8px 12px;
+  white-space:nowrap;
+}
 
-    /* TIMELINE */
-    main{
-      background:#fff;
-      max-width:1200px;
-      margin:0 auto;
-      padding:60px 40px;
-      position:relative;
-    }
+/* ================= HERO ================= */
+.hero{
+  position:relative;
+}
+.hero img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+}
+.hero h1{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Playfair Display', serif;
+  font-size:4rem;
+}
 
-    .timeline{
-      position:relative;
-      padding-left:200px;
-    }
+/* ================= TIMELINE ================= */
+main{
+  background:#fff;
+  max-width:1200px;
+  margin:0 auto;
+  padding:60px 40px;
+}
 
-    .timeline::before{
-      content:'';
-      position:absolute;
-      left:120px;
-      top:0;
-      bottom:0;
-      width:4px;
-      background:var(--pink);
-      border-radius:4px;
-    }
+.timeline{
+  position:relative;
+  padding-left:220px;
+}
 
-    .year{
-      font-family:'Playfair Display', serif;
-      font-size:90px;
-      color:var(--pink);
-      position:absolute;
-      left:20px;
-      opacity:.85;
-    }
+/* vertical line */
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:140px;
+  top:0;
+  bottom:0;
+  width:4px;
+  background:var(--pink);
+}
 
-    .year.y2025{ top:0; }
-    .year.y2024{ top:950px; }
+/* year labels */
+.year{
+  position:absolute;
+  left:20px;
+  font-family:'Playfair Display', serif;
+  font-size:90px;
+  color:var(--pink);
+  opacity:.85;
+}
 
-    .event{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:60px;
-      margin-bottom:80px;
-    }
+.y2025{top:0}
+.y2024{top:900px}
 
-    .event.right{
-      padding-left:120px;
-    }
+/* event rows */
+.event{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  margin-bottom:90px;
+  position:relative;
+}
 
-    .event.left{
-      padding-left:40px;
-    }
+/* horizontal connector */
+.event::before{
+  content:'';
+  position:absolute;
+  left:-80px;
+  top:30px;
+  width:80px;
+  height:4px;
+  background:var(--pink);
+}
 
-    .card{
-      max-width:360px;
-    }
+/* alignment */
+.event.right{padding-left:120px}
+.event.left{padding-left:40px}
+.event.left::before{left:140px}
 
-    .card img{
-      width:100%;
-      border-radius:6px;
-      box-shadow:0 12px 22px rgba(0,0,0,.1);
-    }
+/* cards */
+.card{
+  max-width:360px;
+}
+.card img{
+  width:100%;
+  border-radius:6px;
+  box-shadow:0 12px 22px rgba(0,0,0,.1);
+}
+.card h3{
+  font-family:'Playfair Display', serif;
+  font-size:1rem;
+  margin-top:12px;
+}
+.card p{
+  font-size:.9rem;
+  margin-top:6px;
+}
 
-    .card h3{
-      font-family:'Playfair Display', serif;
-      font-size:1rem;
-      margin-top:12px;
-    }
+/* ================= FOOTER ================= */
+footer{
+  text-align:center;
+  padding:24px;
+  background:var(--bg);
+  border-top:3px solid rgba(240,183,208,.6);
+}
 
-    .card p{
-      font-size:.9rem;
-      margin-top:6px;
-    }
-
-    /* FOOTER */
-    footer{
-      text-align:center;
-      padding:24px;
-      background:var(--bg);
-      border-top:3px solid rgba(240,183,208,.6);
-    }
-
-    @media(max-width:900px){
-      .timeline{
-        padding-left:80px;
-      }
-
-      .timeline::before{
-        left:40px;
-      }
-
-      .year{
-        position:relative;
-        left:0;
-        font-size:48px;
-        margin-bottom:20px;
-      }
-
-      .event{
-        grid-template-columns:1fr;
-        padding-left:0 !important;
-      }
-    }
-  </style>
+/* ================= MOBILE ================= */
+@media(max-width:900px){
+  .timeline{
+    padding-left:80px;
+  }
+  .timeline::before{
+    left:40px;
+  }
+  .year{
+    position:relative;
+    font-size:48px;
+    left:0;
+    margin-bottom:20px;
+  }
+  .event{
+    grid-template-columns:1fr;
+    padding-left:0 !important;
+  }
+  .event::before{display:none}
+}
+</style>
 </head>
 
 <body>
 
+<!-- BANNER -->
+<div class="full-width-banner">
+  <img src="stupidassphoto.png" alt="Educate Donate Motto">
+</div>
+
+<!-- NAV -->
 <nav>
-  <a href="index.html">HOME</a>
-  <a href="events.html" class="active">EVENTS</a>
-  <a href="newsletter.html">NEWSLETTER</a>
-  <a href="index.html#contact">CONTACT</a>
+  <a href="index.html" class="home-btn active">HOME</a>
+  <div class="nav-links">
+    <div class="dropdown">
+      <a href="#" class="dropdown-toggle">About</a>
+      <div class="dropdown-menu">
+        <a href="socialmedia.html">Social Media Team</a>
+        <a href="about.html">Executive Board</a>
+        <a href="partnerships.html">Partnerships</a>
+      </div>
+    </div>
+    <a href="events.html">Events</a>
+    <a href="newsletter.html">Newsletter</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="getinvolved.html">Get Involved</a>
+  </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <img src="ps.png" alt="Events">
   <h1>Events</h1>
@@ -201,7 +249,7 @@
       <div class="card">
         <img src="ffphoto.jpeg">
         <h3>Falcon Fest 2025</h3>
-        <p>For spooky season, we joined Falcon Fest with our jewelry booth — every purchase supported rare disease research and awareness.</p>
+        <p>Jewelry booth fundraiser supporting rare disease research.</p>
       </div>
     </div>
 
@@ -209,7 +257,7 @@
       <div class="card">
         <img src="PARNIKAMONKEY.jpeg">
         <h3>San Jose Makers Market</h3>
-        <p>We sold handmade jewelry while connecting with new supporters and sharing our mission with the community.</p>
+        <p>Handmade jewelry sales and community outreach.</p>
       </div>
       <div></div>
     </div>
@@ -218,18 +266,9 @@
       <div></div>
       <div class="card">
         <img src="IMG_5304.jpeg">
-        <h3>The SoSo Market – Berkeley</h3>
-        <p>RDC members showcased handcrafted jewelry, raising funds and awareness for our nonprofit mission.</p>
+        <h3>SoSo Market – Berkeley</h3>
+        <p>Raising funds and awareness through handcrafted jewelry.</p>
       </div>
-    </div>
-
-    <div class="event left">
-      <div class="card">
-        <img src="539601-flyer.jpeg">
-        <h3>Chipotle Fundraiser</h3>
-        <p>Funds raised supported toys and care packages for children at Oakland Children’s Hospital.</p>
-      </div>
-      <div></div>
     </div>
 
     <div class="year y2024">2024</div>
@@ -238,18 +277,9 @@
       <div class="card">
         <img src="DA2D33E9-DC91-493F-9688-0AFB6D8669ECIMG_3847.jpeg">
         <h3>Bracelet Workshop</h3>
-        <p>Members crafted handmade jewelry in preparation for Falcon Fest.</p>
+        <p>Preparing jewelry for Falcon Fest.</p>
       </div>
       <div></div>
-    </div>
-
-    <div class="event right">
-      <div></div>
-      <div class="card">
-        <img src="BB4FBE63-5171-4CA5-8D94-2037D9E180F3IMG_4198.jpeg">
-        <h3>Holiday Care Package Drive</h3>
-        <p>We assembled care packages and blankets for hospice and cancer support organizations.</p>
-      </div>
     </div>
 
   </div>
@@ -260,7 +290,7 @@
 </footer>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
