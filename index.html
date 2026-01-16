@@ -1,297 +1,555 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RDC – Events</title>
-<link rel="icon" href="rdc.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="Rare Disease Club" content="In the Rare Disease Club, our primary objective is to spread awareness about rare diseases, which are often ignored in society. Join us to make a difference and support our community." />
+  <link rel="canonical" href="https://www.rarediseaseclubs.com" />
+  <link rel="icon" href="rdc.png" type="image/png" />
+  <title>Rare Disease Club</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    /* --- Base (match About page zoom) --- */
+    /* No custom html font-size => browser default ~16px (same as About) */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fce8f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
 
-<style>
-:root{
-  --pink:#f0b7d0;
-  --bg:#fdeef5;
-  --text:#111;
-}
+    /* Full width banners (same) */
+    .full-width-banner {
+      width: 100vw;
+      background-color: #fce8f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px 0;
+    }
+    .full-width-banner img { width: 100%; max-width: 100%; height: auto; display: block; }
+    .motto-img, .rdc-title-banner { max-width: 100%; margin: 0 auto 10px auto; }
 
-*{box-sizing:border-box;margin:0;padding:0}
+    /* --- NAVIGATION (exactly like About) --- */
+    nav {
+      background-color: #fce8f5;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      min-height: 72px;
+      width: 100%;
+      padding: 0;
+    }
+    .home-btn, .nav-links a, .dropdown-toggle {
+      text-decoration: none;
+      color: black;
+      font-size: 1.35rem;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      padding: 0 32px;
+      border: none;
+      background: none;
+      border-radius: 0;
+      margin: 0;
+      height: 72px;
+      line-height: 72px;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+    .home-btn.active {
+      background: white;
+      color: black;
+      border: 3px solid black;
+      border-radius: 24px;
+      padding: 0 32px;
+      height: 56px;
+      line-height: 56px;
+      margin-left: 12px;
+      font-size: 1.2rem;
+    }
+    .nav-links { display: flex; gap: 0; align-items: center; height: 72px; }
+    .dropdown { position: relative; display: flex; align-items: center; height: 72px; }
+    .dropdown-toggle:after { content: ' ▼'; font-size: 0.8em; color: #19171a; margin-left: 2px; }
+    .nav-links a[href="getinvolved.html"] { font-size: 1.35rem; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+      background-color: #111;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+      z-index: 99;
+      flex-direction: column;
+      padding: 0;
+    }
+    .dropdown-menu a {
+      color: #fff;
+      padding: 16px 26px;
+      font-size: 1.15rem;
+      border-bottom: 1px solid #222;
+      background: none;
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      height: auto;
+      line-height: 1.6;
+      display: block;
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover,
+    .dropdown-menu a:focus { background: #B96794; color: #fff; }
+    .dropdown:hover .dropdown-menu,
+    .dropdown.active .dropdown-menu { display: flex; }
+    .nav-links a:not(.active):hover,
+    .nav-links .dropdown-toggle:not(.active):hover { color: #B96794; }
 
-body{
-  font-family:Georgia, serif;
-  background:var(--bg);
-  color:var(--text);
-}
+    /* Responsive nav — same as About */
+    @media (max-width: 900px) {
+      nav { flex-direction: column; min-height: auto; }
+      .nav-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+      }
+      .home-btn, .nav-links a, .dropdown-toggle {
+        font-size: 1.25rem;
+        height: 56px;
+        line-height: 56px;
+        padding: 0 16px;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .nav-links a[href="getinvolved.html"] { font-size: 1.25rem; }
+      .home-btn.active { margin-left: 0; border-radius: 18px; }
+      .dropdown { height: 56px; }
+      .dropdown-menu {
+        position: static;
+        min-width: 0;
+        box-shadow: none;
+        border-radius: 0;
+        width: 150vw;
+      }
+      .hero { min-height: 800px; padding: 42px 0; }
+      .what-we-do-image { width: 94%; }
+    }
+    @media (max-width: 600px) {
+      html { font-size: 17px; } /* About uses this bump on small screens */
+      .home-btn, .nav-links a, .dropdown-toggle {
+        font-size: 1rem;
+        padding: 0 10px;
+        height: 48px;
+        line-height: 48px;
+      }
+      .nav-links a[href="getinvolved.html"] { font-size: 1rem; }
+      .home-btn.active {
+        border-radius: 12px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 1rem;
+      }
+      .hero { min-height: 420px; padding: 36px 0; }
+      .hero-text h1 { font-size: clamp(2.9rem, 11vw, 4.2rem); }
+      .hero-text p { font-size: 0.95rem; }
+      .what-we-do-image { width: 100%; max-width: 480px; }
+    }
 
-/* ================= BANNER ================= */
-.full-width-banner img{
-  width:100%;
-  display:block;
-}
+    /* --- HERO (scaled to sit nicely under the About-sized nav) --- */
+    .hero {
+      width: 100vw;
+      min-height: 520px;
+      background-image: url('PSP.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 48px 0;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100vw; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+    .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; width: 100%; text-align: center; padding: 16px; }
+    .hero-text { color: #fff; margin-bottom: 36px; max-width: 960px; }
+    .hero-text h1 {
+      font-size: clamp(2.6rem, 6vw, 3.8rem);
+      margin-bottom: 12px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      line-height: 1.05;
+    }
+    .hero-text p { font-size: 0.85rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+    .hero-btn-container { width: 100%; display: flex; justify-content: center; }
+    .hero-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 3px solid #fff;
+      background: transparent;
+      transition: all .3s ease;
+      border-radius: 20px;
+      min-width: 190px;
+    }
+    .hero-btn:hover { background: rgba(255,255,255,.2); }
 
-/* ================= NAV ================= */
-nav{
-  background:var(--bg);
-  border-top:3px solid #000;
-  border-bottom:3px solid #000;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:72px;
-}
+    /* --- NEW: Awareness banner section (placed right under the hero) --- */
+    .awareness-section {
+      width: 100vw;
+      background: #fdeaf2;
+      padding: 28px 6vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .awareness-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: #1a1a1a;
+      margin-bottom: 18px;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+    .awareness-card {
+      width: min(1100px, 94%);
+      background: #fff;
+      border-radius: 18px;
+      padding: 14px;
+      border: 6px solid #f8cde1;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+      display: block;
+      overflow: hidden;
+    }
+    .awareness-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      max-height: 480px;
+    }
+    .awareness-caption {
+      text-align: center;
+      margin-top: 12px;
+      color: #000;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
 
-.nav-links{
-  display:flex;
-  gap:18px;
-  align-items:center;
-}
+    /* --- What We Do --- */
+    .what-we-do-section { background: #f9dff4; padding: 40px 5vw; position: relative; }
+    .what-we-do-container { max-width: 825px; margin: 0 auto; position: relative; display: flex; flex-direction: column; align-items: center; }
+    .what-we-do-image {
+      width: 88%;
+      max-width: 800px;
+      border-radius: 24px;
+      border: 3px solid #000;
+      display: block;
+    }
+    .what-we-do-content {
+      background: #000; color: #fff; padding: 18px;
+      width: 88%; max-width: 520px; margin: -50px auto 0 auto;
+      border-radius: 24px; z-index: 2; position: relative;
+    }
+    .what-we-do-content h2 { font-size: 1.05rem; color: #f9dff4; margin-bottom: 10px; text-align: center; letter-spacing: 1px; }
+    .what-we-do-content p { font-size: 0.75rem; line-height: 1.5; text-align: center; }
 
-nav a{
-  text-decoration:none;
-  color:#111;
-  font-weight:700;
-}
+    /* --- Impact Cards --- */
+    .nord-section { padding: 28px 6vw; background: #fff; margin: 24px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.07); opacity: 0; transform: translateY(50px); transition: all .8s ease; }
+    .nord-section.show { opacity: 1; transform: translateY(0); }
+    .nord-section h2 { color: #000; text-align: center; margin-bottom: 18px; font-size: 1.4rem; }
+    .services-grid { display: flex; flex-wrap: wrap; gap: 26px; max-width: 1200px; margin: 0 auto; justify-content: center; }
+    .service-card { background: #f9f9f9; border-radius: 12px; padding: 22px; text-align: center; transition: transform .3s ease; width: 94vw; max-width: 340px; }
+    .service-card:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,.1); }
+    .service-card h3 { color: #000; margin-bottom: 10px; font-size: 1.05rem; }
+    .service-card p { margin-bottom: 14px; color: #555; font-size: 0.88rem; line-height: 1.45; }
+    .service-btn { display: inline-block; padding: 10px 20px; background: #000; color: #fff; text-decoration: none; border-radius: 8px; font-size: 0.88rem; min-width: 130px; }
+    .service-btn:hover { background: #784461; }
 
-.home-btn.active{
-  background:#fff;
-  border:3px solid #000;
-  border-radius:18px;
-  padding:8px 18px;
-}
+    /* --- Events (DESIGNED to match your screenshots: timeline + cards) --- */
+    .events-section { background: #fce8f5; padding: 46px 6vw; }
+    .events-section h2 { text-align: center; font-size: 1.4rem; color: #000; margin-bottom: 28px; }
 
-/* dropdown */
-.dropdown{position:relative}
-.dropdown-menu{
-  display:none;
-  position:absolute;
-  top:100%;
-  left:0;
-  background:#fff;
-  border:1px solid #ccc;
-}
-.dropdown:hover .dropdown-menu{display:block}
-.dropdown-menu a{
-  display:block;
-  padding:8px 12px;
-  white-space:nowrap;
-}
+    /* Timeline container */
+    .timeline {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      padding: 24px 12px;
+    }
 
-/* ================= HERO ================= */
-.hero{
-  position:relative;
-}
-.hero img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-}
-.hero h1{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:'Playfair Display', serif;
-  font-size:4rem;
-}
+    /* vertical center line */
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 100%;
+      background: #f0b7d0;
+      border-radius: 6px;
+    }
 
-/* ================= TIMELINE ================= */
-main{
-  background:#fff;
-  max-width:1200px;
-  margin:0 auto;
-  padding:60px 40px;
-}
+    .timeline-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      color: #f0b7d0;
+      margin: 40px 0 10px 0;
+    }
 
-.timeline{
-  position:relative;
-  padding-left:220px;
-}
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 1fr 40px 1fr;
+      gap: 12px;
+      align-items: start;
+      margin: 20px 0 40px;
+    }
 
-/* vertical line */
-.timeline::before{
-  content:'';
-  position:absolute;
-  left:140px;
-  top:0;
-  bottom:0;
-  width:4px;
-  background:var(--pink);
-}
+    .timeline-item {
+      background: #fff;
+      border: 4px solid #e7afca;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+      max-width: 480px;
+    }
+    .timeline-item h3 { font-family: 'Playfair Display', serif; margin-bottom: 8px; }
+    .timeline-item p { color: #555; font-weight: 600; font-size: 15px; }
 
-/* year labels */
-.year{
-  position:absolute;
-  left:20px;
-  font-family:'Playfair Display', serif;
-  font-size:90px;
-  color:var(--pink);
-  opacity:.85;
-}
+    .timeline-media {
+      display: block;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 6px solid #fff;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      margin-bottom: 12px;
+    }
+    .timeline-media img { width: 100%; height: auto; display: block; }
 
-.y2025{top:0}
-.y2024{top:900px}
+    /* the center circle connector */
+    .timeline-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: white;
+      border: 4px solid #f0b7d0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+    }
 
-/* event rows */
-.event{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  margin-bottom:90px;
-  position:relative;
-}
+    /* position left / right content */
+    .left { grid-column: 1; text-align: right; }
+    .right { grid-column: 3; text-align: left; }
 
-/* horizontal connector */
-.event::before{
-  content:'';
-  position:absolute;
-  left:-80px;
-  top:30px;
-  width:80px;
-  height:4px;
-  background:var(--pink);
-}
+    /* small captions under images */
+    .caption { font-size: 0.95rem; color: #000; margin-top: 6px; font-weight: 700; }
 
-/* alignment */
-.event.right{padding-left:120px}
-.event.left{padding-left:40px}
-.event.left::before{left:140px}
+    @media (max-width: 960px) {
+      .timeline::before { left: 24px; transform: none; }
+      .timeline-row { grid-template-columns: 56px 1fr; }
+      .left { grid-column: 2; text-align: left; }
+      .right { grid-column: 2; text-align: left; }
+      .timeline-dot { grid-column: 1; margin-left: 8px; }
+      .awareness-card { width: calc(100% - 32px); }
+    }
 
-/* cards */
-.card{
-  max-width:360px;
-}
-.card img{
-  width:100%;
-  border-radius:6px;
-  box-shadow:0 12px 22px rgba(0,0,0,.1);
-}
-.card h3{
-  font-family:'Playfair Display', serif;
-  font-size:1rem;
-  margin-top:12px;
-}
-.card p{
-  font-size:.9rem;
-  margin-top:6px;
-}
+    /* --- Contact --- */
+    .contact-section { background: #1a1a1a; padding: 70px 6vw; color: #FCE8F5; }
+    .contact-container { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; }
+    .contact-info, .contact-form { flex: 1; min-width: 290px; max-width: 480px; padding: 22px; }
+    .contact-info h2, .contact-form h2 { font-size: 1.9rem; margin-bottom: 18px; }
+    .contact-detail { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 1.05rem; }
+    .contact-form { background: #2a2a2a; border-radius: 16px; padding: 26px; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+    .contact-form form { display: flex; flex-direction: column; gap: 14px; }
+    .contact-form input, .contact-form textarea {
+      width: 100%; padding: 14px 16px; background: #3d3c3c; border: 2px solid transparent; border-radius: 8px; color: #FCE8F5; font-size: 1.05rem; transition: border-color .3s;
+    }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: #FCE8F5; outline: none; }
+    .contact-form button[type="submit"] {
+      padding: 14px 24px; background: linear-gradient(135deg, #FCE8F5, #B96794); color: #1a1a1a; border: none; border-radius: 22px; font-size: 1.05rem; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: transform .2s, box-shadow .2s;
+    }
+    .contact-form button[type="submit"]:hover { transform: translateY(-1px); box-shadow: 0 5px 15px rgba(252,232,245,.4); }
 
-/* ================= FOOTER ================= */
-footer{
-  text-align:center;
-  padding:24px;
-  background:var(--bg);
-  border-top:3px solid rgba(240,183,208,.6);
-}
-
-/* ================= MOBILE ================= */
-@media(max-width:900px){
-  .timeline{
-    padding-left:80px;
-  }
-  .timeline::before{
-    left:40px;
-  }
-  .year{
-    position:relative;
-    font-size:48px;
-    left:0;
-    margin-bottom:20px;
-  }
-  .event{
-    grid-template-columns:1fr;
-    padding-left:0 !important;
-  }
-  .event::before{display:none}
-}
-</style>
+    footer { text-align: center; padding: 26px 12px; background: #fce8f5; border-top: 3px solid #e6c2d4; margin-top: 40px;}
+  </style>
 </head>
-
 <body>
-
-<!-- BANNER -->
-<div class="full-width-banner">
-  <img src="stupidassphoto.png" alt="Educate Donate Motto">
-</div>
-
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="home-btn active">HOME</a>
-  <div class="nav-links">
-    <div class="dropdown">
-      <a href="#" class="dropdown-toggle">About</a>
-      <div class="dropdown-menu">
-        <a href="socialmedia.html">Social Media Team</a>
-        <a href="about.html">Executive Board</a>
-        <a href="partnerships.html">Partnerships</a>
-      </div>
-    </div>
-    <a href="events.html">Events</a>
-    <a href="newsletter.html">Newsletter</a>
-    <a href="index.html#contact">Contact</a>
-    <a href="getinvolved.html">Get Involved</a>
+  <!-- Top banners -->
+  <div class="full-width-banner">
+    <!-- Replace these with your assets -->
+    <img src="stupidassphoto.png" alt="Educate Donate Motto" class="motto-img">
   </div>
-</nav>
 
-<!-- HERO -->
-<div class="hero">
-  <img src="ps.png" alt="Events">
-  <h1>Events</h1>
-</div>
+  <!-- NAV (About clone) -->
+  <nav>
+    <a href="index.html" class="home-btn active">HOME</a>
+    <div class="nav-links">
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle">About</a>
+        <div class="dropdown-menu">
+          <a href="socialmedia.html">Social Media Team</a>
+          <a href="about.html">Executive Board</a>
+          <a href="partnerships.html">Partnerships</a>
+        </div>
+      </div>
+      <a href="events.html">Events</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="getinvolved.html">Get Involved</a>
+    </div>
+  </nav>
 
-<main>
-  <div class="timeline">
-
-    <div class="year y2025">2025</div>
-
-    <div class="event right">
-      <div></div>
-      <div class="card">
-        <img src="ffphoto.jpeg">
-        <h3>Falcon Fest 2025</h3>
-        <p>Jewelry booth fundraiser supporting rare disease research.</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Together For Rare</h1>
+        <h1>Lives</h1>
+        <p>Rare doesn't mean alone. Together, we're turning awareness into action and hope into impact.</p>
+      </div>
+      <div class="hero-btn-container">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOEmQyVhYE733Ro9_aRRMpHArk9X46Cjnp3lATUR5TJ0DiYQ/viewform" class="hero-btn">JOIN NOW</a>
       </div>
     </div>
+  </section>
 
-    <div class="event left">
-      <div class="card">
-        <img src="PARNIKAMONKEY.jpeg">
-        <h3>San Jose Makers Market</h3>
-        <p>Handmade jewelry sales and community outreach.</p>
+  <!-- NEW AWARENESS SECTION (added right below the hero as requested) -->
+  <section class="awareness-section" aria-labelledby="awareness-heading">
+    <h2 id="awareness-heading" class="awareness-title">Rare Disease Awareness begins with us</h2>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="what-we-do-section">
+    <div class="what-we-do-container">
+      <img src="photocopy.jpeg" alt="What We Do" class="what-we-do-image">
+      <div class="what-we-do-content">
+        <h2>WHAT WE DO</h2>
+        <p>
+          Rare Disease Collective (RDC) is a student-led initiative working to raise awareness about rare diseases.
+          We aim to educate communities, support early diagnosis, and promote conversations around conditions that
+          often go unnoticed due to limited research and public understanding.
+        </p>
       </div>
-      <div></div>
     </div>
+  </section>
 
-    <div class="event right">
-      <div></div>
-      <div class="card">
-        <img src="IMG_5304.jpeg">
-        <h3>SoSo Market – Berkeley</h3>
-        <p>Raising funds and awareness through handcrafted jewelry.</p>
+  <!-- IMPACT -->
+  <section class="nord-section">
+    <h2>How You Can Make an Impact</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Donating</h3>
+        <p>Donate to CRD and their research facilities of rare disease treatment and support.</p>
+        <a href="https://cureraredisease.raisely.com/parnika-khatri" target="_blank" class="service-btn">Donate</a>
+      </div>
+      <div class="service-card">
+        <h3>Volunteering</h3>
+        <p>Get a chance to make a difference by volunteering.</p>
+        <a href="#" class="service-btn">Search Now</a>
+      </div>
+      <div class="service-card">
+        <h3>Partnerships</h3>
+        <p>Explore our current partnerships!</p>
+        <a href="partner.html" class="service-btn">Learn More</a>
       </div>
     </div>
+  </section>
 
-    <div class="year y2024">2024</div>
+  <!-- EVENTS (timeline layout matching screenshots) --!>
 
-    <div class="event left">
-      <div class="card">
-        <img src="DA2D33E9-DC91-493F-9688-0AFB6D8669ECIMG_3847.jpeg">
-        <h3>Bracelet Workshop</h3>
-        <p>Preparing jewelry for Falcon Fest.</p>
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2>Get In Touch</h2>
+        <div class="contact-detail">
+          <svg style="width: 20px; height: 20px; fill: #FCE8F5;" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+          </svg>
+          <span>Email Us</span>
+        </div>
+        <a href="mailto:rarediseaseclub44@gmail.com" style="color:#FCE8F5; text-decoration:none;">rarediseaseclub44@gmail.com</a>
       </div>
-      <div></div>
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form action="https://formspree.io/f/mblkaeak" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="_replyto" placeholder="Email Address" required />
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">
+            Send Message
+            <svg style="width: 18px; height: 18px; fill: #1a1a1a;" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+            </svg>
+          </button>
+        </form>
+      </div>
     </div>
+  </section>
 
-  </div>
-</main>
+  <footer>
+    <p>© <span id="year"></span> Rare Disease Club — Educate · Donate · Make An Impact</p>
+  </footer>
 
-<footer>
-  © <span id="year"></span> Rare Disease Club — Educate · Donate · Make An Impact
-</footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    // Enable About dropdown for mobile (same behavior)
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            const dropdown = this.parentElement;
+            dropdown.classList.toggle('active');
+          }
+        });
+      });
+      document.addEventListener('click', function(e) {
+        document.querySelectorAll('.dropdown.active').forEach(function(drop) {
+          if (!drop.contains(e.target)) drop.classList.remove('active');
+        });
+      });
 
+      // Impact section animation
+      const impactSection = document.querySelector('.nord-section');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('show');
+        });
+      }, { threshold: 0.2 });
+      if (impactSection) observer.observe(impactSection);
+    });
+  </script>
 </body>
 </html>
