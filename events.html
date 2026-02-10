@@ -1,297 +1,307 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RDC – Events</title>
-<link rel="icon" href="rdc.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="Rare Disease Club" content="Explore the impact of the Rare Disease Club through our timeline of events, fundraisers, and community outreach." />
+  <link rel="icon" href="rdc.png" type="image/png" />
+  <title>Events – Rare Disease Club</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    /* --- Base --- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fce8f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
 
-<style>
-:root{
-  --pink:#f0b7d0;
-  --bg:#fdeef5;
-  --text:#111;
-}
+    /* --- Banner --- */
+    .full-width-banner {
+      width: 100vw;
+      background-color: #fce8f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px 0;
+    }
+    .full-width-banner img { width: 100%; max-width: 100%; height: auto; display: block; }
 
-*{box-sizing:border-box;margin:0;padding:0}
+    /* --- NAVIGATION --- */
+    nav {
+      background-color: #fce8f5;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      min-height: 72px;
+      width: 100%;
+      padding: 0;
+    }
+    .home-btn, .nav-links a, .dropdown-toggle {
+      text-decoration: none;
+      color: black;
+      font-size: 1.35rem;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      padding: 0 32px;
+      height: 72px;
+      line-height: 72px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    .home-btn.active {
+      background: white;
+      border: 3px solid black;
+      border-radius: 24px;
+      padding: 0 32px;
+      height: 56px;
+      line-height: 56px;
+      margin-left: 12px;
+      font-size: 1.2rem;
+    }
+    .nav-links { display: flex; gap: 0; align-items: center; height: 72px; }
+    .dropdown { position: relative; display: flex; align-items: center; height: 72px; }
+    .dropdown-toggle:after { content: ' ▼'; font-size: 0.8em; margin-left: 2px; }
+    
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+      background-color: #111;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+      z-index: 99;
+    }
+    .dropdown-menu a {
+      color: #fff;
+      padding: 16px 26px;
+      font-size: 1.15rem;
+      border-bottom: 1px solid #222;
+      display: block;
+      height: auto;
+      line-height: 1.6;
+    }
+    .dropdown-menu a:hover { background: #B96794; }
+    .dropdown:hover .dropdown-menu { display: block; }
 
-body{
-  font-family:Georgia, serif;
-  background:var(--bg);
-  color:var(--text);
-}
+    /* --- HERO --- */
+    .hero {
+      width: 100vw;
+      min-height: 400px;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('ps.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 5rem);
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
 
-/* ================= BANNER ================= */
-.full-width-banner img{
-  width:100%;
-  display:block;
-}
+    /* --- TIMELINE SECTION --- */
+    .timeline-container {
+      background-color: #fff;
+      padding: 80px 5vw;
+    }
+    .timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    /* Central Line */
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: #f0b7d0;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
 
-/* ================= NAV ================= */
-nav{
-  background:var(--bg);
-  border-top:3px solid #000;
-  border-bottom:3px solid #000;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:72px;
-}
+    .year-header {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .year-header span {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: #f0b7d0;
+      background: #fff;
+      padding: 0 20px;
+      font-weight: bold;
+      opacity: 0.9;
+    }
 
-.nav-links{
-  display:flex;
-  gap:18px;
-  align-items:center;
-}
+    .event-wrapper {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+    /* The circles on the timeline */
+    .event-wrapper::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: -10px;
+      background-color: white;
+      border: 4px solid #f0b7d0;
+      top: 40px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .left { left: 0; }
+    .right { left: 50%; }
+    .right::after { left: -10px; }
 
-nav a{
-  text-decoration:none;
-  color:#111;
-  font-weight:700;
-}
+    .card {
+      padding: 20px;
+      background-color: white;
+      position: relative;
+      border-radius: 12px;
+      border: 4px solid #fce8f5;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      color: #111;
+    }
+    .card p {
+      font-size: 1rem;
+      color: #555;
+    }
 
-.home-btn.active{
-  background:#fff;
-  border:3px solid #000;
-  border-radius:18px;
-  padding:8px 18px;
-}
+    /* --- FOOTER --- */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #fce8f5;
+      border-top: 3px solid #e6c2d4;
+    }
 
-/* dropdown */
-.dropdown{position:relative}
-.dropdown-menu{
-  display:none;
-  position:absolute;
-  top:100%;
-  left:0;
-  background:#fff;
-  border:1px solid #ccc;
-}
-.dropdown:hover .dropdown-menu{display:block}
-.dropdown-menu a{
-  display:block;
-  padding:8px 12px;
-  white-space:nowrap;
-}
-
-/* ================= HERO ================= */
-.hero{
-  position:relative;
-}
-.hero img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-}
-.hero h1{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:'Playfair Display', serif;
-  font-size:4rem;
-}
-
-/* ================= TIMELINE ================= */
-main{
-  background:#fff;
-  max-width:1200px;
-  margin:0 auto;
-  padding:60px 40px;
-}
-
-.timeline{
-  position:relative;
-  padding-left:220px;
-}
-
-/* vertical line */
-.timeline::before{
-  content:'';
-  position:absolute;
-  left:140px;
-  top:0;
-  bottom:0;
-  width:4px;
-  background:var(--pink);
-}
-
-/* year labels */
-.year{
-  position:absolute;
-  left:20px;
-  font-family:'Playfair Display', serif;
-  font-size:90px;
-  color:var(--pink);
-  opacity:.85;
-}
-
-.y2025{top:0}
-.y2024{top:900px}
-
-/* event rows */
-.event{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  margin-bottom:90px;
-  position:relative;
-}
-
-/* horizontal connector */
-.event::before{
-  content:'';
-  position:absolute;
-  left:-80px;
-  top:30px;
-  width:80px;
-  height:4px;
-  background:var(--pink);
-}
-
-/* alignment */
-.event.right{padding-left:120px}
-.event.left{padding-left:40px}
-.event.left::before{left:140px}
-
-/* cards */
-.card{
-  max-width:360px;
-}
-.card img{
-  width:100%;
-  border-radius:6px;
-  box-shadow:0 12px 22px rgba(0,0,0,.1);
-}
-.card h3{
-  font-family:'Playfair Display', serif;
-  font-size:1rem;
-  margin-top:12px;
-}
-.card p{
-  font-size:.9rem;
-  margin-top:6px;
-}
-
-/* ================= FOOTER ================= */
-footer{
-  text-align:center;
-  padding:24px;
-  background:var(--bg);
-  border-top:3px solid rgba(240,183,208,.6);
-}
-
-/* ================= MOBILE ================= */
-@media(max-width:900px){
-  .timeline{
-    padding-left:80px;
-  }
-  .timeline::before{
-    left:40px;
-  }
-  .year{
-    position:relative;
-    font-size:48px;
-    left:0;
-    margin-bottom:20px;
-  }
-  .event{
-    grid-template-columns:1fr;
-    padding-left:0 !important;
-  }
-  .event::before{display:none}
-}
-</style>
+    /* --- MOBILE RESPONSIVENESS --- */
+    @media (max-width: 900px) {
+      .nav-links { display: none; } /* Consider adding a burger menu for mobile later */
+      .timeline::after { left: 31px; }
+      .event-wrapper { width: 100%; padding-left: 70px; padding-right: 25px; }
+      .event-wrapper::after { left: 21px; }
+      .right { left: 0%; }
+      .year-header span { font-size: 3.5rem; }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- BANNER -->
-<div class="full-width-banner">
-  <img src="stupidassphoto.png" alt="Educate Donate Motto">
-</div>
-
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="home-btn active">HOME</a>
-  <div class="nav-links">
-    <div class="dropdown">
-      <a href="#" class="dropdown-toggle">About</a>
-      <div class="dropdown-menu">
-        <a href="socialmedia.html">Social Media Team</a>
-        <a href="about.html">Executive Board</a>
-        <a href="partnerships.html">Partnerships</a>
-      </div>
-    </div>
-    <a href="events.html">Events</a>
-    <a href="newsletter.html">Newsletter</a>
-    <a href="index.html#contact">Contact</a>
-    <a href="getinvolved.html">Get Involved</a>
+  <div class="full-width-banner">
+    <img src="stupidassphoto.png" alt="Educate Donate Motto">
   </div>
-</nav>
 
-<!-- HERO -->
-<div class="hero">
-  <img src="ps.png" alt="Events">
-  <h1>Events</h1>
-</div>
-
-<main>
-  <div class="timeline">
-
-    <div class="year y2025">2025</div>
-
-    <div class="event right">
-      <div></div>
-      <div class="card">
-        <img src="ffphoto.jpeg">
-        <h3>Falcon Fest 2025</h3>
-        <p>Jewelry booth fundraiser supporting rare disease research.</p>
+  <nav>
+    <a href="index.html" class="home-btn active">HOME</a>
+    <div class="nav-links">
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle">About</a>
+        <div class="dropdown-menu">
+          <a href="socialmedia.html">Social Media Team</a>
+          <a href="about.html">Executive Board</a>
+          <a href="partnerships.html">Partnerships</a>
+        </div>
       </div>
+      <a href="events.html">Events</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="getinvolved.html">Get Involved</a>
     </div>
+  </nav>
 
-    <div class="event left">
-      <div class="card">
-        <img src="PARNIKAMONKEY.jpeg">
-        <h3>San Jose Makers Market</h3>
-        <p>Handmade jewelry sales and community outreach.</p>
+  <section class="hero">
+    <h1>Our Events</h1>
+  </section>
+
+  <div class="timeline-container">
+    <div class="timeline">
+      
+      <div class="year-header"><span>2025</span></div>
+
+      <div class="event-wrapper right">
+        <div class="card">
+          <img src="ffphoto.jpeg" alt="Falcon Fest">
+          <h3>Falcon Fest 2025</h3>
+          <p>Jewelry booth fundraiser supporting rare disease research.</p>
+        </div>
       </div>
-      <div></div>
-    </div>
 
-    <div class="event right">
-      <div></div>
-      <div class="card">
-        <img src="IMG_5304.jpeg">
-        <h3>SoSo Market – Berkeley</h3>
-        <p>Raising funds and awareness through handcrafted jewelry.</p>
+      <div class="event-wrapper left">
+        <div class="card">
+          <img src="PARNIKAMONKEY.jpeg" alt="Makers Market">
+          <h3>San Jose Makers Market</h3>
+          <p>Handmade jewelry sales and community outreach.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="year y2024">2024</div>
-
-    <div class="event left">
-      <div class="card">
-        <img src="DA2D33E9-DC91-493F-9688-0AFB6D8669ECIMG_3847.jpeg">
-        <h3>Bracelet Workshop</h3>
-        <p>Preparing jewelry for Falcon Fest.</p>
+      <div class="event-wrapper right">
+        <div class="card">
+          <img src="IMG_5304.jpeg" alt="SoSo Market">
+          <h3>SoSo Market – Berkeley</h3>
+          <p>Raising funds and awareness through handcrafted jewelry.</p>
+        </div>
       </div>
-      <div></div>
-    </div>
 
+      <div class="year-header" style="margin-top: 60px;"><span>2024</span></div>
+
+      <div class="event-wrapper left">
+        <div class="card">
+          <img src="DA2D33E9-DC91-493F-9688-0AFB6D8669ECIMG_3847.jpeg" alt="Workshop">
+          <h3>Bracelet Workshop</h3>
+          <p>Preparing jewelry for Falcon Fest.</p>
+        </div>
+      </div>
+
+    </div>
   </div>
-</main>
 
-<footer>
-  © <span id="year"></span> Rare Disease Club — Educate · Donate · Make An Impact
-</footer>
+  <footer>
+    <p>© <span id="year"></span> Rare Disease Club — Educate · Donate · Make An Impact</p>
+  </footer>
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
