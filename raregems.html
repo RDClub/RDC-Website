@@ -34,6 +34,7 @@
       padding: 15px 0;
     }
     .full-width-banner img { width: 100%; max-width: 100%; height: auto; display: block; }
+    .motto-img, .rdc-title-banner { max-width: 100%; margin: 0 auto 10px auto; }
 
     /* --- NAVIGATION --- */
     nav {
@@ -57,14 +58,20 @@
       text-transform: uppercase;
       transition: all 0.3s ease;
       padding: 0 32px;
+      border: none;
+      background: none;
+      border-radius: 0;
+      margin: 0;
       height: 72px;
       line-height: 72px;
       display: flex;
       align-items: center;
+      box-sizing: border-box;
       cursor: pointer;
     }
     .home-btn.active {
       background: white;
+      color: black;
       border: 3px solid black;
       border-radius: 24px;
       padding: 0 32px;
@@ -74,9 +81,19 @@
       font-size: 1.2rem;
     }
     .nav-links { display: flex; gap: 0; align-items: center; height: 72px; }
-    .nav-links a.active { color: #B96794; }
+    .nav-links a.active {
+      background: white;
+      color: black;
+      border: 3px solid black;
+      border-radius: 24px;
+      padding: 0 24px;
+      height: 56px;
+      line-height: 56px;
+      font-size: 1.2rem;
+      margin: 0 8px;
+    }
     .dropdown { position: relative; display: flex; align-items: center; height: 72px; }
-    .dropdown-toggle:after { content: ' ▼'; font-size: 0.8em; margin-left: 2px; }
+    .dropdown-toggle:after { content: ' ▼'; font-size: 0.8em; color: #19171a; margin-left: 2px; }
 
     .dropdown-menu {
       display: none;
@@ -154,18 +171,49 @@
       letter-spacing: 1px;
       margin-bottom: 34px;
     }
-    .follow-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
+    .follow-carousel {
+      position: relative;
+      overflow: hidden;
       margin-bottom: 38px;
+      --slides-per-view: 4;
+      --carousel-gap: 14px;
     }
-    .follow-grid img {
+    .follow-track {
+      display: flex;
+      gap: var(--carousel-gap);
+      transition: transform 0.45s ease;
+      will-change: transform;
+    }
+    .follow-slide {
+      flex: 0 0 calc((100% - (var(--slides-per-view) - 1) * var(--carousel-gap)) / var(--slides-per-view));
+    }
+    .follow-slide img {
       width: 100%;
       aspect-ratio: 3 / 4;
       object-fit: cover;
       border-radius: 3px;
       display: block;
+    }
+    .follow-controls {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .follow-btn {
+      border: 1px solid #fff;
+      background: transparent;
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .follow-btn:hover {
+      background: #fff;
+      color: #000;
     }
     .follow-links {
       text-align: center;
@@ -189,7 +237,10 @@
       .nav-links { display: none; }
       .passion-top { flex-direction: column; align-items: stretch; gap: 24px; }
       .passion-img { width: 100%; max-width: 100%; }
-      .follow-grid { grid-template-columns: repeat(2, 1fr); }
+      .follow-carousel { --slides-per-view: 2; }
+    }
+    @media (max-width: 600px) {
+      .follow-carousel { --slides-per-view: 1; }
     }
   </style>
 </head>
@@ -236,11 +287,20 @@
     <!-- FOLLOW US -->
     <section class="follow">
       <h2>Follow Us</h2>
-      <div class="follow-grid">
-        <img src="L1070775.jpeg" alt="Rare Gems jewelry booth at a market">
-        <img src="ffphoto.jpeg" alt="Rare Disease Club members at a community event">
-        <img src="PARNIKAMONKEY.jpeg" alt="Rare Gems jewelry stand">
-        <img src="IMG_7308.jpeg" alt="Rare Disease Club fundraiser booth">
+      <div class="follow-carousel" id="follow-carousel">
+        <div class="follow-track" id="follow-track">
+          <div class="follow-slide"><img src="raregems-carousel-01.png" alt="Rare Gems jewelry display"></div>
+          <div class="follow-slide"><img src="raregems-carousel-02.jpeg" alt="Rare Gems booth photo with event guest"></div>
+          <div class="follow-slide"><img src="raregems-carousel-03.png" alt="Rare Gems booth table and jewelry stand"></div>
+          <div class="follow-slide"><img src="raregems-carousel-04.png" alt="Rare Gems beaded jewelry display"></div>
+          <div class="follow-slide"><img src="raregems-carousel-05.png" alt="Rare Gems jewelry booth setup"></div>
+          <div class="follow-slide"><img src="raregems-carousel-06.jpeg" alt="Rare Gems pricing board and bracelet display"></div>
+          <div class="follow-slide"><img src="raregems-carousel-07.jpeg" alt="Rare Gems market booth with visitors"></div>
+        </div>
+        <div class="follow-controls">
+          <button class="follow-btn" id="follow-prev" aria-label="Previous photos">&#8592;</button>
+          <button class="follow-btn" id="follow-next" aria-label="Next photos">&#8594;</button>
+        </div>
       </div>
       <div class="follow-links">
         <span class="lead">Want to see more of what we've done? Follow us on:</span>
@@ -256,6 +316,56 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const followCarousel = document.getElementById("follow-carousel");
+    const followTrack = document.getElementById("follow-track");
+    const followSlides = Array.from(followTrack.children);
+    const followPrev = document.getElementById("follow-prev");
+    const followNext = document.getElementById("follow-next");
+    let followIndex = 0;
+    let followInterval;
+
+    function getSlidesPerView() {
+      if (window.innerWidth <= 600) return 1;
+      if (window.innerWidth <= 900) return 2;
+      return 4;
+    }
+
+    function updateFollowCarousel() {
+      const gap = parseFloat(getComputedStyle(followTrack).gap) || 0;
+      const slideWidth = followSlides[0].getBoundingClientRect().width + gap;
+      const maxIndex = Math.max(0, followSlides.length - getSlidesPerView());
+      followIndex = Math.min(followIndex, maxIndex);
+      followTrack.style.transform = `translateX(-${followIndex * slideWidth}px)`;
+    }
+
+    function moveFollowCarousel(step) {
+      const maxIndex = Math.max(0, followSlides.length - getSlidesPerView());
+      followIndex = followIndex + step;
+      if (followIndex > maxIndex) followIndex = 0;
+      if (followIndex < 0) followIndex = maxIndex;
+      updateFollowCarousel();
+    }
+
+    function startFollowAutoplay() {
+      clearInterval(followInterval);
+      followInterval = setInterval(() => moveFollowCarousel(1), 3500);
+    }
+
+    followPrev.addEventListener("click", () => {
+      moveFollowCarousel(-1);
+      startFollowAutoplay();
+    });
+    followNext.addEventListener("click", () => {
+      moveFollowCarousel(1);
+      startFollowAutoplay();
+    });
+    window.addEventListener("resize", updateFollowCarousel);
+    followCarousel.addEventListener("mouseenter", () => clearInterval(followInterval));
+    followCarousel.addEventListener("mouseleave", startFollowAutoplay);
+
+    updateFollowCarousel();
+    startFollowAutoplay();
   </script>
 
 </body>
