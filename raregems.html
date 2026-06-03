@@ -103,10 +103,78 @@
     .nav-links a:not(.active):hover,
     .dropdown-toggle:not(.active):hover { color: #B96794; }
 
-    /* --- BLANK CONTENT AREA --- */
-    .page-content {
-      flex: 1;
+    .page-content { flex: 1; }
+
+    /* --- OUR PASSION FOR JEWELRY --- */
+    .passion {
+      background: #ffffff;
+      padding: 70px 6vw 60px;
     }
+    .passion-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 48px;
+      margin-bottom: 36px;
+    }
+    .passion-top h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(2.2rem, 5.5vw, 4rem);
+      text-transform: uppercase;
+      color: #111;
+      line-height: 1.1;
+    }
+    .passion-img {
+      width: 280px;
+      max-width: 40%;
+      flex-shrink: 0;
+      border-radius: 6px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    }
+    .passion-text p {
+      font-size: 1.05rem;
+      color: #333;
+      line-height: 1.75;
+      margin-bottom: 16px;
+      max-width: 1000px;
+    }
+
+    /* --- FOLLOW US --- */
+    .follow {
+      background: #000;
+      color: #fff;
+      padding: 60px 6vw 70px;
+    }
+    .follow h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 34px;
+    }
+    .follow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 38px;
+    }
+    .follow-grid img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 3px;
+      display: block;
+    }
+    .follow-links {
+      text-align: center;
+      font-size: 1.15rem;
+      line-height: 1.9;
+    }
+    .follow-links .lead { display: block; margin-bottom: 8px; }
+    .follow-links a { color: #fff; text-decoration: underline; }
+    .follow-links a:hover { color: #f0b7d0; }
 
     /* --- FOOTER --- */
     footer {
@@ -119,10 +187,12 @@
     /* --- MOBILE RESPONSIVENESS --- */
     @media (max-width: 900px) {
       .nav-links { display: none; }
+      .passion-top { flex-direction: column; align-items: stretch; gap: 24px; }
+      .passion-img { width: 100%; max-width: 100%; }
+      .follow-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
-<body>
 <body>
   <!-- Top banners -->
   <div class="full-width-banner">
@@ -149,8 +219,36 @@
     </div>
   </nav>
 
-  <!-- Intentionally blank page -->
-  <div class="page-content"></div>
+  <main class="page-content">
+    <!-- OUR PASSION FOR JEWELRY -->
+    <section class="passion">
+      <div class="passion-top">
+        <h1>Our Passion for Jewelry</h1>
+        <img src="IMG_5304.jpeg" alt="Rare Gems handmade jewelry booth" class="passion-img">
+      </div>
+      <div class="passion-text">
+        <p>Rare Gems Jewelry is the handcrafted jewelry branch of the Rare Disease Club, dedicated to turning creativity into impact. All proceeds from every piece sold are fully donated to rare disease organizations, patient support initiatives, and related research efforts. Our jewelry has also supported Mission 7K, helping provide financial assistance to a family with two children affected by a rare disease, specifically to support their medical expenses.</p>
+        <p>Through Rare Gems Jewelry, we aim to combine art, purpose, and community—proving that even small creations can make a meaningful difference. Each piece is thoughtfully designed and handmade with high-quality materials, ensuring both beauty and durability.</p>
+        <p>We sell our jewelry online on our Rare Gems website and at local markets throughout the Bay Area, bringing our mission directly to the community. Some of the markets we have participated in include flea and community markets such as the Soso Market, the San Jose Makers Market, and the Berkeley Farmers Market.</p>
+      </div>
+    </section>
+
+    <!-- FOLLOW US -->
+    <section class="follow">
+      <h2>Follow Us</h2>
+      <div class="follow-grid">
+        <img src="L1070775.jpeg" alt="Rare Gems jewelry booth at a market">
+        <img src="ffphoto.jpeg" alt="Rare Disease Club members at a community event">
+        <img src="PARNIKAMONKEY.jpeg" alt="Rare Gems jewelry stand">
+        <img src="IMG_7308.jpeg" alt="Rare Disease Club fundraiser booth">
+      </div>
+      <div class="follow-links">
+        <span class="lead">Want to see more of what we've done? Follow us on:</span>
+        Instagram ~ <a href="https://instagram.com/raredisease.club" target="_blank" rel="noopener">@raredisease.club</a> &amp; <a href="https://instagram.com/raregem.designs" target="_blank" rel="noopener">@raregem.designs</a><br>
+        Tiktok ~ <a href="https://tiktok.com/@rdc4617" target="_blank" rel="noopener">@rdc4617</a> &amp; <a href="https://tiktok.com/@raregem.designs" target="_blank" rel="noopener">@raregem.designs</a>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <p>© <span id="year"></span> Rare Disease Club — Educate · Donate · Make An Impact</p>
