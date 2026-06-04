@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chapters - Rare Disease Club</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fce8f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .full-width-banner {
+      width: 100vw;
+      background-color: #fce8f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px 0;
+    }
+    .full-width-banner img { width: 100%; max-width: 100%; height: auto; display: block; }
+
+    /* --- NAVIGATION --- */
+    nav {
+      background-color: #fce8f5;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      min-height: 72px;
+      width: 100%;
+      padding: 0;
+    }
+    .home-btn, .nav-links a, .dropdown-toggle {
+      text-decoration: none;
+      color: black;
+      font-size: 1.35rem;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      padding: 0 32px;
+      border: none;
+      background: none;
+      border-radius: 0;
+      margin: 0;
+      height: 72px;
+      line-height: 72px;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+    .home-btn.active,
+    .nav-links a.active,
+    .dropdown.active-parent .dropdown-toggle {
+      background: white;
+      color: black;
+      border: 3px solid black;
+      border-radius: 24px;
+      padding: 0 32px;
+      height: 56px;
+      line-height: 56px;
+      margin-left: 12px;
+      font-size: 1.2rem;
+    }
+    .nav-links { display: flex; gap: 0; align-items: center; height: 72px; }
+    .dropdown { position: relative; display: flex; align-items: center; height: 72px; }
+    .dropdown-toggle:after { content: ' ▼'; font-size: 0.8em; color: #19171a; margin-left: 2px; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+      background-color: #111;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+      z-index: 99;
+      flex-direction: column;
+      padding: 0;
+    }
+    .dropdown-menu a {
+      color: #fff;
+      padding: 16px 26px;
+      font-size: 1.15rem;
+      border-bottom: 1px solid #222;
+      background: none;
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      height: auto;
+      line-height: 1.6;
+      display: block;
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover, .dropdown-menu a:focus { background: #B96794; color: #fff; }
+    .dropdown:hover .dropdown-menu, .dropdown.active .dropdown-menu { display: flex; }
+    .nav-links a:not(.active):hover, .nav-links .dropdown-toggle:not(.active):hover { color: #B96794; }
+
+    @media (max-width: 900px) {
+      nav { flex-direction: column; min-height: auto; }
+      .nav-links { flex-direction: column; align-items: stretch; gap: 0; width: 100%; }
+      .home-btn, .nav-links a, .dropdown-toggle {
+        font-size: 1.25rem; height: 56px; line-height: 56px; padding: 0 16px; width: 100%; justify-content: flex-start;
+      }
+      .home-btn.active, .nav-links a.active, .dropdown.active-parent .dropdown-toggle { margin-left: 0; border-radius: 18px; }
+      .dropdown { height: 56px; }
+      .dropdown-menu { position: static; min-width: 0; box-shadow: none; border-radius: 0; width: 100vw; }
+    }
+    @media (max-width: 600px) {
+      html { font-size: 17px; }
+      .home-btn, .nav-links a, .dropdown-toggle { font-size: 1rem; padding: 0 10px; height: 48px; line-height: 48px; }
+      .home-btn.active, .nav-links a.active, .dropdown.active-parent .dropdown-toggle { border-radius: 12px; height: 44px; line-height: 44px; font-size: 1rem; }
+    }
+
+    /* --- HERO --- */
+    .chapters-hero {
+      width: 100vw;
+      background: linear-gradient(135deg, #f9dff4 0%, #B96794 60%, #874c6e 100%);
+      padding: 70px 20px;
+      text-align: center;
+      border-top: 3px solid #222;
+    }
+    .chapters-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      color: #fff;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+
+    /* --- CHAPTERS CONTENT --- */
+    .chapters-section {
+      width: 100%;
+      background: #fff;
+      padding: 60px 5vw 80px;
+    }
+    .chapters-subtitle {
+      text-align: center;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      color: #B96794;
+      margin-bottom: 50px;
+      letter-spacing: 1px;
+    }
+
+    /* --- SCHOOL DIVIDER --- */
+    .school-divider {
+      text-align: center;
+      margin: 0 auto 50px;
+      max-width: 800px;
+    }
+    .school-divider h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.2rem;
+      color: #19171a;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+    .school-divider .school-line {
+      width: 120px;
+      height: 3px;
+      background: #f0b7d0;
+      margin: 0 auto 12px;
+      border: none;
+    }
+    .school-email {
+      font-size: 1.05rem;
+      color: #B96794;
+    }
+    .school-email a {
+      color: #B96794;
+      text-decoration: none;
+    }
+    .school-email a:hover { text-decoration: underline; }
+
+    /* --- MEMBER ROW --- */
+    .members-row {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      max-width: 800px;
+      margin: 0 auto 70px;
+      flex-wrap: wrap;
+    }
+
+    /* --- MEMBER CARD --- */
+    .member-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 280px;
+    }
+    .member-circle {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid #f0b7d0;
+      box-shadow: 0 6px 20px rgba(185,103,148,0.18);
+      margin-bottom: 20px;
+      background: #fae3f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .member-circle:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(185,103,148,0.3);
+    }
+    .member-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .member-initials {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 3.2rem;
+      color: #B96794;
+      font-weight: 700;
+      user-select: none;
+    }
+    .member-role {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #19171a;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+    .member-name {
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      color: #555;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .members-row { gap: 40px; }
+      .member-circle { width: 180px; height: 180px; }
+      .member-initials { font-size: 2.6rem; }
+      .school-divider h2 { font-size: 1.6rem; }
+    }
+    @media (max-width: 480px) {
+      .members-row { flex-direction: column; align-items: center; gap: 36px; }
+      .member-circle { width: 160px; height: 160px; }
+    }
+  </style>
+</head>
+<body>
+<!-- Full Width Banner -->
+<div class="full-width-banner">
+  <img src="stupidassphoto.png" alt="Educate Donate Motto" class="motto-img">
+</div>
+
+<!-- Navigation -->
+<nav>
+  <a href="index.html" class="home-btn">HOME</a>
+  <div class="nav-links">
+    <div class="dropdown active-parent">
+      <a href="#" class="dropdown-toggle">About</a>
+      <div class="dropdown-menu">
+        <a href="socialmedia.html">Social Media Team</a>
+        <a href="about.html">Executive Board</a>
+        <a href="chapters.html">Chapters</a>
+        <a href="partnerships.html">Partnerships</a>
+      </div>
+    </div>
+    <a href="events.html">Events</a>
+    <a href="raregems.html">Rare Gems</a>
+    <a href="newsletter.html">Newsletter</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="getinvolved.html">Get Involved</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="chapters-hero">
+  <h1>Our Chapters</h1>
+</section>
+
+<!-- CHAPTERS -->
+<section class="chapters-section">
+  <div class="chapters-subtitle">Chapter Presidents</div>
+
+  <!-- AMADOR VALLEY HIGH SCHOOL -->
+  <div class="school-divider">
+    <h2>Amador Valley High School</h2>
+    <hr class="school-line">
+    <div class="school-email"><a href="mailto:amadorvalleyrarediseaseclub@gmail.com">amadorvalleyrarediseaseclub@gmail.com</a></div>
+  </div>
+
+  <div class="members-row">
+    <div class="member-card">
+      <div class="member-circle">
+        <span class="member-initials">DF</span>
+      </div>
+      <div class="member-role">President</div>
+      <div class="member-name">Dariah Feng</div>
+    </div>
+    <div class="member-card">
+      <div class="member-circle">
+        <span class="member-initials">ZF</span>
+      </div>
+      <div class="member-role">Vice President</div>
+      <div class="member-name">Zainab Firdaus</div>
+    </div>
+  </div>
+
+  <!-- CAL HIGH -->
+  <div class="school-divider">
+    <h2>California High School</h2>
+    <hr class="school-line">
+    <div class="school-email"><a href="mailto:calhighrdc@gmail.com">calhighrdc@gmail.com</a></div>
+  </div>
+
+  <div class="members-row">
+    <div class="member-card">
+      <div class="member-circle">
+        <span class="member-initials">ML</span>
+      </div>
+      <div class="member-role">President</div>
+      <div class="member-name">Maggie Luo</div>
+    </div>
+    <div class="member-card">
+      <div class="member-circle">
+        <span class="member-initials">GH</span>
+      </div>
+      <div class="member-role">Vice President</div>
+      <div class="member-name">Genevieve Huie</div>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        if(window.innerWidth <= 900) {
+          e.preventDefault();
+          this.parentElement.classList.toggle('active');
+        }
+      });
+    });
+    document.addEventListener('click', function(e) {
+      document.querySelectorAll('.dropdown.active').forEach(function(drop) {
+        if (!drop.contains(e.target)) drop.classList.remove('active');
+      });
+    });
+  });
+</script>
+</body>
+</html>
