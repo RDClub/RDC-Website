@@ -155,19 +155,12 @@
       border-radius: 6px;
       box-shadow: 0 8px 22px rgba(0,0,0,0.12);
     }
-    .passion-text {
-      width: 55%;
-      margin-right: auto;
-    }
     .passion-text p {
       font-size: 1.2rem;
       color: #333;
       line-height: 1.75;
       margin-bottom: 16px;
-      max-width: 100%;
-    }
-    .passion-text.full-width {
-      width: 100%;
+      max-width: 1000px;
     }
     .passion-copy h2 {
       font-size: 1.5rem;
@@ -257,7 +250,6 @@
       .passion-top { flex-direction: column; align-items: stretch; gap: 24px; }
       .passion-copy { max-width: 100%; }
       .passion-img { width: 100%; max-width: 100%; }
-      .passion-text { width: 100%; }
       .follow-carousel { --slides-per-view: 2; }
     }
     @media (max-width: 600px) {
@@ -304,10 +296,7 @@
       <div class="passion-text">
         <p>Rare Gems Jewelry is the handcrafted jewelry branch of the Rare Disease Club, dedicated to turning creativity into impact. All proceeds from every piece sold are fully donated to rare [...]
         Through Rare Gems Jewelry, we aim to combine art, purpose, and community—proving that even small creations can make a meaningful difference. Each piece is thoughtfully designed and hand[...]
-        We sell our jewelry online on our Rare Gems website and at local markets throughout the Bay Area, bringing our mission directly to the community. Some of the markets we have participated [...]</p>
-      </div>
-      <div class="passion-text full-width">
-        <p>Additional content here continues at full width after the image section.</p>
+        We sell our jewelry online on our Rare Gems website and at local markets throughout the Bay Area, bringing our mission directly to the community. Some of the markets we have participated [...]
       </div>
     </section>
 
@@ -361,12 +350,16 @@
     function updateFollowCarousel() {
       const gap = parseFloat(getComputedStyle(followTrack).gap) || 0;
       const slideWidth = followSlides[0].getBoundingClientRect().width + gap;
+      const maxIndex = Math.max(0, followSlides.length - getSlidesPerView());
+      followIndex = Math.min(followIndex, maxIndex);
       followTrack.style.transform = `translateX(-${followIndex * slideWidth}px)`;
     }
 
     function moveFollowCarousel(step) {
+      const maxIndex = Math.max(0, followSlides.length - getSlidesPerView());
       followIndex = followIndex + step;
-      // Infinite loop - continue forever without resetting
+      if (followIndex > maxIndex) followIndex = 0;
+      if (followIndex < 0) followIndex = maxIndex;
       updateFollowCarousel();
     }
 
