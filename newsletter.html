@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Rare Disease Club - Spreading Awareness About Rare Diseases</title>
+  <title>Newsletter - Rare Disease Club</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
@@ -202,285 +202,103 @@
       }
     }
 
-    /* --- ABOUT SECTION --- */
-    .about-section-v5 {
-      background: #f9dff4;
+    /* --- NEWSLETTER HERO --- */
+    .newsletter-hero {
+      width: 100vw;
+      background: linear-gradient(135deg, #f9dff4 0%, #B96794 60%, #874c6e 100%);
+      padding: 80px 20px;
+      text-align: center;
       border-top: 3px solid #222;
+    }
+    .newsletter-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      color: #fff;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+
+    /* --- NEWSLETTER GRID --- */
+    .newsletter-section {
       width: 100vw;
-      min-height: 70vh;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: stretch;
-      position: relative; /* allow absolute children if needed */
+      background: #f4f0f2;
+      padding: 60px 5vw 80px;
     }
-    /* left column: keep content centered, but allow an absolute-positioned logo in the corner */
-    .about-left-v5 {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 120px 40px 60px 40px; /* extra top padding so content doesn't overlap the logo */
-      position: relative; /* logo positioned relative to this column */
+    .newsletter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 36px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-    /* logo positioned in the top-left corner of the left column */
-    .about-logo-v5 {
+    .newsletter-card {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 3 / 4;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .newsletter-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.22);
+    }
+    .newsletter-card img.card-cover {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .card-overlay {
       position: absolute;
-      left: 28px;
-      top: 24px;
-      width: 140px;
-      max-width: none;
-      display: block;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent 0%, rgba(0,0,0,0.78) 100%);
+      padding: 60px 24px 28px;
+      color: #fff;
     }
-    .about-title-v5 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2.5rem;
-      letter-spacing: 2px;
-      margin-bottom: 24px;
-      font-weight: 400;
-      color: #19171a;
-    }
-    .about-desc-v5 {
-      background: #fae3f5;
-      border-radius: 12px;
-      padding: 24px 36px;
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.45rem;
-      color: #19171a;
-      line-height: 1.45;
-      width: 100%;
-      max-width: 720px;
-      margin: 12px auto 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    .about-right-v5 {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 60px 50px 60px 40px;
-    }
-    .about-image-v5 {
-      width: 100%;
-      height: 550px;
-      max-width: 480px;
-      border: 4px solid #19171a;
-      background: white;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.10);
-      object-fit: cover;
-    }
-
-    /* responsive adjustments: switch logo to normal flow on narrow screens */
-    @media (max-width: 1100px) {
-      .about-section-v5 {
-        flex-direction: column;
-        align-items: center;
-      }
-      .about-left-v5, .about-right-v5 {
-        padding: 40px 10px;
-      }
-      .about-image-v5 {
-        max-width: 95vw;
-      }
-      /* place logo into the normal flow above the heading on narrow screens */
-      .about-logo-v5 {
-        position: static;
-        width: 120px;
-        margin-bottom: 18px;
-      }
-      .about-desc-v5 {
-        padding: 18px 10px;
-        font-size: 1.1rem;
-        max-width: 90%;
-      }
-    }
-    @media (max-width: 700px) {
-      .about-title-v5 { font-size: 2rem; }
-      .about-desc-v5 { font-size: 1rem; padding: 12px 6px;}
-      .about-logo-v5 { width: 110px; margin-bottom: 14px; }
-      .about-left-v5 { padding-top: 60px; } /* reduce top padding on very small screens */
-    }
-
-    /* --- COFOUNDERS / EXECUTIVE BOARD (unchanged) --- */
-    .cofounders-section {
-      width: 100vw;
-      background: #fff;
-      padding: 60px 0 40px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border-top: 3px solid #ccc;
-    }
-    .cofounders-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-      color: #19171a;
-      text-align: center;
-      width: 100%;
-      border-bottom: 3px solid #B96794;
-      padding-bottom: 8px;
-      max-width: 1100px;
-    }
-    .cofounders-intro {
-      font-size: 1.18rem;
-      text-align: center;
-      color: #222;
-      max-width: 900px;
-      margin-bottom: 38px;
-      font-family: 'Playfair Display', Georgia, serif;
-      line-height: 1.52;
-    }
-    .cofounder-row-v5,
-    .cofounder-row-v5.reverse {
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto 30px auto;
-      gap: 0;
-    }
-    .cofounder-row-v5.reverse {
-      flex-direction: row-reverse;
-    }
-    .cofounder-content-box-v5 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 270px;
-      background: #fff;
-      flex-shrink: 0;
-    }
-    .cofounder-name-v5 {
-      font-weight: bold;
-      margin-bottom: 8px;
-      font-size: 1.2rem;
-      text-align: center;
-      width: 100%;
-    }
-    .cofounder-img-v5 {
-      width: 250px;
-      height: 320px;
-      object-fit: cover;
-      border: 4px solid #19171a;
-      background: white;
-      display: block;
-      margin: 0;
-    }
-    .cofounder-desc-box-v5 {
-      background: #fae3f5;
-      border-radius: 12px;
-      padding: 30px 40px;
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.35rem;
-      color: #19171a;
-      text-align: center;
-      min-height: 320px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1.45;
-      flex: 1;
-      margin: 0;
-    }
-    @media (max-width: 900px) {
-      .cofounder-row-v5,
-      .cofounder-row-v5.reverse {
-        flex-direction: column !important;
-        align-items: center;
-      }
-      .cofounder-content-box-v5,
-      .cofounder-desc-box-v5 {
-        width: 100%;
-      }
-      .cofounder-desc-box-v5 {
-        padding: 18px 10px;
-        min-height: unset;
-      }
-      .cofounder-img-v5 {
-        width: 95vw;
-        max-width: 260px;
-        height: auto;
-      }
-    }
-    .executive-board-section {
-      width: 100vw;
-      background: #f9eaf6;
-      padding: 50px 0 40px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border-top: 3px solid #B96794;
-    }
-    .executive-board-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 24px;
-      letter-spacing: 1px;
-      color: #19171a;
-      text-align: center;
-      width: 100%;
-      max-width: 1100px;
-    }
-    .executive-board-row {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: 90px;
-      max-width: 1100px;
-      width: 100%;
-    }
-    .executive-board-member {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 340px;
-    }
-    .executive-board-name {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2rem;
-      margin-bottom: 16px;
-      text-align: center;
-      color: #19171a;
-    }
-    .executive-board-img {
-      width: 320px;
-      height: 400px;
-      object-fit: cover;
-      border: 4px solid #222;
-      background: #fff;
+    .card-meta {
+      font-size: 0.92rem;
+      opacity: 0.85;
       margin-bottom: 10px;
-      box-shadow: 0 2px 12px rgba(185,103,148,0.13);
+      font-family: Georgia, serif;
     }
-    @media (max-width: 900px) {
-      .executive-board-row {
-        flex-direction: column;
-        gap: 38px;
-        align-items: center;
-      }
-      .executive-board-img {
-        width: 95vw;
-        max-width: 320px;
-      }
+    .card-overlay h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.7rem;
+      margin-bottom: 8px;
+      line-height: 1.25;
     }
-    @media (max-width: 700px) {
-      .executive-board-title { font-size: 1.6rem; }
-      .executive-board-name { font-size: 1.1rem; margin-bottom: 8px;}
-      .executive-board-img { width: 85vw; max-width: 260px; height: auto;}
+    .card-overlay p {
+      font-size: 1rem;
+      opacity: 0.88;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      .newsletter-grid {
+        grid-template-columns: 1fr;
+      }
+      .newsletter-card {
+        aspect-ratio: 3 / 4;
+      }
+      .card-overlay h2 { font-size: 1.35rem; }
+    }
+
+    .newsletter-card a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 <body>
- <!-- Full Width Banner -->
+<!-- Full Width Banner -->
 <div class="full-width-banner">
   <img src="stupidassphoto.png" alt="Educate Donate Motto" class="motto-img">
 </div>
@@ -489,14 +307,14 @@
 <nav>
   <a href="index.html" class="home-btn">HOME</a>
   <div class="nav-links">
-      <div class="dropdown">
-        <a href="#" class="dropdown-toggle">About</a>
-        <div class="dropdown-menu">
-          <a href="/socialmedia">Social Media Team</a>
-          <a href="/about">Executive Board</a>
-          <a href="/partnerships">Partnerships</a>
-        </div>
+    <div class="dropdown">
+      <a href="#" class="dropdown-toggle">About</a>
+      <div class="dropdown-menu">
+        <a href="socialmedia.html">Social Media Team</a>
+        <a href="about.html">Executive Board</a>
+        <a href="partnerships.html">Partnerships</a>
       </div>
+    </div>
     <a href="events.html">Events</a>
     <a href="raregems.html">Rare Gems</a>
     <a href="newsletter.html" class="active">Newsletter</a>
@@ -505,6 +323,29 @@
   </div>
 </nav>
 
+<!-- NEWSLETTER HERO -->
+<section class="newsletter-hero">
+  <h1>Our Newsletters</h1>
+</section>
+
+<!-- NEWSLETTER GRID -->
+<section class="newsletter-section">
+  <div class="newsletter-grid">
+
+    <!-- January Issue -->
+    <div class="newsletter-card">
+      <a href="newsletter-jan.html">
+        <img src="newsletter-jan-p1.png" alt="January Issue - RDC Newsletter" class="card-cover">
+        <div class="card-overlay">
+          <div class="card-meta">RDC Newsletter &middot; January 2026</div>
+          <h2>January Issue</h2>
+          <p>What is Rare Disease Club? &middot; Fanconi Anemia</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</section>
 
 <script>
   // Enable About dropdown for mobile
