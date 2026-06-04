@@ -229,26 +229,27 @@
     }
     .coalition-intro h2 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
       color: #B96794;
       margin-bottom: 16px;
     }
     .coalition-intro p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #555;
     }
     .coalition-item {
       display: flex;
       align-items: center;
       gap: 48px;
-      max-width: 1100px;
+      max-width: 100%;
       margin: 0 auto 70px;
+      padding: 0 2vw;
     }
     .coalition-item.reverse { flex-direction: row-reverse; }
     .coalition-text { flex: 1; }
     .coalition-num {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
+      font-size: 3.5rem;
       font-weight: bold;
       color: #f0b7d0;
       line-height: 1;
@@ -256,19 +257,21 @@
     }
     .coalition-text h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
+      font-size: 2.2rem;
       color: #111;
       margin-bottom: 14px;
     }
     .coalition-text p {
-      font-size: 1.05rem;
+      font-size: 1.15rem;
       color: #444;
       line-height: 1.7;
     }
     .coalition-media { flex: 1; }
     .coalition-media img,
     .coalition-media video {
-      width: 70%;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
       border-radius: 12px;
       border: 4px solid #fff;
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
