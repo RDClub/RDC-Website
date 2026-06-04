@@ -358,20 +358,23 @@
     }
 
     function moveFollowCarousel(step) {
+      /* Before moving, silently snap back to the original region if needed.
+         This prevents the black-flash when clicking faster than the
+         transition duration — we never run past the cloned set. */
+      if (followIndex >= totalOriginal) {
+        followIndex -= totalOriginal;
+        updateFollowCarousel(false);
+        /* Force a layout reflow so the non-animated reset is painted
+           before the animated step starts. */
+        void followTrack.offsetWidth;
+      } else if (followIndex < 0) {
+        followIndex += totalOriginal;
+        updateFollowCarousel(false);
+        void followTrack.offsetWidth;
+      }
+
       followIndex += step;
       updateFollowCarousel(true);
-
-      /* After transition, silently jump if we've entered the cloned region */
-      followTrack.addEventListener('transitionend', function handler() {
-        followTrack.removeEventListener('transitionend', handler);
-        if (followIndex >= totalOriginal) {
-          followIndex -= totalOriginal;
-          updateFollowCarousel(false);
-        } else if (followIndex < 0) {
-          followIndex += totalOriginal;
-          updateFollowCarousel(false);
-        }
-      });
     }
 
     function startFollowAutoplay() {
