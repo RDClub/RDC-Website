@@ -114,7 +114,7 @@
     /* --- HERO --- */
     .hero {
       width: 100vw;
-      min-height: 400px;
+      min-height: 500px;
       background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('ps.png');
       background-size: cover;
       background-position: center;
@@ -203,6 +203,8 @@
     .card:hover { transform: translateY(-5px); }
     .card img {
       width: 100%;
+      height: 350px;
+      object-fit: cover;
       border-radius: 8px;
       margin-bottom: 15px;
     }
@@ -220,59 +222,69 @@
     /* --- RARE CARE COALITION --- */
     .coalition {
       background-color: #fce8f5;
-      padding: 80px 5vw 40px;
+      padding: 100px 5vw 60px;
     }
     .coalition-intro {
-      max-width: 900px;
-      margin: 0 auto 60px;
+      max-width: 1000px;
+      margin: 0 auto 80px;
       text-align: center;
     }
     .coalition-intro h2 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.5rem, 6vw, 4rem);
       color: #B96794;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
     .coalition-intro p {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       color: #555;
     }
     .coalition-item {
       display: flex;
       align-items: center;
-      gap: 48px;
-      max-width: 1100px;
-      margin: 0 auto 70px;
+      gap: 60px;
+      max-width: 1400px;
+      margin: 0 auto 100px;
     }
     .coalition-item.reverse { flex-direction: row-reverse; }
     .coalition-text { flex: 1; }
     .coalition-num {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
+      font-size: 3.5rem;
       font-weight: bold;
       color: #f0b7d0;
       line-height: 1;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
     .coalition-text h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
+      font-size: 2rem;
       color: #111;
-      margin-bottom: 14px;
+      margin-bottom: 18px;
     }
     .coalition-text p {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       color: #444;
-      line-height: 1.7;
+      line-height: 1.8;
     }
     .coalition-media { flex: 1; }
-    .coalition-media img,
-    .coalition-media video {
-      width: 70%;
+    .coalition-media img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
       border-radius: 12px;
       border: 4px solid #fff;
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
       display: block;
+    }
+    .coalition-media video {
+      width: 100%;
+      max-height: 500px;
+      border-radius: 12px;
+      border: 4px solid #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      display: block;
+      object-fit: cover;
     }
 
     /* --- FOOTER --- */
@@ -291,7 +303,10 @@
       .event-wrapper::after { left: 21px; }
       .right { left: 0%; }
       .year-header span { font-size: 3.5rem; }
-      .coalition-item, .coalition-item.reverse { flex-direction: column; gap: 24px; }
+      .coalition-item, .coalition-item.reverse { flex-direction: column; gap: 40px; }
+      .coalition-media img {
+        height: 400px;
+      }
     }
   </style>
 </head>
@@ -336,7 +351,8 @@
       <div class="coalition-text">
         <div class="coalition-num">01</div>
         <h3>Guest Speaking for Local Middle Schools</h3>
-        <p>As part of our commitment to raising awareness about rare diseases, over the past few years Rare Disease Club members have served as guest speakers at local middle schools, including Hart Middle School. Through engaging presentations and discussions, we introduce students to the world of rare diseases, the challenges faced by patients and families, and the importance of scientific research and advocacy.</p>
+        <p>As part of our commitment to raising awareness about rare diseases, over the past few years Rare Disease Club members have served as guest speakers at local middle schools, including H[...]
+        </p>
       </div>
       <div class="coalition-media">
         <img src="rarecare-guestspeaking.png" alt="Rare Disease Club members guest speaking">
@@ -347,7 +363,8 @@
       <div class="coalition-text">
         <div class="coalition-num">02</div>
         <h3>Speech &amp; Debate Summer Camp</h3>
-        <p>Rare Disease Club hosts a Speech &amp; Debate Summer Camp to help students develop public speaking, critical thinking, and communication skills. Through interactive lessons, practice activities, and mentorship, participants build confidence while learning how to effectively advocate for important issues and engage in meaningful discussions.</p>
+        <p>Rare Disease Club hosts a Speech &amp; Debate Summer Camp to help students develop public speaking, critical thinking, and communication skills. Through interactive lessons, practice a[...]
+        </p>
       </div>
       <div class="coalition-media">
         <video src="compressed-video.mp4" controls playsinline preload="metadata"></video>
@@ -358,7 +375,8 @@
       <div class="coalition-text">
         <div class="coalition-num">03</div>
         <h3>Fundraisers</h3>
-        <p>Rare Disease Club partners with local restaurants, including Chipotle, The Habit Burger Grill, and Panda Express, to host fundraising events that support rare disease awareness and advocacy. These partnerships help us engage the community, raise funds for our initiatives, and expand our impact through education and outreach.</p>
+        <p>Rare Disease Club partners with local restaurants, including Chipotle, The Habit Burger Grill, and Panda Express, to host fundraising events that support rare disease awareness and adv[...]
+        </p>
       </div>
       <div class="coalition-media">
         <img src="IMG_7308.jpeg" alt="Rare Disease Club fundraiser booth">
