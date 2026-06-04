@@ -134,6 +134,12 @@
       gap: 48px;
       margin-bottom: 36px;
     }
+    .passion-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 650px;
+    }
     .passion-top h1 {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
@@ -156,12 +162,11 @@
       margin-bottom: 16px;
       max-width: 1000px;
     }
-    .passion-text h2 {
-      font-size: 1.6rem;
+    .passion-copy h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
       color: #333;
-      line-height: 1.75;
-      margin-bottom: 16px;
-      max-width: 1000px;
+      line-height: 1.4;
     }
 
     /* --- FOLLOW US --- */
@@ -243,6 +248,7 @@
     @media (max-width: 900px) {
       .nav-links { display: none; }
       .passion-top { flex-direction: column; align-items: stretch; gap: 24px; }
+      .passion-copy { max-width: 100%; }
       .passion-img { width: 100%; max-width: 100%; }
       .follow-carousel { --slides-per-view: 2; }
     }
@@ -259,21 +265,21 @@
   </div>
 
   <nav>
-    <a href="index.html" class="home-btn">HOME</a>
+    <a href="/" class="home-btn">HOME</a>
     <div class="nav-links">
       <div class="dropdown">
         <a href="#" class="dropdown-toggle">About</a>
         <div class="dropdown-menu">
-          <a href="socialmedia.html">Social Media Team</a>
-          <a href="about.html">Executive Board</a>
-          <a href="partnerships.html">Partnerships</a>
+          <a href="/socialmedia">Social Media Team</a>
+          <a href="/about">Executive Board</a>
+          <a href="/partnerships">Partnerships</a>
         </div>
       </div>
-      <a href="events.html">Events</a>
-      <a href="raregems.html" class="active">Rare Gems</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="getinvolved.html">Get Involved</a>
+      <a href="/events">Events</a>
+      <a href="/raregems" class="active">Rare Gems</a>
+      <a href="/newsletter">Newsletter</a>
+      <a href="/#contact">Contact</a>
+      <a href="/getinvolved">Get Involved</a>
     </div>
   </nav>
 
@@ -281,9 +287,11 @@
     <!-- OUR PASSION FOR JEWELRY -->
     <section class="passion">
       <div class="passion-top">
-        <h1>Our Passion for Jewelry</h1>
+        <div class="passion-copy">
+          <h1>Our Passion for Jewelry</h1>
+          <h2>Rare Gems by Parnika K and Samhita R</h2>
+        </div>
         <img src="IMG_5304.jpeg" alt="Rare Gems handmade jewelry booth" class="passion-img">
-        <h2>Rare Gems by Parnika K and Samhita R</h2>
       </div>
       <div class="passion-text">
         <p>Rare Gems Jewelry is the handcrafted jewelry branch of the Rare Disease Club, dedicated to turning creativity into impact. All proceeds from every piece sold are fully donated to rare disease organizations, patient support initiatives, and related research efforts. Our jewelry has also supported Mission 7K, helping provide financial assistance to a family with two children affected by a rare disease, specifically to support their medical expenses.
