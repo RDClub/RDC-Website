@@ -127,41 +127,34 @@
       background: #ffffff;
       padding: 70px 6vw 60px;
     }
-    .passion-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 48px;
-      margin-bottom: 36px;
-    }
-    .passion-top h1 {
+    .passion-header h1 {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
       font-size: clamp(2.2rem, 5.5vw, 4rem);
       text-transform: uppercase;
       color: #111;
       line-height: 1.1;
+      margin-bottom: 10px;
     }
     .passion-img {
+      float: right;
       width: 400px;
       max-width: 40%;
-      flex-shrink: 0;
       border-radius: 6px;
       box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+      margin: 0 0 20px 36px;
+    }
+    .passion-text h2 {
+      font-size: 1.6rem;
+      color: #333;
+      line-height: 1.75;
+      margin-bottom: 12px;
     }
     .passion-text p {
       font-size: 1.2rem;
       color: #333;
       line-height: 1.75;
       margin-bottom: 16px;
-      max-width: 1000px;
-    }
-    .passion-text h2 {
-      font-size: 1.6rem;
-      color: #333;
-      line-height: 1.75;
-      margin-bottom: 16px;
-      max-width: 1000px;
     }
 
     /* --- FOLLOW US --- */
@@ -188,8 +181,10 @@
     .follow-track {
       display: flex;
       gap: var(--carousel-gap);
-      transition: transform 0.45s ease;
       will-change: transform;
+    }
+    .follow-track.animating {
+      transition: transform 0.45s ease;
     }
     .follow-slide {
       flex: 0 0 calc((100% - (var(--slides-per-view) - 1) * var(--carousel-gap)) / var(--slides-per-view));
@@ -242,8 +237,7 @@
     /* --- MOBILE RESPONSIVENESS --- */
     @media (max-width: 900px) {
       .nav-links { display: none; }
-      .passion-top { flex-direction: column; align-items: stretch; gap: 24px; }
-      .passion-img { width: 100%; max-width: 100%; }
+      .passion-img { float: none; width: 100%; max-width: 100%; margin: 0 0 20px 0; }
       .follow-carousel { --slides-per-view: 2; }
     }
     @media (max-width: 600px) {
@@ -280,16 +274,17 @@
   <main class="page-content">
     <!-- OUR PASSION FOR JEWELRY -->
     <section class="passion">
-      <div class="passion-top">
+      <div class="passion-header">
         <h1>Our Passion for Jewelry</h1>
-        <img src="IMG_5304.jpeg" alt="Rare Gems handmade jewelry booth" class="passion-img">
-        <h2>Rare Gems by Parnika K and Samhita R</h2>
       </div>
       <div class="passion-text">
+        <img src="IMG_5304.jpeg" alt="Rare Gems handmade jewelry booth" class="passion-img">
+        <h2>Rare Gems by Parnika K and Samhita R</h2>
         <p>Rare Gems Jewelry is the handcrafted jewelry branch of the Rare Disease Club, dedicated to turning creativity into impact. All proceeds from every piece sold are fully donated to rare disease organizations, patient support initiatives, and related research efforts. Our jewelry has also supported Mission 7K, helping provide financial assistance to a family with two children affected by a rare disease, specifically to support their medical expenses.
         Through Rare Gems Jewelry, we aim to combine art, purpose, and community—proving that even small creations can make a meaningful difference. Each piece is thoughtfully designed and handmade with high-quality materials, ensuring both beauty and durability.
         We sell our jewelry online on our Rare Gems website and at local markets throughout the Bay Area, bringing our mission directly to the community. Some of the markets we have participated in include flea and community markets such as the Soso Market, the San Jose Makers Market, and the Berkeley Farmers Market.</p>
       </div>
+      <div style="clear: both;"></div>
     </section>
 
     <!-- FOLLOW US -->
@@ -325,13 +320,21 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    /* Infinite carousel logic */
     const followCarousel = document.getElementById("follow-carousel");
     const followTrack = document.getElementById("follow-track");
-    const followSlides = Array.from(followTrack.children);
     const followPrev = document.getElementById("follow-prev");
     const followNext = document.getElementById("follow-next");
-    let followIndex = 0;
     let followInterval;
+
+    /* Clone all original slides and append for seamless infinite loop */
+    const originalSlides = Array.from(followTrack.children);
+    const totalOriginal = originalSlides.length;
+    originalSlides.forEach(slide => {
+      followTrack.appendChild(slide.cloneNode(true));
+    });
+    const allSlides = Array.from(followTrack.children);
+    let followIndex = 0;
 
     function getSlidesPerView() {
       if (window.innerWidth <= 600) return 1;
@@ -339,20 +342,36 @@
       return 4;
     }
 
-    function updateFollowCarousel() {
+    function getSlideWidth() {
       const gap = parseFloat(getComputedStyle(followTrack).gap) || 0;
-      const slideWidth = followSlides[0].getBoundingClientRect().width + gap;
-      const maxIndex = Math.max(0, followSlides.length - getSlidesPerView());
-      followIndex = Math.min(followIndex, maxIndex);
+      return allSlides[0].getBoundingClientRect().width + gap;
+    }
+
+    function updateFollowCarousel(animate) {
+      if (animate) {
+        followTrack.classList.add('animating');
+      } else {
+        followTrack.classList.remove('animating');
+      }
+      const slideWidth = getSlideWidth();
       followTrack.style.transform = `translateX(-${followIndex * slideWidth}px)`;
     }
 
     function moveFollowCarousel(step) {
-      const maxIndex = Math.max(0, followSlides.length - getSlidesPerView());
-      followIndex = followIndex + step;
-      if (followIndex > maxIndex) followIndex = 0;
-      if (followIndex < 0) followIndex = maxIndex;
-      updateFollowCarousel();
+      followIndex += step;
+      updateFollowCarousel(true);
+
+      /* After transition, silently jump if we've entered the cloned region */
+      followTrack.addEventListener('transitionend', function handler() {
+        followTrack.removeEventListener('transitionend', handler);
+        if (followIndex >= totalOriginal) {
+          followIndex -= totalOriginal;
+          updateFollowCarousel(false);
+        } else if (followIndex < 0) {
+          followIndex += totalOriginal;
+          updateFollowCarousel(false);
+        }
+      });
     }
 
     function startFollowAutoplay() {
@@ -368,11 +387,11 @@
       moveFollowCarousel(1);
       startFollowAutoplay();
     });
-    window.addEventListener("resize", updateFollowCarousel);
+    window.addEventListener("resize", () => updateFollowCarousel(false));
     followCarousel.addEventListener("mouseenter", () => clearInterval(followInterval));
     followCarousel.addEventListener("mouseleave", startFollowAutoplay);
 
-    updateFollowCarousel();
+    updateFollowCarousel(false);
     startFollowAutoplay();
   </script>
 
