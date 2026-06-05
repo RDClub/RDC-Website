@@ -1,0 +1,83 @@
+/* Shared mobile navigation enhancement for Rare Disease Club.
+   Loaded after each page's inline <style> so these rules take precedence.
+   Progressive enhancement: the collapsed menu only activates once
+   nav-mobile.js adds the `js-nav` class, so the site still works without JS. */
+
+.nav-toggle { display: none; }
+
+@media (max-width: 900px) {
+  /* Compact top bar: HOME on the left, hamburger on the right. */
+  nav.js-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 64px;
+    padding: 6px 12px;
+  }
+
+  /* Keep HOME compact instead of stretching full width. */
+  nav.js-nav .home-btn {
+    width: auto;
+    justify-content: center;
+  }
+
+  /* Hamburger button. */
+  nav.js-nav .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 46px;
+    height: 46px;
+    padding: 9px;
+    margin-left: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  nav.js-nav .nav-toggle span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: #000;
+    border-radius: 2px;
+    transition: transform .3s ease, opacity .3s ease;
+  }
+
+  /* Collapsible menu, hidden until the hamburger is tapped. The base styles
+     pin .nav-links to height:72px, which would clip the expanded list and let
+     page content overlap it — reset to auto so it grows and pushes content down. */
+  nav.js-nav .nav-links {
+    display: none;
+    flex-basis: 100%;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  nav.js-nav.open .nav-links { display: flex; }
+
+  /* Animate the hamburger into an X while open. */
+  nav.js-nav.open .nav-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  nav.js-nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+  nav.js-nav.open .nav-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  /* Keep the About sub-menu inside the screen (fixes the 150vw overflow) and
+     stack it below its toggle instead of beside it. */
+  nav.js-nav .dropdown {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+  }
+  nav.js-nav .nav-links a {
+    width: 100%;
+  }
+  nav.js-nav .dropdown-menu {
+    position: static;
+    width: 100%;
+    min-width: 0;
+  }
+}
