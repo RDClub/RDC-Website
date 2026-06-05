@@ -249,14 +249,34 @@
     }
 
     @media (max-width: 700px) {
-      .members-row { gap: 40px; }
-      .member-circle { width: 180px; height: 180px; }
-      .member-initials { font-size: 2.6rem; }
-      .school-divider h2 { font-size: 1.6rem; }
+      .members-row { gap: 30px; }
+      .member-card { width: 200px; }
+      .member-circle { width: 150px; height: 150px; }
+      .member-initials { font-size: 2.2rem; }
+      .member-role { font-size: 1.05rem; }
+      .member-name { font-size: 0.95rem; }
+      .school-divider h2 { font-size: 1.5rem; }
+      .school-email { font-size: 0.9rem; }
+      .school-email a { word-break: break-all; }
+      .chapters-section { padding: 40px 3vw 60px; }
+      .chapters-subtitle { font-size: 1.5rem; margin-bottom: 35px; }
+      .chapters-hero { padding: 50px 15px; }
     }
     @media (max-width: 480px) {
-      .members-row { flex-direction: column; align-items: center; gap: 36px; }
-      .member-circle { width: 160px; height: 160px; }
+      .members-row { gap: 16px; }
+      .member-card { width: 45%; }
+      .member-circle { width: 120px; height: 120px; }
+      .member-initials { font-size: 1.8rem; }
+      .member-role { font-size: 0.95rem; }
+      .member-name { font-size: 0.85rem; }
+      .school-divider h2 { font-size: 1.3rem; }
+      .school-divider { margin-bottom: 30px; }
+      .members-row { margin-bottom: 50px; }
+    }
+    @media (max-width: 340px) {
+      .members-row { flex-direction: column; align-items: center; gap: 28px; }
+      .member-card { width: 80%; }
+      .member-circle { width: 130px; height: 130px; }
     }
   </style>
 </head>
@@ -330,7 +350,7 @@
   <div class="members-row">
     <div class="member-card">
       <div class="member-circle">
-        <img src="vpcalhigh.png" alt="Maggie Luo" style="object-position: center 70%;">
+        <img src="vpcalhigh.png" alt="Maggie Luo" style="object-position: center 80%;">
       </div>
       <div class="member-role">President</div>
       <div class="member-name">Maggie Luo</div>
